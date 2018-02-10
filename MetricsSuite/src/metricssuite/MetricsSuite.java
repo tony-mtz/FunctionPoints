@@ -45,7 +45,10 @@ public class MetricsSuite extends Application {
     public static void main(String[] args) {
         launch(args);
         
-        
+        /**
+        *demo save and read for data needed in the Function Points tab
+        *You need to use gson-2.8.2.jar, place it in your Libraries folder
+        * 
         //test file save and read
         String projName = "project1";
         
@@ -92,7 +95,7 @@ public class MetricsSuite extends Application {
             System.out.println(ex.getMessage());
         }
         
-        
+        */
     }
     
 }
