@@ -42,8 +42,13 @@ public class Controller implements Initializable{
 
     @FXML
     private void addTab() {
-        Tab tab = new Tab("Test");
-        tabPane.getTabs().add(tab);
+        try {
+            Tab tab = new Tab("Function Points");
+            tabPane.getTabs().add(tab);
+            tab.setContent(FXMLLoader.load(this.getClass().getResource("FPTab.fxml")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
