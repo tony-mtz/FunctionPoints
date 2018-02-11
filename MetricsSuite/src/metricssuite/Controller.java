@@ -37,7 +37,15 @@ public class Controller implements Initializable{
     
     @FXML
     private MenuItem mLanguage;
-    
+    @FXML
+    private TabPane tabPane;
+
+    @FXML
+    private void addTab() {
+        Tab tab = new Tab("Test");
+        tabPane.getTabs().add(tab);
+    }
+
     @FXML
     void popup(Event event) throws IOException{
         System.out.println("hello");
@@ -53,8 +61,6 @@ public class Controller implements Initializable{
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        
                 
                 
        
