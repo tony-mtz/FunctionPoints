@@ -26,6 +26,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import utils.ProjectObject;
 
 
 /**
@@ -39,6 +40,7 @@ public class Controller implements Initializable{
     private MenuItem mLanguage;
     @FXML
     private TabPane tabPane;
+    ProjectObject proj = new ProjectObject();
 
     @FXML
     private void addTab() {
@@ -74,6 +76,7 @@ public class Controller implements Initializable{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        
     }
        
     
