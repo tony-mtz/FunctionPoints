@@ -24,6 +24,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import utils.ProjectData;
+import utils.ProjectObject;
 
 
 
@@ -48,10 +49,14 @@ public class MetricsSuite extends Application {
         /**
         *demo save and read for data needed in the Function Points tab
         *You need to use gson-2.8.2.jar, place it in your Libraries folder
-        * 
+        * */
         //test file save and read
+        
+        ProjectObject proj1= new ProjectObject("Proj1");
+        
         String projName = "project1";
         
+        //each new window
         ProjectData data = new ProjectData();
         //bind to UI input boxes and radio buttons
         data.extInputs = 10;
@@ -71,9 +76,12 @@ public class MetricsSuite extends Application {
         data.vaf.qestion11 =3;
         //ect...default vaf value to 0
         
+        //add to main proj
+        proj1.projData.add(data);
+        
         //save data to file
         Gson gson = new Gson();
-        String dataString = gson.toJson(data, ProjectData.class );        
+        String dataString = gson.toJson(proj1, ProjectObject.class );        
         try{
                 File file = new File(projName +".ms");
                 Writer writer = new BufferedWriter(new FileWriter(file));
@@ -85,17 +93,17 @@ public class MetricsSuite extends Application {
         
         //read data from file
         //will read data to UI
-        ProjectData outD;
+        ProjectObject outD;
         try {
-            outD = gson.fromJson(new FileReader(projName + ".ms"), ProjectData.class);
+            outD = gson.fromJson(new FileReader(projName + ".ms"), ProjectObject.class);
             System.out.println(outD.language);
-            System.out.println(outD.extInputs);
-            System.out.println(outD.vaf.qestion1);
+            System.out.println(outD.projData.get(0).language);
+            System.out.println(outD.projData.get(0).vaf.qestion1);
         } catch (FileNotFoundException ex) {
             System.out.println(ex.getMessage());
         }
         
-        */
+        
     }
     
 }
