@@ -61,9 +61,22 @@ public class Controller implements Initializable{
         Scene scene = new Scene(vbox);
         stage.setScene(scene);
         stage.show();
-        
-       
     }
+    
+    @FXML
+    private void newProject(Event event){
+        try {
+            VBox vbox = FXMLLoader.load(getClass().getResource("NewProject.fxml"));            
+            Stage stage = new Stage();
+            Scene scene = new Scene(vbox);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+       
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
                 

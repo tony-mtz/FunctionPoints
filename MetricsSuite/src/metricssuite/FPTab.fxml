@@ -9,7 +9,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="365.0" prefWidth="591.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="metricssuite.FPTabController">
+<AnchorPane prefHeight="365.0" prefWidth="591.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="metricssuite.FPTabController">
    <children>
       <Label layoutX="24.0" layoutY="38.0" text="External Inputs">
          <font>

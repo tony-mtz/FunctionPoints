@@ -8,7 +8,10 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="metricssuite.Controller">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" 
+          prefHeight="410.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" 
+          fx:controller="metricssuite.Controller">
+    
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="327.0" minWidth="10.0" prefWidth="301.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="339.0" minWidth="10.0" prefWidth="299.0" />
@@ -23,7 +26,7 @@
         <menus>
           <Menu id="mFile" mnemonicParsing="false" text="File">
             <items>
-              <MenuItem id="mNew" mnemonicParsing="false" text="New" />
+              <MenuItem id="mNew" mnemonicParsing="false" text="New" onAction="#newProject"/>
                   <MenuItem id="mOpen" mnemonicParsing="false" text="Open" />
                   <MenuItem id="mSave" mnemonicParsing="false" text="Save" />
                   <MenuItem id="mExit" mnemonicParsing="false" text="Exit" />
