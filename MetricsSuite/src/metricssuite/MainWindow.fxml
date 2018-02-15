@@ -58,6 +58,6 @@
             </Menu>
         </menus>
       </MenuBar>
-      <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" GridPane.rowSpan="2147483647" />
+      <TabPane fx:id="tabPane" prefHeight="358.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" GridPane.rowSpan="2147483647" />
    </children>
 </GridPane>
