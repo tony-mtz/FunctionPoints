@@ -13,7 +13,7 @@ public class VAFController implements Initializable {
     @FXML
     private Button cancel;
     @FXML
-    private void close(){
+    private void close() {
         Stage stage = (Stage) cancel.getScene().getWindow();
         stage.close();
     }

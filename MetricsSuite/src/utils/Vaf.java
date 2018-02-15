@@ -14,12 +14,19 @@ public class Vaf {
     private int[] values = new int[14];
 
     public Vaf(){
+
     }
 
     public Vaf(int[] values){
         this.values = values;
                 
     }
-    
+
+    public void setValue(int index, int value) {
+        if ((value > 5) || (value) < 0) {
+            throw new IllegalArgumentException("Value out of range for VAF");
+        }
+        this.values[index] = value;
+    }
     
 }

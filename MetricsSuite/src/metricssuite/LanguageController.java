@@ -20,16 +20,9 @@ import java.util.ResourceBundle;
 
 public class LanguageController implements Initializable {
 
-    @FXML
-    private ChoiceBox languageChoice;
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        List<String> testList = new ArrayList<String>();
-        testList.add("Test");
-        testList.add("Java");
-        ObservableList obList = FXCollections.observableList(testList);
-        languageChoice.setItems(obList);
+
     }
 }
 
