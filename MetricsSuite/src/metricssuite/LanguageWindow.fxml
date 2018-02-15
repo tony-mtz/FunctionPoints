@@ -3,12 +3,13 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="362.0" prefWidth="193.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="362.0" prefWidth="193.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="metricssuite.LanguageController">
    <children>
       <GridPane prefHeight="342.0" prefWidth="195.0">
         <columnConstraints>
@@ -35,17 +36,20 @@
          <children>
             <Label text="Select one language" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="67.0" text="Done" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="13" />
-            <RadioButton mnemonicParsing="false" text="Assembler" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <RadioButton mnemonicParsing="false" text="Ada 95" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <RadioButton mnemonicParsing="false" text="C" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <RadioButton mnemonicParsing="false" text="C++" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <RadioButton mnemonicParsing="false" text="COBOL" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <RadioButton mnemonicParsing="false" text="FORTRAN" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <RadioButton mnemonicParsing="false" text="HTML" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <RadioButton mnemonicParsing="false" text="Java" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-            <RadioButton mnemonicParsing="false" text="JavaScript" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-            <RadioButton mnemonicParsing="false" text="Visual Basic" GridPane.columnIndex="1" GridPane.rowIndex="12" />
-            <RadioButton mnemonicParsing="false" text="VBScript" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <RadioButton mnemonicParsing="false" text="Assembler" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <toggleGroup>
+                  <ToggleGroup fx:id="languageGroup" />
+               </toggleGroup></RadioButton>
+            <RadioButton mnemonicParsing="false" text="Ada 95" toggleGroup="$languageGroup" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <RadioButton mnemonicParsing="false" text="C" toggleGroup="$languageGroup" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <RadioButton mnemonicParsing="false" text="C++" toggleGroup="$languageGroup" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <RadioButton mnemonicParsing="false" text="COBOL" toggleGroup="$languageGroup" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <RadioButton mnemonicParsing="false" text="FORTRAN" toggleGroup="$languageGroup" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <RadioButton mnemonicParsing="false" text="HTML" toggleGroup="$languageGroup" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <RadioButton mnemonicParsing="false" text="Java" toggleGroup="$languageGroup" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <RadioButton mnemonicParsing="false" text="JavaScript" toggleGroup="$languageGroup" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <RadioButton mnemonicParsing="false" text="Visual Basic" toggleGroup="$languageGroup" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <RadioButton mnemonicParsing="false" text="VBScript" toggleGroup="$languageGroup" GridPane.columnIndex="1" GridPane.rowIndex="11" />
          </children>
       </GridPane>
    </children>
