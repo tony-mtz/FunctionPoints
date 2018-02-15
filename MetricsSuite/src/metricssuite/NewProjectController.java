@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import utils.ProjectData;
 import utils.ProjectObject;
 
@@ -20,7 +21,7 @@ import utils.ProjectObject;
 public class NewProjectController {
     
     
-    @FXML public Button okButton;
+    @FXML public Button btnOk;
     @FXML public TextField projName;
     @FXML public TextField productName;
     @FXML public TextField creator;
@@ -36,7 +37,8 @@ public class NewProjectController {
         ProjectData data = new ProjectData(); 
         newProject = new ProjectObject(projN, prodN, creatorS);
         newProject.projData.add(data);
-        
+        Stage stage = (Stage) btnOk.getScene().getWindow();
+        stage.close();
         System.out.println(newProject.creator);
         
     }
