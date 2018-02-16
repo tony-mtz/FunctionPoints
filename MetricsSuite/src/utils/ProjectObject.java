@@ -43,14 +43,16 @@ public class ProjectObject {
           this.productName = productName;
           this.creator = creator;
           language = "Java";
+          ProjectData data = new ProjectData();
           projData = new ArrayList<>();
-          
+          projData.add(data);
     }
     
     public ProjectObject(){
-          
+          ProjectData data = new ProjectData();
           language = "Java";
           projData = new ArrayList<>();
+          projData.add(data);
           
     }
     

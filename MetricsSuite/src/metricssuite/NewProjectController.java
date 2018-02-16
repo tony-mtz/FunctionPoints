@@ -37,12 +37,13 @@ public class NewProjectController implements Initializable{
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-//        Context.getInstance().projObject().creator = "tonyWWWW!";
-//        System.out.println(Context.getInstance().projObject().creator);             
-       
-        
     }
     
+    
+    /**
+     * Populate Context object with new project data
+     * @param Event 
+     */
     @FXML
     public void createProject(ActionEvent Event){        
         
@@ -60,10 +61,6 @@ public class NewProjectController implements Initializable{
         Context.getInstance().projObject().projData.add(data);
         Stage stage = (Stage) btnOk.getScene().getWindow();
         stage.close();
-//        System.out.println();
-        
-        
-        
     }
     
 }

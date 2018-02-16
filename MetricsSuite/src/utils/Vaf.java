@@ -29,4 +29,8 @@ public class Vaf {
         this.values[index] = value;
     }
     
+    public int getValue(int index){
+        return values[index];
+    }
+    
 }

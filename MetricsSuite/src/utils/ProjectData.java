@@ -14,6 +14,10 @@ public class ProjectData {
     
     public String language;            
     public int extInputs;
+
+    public void setExtInputs(int extInputs) {
+        this.extInputs = extInputs;
+    }
     public int extOutputs;
     public int extInquiries;
     public int intLogicFiles;
@@ -40,5 +44,9 @@ public class ProjectData {
         wfExtIntFiles = 0;
         vaf = new Vaf();
     }   
+    
+    public int getExtIn(){
+        return extInputs;
+    }
 }
 

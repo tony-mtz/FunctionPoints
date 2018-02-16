@@ -5,6 +5,16 @@ import utils.ProjectObject;
 public class Context {
     private final static Context instance = new Context();
     private String defaultLanguage = "Java";
+    
+    private String path= "";
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
 
     public static Context getInstance() {
         return instance;

@@ -39,8 +39,7 @@ public class MetricsSuite extends Application {
     public void start(Stage primaryStage) throws Exception {
         
         
-        GridPane grid = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
-        
+        GridPane grid = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));        
         Scene scene = new Scene(grid);
         primaryStage.setScene(scene);
         //primaryStage.setTitle(title);
@@ -53,12 +52,15 @@ public class MetricsSuite extends Application {
         /**
         *demo save and read for data needed in the Function Points tab
         *You need to use gson-2.8.2.jar, place it in your Libraries folder
-        * 
+        
         //test file save and read
         
-        ProjectObject proj1= new ProjectObject("Proj1");
+        ProjectObject proj1= new ProjectObject();
         
-        String projName = "project1";
+        proj1.creator = "Tony";
+        proj1.productName = "543 FP";
+        proj1.projectName = "543 FPP";
+                
         
         //each new window
         ProjectData data = new ProjectData();
@@ -76,9 +78,7 @@ public class MetricsSuite extends Application {
         data.wfExtIntFiles = 3; 
         
         data.language = "C++";
-        data.vaf.qestion1 = 5;
-        data.vaf.qestion11 =3;
-        //ect...default vaf value to 0
+        
         
         //add to main proj
         proj1.projData.add(data);
@@ -87,27 +87,27 @@ public class MetricsSuite extends Application {
         Gson gson = new Gson();
         String dataString = gson.toJson(proj1, ProjectObject.class );        
         try{
-                File file = new File(projName +".ms");
+                File file = new File("temp" +".ms");
                 Writer writer = new BufferedWriter(new FileWriter(file));
                 writer.write(dataString);
                 writer.flush();            
         }catch(IOException e){
             System.out.println(e.getMessage());
         }
-        
+        */
         //read data from file
         //will read data to UI
-        ProjectObject outD;
-        try {
-            outD = gson.fromJson(new FileReader(projName + ".ms"), ProjectObject.class);
-            System.out.println(outD.language);
-            System.out.println(outD.projData.get(0).language);
-            System.out.println(outD.projData.get(0).vaf.qestion1);
-        } catch (FileNotFoundException ex) {
-            System.out.println(ex.getMessage());
-        }
+//        ProjectObject outD;
+//        try {
+//            outD = gson.fromJson(new FileReader(projName + ".ms"), ProjectObject.class);
+//            System.out.println(outD.language);
+//            System.out.println(outD.projData.get(0).language);
+//            System.out.println(outD.projData.get(0).vaf.qestion1);
+//        } catch (FileNotFoundException ex) {
+//            System.out.println(ex.getMessage());
+//        }
         
-        */
+        
     }
     
 }

@@ -14,9 +14,14 @@ import javax.swing.text.TableView;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.scene.control.TextField;
 
 public class FPTabController implements Initializable{
+   @FXML public TextField extInp;
 
+   public void setExtInp(String in){
+       extInp.setText(in);
+   }
     @FXML
     void popup(Event event) throws IOException {
         VBox vbox = FXMLLoader.load(getClass().getResource("LanguageWindow.fxml"));
@@ -30,7 +35,7 @@ public class FPTabController implements Initializable{
     @FXML
     void vafPopup(Event event) throws IOException {
         AnchorPane vbox = FXMLLoader.load(getClass().getResource("VAFWindow.fxml"));
-
+        
         Stage stage = new Stage();
         Scene scene = new Scene(vbox);
         stage.setScene(scene);
@@ -39,9 +44,11 @@ public class FPTabController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-
-
+        
+          
+      
 
     }
+
+   
 }
