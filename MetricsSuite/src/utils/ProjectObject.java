@@ -18,6 +18,24 @@ public class ProjectObject {
     public String productName;
     public String creator;
     public String language; 
+    public String comments;
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
+    
+    public void setComments(String comments){
+        this.comments = comments;
+        
+    }
     public ArrayList <ProjectData> projData;
     
     public ProjectObject(String projectName, String productName, String creator){

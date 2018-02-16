@@ -34,12 +34,16 @@ import utils.ProjectObject;
  */
 public class MetricsSuite extends Application {
     
+    public String title = "CECS 543 Metrics Suite";
     @Override
     public void start(Stage primaryStage) throws Exception {
+        
+        
         GridPane grid = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
         
         Scene scene = new Scene(grid);
         primaryStage.setScene(scene);
+        //primaryStage.setTitle(title);
         primaryStage.show();
     }
     

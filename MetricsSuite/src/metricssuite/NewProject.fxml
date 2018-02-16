@@ -10,9 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox alignment="TOP_CENTER" prefHeight="325.0" prefWidth="476.0" xmlns="http://javafx.com/javafx/9.0.1" 
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="metricssuite.NewProjectController">
+<VBox alignment="TOP_CENTER" prefHeight="325.0" prefWidth="476.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="metricssuite.NewProjectController">
    <children>
       <GridPane>
         <columnConstraints>
@@ -55,7 +53,7 @@
           <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextArea id="comments" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextArea id="comments" fx:id="comments" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
       <GridPane layoutX="20.0" layoutY="187.0">
@@ -68,7 +66,7 @@
             <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Button fx:id="btnOk" onAction="#createProject" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Ok" GridPane.columnIndex="1" />
+            <Button fx:id="btnOk" mnemonicParsing="false" onAction="#createProject" prefHeight="25.0" prefWidth="98.0" text="Ok" GridPane.columnIndex="1" />
             <Button id="btnCancel" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Cancel" GridPane.columnIndex="2" />
          </children>
       </GridPane>

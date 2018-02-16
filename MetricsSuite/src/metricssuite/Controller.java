@@ -24,6 +24,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -42,8 +43,11 @@ public class Controller implements Initializable{
     private MenuItem mLanguage;
     @FXML
     private TabPane tabPane;
-    ProjectObject proj = new ProjectObject();
-
+    
+    
+    
+    
+    
     @FXML
     private void addTab() {
         try {
@@ -56,16 +60,14 @@ public class Controller implements Initializable{
     }
 
     @FXML
-    private void exit() {
+    private void exit() {       
         Platform.exit();
     }
 
     @FXML
     void popup(Event event) throws IOException{
-        System.out.println("hello");
-        
+            
         VBox vbox = FXMLLoader.load(getClass().getResource("LanguageWindow.fxml"));
-        
         Stage stage = new Stage();
         Scene scene = new Scene(vbox);
         stage.setScene(scene);
@@ -73,26 +75,27 @@ public class Controller implements Initializable{
     }
     
     @FXML
-    private void newProject(Event event){
+    public void newProject(Event event){
         try {
             VBox vbox = FXMLLoader.load(getClass().getResource("NewProject.fxml"));            
             Stage stage = new Stage();
             Scene scene = new Scene(vbox);
             stage.setScene(scene);
+            stage.setTitle("New Project");
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }        
         
+        System.out.println("otu");
     }
-       
-    
+
+ 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-                
-                
-       
-        
+//        Context.getInstance().projObject().creator = "tonyM!";
+//        System.out.println(Context.getInstance().projObject().creator);
+               
     }
     
     
