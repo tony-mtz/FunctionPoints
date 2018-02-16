@@ -55,5 +55,11 @@ public class ProjectObject {
           projData.add(data);
           
     }
-    
+
+    public int createNewData() {
+        ProjectData data = new ProjectData();
+        projData.add(data);
+        System.out.println("Length: " + projData.size());
+        return projData.indexOf(data);
+    }
 }

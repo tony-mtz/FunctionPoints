@@ -120,32 +120,32 @@ public class Controller implements Initializable{
         try {
             projFile = gson.fromJson(new FileReader(selectedFile.toString()), ProjectObject.class);
             
-            Context.getInstance().projObject().language= projFile.language;
-            Context.getInstance().projObject().comments = projFile.comments;
-            Context.getInstance().projObject().creator = projFile.creator;
-            Context.getInstance().projObject().productName =projFile.productName;
-            Context.getInstance().projObject().projectName = projFile.projectName;
+            Context.getInstance().getProjectObject().language= projFile.language;
+            Context.getInstance().getProjectObject().comments = projFile.comments;
+            Context.getInstance().getProjectObject().creator = projFile.creator;
+            Context.getInstance().getProjectObject().productName =projFile.productName;
+            Context.getInstance().getProjectObject().projectName = projFile.projectName;
             System.out.println(projFile.projData.size());
             System.out.println(projFile.projData.get(0).extInputs+ "....extInputs");
 
-            //Context.getInstance().projObject().projData.set(0, );//   .get(0).extInputs = projFile.projData.get(0).extInputs;
-            System.out.println(Context.getInstance().projObject().projData.get(0).extInputs);
+            //Context.getInstance().getProjectObject().projData.set(0, );//   .get(0).extInputs = projFile.projData.get(0).extInputs;
+            System.out.println(Context.getInstance().getProjectObject().projData.get(0).extInputs);
             for(int i =0; i<projFile.projData.size(); i++){
-                Context.getInstance().projObject().projData.get(i).extInputs = projFile.projData.get(i).extInputs;
-                Context.getInstance().projObject().projData.get(i).extOutputs = projFile.projData.get(i).extOutputs;
-                Context.getInstance().projObject().projData.get(i).extInquiries = projFile.projData.get(i).extInquiries;
-                Context.getInstance().projObject().projData.get(i).intLogicFiles = projFile.projData.get(i).intLogicFiles;
-                Context.getInstance().projObject().projData.get(i).extIntFiles = projFile.projData.get(i).extIntFiles;
-                Context.getInstance().projObject().projData.get(i).wfExtInputs = projFile.projData.get(i).wfExtInputs;
-                Context.getInstance().projObject().projData.get(i).wfExtOutputs = projFile.projData.get(i).wfExtOutputs;
-                Context.getInstance().projObject().projData.get(i).wfExtInquiries = projFile.projData.get(i).wfExtInquiries;
-                Context.getInstance().projObject().projData.get(i).wfIntLogicFiles = projFile.projData.get(i).wfIntLogicFiles;
-                Context.getInstance().projObject().projData.get(i).wfExtIntFiles = projFile.projData.get(i).wfExtIntFiles;
+                Context.getInstance().getProjectObject().projData.get(i).extInputs = projFile.projData.get(i).extInputs;
+                Context.getInstance().getProjectObject().projData.get(i).extOutputs = projFile.projData.get(i).extOutputs;
+                Context.getInstance().getProjectObject().projData.get(i).extInquiries = projFile.projData.get(i).extInquiries;
+                Context.getInstance().getProjectObject().projData.get(i).intLogicFiles = projFile.projData.get(i).intLogicFiles;
+                Context.getInstance().getProjectObject().projData.get(i).extIntFiles = projFile.projData.get(i).extIntFiles;
+                Context.getInstance().getProjectObject().projData.get(i).wfExtInputs = projFile.projData.get(i).wfExtInputs;
+                Context.getInstance().getProjectObject().projData.get(i).wfExtOutputs = projFile.projData.get(i).wfExtOutputs;
+                Context.getInstance().getProjectObject().projData.get(i).wfExtInquiries = projFile.projData.get(i).wfExtInquiries;
+                Context.getInstance().getProjectObject().projData.get(i).wfIntLogicFiles = projFile.projData.get(i).wfIntLogicFiles;
+                Context.getInstance().getProjectObject().projData.get(i).wfExtIntFiles = projFile.projData.get(i).wfExtIntFiles;
                 for(int j=0; j<14; j++){
-                    Context.getInstance().projObject().projData.get(i).vaf.setValue(i,projFile.projData.get(i).vaf.getValue(j));
+                    Context.getInstance().getProjectObject().projData.get(i).vaf.setValue(i,projFile.projData.get(i).vaf.getValue(j));
                 }
             }
-        System.out.println(Context.getInstance().projObject().productName);
+        System.out.println(Context.getInstance().getProjectObject().productName);
         } catch (FileNotFoundException ex) {
             System.out.println(ex.getMessage());
         }
@@ -154,8 +154,8 @@ public class Controller implements Initializable{
  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-//        Context.getInstance().projObject().creator = "tonyM!";
-       // System.out.println("hello");//Context.getInstance().projObject().creator);
+//        Context.getInstance().getProjectObject().creator = "tonyM!";
+       // System.out.println("hello");//Context.getInstance().getProjectObject().creator);
           
     }
     

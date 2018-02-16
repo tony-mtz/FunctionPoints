@@ -25,13 +25,10 @@ public class LanguageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         System.out.println("Default language: " + Context.getInstance().getDefaultLanguage());
-        languageGroup.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
-            @Override
-            public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
-                RadioButton chk = (RadioButton) newValue.getToggleGroup().getSelectedToggle();
-                Context.getInstance().setDefaultLanguage(chk.getText());
-                System.out.println("New default: " + Context.getInstance().getDefaultLanguage());
-            }
+        languageGroup.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            RadioButton chk = (RadioButton) newValue.getToggleGroup().getSelectedToggle();
+            Context.getInstance().setDefaultLanguage(chk.getText());
+            System.out.println("New default: " + Context.getInstance().getDefaultLanguage());
         });
     }
 }

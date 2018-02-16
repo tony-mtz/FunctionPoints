@@ -52,13 +52,13 @@ public class NewProjectController implements Initializable{
         String creatorS = new String(creator.getText());
         String commentsTxt = new String(comments.getText());
         
-        Context.getInstance().projObject().setCreator(creatorS);
-        Context.getInstance().projObject().setProductName(prodN);
-        Context.getInstance().projObject().setProjectName(projN);
-        Context.getInstance().projObject().setComments(commentsTxt);
+        Context.getInstance().getProjectObject().setCreator(creatorS);
+        Context.getInstance().getProjectObject().setProductName(prodN);
+        Context.getInstance().getProjectObject().setProjectName(projN);
+        Context.getInstance().getProjectObject().setComments(commentsTxt);
         
         ProjectData data = new ProjectData(); 
-        Context.getInstance().projObject().projData.add(data);
+        Context.getInstance().getProjectObject().projData.add(data);
         Stage stage = (Stage) btnOk.getScene().getWindow();
         stage.close();
     }

@@ -1,5 +1,6 @@
 package metricssuite;
 
+import utils.ProjectData;
 import utils.ProjectObject;
 
 public class Context {
@@ -30,8 +31,16 @@ public class Context {
     
     private ProjectObject obj = new ProjectObject();
     
-    public ProjectObject projObject(){
+    public ProjectObject getProjectObject(){
         return obj;
+    }
+
+    public void setProjectObject(ProjectObject newObj) {
+        obj = newObj;
+    }
+
+    public int createNewData() {
+        return obj.createNewData();
     }
     
 }

@@ -4,8 +4,10 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -17,11 +19,13 @@ import java.util.ResourceBundle;
 import javafx.scene.control.TextField;
 
 public class FPTabController implements Initializable{
-   @FXML public TextField extInp;
+   @FXML private TextField extInp;
+   @FXML private TextField extOut;
+   @FXML private TextField extInq;
+   @FXML private TextField intFiles;
+   @FXML private TextField extFiles;
+   public int index;
 
-   public void setExtInp(String in){
-       extInp.setText(in);
-   }
     @FXML
     void popup(Event event) throws IOException {
         VBox vbox = FXMLLoader.load(getClass().getResource("LanguageWindow.fxml"));
@@ -34,20 +38,18 @@ public class FPTabController implements Initializable{
 
     @FXML
     void vafPopup(Event event) throws IOException {
-        AnchorPane vbox = FXMLLoader.load(getClass().getResource("VAFWindow.fxml"));
-        
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("VAFWindow.fxml"));
         Stage stage = new Stage();
-        Scene scene = new Scene(vbox);
-        stage.setScene(scene);
+        stage.setScene(new Scene(fxmlLoader.load()));
+        VAFController controller = fxmlLoader.getController();
+        controller.initData(index);
         stage.show();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-          
-      
-
+        index = Context.getInstance().createNewData();
+        System.out.println(index);
     }
 
    
