@@ -142,7 +142,7 @@ public class Controller implements Initializable{
                 Context.getInstance().getProjectObject().projData.get(i).wfIntLogicFiles = projFile.projData.get(i).wfIntLogicFiles;
                 Context.getInstance().getProjectObject().projData.get(i).wfExtIntFiles = projFile.projData.get(i).wfExtIntFiles;
                 for(int j=0; j<14; j++){
-                    Context.getInstance().getProjectObject().projData.get(i).vaf.setValue(i,projFile.projData.get(i).vaf.getValue(j));
+                    Context.getInstance().getProjectObject().projData.get(i).setValueFactorAtIndex(j, projFile.projData.get(i).getValueFactorAtIndex(j));
                 }
             }
         System.out.println(Context.getInstance().getProjectObject().productName);

@@ -6,6 +6,9 @@
 package utils;
 
 
+import javafx.beans.binding.Bindings;
+import javafx.beans.value.ObservableValue;
+
 /**
  *
  * @author tony
@@ -28,7 +31,7 @@ public class ProjectData {
     public int wfExtInquiries;
     public int wfIntLogicFiles;
     public int wfExtIntFiles;
-    public Vaf vaf;
+    private int[] valueFactors;
 
     public ProjectData() {
         language = "Java";
@@ -42,11 +45,25 @@ public class ProjectData {
         wfExtInquiries = 0;
         wfIntLogicFiles = 0;
         wfExtIntFiles = 0;
-        vaf = new Vaf();
-    }   
+        valueFactors = new int[14];
+    }
+
+    public ObservableValue changePropertyValueFactors() {
+        return Bindings.concat(valueFactors);
+    }
     
     public int getExtIn(){
         return extInputs;
+    }
+    public int getValueFactorAtIndex (int index) {return valueFactors[index];}
+    public void setValueFactorAtIndex (int index, int value) {
+        valueFactors[index] = value;
+    }
+    public int getValueFactorSum() {
+        int sum = 0;
+        for(int i: valueFactors)
+            sum += i;
+        return sum;
     }
 }
 

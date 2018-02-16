@@ -49,11 +49,9 @@ public class ProjectObject {
     }
     
     public ProjectObject(){
-          ProjectData data = new ProjectData();
           language = "Java";
           projData = new ArrayList<>();
-          projData.add(data);
-          
+
     }
 
     public int createNewData() {

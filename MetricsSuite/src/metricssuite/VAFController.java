@@ -10,9 +10,11 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.scene.control.Slider;
+import utils.ProjectData;
 
 public class VAFController implements Initializable {
     private int index;
+    private ProjectData data;
     @FXML
     private Button cancel;
     @FXML
@@ -60,13 +62,18 @@ public class VAFController implements Initializable {
     @FXML
     private void submit(){
         for(int i = 0; i < sliders.size(); i++) {
-            System.out.println(sliders.get(i).getValue());
+            data.setValueFactorAtIndex(i, (int) sliders.get(i).getValue());
         }
         Stage stage = (Stage) done.getScene().getWindow();
         System.out.println("VAF INDEX " + index);
         stage.close();
     }
-    public void initData(Integer index) {
+    public void initIndex(Integer index) {
         this.index = index;
+        data = Context.getInstance().getProjectObject().projData.get(index);
+    }
+
+    public void initSliders() {
+        for (int i=0; i<sliders.size(); i++) sliders.get(i).setValue(data.getValueFactorAtIndex(i));
     }
 }
