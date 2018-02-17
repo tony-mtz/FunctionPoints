@@ -194,47 +194,49 @@ public class Controller implements Initializable{
         File selectedFile = fileChooser.showOpenDialog(null);
         if(selectedFile != null){
             selectedFile.getAbsolutePath();
+            
+            System.out.println(selectedFile.toString());
+            Gson gson = new Gson();
+            ProjectObject projFile;
+            try {
+                projFile = gson.fromJson(new FileReader(selectedFile.toString()), ProjectObject.class);
+
+                Context.getInstance().getProjectObject().language= projFile.language;
+                Context.getInstance().getProjectObject().comments = projFile.comments;
+                Context.getInstance().getProjectObject().creator = projFile.creator;
+                Context.getInstance().getProjectObject().productName =projFile.productName;
+                Context.getInstance().getProjectObject().projectName = projFile.projectName;
+                System.out.println(projFile.projData.size());
+                System.out.println(projFile.projData.get(0).extInputs+ "....extInputs");
+
+                //check the size and add a new Data, aka - one for each tab.
+                for(int i =0; i<projFile.projData.size(); i++){
+                    ProjectData data = new ProjectData();
+                    data.extInputs = projFile.projData.get(i).extInputs;
+                    data.extOutputs = projFile.projData.get(i).extOutputs;
+                    data.extInquiries = projFile.projData.get(i).extInquiries;
+                    data.intLogicFiles = projFile.projData.get(i).intLogicFiles;
+                    data.extIntFiles = projFile.projData.get(i).extIntFiles;
+                    data.wfExtInputs = projFile.projData.get(i).wfExtInputs;
+                    data.wfExtOutputs = projFile.projData.get(i).wfExtOutputs;
+                    data.wfExtInquiries = projFile.projData.get(i).wfExtInquiries;
+                    data.wfIntLogicFiles = projFile.projData.get(i).wfIntLogicFiles;
+                  for(int j=0; j<14; j++){
+                        data.setValueFactorAtIndex(j, projFile.projData.get(i).getValueFactorAtIndex(j));
+                    }
+                  Context.getInstance().getProjectObject().projData.add(data);
+                }
+
+            System.out.println(Context.getInstance().getProjectObject().productName);
+            System.out.println(Context.getInstance().getProjectObject().projData.size());
+            } catch (FileNotFoundException ex) {
+                System.out.println(ex.getMessage());
+            }
         }else{
             System.out.println("nothing");
         }
         
-        System.out.println(selectedFile.toString());
-        Gson gson = new Gson();
-        ProjectObject projFile;
-        try {
-            projFile = gson.fromJson(new FileReader(selectedFile.toString()), ProjectObject.class);
-            
-            Context.getInstance().getProjectObject().language= projFile.language;
-            Context.getInstance().getProjectObject().comments = projFile.comments;
-            Context.getInstance().getProjectObject().creator = projFile.creator;
-            Context.getInstance().getProjectObject().productName =projFile.productName;
-            Context.getInstance().getProjectObject().projectName = projFile.projectName;
-            System.out.println(projFile.projData.size());
-            System.out.println(projFile.projData.get(0).extInputs+ "....extInputs");
-
-            //check the size and add a new Data, aka - one for each tab.
-            for(int i =0; i<projFile.projData.size(); i++){
-                ProjectData data = new ProjectData();
-                data.extInputs = projFile.projData.get(i).extInputs;
-                data.extOutputs = projFile.projData.get(i).extOutputs;
-                data.extInquiries = projFile.projData.get(i).extInquiries;
-                data.intLogicFiles = projFile.projData.get(i).intLogicFiles;
-                data.extIntFiles = projFile.projData.get(i).extIntFiles;
-                data.wfExtInputs = projFile.projData.get(i).wfExtInputs;
-                data.wfExtOutputs = projFile.projData.get(i).wfExtOutputs;
-                data.wfExtInquiries = projFile.projData.get(i).wfExtInquiries;
-                data.wfIntLogicFiles = projFile.projData.get(i).wfIntLogicFiles;
-              for(int j=0; j<14; j++){
-                    data.setValueFactorAtIndex(j, projFile.projData.get(i).getValueFactorAtIndex(j));
-                }
-              Context.getInstance().getProjectObject().projData.add(data);
-            }
-            
-        System.out.println(Context.getInstance().getProjectObject().productName);
-        System.out.println(Context.getInstance().getProjectObject().projData.size());
-        } catch (FileNotFoundException ex) {
-            System.out.println(ex.getMessage());
-        }
+        
         
     }
  
