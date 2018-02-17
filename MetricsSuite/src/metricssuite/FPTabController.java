@@ -20,7 +20,6 @@ import javafx.stage.Stage;
 
 import javax.swing.table.TableColumn;
 import javax.swing.text.TableView;
-import javax.xml.soap.Text;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -34,6 +33,7 @@ public class FPTabController implements Initializable{
    @FXML private TextField intFiles;
    @FXML private TextField extFiles;
    @FXML private TextField vafSum;
+   @FXML private TextField fpTotal;
 
    @FXML private ToggleGroup externalInputs;
    @FXML private ToggleGroup externalOutputs;
@@ -60,6 +60,12 @@ public class FPTabController implements Initializable{
         LanguageController controller = fxmlLoader.getController();
         controller.initData(index);
         stage.show();
+    }
+
+    @FXML
+    void calculateFunctionPoints(Event event) {
+        int total = (int) (data.getTotalFactors() * (0.65 + (0.01 * data.getValueFactorSum())));
+        fpTotal.setText(String.valueOf(total));
     }
 
     @FXML

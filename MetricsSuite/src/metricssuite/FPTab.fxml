@@ -11,6 +11,11 @@
 
 <AnchorPane prefHeight="365.0" prefWidth="591.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="metricssuite.FPTabController">
    <children>
+      <Label layoutX="190.0" layoutY="290.0" text="Current Language:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
       <Label layoutX="24.0" layoutY="38.0" text="External Inputs">
          <font>
             <Font size="15.0" />
@@ -36,11 +41,11 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Button layoutX="24.0" layoutY="230.0" mnemonicParsing="false" text="Compute FP" />
+      <Button layoutX="24.0" layoutY="230.0" mnemonicParsing="false" onAction="#calculateFunctionPoints" text="Compute FP" />
       <Button layoutX="24.0" layoutY="260.0" mnemonicParsing="false" onAction="#vafPopup" text="Value Adjustments" />
       <Button layoutX="24.0" layoutY="290.0" mnemonicParsing="false" text="Compute Code Size" />
       <Button layoutX="24.0" layoutY="320.0" mnemonicParsing="false" onAction="#popup" text="Change Language" />
-      <TextField alignment="CENTER_RIGHT" blendMode="DARKEN" editable="false" layoutX="428.0" layoutY="230.0">
+      <TextField fx:id="fpTotal" alignment="CENTER_RIGHT" blendMode="DARKEN" editable="false" layoutX="428.0" layoutY="230.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></TextField>
