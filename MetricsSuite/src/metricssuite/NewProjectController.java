@@ -57,8 +57,6 @@ public class NewProjectController implements Initializable{
         Context.getInstance().getProjectObject().setProjectName(projN);
         Context.getInstance().getProjectObject().setComments(commentsTxt);
         
-        ProjectData data = new ProjectData(); 
-        Context.getInstance().getProjectObject().projData.add(data);
         Stage stage = (Stage) btnOk.getScene().getWindow();
         stage.close();
     }

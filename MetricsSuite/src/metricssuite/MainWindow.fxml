@@ -29,7 +29,7 @@
             <items>
               <MenuItem id="mNew" mnemonicParsing="false" onAction="#newProject" text="New" />
                   <MenuItem id="mOpen" mnemonicParsing="false" text="Open" onAction="#openFile" />
-                  <MenuItem id="mSave" mnemonicParsing="false" text="Save" />
+                  <MenuItem id="mSave" mnemonicParsing="false" text="Save" onAction="#saveProject" />
                   <MenuItem id="mExit" mnemonicParsing="false" onAction="#exit" text="Exit" />
             </items>
           </Menu>

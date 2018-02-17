@@ -48,6 +48,7 @@ public class FPTabController implements Initializable{
         stage.setScene(new Scene(fxmlLoader.load()));
         LanguageController controller = fxmlLoader.getController();
         controller.initData(index);
+        
         stage.show();
     }
 
@@ -80,7 +81,21 @@ public class FPTabController implements Initializable{
             data.wfExtInputs = complexity;
             extInpResults.setText(String.valueOf(data.extInputs * complexity));
         });
+        
+        
+        
     }
+    
+    
+    @FXML
+    public void setExt(){
+        extInp.setText("wwww");
+    }
+    
+    public int getIndex(){
+        return index;
+    }
+
 
 
 }

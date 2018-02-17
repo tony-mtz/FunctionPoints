@@ -34,8 +34,14 @@ import javafx.stage.Stage;
 import utils.ProjectObject;
 
 import com.google.gson.Gson;
+import com.sun.javafx.robot.impl.FXRobotHelper;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.Writer;
+import javafx.scene.Node;
+import javafx.scene.layout.AnchorPane;
 import utils.ProjectData;
 
 
@@ -86,6 +92,10 @@ public class Controller implements Initializable{
     @FXML
     public void newProject(Event event){
         try {
+            
+           
+            
+           
             VBox vbox = FXMLLoader.load(getClass().getResource("NewProject.fxml"));            
             Stage stage = new Stage();
             Scene scene = new Scene(vbox);
@@ -97,7 +107,81 @@ public class Controller implements Initializable{
         }
     }
     
-    
+   
+    /**
+     * Saves project
+     * 
+     * Currently: still need:
+     *            reference language
+     *            weighting factors
+     *             input total
+     *            computed fp
+     * 
+     *            And select file to save to 
+     *            right now it saves to a predefined file in the local folder 
+     * 
+     * @param event 
+     */
+    @FXML
+    public void saveProject(Event event){
+        
+        //this selects the tab (0) (1) ....(n)
+        int index = Context.getInstance().getProjectObject().projData.size();
+        //System.out.println(index);
+        for(int i =0; i< index; i++){
+            SingleSelectionModel<Tab> selectionModel = tabPane.getSelectionModel();
+            selectionModel.select(i);
+            Node n = selectionModel.getSelectedItem().getContent();
+            AnchorPane ap = (AnchorPane) selectionModel.getSelectedItem().getContent();
+            ObservableList<Node> comp = ap.getChildren();
+            
+            for(Node node: comp){
+                if (node instanceof TextField){
+                    //System.out.println(((TextField) node).getText());
+                    //System.out.println(((TextField) node).getId());
+                    if(((TextField) node).getId() != null){
+                        System.out.println(((TextField) node).getId() +
+                                ((TextField) node).getText());
+                        if(((TextField) node).getId().equals("extInp")){                           
+                            Context.getInstance().getProjectObject().projData.get(i).extInputs = Integer.parseInt(((TextField) node).getText());
+                        }
+                        if(((TextField) node).getId().equals("extOut")){                           
+                            Context.getInstance().getProjectObject().projData.get(i).extOutputs = Integer.parseInt(((TextField) node).getText());
+                        }
+                        if(((TextField) node).getId().equals("extInq")){                           
+                            Context.getInstance().getProjectObject().projData.get(i).extInquiries = Integer.parseInt(((TextField) node).getText());
+                        }
+                        if(((TextField) node).getId().equals("intFiles")){                           
+                            Context.getInstance().getProjectObject().projData.get(i).intLogicFiles = Integer.parseInt(((TextField) node).getText());
+                        }
+                        if(((TextField) node).getId().equals("extFiles")){                           
+                            Context.getInstance().getProjectObject().projData.get(i).extIntFiles = Integer.parseInt(((TextField) node).getText());
+                        }
+                        
+                        //still need================
+                        //save preference language
+                        //weighting factors
+                        //input total
+                        //computed fp
+                    }
+                }
+            }
+        }
+               
+        //chose file name..ect
+        //save to gson before writing
+        Gson gson = new Gson();
+        String dataString = gson.toJson(Context.getInstance().getProjectObject(), ProjectObject.class );        
+        try{
+                File file = new File("temp1" +".ms");
+                Writer writer = new BufferedWriter(new FileWriter(file));
+                writer.write(dataString);
+                writer.flush();            
+        }catch(IOException e){
+            System.out.println(e.getMessage());
+        }
+        
+    }
     /**
      * Load project from selected file
      * @param event 
