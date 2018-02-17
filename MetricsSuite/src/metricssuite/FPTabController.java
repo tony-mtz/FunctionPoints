@@ -33,10 +33,21 @@ public class FPTabController implements Initializable{
    @FXML private TextField intFiles;
    @FXML private TextField extFiles;
    @FXML private TextField vafSum;
+   @FXML private TextField fpTotal;
 
    @FXML private ToggleGroup externalInputs;
+   @FXML private ToggleGroup externalOutputs;
+   @FXML private ToggleGroup externalInquiries;
+   @FXML private ToggleGroup internalLogicalFiles;
+   @FXML private ToggleGroup externalLogicalFiles;
 
    @FXML private TextField extInpResults;
+   @FXML private TextField externalOutputResults;
+   @FXML private TextField externalInquiriesResults;
+   @FXML private TextField internalLogicalFilesResults;
+   @FXML private TextField externalLogicalFilesResults;
+   @FXML private TextField total;
+
 
    public int index;
    private ProjectData data;
@@ -53,6 +64,12 @@ public class FPTabController implements Initializable{
     }
 
     @FXML
+    void calculateFunctionPoints(Event event) {
+        int total = (int) (data.getTotalFactors() * (0.65 + (0.01 * data.getValueFactorSum())));
+        fpTotal.setText(String.valueOf(total));
+    }
+
+    @FXML
     void vafPopup(Event event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("VAFWindow.fxml"));
         Stage stage = new Stage();
@@ -63,23 +80,106 @@ public class FPTabController implements Initializable{
         stage.show();
     }
 
+    int updateText(TextField field, ToggleGroup group, TextField results) {
+        try {
+            int value = Integer.parseInt(field.getText());
+            if (value < 0) {
+                throw new NumberFormatException("Number needs to be positive");
+            }
+            RadioButton chk = (RadioButton) group.getSelectedToggle();
+            int complexity = Integer.parseInt(chk.getText());
+            results.setText(String.valueOf(complexity*value));
+            return value;
+        } catch (NumberFormatException e){
+            System.out.println("Invalid input.");
+            return -1;
+        }
+    }
+
+    int getRadioButtonValue(ToggleGroup group) {
+        RadioButton chk = (RadioButton) group.getSelectedToggle();
+        return Integer.parseInt(chk.getText());
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         index = Context.getInstance().createNewData();
         System.out.println(index);
         data = Context.getInstance().getProjectObject().projData.get(index);
         extInp.setOnAction(event -> {
-            int value = Integer.parseInt(extInp.getText());
-            data.extInputs = value;
-            RadioButton chk = (RadioButton) externalInputs.getSelectedToggle();
-            int complexity = Integer.parseInt(chk.getText());
-            extInpResults.setText(String.valueOf(complexity*value));
+            int result = updateText(extInp, externalInputs, extInpResults);
+            if (result > -1) {
+                data.extInputs = result;
+                total.setText(String.valueOf(data.getTotalFactors()));
+            } else {
+                extInp.setText(String.valueOf(data.extInputs));
+            }
         });
         externalInputs.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
-            RadioButton chk = (RadioButton) externalInputs.getSelectedToggle();
-            int complexity = Integer.parseInt(chk.getText());
+            int complexity = getRadioButtonValue(externalInputs);
             data.wfExtInputs = complexity;
             extInpResults.setText(String.valueOf(data.extInputs * complexity));
+            total.setText(String.valueOf(data.getTotalFactors()));
+        });
+        extOut.setOnAction(event -> {
+            int result = updateText(extOut, externalOutputs, externalOutputResults);
+            if (result > -1) {
+                data.extOutputs = result;
+                total.setText(String.valueOf(data.getTotalFactors()));
+            } else {
+                extOut.setText(String.valueOf(data.extOutputs));
+            }
+        });
+        externalOutputs.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            int complexity = getRadioButtonValue(externalOutputs);
+            data.wfExtOutputs = complexity;
+            externalOutputResults.setText(String.valueOf(data.extOutputs * complexity));
+            total.setText(String.valueOf(data.getTotalFactors()));
+        });
+        extInq.setOnAction(event -> {
+            int result = updateText(extInq, externalInquiries, externalInquiriesResults);
+            if (result > -1) {
+                data.extInquiries = result;
+                total.setText(String.valueOf(data.getTotalFactors()));
+            } else {
+                extInq.setText(String.valueOf(data.extInquiries));
+            }
+        });
+        externalInquiries.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            int complexity = getRadioButtonValue(externalInquiries);
+            data.wfExtInquiries = complexity;
+            externalInquiriesResults.setText(String.valueOf(data.extInquiries * complexity));
+            total.setText(String.valueOf(data.getTotalFactors()));
+        });
+        intFiles.setOnAction(event -> {
+            int result = updateText(intFiles, internalLogicalFiles, internalLogicalFilesResults);
+            if (result > -1) {
+                data.intLogicFiles = result;
+                total.setText(String.valueOf(data.getTotalFactors()));
+            } else {
+                intFiles.setText(String.valueOf(data.intLogicFiles));
+            }
+        });
+        internalLogicalFiles.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            int complexity = getRadioButtonValue(internalLogicalFiles);
+            data.wfIntLogicFiles = complexity;
+            internalLogicalFilesResults.setText(String.valueOf(data.intLogicFiles * complexity));
+            total.setText(String.valueOf(data.getTotalFactors()));
+        });
+        extFiles.setOnAction(event -> {
+            int result = updateText(extFiles, externalLogicalFiles, externalLogicalFilesResults);
+            if (result > -1) {
+                data.extIntFiles = result;
+                total.setText(String.valueOf(data.getTotalFactors()));
+            } else {
+                extFiles.setText(String.valueOf(data.extIntFiles));
+            }
+        });
+        externalLogicalFiles.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            int complexity = getRadioButtonValue(externalLogicalFiles);
+            data.wfExtIntFiles = complexity;
+            externalLogicalFilesResults.setText(String.valueOf(data.extIntFiles * complexity));
+            total.setText(String.valueOf(data.getTotalFactors()));
         });
         
         

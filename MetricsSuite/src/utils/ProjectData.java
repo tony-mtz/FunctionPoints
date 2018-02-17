@@ -40,11 +40,11 @@ public class ProjectData {
         extInquiries = 0;
         intLogicFiles = 0;
         extIntFiles = 0;
-        wfExtInputs = 0;
-        wfExtOutputs = 0;
-        wfExtInquiries = 0;
-        wfIntLogicFiles = 0;
-        wfExtIntFiles = 0;
+        wfExtInputs = 4;
+        wfExtOutputs = 5;
+        wfExtInquiries = 4;
+        wfIntLogicFiles = 10;
+        wfExtIntFiles = 7;
         valueFactors = new int[14];
     }
 
@@ -64,6 +64,10 @@ public class ProjectData {
         for(int i: valueFactors)
             sum += i;
         return sum;
+    }
+    public int getTotalFactors() {
+        return extInputs * wfExtInputs + extOutputs * wfExtOutputs + extInquiries * wfExtInquiries +
+                intLogicFiles * wfIntLogicFiles + extIntFiles * wfExtIntFiles;
     }
 }
 
