@@ -65,5 +65,9 @@ public class ProjectData {
             sum += i;
         return sum;
     }
+    public int getTotalFactors() {
+        return extInputs * wfExtInputs + extOutputs * wfExtOutputs + extInquiries * wfExtInquiries +
+                intLogicFiles * wfIntLogicFiles + extIntFiles * wfExtIntFiles;
+    }
 }
 
