@@ -128,24 +128,26 @@ public class Controller implements Initializable{
             System.out.println(projFile.projData.size());
             System.out.println(projFile.projData.get(0).extInputs+ "....extInputs");
 
-            //Context.getInstance().getProjectObject().projData.set(0, );//   .get(0).extInputs = projFile.projData.get(0).extInputs;
-            System.out.println(Context.getInstance().getProjectObject().projData.get(0).extInputs);
+            //check the size and add a new Data, aka - one for each tab.
             for(int i =0; i<projFile.projData.size(); i++){
-                Context.getInstance().getProjectObject().projData.get(i).extInputs = projFile.projData.get(i).extInputs;
-                Context.getInstance().getProjectObject().projData.get(i).extOutputs = projFile.projData.get(i).extOutputs;
-                Context.getInstance().getProjectObject().projData.get(i).extInquiries = projFile.projData.get(i).extInquiries;
-                Context.getInstance().getProjectObject().projData.get(i).intLogicFiles = projFile.projData.get(i).intLogicFiles;
-                Context.getInstance().getProjectObject().projData.get(i).extIntFiles = projFile.projData.get(i).extIntFiles;
-                Context.getInstance().getProjectObject().projData.get(i).wfExtInputs = projFile.projData.get(i).wfExtInputs;
-                Context.getInstance().getProjectObject().projData.get(i).wfExtOutputs = projFile.projData.get(i).wfExtOutputs;
-                Context.getInstance().getProjectObject().projData.get(i).wfExtInquiries = projFile.projData.get(i).wfExtInquiries;
-                Context.getInstance().getProjectObject().projData.get(i).wfIntLogicFiles = projFile.projData.get(i).wfIntLogicFiles;
-                Context.getInstance().getProjectObject().projData.get(i).wfExtIntFiles = projFile.projData.get(i).wfExtIntFiles;
-                for(int j=0; j<14; j++){
-                    Context.getInstance().getProjectObject().projData.get(i).setValueFactorAtIndex(j, projFile.projData.get(i).getValueFactorAtIndex(j));
+                ProjectData data = new ProjectData();
+                data.extInputs = projFile.projData.get(i).extInputs;
+                data.extOutputs = projFile.projData.get(i).extOutputs;
+                data.extInquiries = projFile.projData.get(i).extInquiries;
+                data.intLogicFiles = projFile.projData.get(i).intLogicFiles;
+                data.extIntFiles = projFile.projData.get(i).extIntFiles;
+                data.wfExtInputs = projFile.projData.get(i).wfExtInputs;
+                data.wfExtOutputs = projFile.projData.get(i).wfExtOutputs;
+                data.wfExtInquiries = projFile.projData.get(i).wfExtInquiries;
+                data.wfIntLogicFiles = projFile.projData.get(i).wfIntLogicFiles;
+              for(int j=0; j<14; j++){
+                    data.setValueFactorAtIndex(j, projFile.projData.get(i).getValueFactorAtIndex(j));
                 }
+              Context.getInstance().getProjectObject().projData.add(data);
             }
+            
         System.out.println(Context.getInstance().getProjectObject().productName);
+        System.out.println(Context.getInstance().getProjectObject().projData.size());
         } catch (FileNotFoundException ex) {
             System.out.println(ex.getMessage());
         }
