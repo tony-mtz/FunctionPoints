@@ -45,7 +45,8 @@ public class ProjectObject {
           language = "Java";
           ProjectData data = new ProjectData();
           projData = new ArrayList<>();
-          projData.add(data);
+          //do this at tab creation instead
+          //projData.add(data);
     }
     
     public ProjectObject(){
