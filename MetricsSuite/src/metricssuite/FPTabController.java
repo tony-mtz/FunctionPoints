@@ -2,12 +2,17 @@ package metricssuite;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.Toggle;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -28,6 +33,11 @@ public class FPTabController implements Initializable{
    @FXML private TextField intFiles;
    @FXML private TextField extFiles;
    @FXML private TextField vafSum;
+
+   @FXML private ToggleGroup externalInputs;
+
+   @FXML private TextField extInpResults;
+
    public int index;
    private ProjectData data;
 
@@ -57,7 +67,20 @@ public class FPTabController implements Initializable{
         index = Context.getInstance().createNewData();
         System.out.println(index);
         data = Context.getInstance().getProjectObject().projData.get(index);
+        extInp.setOnAction(event -> {
+            int value = Integer.parseInt(extInp.getText());
+            data.extInputs = value;
+            RadioButton chk = (RadioButton) externalInputs.getSelectedToggle();
+            int complexity = Integer.parseInt(chk.getText());
+            extInpResults.setText(String.valueOf(complexity*value));
+        });
+        externalInputs.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            RadioButton chk = (RadioButton) externalInputs.getSelectedToggle();
+            int complexity = Integer.parseInt(chk.getText());
+            data.wfExtInputs = complexity;
+            extInpResults.setText(String.valueOf(data.extInputs * complexity));
+        });
     }
 
-   
+
 }

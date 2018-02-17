@@ -43,7 +43,6 @@ public class ProjectObject {
           this.productName = productName;
           this.creator = creator;
           language = "Java";
-          ProjectData data = new ProjectData();
           projData = new ArrayList<>();
           //do this at tab creation instead
           //projData.add(data);
