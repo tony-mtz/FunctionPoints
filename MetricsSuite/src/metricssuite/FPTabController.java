@@ -130,9 +130,11 @@ public class FPTabController implements Initializable{
              index = Context.getInstance().createNewData();
              data = Context.getInstance().getProjectObject().projData.get(index);
         }else{
+             
             data = Context.getInstance().getProjectObject().projData.get(Context.getInstance().incr());
             //for vaf to get the correct ref
-            index = Context.getInstance().getProjectObject().projData.size()-1;
+            index = Context.getInstance().returnCounter();
+           
         }
             
         

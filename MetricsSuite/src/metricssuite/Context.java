@@ -35,6 +35,9 @@ public class Context {
         return counter;
           
     }
+    public int returnCounter(){
+        return counter;
+    }
     public void resetIncr(){
         counter = -1;
     }
