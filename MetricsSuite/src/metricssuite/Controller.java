@@ -34,7 +34,6 @@ import javafx.stage.Stage;
 import utils.ProjectObject;
 
 import com.google.gson.Gson;
-import com.sun.javafx.robot.impl.FXRobotHelper;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -233,7 +232,7 @@ public class Controller implements Initializable{
                 Context.getInstance().setProjectObject(newProject);
                 System.out.println("Context proj size: " + Context.getInstance().getProjectObject().projData.size());
 
-                Context.getInstance().getProjectObject().language= projFile.language;
+                Context.getInstance().getProjectObject().setLanguage(projFile.getLanguage());
                 Context.getInstance().getProjectObject().comments = projFile.comments;
                 Context.getInstance().getProjectObject().creator = projFile.creator;
                 Context.getInstance().getProjectObject().productName =projFile.productName;

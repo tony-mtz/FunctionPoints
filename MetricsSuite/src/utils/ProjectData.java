@@ -7,6 +7,10 @@ package utils;
 
 
 import javafx.beans.binding.Bindings;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.beans.value.ObservableValue;
 
 /**
@@ -14,8 +18,21 @@ import javafx.beans.value.ObservableValue;
  * @author tony
  */
 public class ProjectData {
-    
-    public String language;            
+    private final IntegerProperty vafSum = new SimpleIntegerProperty();
+
+    public String getLanguage() {
+        return language.get();
+    }
+
+    public StringProperty languageProperty() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language.set(language);
+    }
+
+    private final StringProperty language = new SimpleStringProperty();
     public int extInputs;
 
     public void setExtInputs(int extInputs) {
@@ -34,7 +51,7 @@ public class ProjectData {
     private int[] valueFactors;
 
     public ProjectData() {
-        language = "Java";
+        setLanguage("Java");
         extInputs = 0;
         extOutputs = 0;
         extInquiries = 0;
@@ -48,10 +65,18 @@ public class ProjectData {
         valueFactors = new int[14];
     }
 
-    public ObservableValue changePropertyValueFactors() {
-        return Bindings.concat(valueFactors);
+    public IntegerProperty vafSumProperty() {
+        return vafSum;
     }
-    
+
+    public final int getVafSum() {
+        return vafSumProperty().get();
+    }
+
+    public final void setVafSum() {
+        vafSumProperty().set(getValueFactorSum());
+    }
+
     public int getExtIn(){
         return extInputs;
     }

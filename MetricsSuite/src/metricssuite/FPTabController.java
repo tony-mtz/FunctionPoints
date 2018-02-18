@@ -10,9 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.Toggle;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -23,34 +21,35 @@ import javax.swing.text.TableView;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.scene.control.TextField;
+
 import utils.ProjectData;
 
 public class FPTabController implements Initializable{
-   @FXML private TextField extInp;
-   @FXML private TextField extOut;
-   @FXML private TextField extInq;
-   @FXML private TextField intFiles;
-   @FXML private TextField extFiles;
-   @FXML private TextField vafSum;
-   @FXML private TextField fpTotal;
+    @FXML private TextField extInp;
+    @FXML private TextField extOut;
+    @FXML private TextField extInq;
+    @FXML private TextField intFiles;
+    @FXML private TextField extFiles;
+    @FXML private TextField vafSum;
+    @FXML private TextField fpTotal;
 
-   @FXML private ToggleGroup externalInputs;
-   @FXML private ToggleGroup externalOutputs;
-   @FXML private ToggleGroup externalInquiries;
-   @FXML private ToggleGroup internalLogicalFiles;
-   @FXML private ToggleGroup externalLogicalFiles;
+    @FXML private ToggleGroup externalInputs;
+    @FXML private ToggleGroup externalOutputs;
+    @FXML private ToggleGroup externalInquiries;
+    @FXML private ToggleGroup internalLogicalFiles;
+    @FXML private ToggleGroup externalLogicalFiles;
 
-   @FXML private TextField extInpResults;
-   @FXML private TextField externalOutputResults;
-   @FXML private TextField externalInquiriesResults;
-   @FXML private TextField internalLogicalFilesResults;
-   @FXML private TextField externalLogicalFilesResults;
-   @FXML private TextField total;
+    @FXML private TextField extInpResults;
+    @FXML private TextField externalOutputResults;
+    @FXML private TextField externalInquiriesResults;
+    @FXML private TextField internalLogicalFilesResults;
+    @FXML private TextField externalLogicalFilesResults;
+    @FXML private TextField total;
+    @FXML private TextField language;
+    @FXML private TextField codeSize;
 
-
-   public int index;
-   private ProjectData data;
+    public int index;
+    private ProjectData data;
 
     @FXML
     void popup(Event event) throws IOException {
@@ -64,7 +63,7 @@ public class FPTabController implements Initializable{
     }
 
     @FXML
-    void calculateFunctionPoints(Event event) {
+    void calculateFunctionPoints() {
         int total = (int) (data.getTotalFactors() * (0.65 + (0.01 * data.getValueFactorSum())));
         fpTotal.setText(String.valueOf(total));
     }
@@ -78,6 +77,12 @@ public class FPTabController implements Initializable{
         controller.initIndex(index);
         controller.initSliders();
         stage.show();
+    }
+
+    @FXML
+    void computeCodeSize() {
+        int size = Integer.parseInt(fpTotal.getText()) * Context.getInstance().getCodeRatio(data.getLanguage());
+        codeSize.setText(String.valueOf(size));
     }
 
     int updateText(TextField field, ToggleGroup group, TextField results) {
@@ -121,6 +126,7 @@ public class FPTabController implements Initializable{
             extInpResults.setText(String.valueOf(data.extInputs * complexity));
             total.setText(String.valueOf(data.getTotalFactors()));
         });
+        extInpResults.setText((String.valueOf(data.extInputs * data.wfExtInputs)));
         extOut.setOnAction(event -> {
             int result = updateText(extOut, externalOutputs, externalOutputResults);
             if (result > -1) {
@@ -136,6 +142,7 @@ public class FPTabController implements Initializable{
             externalOutputResults.setText(String.valueOf(data.extOutputs * complexity));
             total.setText(String.valueOf(data.getTotalFactors()));
         });
+        externalOutputResults.setText((String.valueOf(data.extOutputs * data.wfExtOutputs)));
         extInq.setOnAction(event -> {
             int result = updateText(extInq, externalInquiries, externalInquiriesResults);
             if (result > -1) {
@@ -151,6 +158,7 @@ public class FPTabController implements Initializable{
             externalInquiriesResults.setText(String.valueOf(data.extInquiries * complexity));
             total.setText(String.valueOf(data.getTotalFactors()));
         });
+        externalInquiriesResults.setText((String.valueOf(data.extInquiries * data.wfExtInquiries)));
         intFiles.setOnAction(event -> {
             int result = updateText(intFiles, internalLogicalFiles, internalLogicalFilesResults);
             if (result > -1) {
@@ -166,6 +174,7 @@ public class FPTabController implements Initializable{
             internalLogicalFilesResults.setText(String.valueOf(data.intLogicFiles * complexity));
             total.setText(String.valueOf(data.getTotalFactors()));
         });
+        internalLogicalFilesResults.setText((String.valueOf(data.intLogicFiles * data.wfIntLogicFiles)));
         extFiles.setOnAction(event -> {
             int result = updateText(extFiles, externalLogicalFiles, externalLogicalFilesResults);
             if (result > -1) {
@@ -181,25 +190,16 @@ public class FPTabController implements Initializable{
             externalLogicalFilesResults.setText(String.valueOf(data.extIntFiles * complexity));
             total.setText(String.valueOf(data.getTotalFactors()));
         });
-        
-        
-        
+        externalLogicalFilesResults.setText((String.valueOf(data.extIntFiles * data.wfExtIntFiles)));
+        data.vafSumProperty().addListener((observable, oldValue, newValue) -> {
+            vafSum.setText(String.valueOf(newValue));
+        });
+        data.languageProperty().addListener((observable, oldValue, newValue) -> language.setText(newValue));
+        language.setText(data.getLanguage());
+        total.setText(String.valueOf(data.getTotalFactors()));
     }
     
-    
-    @FXML
-    public void setExt(){
-        extInp.setText("wwww");
-    }
-    
-    public void initTab(){
-//        extInp.setText("wwww");
-        System.out.println("WHAT AT");
-    }
     public int getIndex(){
         return index;
     }
-
-
-
 }

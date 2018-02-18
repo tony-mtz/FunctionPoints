@@ -64,6 +64,7 @@ public class VAFController implements Initializable {
         for(int i = 0; i < sliders.size(); i++) {
             data.setValueFactorAtIndex(i, (int) sliders.get(i).getValue());
         }
+        data.setVafSum();
         Stage stage = (Stage) done.getScene().getWindow();
         System.out.println("VAF INDEX " + index);
         stage.close();
