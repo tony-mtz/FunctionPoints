@@ -87,6 +87,7 @@ public class ProjectData {
         return extInputs;
     }
     public int getValueFactorAtIndex (int index) {return valueFactors[index];}
+    
     public void setValueFactorAtIndex (int index, int value) {
         valueFactors[index] = value;
     }

@@ -124,14 +124,15 @@ public class FPTabController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-//        index = Context.getInstance().getProjectObject().projData.size();//.createNewData();
-//        System.out.println(index);
+
+        //this accounts for loading from file or creating new tabs
         if(Context.getInstance().menuTab()){
              index = Context.getInstance().createNewData();
              data = Context.getInstance().getProjectObject().projData.get(index);
         }else{
-            
             data = Context.getInstance().getProjectObject().projData.get(Context.getInstance().incr());
+            //for vaf to get the correct ref
+            index = Context.getInstance().getProjectObject().projData.size()-1;
         }
             
         
