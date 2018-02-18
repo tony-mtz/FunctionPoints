@@ -247,28 +247,19 @@ public class Controller implements Initializable{
                             //RadioButton rb = (RadioButton)tog;
                             System.out.println(rb.getId()); 
                             System.out.println(Integer.parseInt(rb.getText())); 
-                            //if(tog.toggleGroupProperty().getName()){
-                               
-                                
-                                
-                            //}
                         }else if(node instanceof RadioButton){
 //                            System.out.print("toggle group: " +((Toggle) node).getToggleGroup().toString());  
 //                            System.out.println(((RadioButton)node).getToggleGroup()); 
 //                            System.out.println("radiob : " + ((RadioButton)node).getToggleGroup().getSelectedToggle()); 
 //                            RadioButton rb = (RadioButton) ((Toggle) node).getToggleGroup().getSelectedToggle();
                             RadioButton rb = (RadioButton) ( (RadioButton)node).getToggleGroup().getSelectedToggle();
-                            
                             //RadioButton rb = (RadioButton)tog;
                             System.out.println(rb.getId()); 
                             System.out.println(Integer.parseInt(rb.getText())); 
                             //if(tog.toggleGroupProperty().getName()){
                             if(((RadioButton) node).getId().equals("rbExtInp6")){                           
                                     ((RadioButton) node).setSelected(true);
-                                }
-                                
-                                
-                            //}
+                            }
                         }
                                 
                     }
