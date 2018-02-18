@@ -40,6 +40,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.Writer;
+import javafx.beans.binding.BooleanBinding;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
 import utils.ProjectData;
@@ -55,18 +56,29 @@ public class Controller implements Initializable{
     @FXML
     private MenuItem mLanguage;
     @FXML
-    private TabPane tabPane;    
-    
+    private GridPane gridPane;
+//    @FXML
+    private TabPane tabPane;   
+
     @FXML
     private void addTab() {
         try {
             Tab tab = new Tab("Function Points");
+            
             tabPane.getTabs().add(tab);
             tab.setContent(FXMLLoader.load(this.getClass().getResource("FPTab.fxml")));
             
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    
+    
+    public void clearTabs(){
+        //can't seem to call this from the new project controller
+//        final BooleanBinding empty = Bindings.isNotEmpty(tabPane.getTabs());
+//        System.out.println("Empty?"+ empty);
+          System.out.println("ClearTABS");
     }
 
     @FXML
@@ -91,17 +103,21 @@ public class Controller implements Initializable{
      */
     @FXML
     public void newProject(Event event){
-        try {
+        try {    
+            if(tabPane!=null){
+                System.out.println(tabPane.getTabs().size());
+                tabPane.getTabs().clear();
+            }
+            tabPane = new TabPane();
+            gridPane.add(tabPane, 0,1,1,1);
             
-           
-            
-           
             VBox vbox = FXMLLoader.load(getClass().getResource("NewProject.fxml"));            
             Stage stage = new Stage();
             Scene scene = new Scene(vbox);
             stage.setScene(scene);
             stage.setTitle("New Project");
             stage.show();
+            
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -177,9 +193,12 @@ public class Controller implements Initializable{
                 Writer writer = new BufferedWriter(new FileWriter(file));
                 writer.write(dataString);
                 writer.flush();            
+                System.out.println("Fin Saved");
         }catch(IOException e){
             System.out.println(e.getMessage());
         }
+        
+        
         
     }
     /**
@@ -187,27 +206,40 @@ public class Controller implements Initializable{
      * @param event 
      */
     @FXML
-    public void openFile(ActionEvent event){
-       
+    public void openFile(ActionEvent event){      
+        
+        //get file from file chooser        
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Project");
-        File selectedFile = fileChooser.showOpenDialog(null);
+        //extension filter
+        FileChooser.ExtensionFilter extentionFilter = new FileChooser.ExtensionFilter("ms files (*.ms)", "*.ms");
+        fileChooser.getExtensionFilters().add(extentionFilter);        
+        File selectedFile = fileChooser.showOpenDialog(null);        
+
         if(selectedFile != null){
             selectedFile.getAbsolutePath();
+            
+           
             
             System.out.println(selectedFile.toString());
             Gson gson = new Gson();
             ProjectObject projFile;
             try {
                 projFile = gson.fromJson(new FileReader(selectedFile.toString()), ProjectObject.class);
+                
+                //reset context
+                ProjectObject newProject = new ProjectObject();
+                //pass new project to context
+                Context.getInstance().setProjectObject(newProject);
+                System.out.println("Context proj size: " + Context.getInstance().getProjectObject().projData.size());
 
                 Context.getInstance().getProjectObject().language= projFile.language;
                 Context.getInstance().getProjectObject().comments = projFile.comments;
                 Context.getInstance().getProjectObject().creator = projFile.creator;
                 Context.getInstance().getProjectObject().productName =projFile.productName;
                 Context.getInstance().getProjectObject().projectName = projFile.projectName;
-                System.out.println(projFile.projData.size());
-                System.out.println(projFile.projData.get(0).extInputs+ "....extInputs");
+                System.out.println("GSON proj size: " +projFile.projData.size());
+              //  System.out.println(projFile.projData.get(0).extInputs+ "....extInputs");
 
                 //check the size and add a new Data, aka - one for each tab.
                 for(int i =0; i<projFile.projData.size(); i++){
@@ -226,9 +258,44 @@ public class Controller implements Initializable{
                     }
                   Context.getInstance().getProjectObject().projData.add(data);
                 }
+                
+                //clear tabs that are opened
+//                tabPane.getTabs().clear();
+                tabPane = new TabPane();
+                gridPane.add(tabPane, 0,1,1,1);
+                
+                //populate new tabs if any
+                for(int i =0; i<projFile.projData.size(); i++){
 
+                    addTab();
+//                FXMLLoader loader = new FXMLLoader();
+//                loader.setLocation(getClass().getResource("FPTab.fxml"));
+//                FPTabController t = loader.getController();
+                
+                }
+            
+                for(int i =0; i<projFile.projData.size(); i++){
+                SingleSelectionModel<Tab> selectionModel = tabPane.getSelectionModel();
+                    selectionModel.select(i);
+                    Node n = selectionModel.getSelectedItem().getContent();
+                    AnchorPane ap = (AnchorPane) selectionModel.getSelectedItem().getContent();
+                    ObservableList<Node> comp = ap.getChildren();
+
+                    for(Node node: comp){
+                        if (node instanceof TextField){
+                            if(((TextField) node).getId() != null){
+                                System.out.println(((TextField) node).getId() +
+                                        ((TextField) node).getText());
+                                if(((TextField) node).getId().equals("extInp")){                           
+                                    ((TextField) node).setText((Integer.toString(Context.getInstance().getProjectObject().projData.get(i).extInputs)));
+                                }
+
+                            }
+                        }
+                    }
+                }
             System.out.println(Context.getInstance().getProjectObject().productName);
-            System.out.println(Context.getInstance().getProjectObject().projData.size());
+            //System.out.println("Context size at the end of open: " +Context.getInstance().getProjectObject().projData.size());
             } catch (FileNotFoundException ex) {
                 System.out.println(ex.getMessage());
             }

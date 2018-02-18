@@ -192,6 +192,10 @@ public class FPTabController implements Initializable{
         extInp.setText("wwww");
     }
     
+    public void initTab(){
+//        extInp.setText("wwww");
+        System.out.println("WHAT AT");
+    }
     public int getIndex(){
         return index;
     }
