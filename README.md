@@ -1,4 +1,4 @@
 # FunctionPoints
 Java UI
 
-Note:  You need add gson-2.8.2.jar to your Libraries folder to run utils
+Note:  There are some jar files in the util folder.  Add them to your project.  The added lib is just there to deal with the FX version of Gson.
