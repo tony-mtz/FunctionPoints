@@ -1,1 +1,1 @@
-null
+{"projectName":"asdf","productName":"dasf","creator":"dsfa","language":"Java","comments":"dfas","projData":[{"vafSum":{"name":"","value":0,"valid":true,"helper":{"observable":{}}},"language":{"name":"","value":"Java","valid":true,"helper":{"observable":{}}},"extInputs":0,"extOutputs":0,"extInquiries":0,"intLogicFiles":0,"extIntFiles":0,"wfExtInputs":4,"wfExtOutputs":5,"wfExtInquiries":4,"wfIntLogicFiles":10,"wfExtIntFiles":7,"valueFactors":[0,0,0,0,0,0,0,0,0,0,0,0,0,0]}]}

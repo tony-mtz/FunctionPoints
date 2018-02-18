@@ -63,6 +63,10 @@ public class ProjectData {
         wfIntLogicFiles = 10;
         wfExtIntFiles = 7;
         valueFactors = new int[14];
+        vafSum = new SimpleIntegerProperty();
+        language = new SimpleStringProperty();
+        
+        
     }
 
     public IntegerProperty vafSumProperty() {

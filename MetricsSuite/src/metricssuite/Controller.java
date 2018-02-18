@@ -72,12 +72,19 @@ public class Controller implements Initializable{
         }
     }
     
-    
-    public void clearTabs(){
-        //can't seem to call this from the new project controller
-//        final BooleanBinding empty = Bindings.isNotEmpty(tabPane.getTabs());
-//        System.out.println("Empty?"+ empty);
-          System.out.println("ClearTABS");
+    private void loadTab(ProjectData data){
+        try{
+            Tab tab  = new Tab("Function Points");
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("FPTab.fxml"));
+            FPTabController t = loader.getController();
+            t.initProjectData(data);
+            tabPane.getTabs().add(tab);
+            tab.setContent(loader.load());
+        }catch(IOException exception){
+            
+                    
+        }
     }
 
     @FXML
@@ -139,7 +146,7 @@ public class Controller implements Initializable{
      */
     @FXML
     public void saveProject(Event event){
-        /*
+       
         //this selects the tab (0) (1) ....(n)
         int index = Context.getInstance().getProjectObject().projData.size();
         //System.out.println(index);
@@ -182,7 +189,7 @@ public class Controller implements Initializable{
                 }
             }
         }
-               */
+              
         //chose file name..ect
         //save to gson before writing
         Gson gson = new Gson();
@@ -220,6 +227,8 @@ public class Controller implements Initializable{
             
            
             
+            
+            
             System.out.println(selectedFile.toString());
             Gson gson = new Gson();
             ProjectObject projFile;
@@ -231,7 +240,7 @@ public class Controller implements Initializable{
                 //pass new project to context
                 Context.getInstance().setProjectObject(newProject);
                 System.out.println("Context proj size: " + Context.getInstance().getProjectObject().projData.size());
-
+                System.out.println("projFile " + projFile.projData.size());
 //                Context.getInstance().getProjectObject().setLanguage(projFile.getLanguage());
                 Context.getInstance().getProjectObject().comments = projFile.comments;
                 Context.getInstance().getProjectObject().creator = projFile.creator;
