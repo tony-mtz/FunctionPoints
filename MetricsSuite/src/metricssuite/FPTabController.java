@@ -38,13 +38,13 @@ public class FPTabController implements Initializable{
     @FXML private ToggleGroup externalInquiries;
     @FXML private ToggleGroup internalLogicalFiles;
     @FXML private ToggleGroup externalLogicalFiles;
-    
+
     @FXML private RadioButton rbExtInp3;
     @FXML private RadioButton rbExtInp4;
     @FXML private RadioButton rbExtInp6;
-    
-    
-    
+
+
+
 
     @FXML private TextField extInpResults;
     @FXML private TextField externalOutputResults;
@@ -130,6 +130,16 @@ public class FPTabController implements Initializable{
         total.setText(String.valueOf(data.getTotalFactors()));
     }
 
+
+    void setDefaultInputs() {
+        extInp.setText(String.valueOf(data.extInputs));
+        extOut.setText(String.valueOf(data.extOutputs));
+        extInq.setText(String.valueOf(data.extInquiries));
+        intFiles.setText(String.valueOf(data.intLogicFiles));
+        extFiles.setText(String.valueOf(data.extIntFiles));
+        vafSum.setText(String.valueOf(data.getValueFactorSum()));
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -138,13 +148,12 @@ public class FPTabController implements Initializable{
              index = Context.getInstance().createNewData();
              data = Context.getInstance().getProjectObject().projData.get(index);
         }else{
-             
             data = Context.getInstance().getProjectObject().projData.get(Context.getInstance().incr());
             //for vaf to get the correct ref
             index = Context.getInstance().returnCounter();
-            
+
            // externalInputs.selectedToggleProperty().
-           
+
         }
             
         
@@ -229,15 +238,15 @@ public class FPTabController implements Initializable{
         });
         data.languageProperty().addListener((observable, oldValue, newValue) -> language.setText(newValue));
         setDefaultValues();
-        
+
         calculateFunctionPoints();
     }
 
     public void initProjectData(ProjectData loadData) {
-        
         Context.getInstance().getProjectObject().setProjectData(index, loadData);
         data = loadData;
         setDefaultValues();
+        setDefaultInputs();
     }
     
     public int getIndex(){
