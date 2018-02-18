@@ -48,66 +48,6 @@ public class MetricsSuite extends Application {
     
     public static void main(String[] args) {
         launch(args);
-        
-        /**
-        *demo save and read for data needed in the Function Points tab
-        *You need to use gson-2.8.2.jar, place it in your Libraries folder
-        
-        //test file save and read
-        
-        ProjectObject proj1= new ProjectObject();
-        
-        proj1.creator = "Tony";
-        proj1.productName = "543 FP";
-        proj1.projectName = "543 FPP";
-                
-        
-        //each new window
-        ProjectData data = new ProjectData();
-        //bind to UI input boxes and radio buttons
-        data.extInputs = 10;
-        data.extOutputs = 10;
-        data.extInquiries = 10;
-        data.intLogicFiles = 2;
-        data.extIntFiles = 0;
-        
-        data.wfExtInputs = 3;
-        data.wfExtOutputs = 3;
-        data.wfExtInquiries = 3;
-        data.wfIntLogicFiles = 3;
-        data.wfExtIntFiles = 3; 
-        
-        data.language = "C++";
-        
-        
-        //add to main proj
-        proj1.projData.add(data);
-        
-        //save data to file
-        Gson gson = new Gson();
-        String dataString = gson.toJson(proj1, ProjectObject.class );        
-        try{
-                File file = new File("temp" +".ms");
-                Writer writer = new BufferedWriter(new FileWriter(file));
-                writer.write(dataString);
-                writer.flush();            
-        }catch(IOException e){
-            System.out.println(e.getMessage());
-        }
-        */
-        //read data from file
-        //will read data to UI
-//        ProjectObject outD;
-//        try {
-//            outD = gson.fromJson(new FileReader(projName + ".ms"), ProjectObject.class);
-//            System.out.println(outD.language);
-//            System.out.println(outD.projData.get(0).language);
-//            System.out.println(outD.projData.get(0).vaf.qestion1);
-//        } catch (FileNotFoundException ex) {
-//            System.out.println(ex.getMessage());
-//        }
-        
-        
     }
     
 }

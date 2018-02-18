@@ -33,7 +33,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import utils.ProjectObject;
 
-import com.google.gson.Gson;
+import com.google.gson.*;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -42,6 +42,7 @@ import java.io.Writer;
 import javafx.beans.binding.BooleanBinding;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
+import org.hildan.fxgson.FxGson;
 import utils.ProjectData;
 
 
@@ -59,31 +60,33 @@ public class Controller implements Initializable{
 //    @FXML
     private TabPane tabPane;   
 
+    /**
+     * tab from file
+     */
     @FXML
     private void addTab() {
         try {
-            Tab tab = new Tab("Function Points");
-            
+            Tab tab = new Tab("Function Points");            
             tabPane.getTabs().add(tab);
             tab.setContent(FXMLLoader.load(this.getClass().getResource("FPTab.fxml")));
-            
+            Context.getInstance().setMenuTab(Boolean.FALSE);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
     
-    private void loadTab(ProjectData data){
-        try{
-            Tab tab  = new Tab("Function Points");
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("FPTab.fxml"));
-            FPTabController t = loader.getController();
-            t.initProjectData(data);
+    /**
+     * create from main menu
+     */
+    @FXML
+    private void loadTab(){
+         try {             
+            Context.getInstance().setMenuTab(Boolean.TRUE);
+            Tab tab = new Tab("Function Points");            
             tabPane.getTabs().add(tab);
-            tab.setContent(loader.load());
-        }catch(IOException exception){
-            
-                    
+            tab.setContent(FXMLLoader.load(this.getClass().getResource("FPTab.fxml")));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -147,52 +150,9 @@ public class Controller implements Initializable{
     @FXML
     public void saveProject(Event event){
        
-        //this selects the tab (0) (1) ....(n)
-        int index = Context.getInstance().getProjectObject().projData.size();
-        //System.out.println(index);
-        for(int i =0; i< index; i++){
-            SingleSelectionModel<Tab> selectionModel = tabPane.getSelectionModel();
-            selectionModel.select(i);
-            Node n = selectionModel.getSelectedItem().getContent();
-            AnchorPane ap = (AnchorPane) selectionModel.getSelectedItem().getContent();
-            ObservableList<Node> comp = ap.getChildren();
-            
-            for(Node node: comp){
-                if (node instanceof TextField){
-                    //System.out.println(((TextField) node).getText());
-                    //System.out.println(((TextField) node).getId());
-                    if(((TextField) node).getId() != null){
-//                        System.out.println(((TextField) node).getId() +
-//                                ((TextField) node).getText());
-                        if(((TextField) node).getId().equals("extInp")){                           
-                            Context.getInstance().getProjectObject().projData.get(i).extInputs = Integer.parseInt(((TextField) node).getText());
-                        }
-                        if(((TextField) node).getId().equals("extOut")){                           
-                            Context.getInstance().getProjectObject().projData.get(i).extOutputs = Integer.parseInt(((TextField) node).getText());
-                        }
-                        if(((TextField) node).getId().equals("extInq")){                           
-                            Context.getInstance().getProjectObject().projData.get(i).extInquiries = Integer.parseInt(((TextField) node).getText());
-                        }
-                        if(((TextField) node).getId().equals("intFiles")){                           
-                            Context.getInstance().getProjectObject().projData.get(i).intLogicFiles = Integer.parseInt(((TextField) node).getText());
-                        }
-                        if(((TextField) node).getId().equals("extFiles")){                           
-                            Context.getInstance().getProjectObject().projData.get(i).extIntFiles = Integer.parseInt(((TextField) node).getText());
-                        }
-                        
-                        //still need================
-                        //save preference language
-                        //weighting factors
-                        //input total
-                        //computed fp
-                    }
-                }
-            }
-        }
-              
         //chose file name..ect
         //save to gson before writing
-        Gson gson = new Gson();
+        Gson gson = FxGson.create();//new Gson();
         String dataString = gson.toJson(Context.getInstance().getProjectObject(), ProjectObject.class );        
         try{
                 File file = new File("temp1" +".ms");
@@ -200,20 +160,21 @@ public class Controller implements Initializable{
                 writer.write(dataString);
                 writer.flush();            
                 System.out.println("Fin Saved");
+                System.out.println("Number of tabs: " +Context.getInstance().getProjectObject().projData.size());
         }catch(IOException e){
             System.out.println(e.getMessage());
-        }
-        
-        
+        }      
         
     }
     /**
      * Load project from selected file
+     * 
      * @param event 
      */
     @FXML
     public void openFile(ActionEvent event){      
         
+        Context.getInstance().resetIncr();
         //get file from file chooser        
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Project");
@@ -223,67 +184,39 @@ public class Controller implements Initializable{
         File selectedFile = fileChooser.showOpenDialog(null);        
 
         if(selectedFile != null){
-            selectedFile.getAbsolutePath();
-            
+            selectedFile.getAbsolutePath();          
            
-            
-            
-            
             System.out.println(selectedFile.toString());
-            Gson gson = new Gson();
+            Gson gson = FxGson.create();
             ProjectObject projFile;
+            
             try {
                 projFile = gson.fromJson(new FileReader(selectedFile.toString()), ProjectObject.class);
-                
-                //reset context
-                ProjectObject newProject = new ProjectObject();
-                //pass new project to context
-                Context.getInstance().setProjectObject(newProject);
-                System.out.println("Context proj size: " + Context.getInstance().getProjectObject().projData.size());
-                System.out.println("projFile " + projFile.projData.size());
-//                Context.getInstance().getProjectObject().setLanguage(projFile.getLanguage());
-                Context.getInstance().getProjectObject().comments = projFile.comments;
-                Context.getInstance().getProjectObject().creator = projFile.creator;
-                Context.getInstance().getProjectObject().productName =projFile.productName;
-                Context.getInstance().getProjectObject().projectName = projFile.projectName;
-                System.out.println("GSON proj size: " +projFile.projData.size());
-              //  System.out.println(projFile.projData.get(0).extInputs+ "....extInputs");
-
-                //check the size and add a new Data, aka - one for each tab.
-                for(int i =0; i<projFile.projData.size(); i++){
-                    ProjectData data = new ProjectData();
-                    data.extInputs = projFile.projData.get(i).extInputs;
-                    data.extOutputs = projFile.projData.get(i).extOutputs;
-                    data.extInquiries = projFile.projData.get(i).extInquiries;
-                    data.intLogicFiles = projFile.projData.get(i).intLogicFiles;
-                    data.extIntFiles = projFile.projData.get(i).extIntFiles;
-                    data.wfExtInputs = projFile.projData.get(i).wfExtInputs;
-                    data.wfExtOutputs = projFile.projData.get(i).wfExtOutputs;
-                    data.wfExtInquiries = projFile.projData.get(i).wfExtInquiries;
-                    data.wfIntLogicFiles = projFile.projData.get(i).wfIntLogicFiles;
-                  for(int j=0; j<14; j++){
-                        data.setValueFactorAtIndex(j, projFile.projData.get(i).getValueFactorAtIndex(j));
-                    }
-                  Context.getInstance().getProjectObject().projData.add(data);
-                }
-                
+                Context.getInstance().setProjectObject(projFile);
+                System.out.println("context: " +Context.getInstance().getProjectObject().projData.size());
+                int size = Context.getInstance().getProjectObject().projData.size();
                 //clear tabs that are opened
-//                tabPane.getTabs().clear();
+                
+                if(tabPane!=null){
+                    System.out.println(tabPane.getTabs().size());
+                    tabPane.getTabs().clear();
+                }
                 tabPane = new TabPane();
                 gridPane.add(tabPane, 0,1,1,1);
                 
+                
+                
+                
+                
+                
+//                
                 //populate new tabs if any
-                for(int i =0; i<projFile.projData.size(); i++){
+                for(int i =0; i<size; i++){
 
                     addTab();
-//<<<<<<< HEAD
-//                FXMLLoader loader = new FXMLLoader();
-//                loader.setLocation(getClass().getResource("FPTab.fxml"));
-//                FPTabController t = loader.getController();
-                
                 }
-            
-                for(int i =0; i<projFile.projData.size(); i++){
+//            
+                for(int i =0; i<size; i++){
                 SingleSelectionModel<Tab> selectionModel = tabPane.getSelectionModel();
                     selectionModel.select(i);
                     Node n = selectionModel.getSelectedItem().getContent();
@@ -298,18 +231,25 @@ public class Controller implements Initializable{
                                 if(((TextField) node).getId().equals("extInp")){                           
                                     ((TextField) node).setText((Integer.toString(Context.getInstance().getProjectObject().projData.get(i).extInputs)));
                                 }
-
+                                if(((TextField) node).getId().equals("extOut")){                           
+                                    ((TextField) node).setText((Integer.toString(Context.getInstance().getProjectObject().projData.get(i).extOutputs)));
+                                }
+                                if(((TextField) node).getId().equals("extInq")){                           
+                                    ((TextField) node).setText((Integer.toString(Context.getInstance().getProjectObject().projData.get(i).extInquiries)));
+                                }
+                                if(((TextField) node).getId().equals("intFiles")){                           
+                                    ((TextField) node).setText((Integer.toString(Context.getInstance().getProjectObject().projData.get(i).intLogicFiles)));
+                                }
+                                 if(((TextField) node).getId().equals("extFiles")){                           
+                                    ((TextField) node).setText((Integer.toString(Context.getInstance().getProjectObject().projData.get(i).extIntFiles)));
+                                }
+                                
                             }
                         }
                     }
-//=======
-                    FXMLLoader loader = new FXMLLoader();
-                    loader.setLocation(getClass().getResource("FPTab.fxml"));
-                    FPTabController t = loader.getController();
-                    t.initProjectData(projFile.projData.get(i));
-//>>>>>>> a5638c4c6eeeb9655b7c9072b69d9c4ebdd31d01
                 }
-            System.out.println(Context.getInstance().getProjectObject().productName);
+                
+            System.out.println("End of load size data: " +Context.getInstance().getProjectObject().productName);
             //System.out.println("Context size at the end of open: " +Context.getInstance().getProjectObject().projData.size());
             } catch (FileNotFoundException ex) {
                 System.out.println(ex.getMessage());
@@ -317,16 +257,10 @@ public class Controller implements Initializable{
         }else{
             System.out.println("nothing");
         }
-        
-        
-        
     }
  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-//        Context.getInstance().getProjectObject().creator = "tonyM!";
-       // System.out.println("hello");//Context.getInstance().getProjectObject().creator);
-          
     }
     
     

@@ -52,23 +52,7 @@ public class NewProjectController implements Initializable{
      * @param Event 
      */
     @FXML
-    public void createProject(ActionEvent Event){   
-        //get size to check for open tabs
-       
-//         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
-//        Controller controller = fxmlLoader.getController();
-//        
-//        int size =0;
-//        try{
-//            System.out.println("tab size " + controller.getTabSize());
-//            size = controller.getTabSize();
-//        }catch(NullPointerException e){
-//            size =0;
-//        }
-        
-        
-        
-        
+    public void createProject(ActionEvent Event){  
         //create new project
         ProjectObject newProject = new ProjectObject();
         //pass new project to context
@@ -91,10 +75,6 @@ public class NewProjectController implements Initializable{
        
         stage.close();
         System.out.println("closing newproj window");
-        
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
-//        Controller controller = fxmlLoader.getController();
-//        controller.clearTabs();     
     }
     
    

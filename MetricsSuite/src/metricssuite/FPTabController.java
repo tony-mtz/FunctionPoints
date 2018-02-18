@@ -47,10 +47,17 @@ public class FPTabController implements Initializable{
     @FXML private TextField total;
     @FXML private TextField language;
     @FXML private TextField codeSize;
+    
+    @FXML boolean menuTab = true;
 
     public int index;
     private ProjectData data;
-
+    
+  
+    @FXML void menuTrue(boolean bool){
+        menuTab = bool;
+    }
+    
     @FXML
     void popup(Event event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("LanguageWindow.fxml"));
@@ -117,9 +124,17 @@ public class FPTabController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        index = Context.getInstance().createNewData();
-        System.out.println(index);
-        data = Context.getInstance().getProjectObject().projData.get(index);
+//        index = Context.getInstance().getProjectObject().projData.size();//.createNewData();
+//        System.out.println(index);
+        if(Context.getInstance().menuTab()){
+             index = Context.getInstance().createNewData();
+             data = Context.getInstance().getProjectObject().projData.get(index);
+        }else{
+            
+            data = Context.getInstance().getProjectObject().projData.get(Context.getInstance().incr());
+        }
+            
+        
         extInp.setOnAction(event -> {
             int result = updateText(extInp, externalInputs, extInpResults);
             if (result > -1) {
@@ -204,6 +219,7 @@ public class FPTabController implements Initializable{
     }
 
     public void initProjectData(ProjectData loadData) {
+        
         Context.getInstance().getProjectObject().setProjectData(index, loadData);
         data = loadData;
         setDefaultValues();
@@ -212,4 +228,6 @@ public class FPTabController implements Initializable{
     public int getIndex(){
         return index;
     }
+
+   
 }

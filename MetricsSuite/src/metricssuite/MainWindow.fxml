@@ -42,7 +42,7 @@
             <items>
                 <Menu id="mFunctionPoints" mnemonicParsing="false" text="Function Points">
                     <items>
-                        <MenuItem id="mEnterFPData" mnemonicParsing="false" onAction="#addTab" text="Enter FP Data" />
+                        <MenuItem id="mEnterFPData" mnemonicParsing="false" onAction="#loadTab" text="Enter FP Data" />
                     </items>
                 </Menu>
             </items>

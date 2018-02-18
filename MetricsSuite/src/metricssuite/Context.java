@@ -26,6 +26,27 @@ public class Context {
     }
     private final static Context instance = new Context();
 
+    
+    
+    //for loading from files
+    private int counter =-1;
+    public int incr(){
+        counter +=1;
+        return counter;
+          
+    }
+    public void resetIncr(){
+        counter = -1;
+    }
+    //for loading a new tab from menu
+    private boolean tabL = false;
+    public void setMenuTab(Boolean bool){
+        tabL = bool;
+    }
+    
+    public boolean menuTab(){
+        return tabL;
+    }
     private String path= "";
 
     public String getPath() {
