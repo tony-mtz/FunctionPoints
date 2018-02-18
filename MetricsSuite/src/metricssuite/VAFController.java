@@ -1,19 +1,24 @@
 package metricssuite;
 
 import javafx.beans.Observable;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.scene.control.Slider;
 import utils.ProjectData;
 
 public class VAFController implements Initializable {
     private int index;
+    private List items = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4, 5));
     private ProjectData data;
     @FXML
     private Button cancel;
@@ -27,46 +32,45 @@ public class VAFController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        sliders.add(slider0);
-        sliders.add(slider1);
-        sliders.add(slider2);
-        sliders.add(slider3);
-        sliders.add(slider4);
-        sliders.add(slider5);
-        sliders.add(slider6);
-        sliders.add(slider7);
-        sliders.add(slider8);
-        sliders.add(slider9);
-        sliders.add(slider10);
-        sliders.add(slider11);
-        sliders.add(slider12);
-        sliders.add(slider13);
+        comboBoxes.add(comboZero);
+        comboBoxes.add(comboOne);
+        comboBoxes.add(comboTwo);
+        comboBoxes.add(comboThree);
+        comboBoxes.add(comboFour);
+        comboBoxes.add(comboFive);
+        comboBoxes.add(comboSix);
+        comboBoxes.add(comboSeven);
+        comboBoxes.add(comboEight);
+        comboBoxes.add(comboNine);
+        comboBoxes.add(comboTen);
+        comboBoxes.add(comboEleven);
+        comboBoxes.add(comboTwelve);
+        comboBoxes.add(comboThirteen);
     }
 
     //del
-    @FXML Slider slider0;
-    @FXML Slider slider1;
-    @FXML Slider slider2;
-    @FXML Slider slider3;
-    @FXML Slider slider4;
-    @FXML Slider slider5;
-    @FXML Slider slider6;
-    @FXML Slider slider7;
-    @FXML Slider slider8;
-    @FXML Slider slider9;
-    @FXML Slider slider10;
-    @FXML Slider slider11;
-    @FXML Slider slider12;
-    @FXML Slider slider13;
-    private ArrayList<Slider> sliders = new ArrayList<Slider>();
+    @FXML ComboBox comboZero;
+    @FXML ComboBox comboOne;
+    @FXML ComboBox comboTwo;
+    @FXML ComboBox comboThree;
+    @FXML ComboBox comboFour;
+    @FXML ComboBox comboFive;
+    @FXML ComboBox comboSix;
+    @FXML ComboBox comboSeven;
+    @FXML ComboBox comboEight;
+    @FXML ComboBox comboNine;
+    @FXML ComboBox comboTen;
+    @FXML ComboBox comboEleven;
+    @FXML ComboBox comboTwelve;
+    @FXML ComboBox comboThirteen;
+    private ArrayList<ComboBox> comboBoxes = new ArrayList<>();
     @FXML
     private void submit(){
-        for(int i = 0; i < sliders.size(); i++) {
-            data.setValueFactorAtIndex(i, (int) sliders.get(i).getValue());
+        for(int i = 0; i < comboBoxes.size(); i++) {
+            data.setValueFactorAtIndex(i, (int) comboBoxes.get(i).getValue());
         }
         data.setVafSum();
         Stage stage = (Stage) done.getScene().getWindow();
-        System.out.println("VAF INDEX " + index);
         stage.close();
     }
     public void initIndex(Integer index) {
@@ -74,7 +78,11 @@ public class VAFController implements Initializable {
         data = Context.getInstance().getProjectObject().projData.get(index);
     }
 
-    public void initSliders() {
-        for (int i=0; i<sliders.size(); i++) sliders.get(i).setValue(data.getValueFactorAtIndex(i));
+    public void initComboBoxes() {
+        for (int i=0; i<comboBoxes.size(); i++) {
+            ComboBox box = comboBoxes.get(i);
+            box.setItems(FXCollections.observableArrayList(items));
+            box.setValue(data.getValueFactorAtIndex(i));
+        }
     }
 }

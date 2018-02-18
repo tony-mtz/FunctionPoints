@@ -75,7 +75,7 @@ public class FPTabController implements Initializable{
         stage.setScene(new Scene(fxmlLoader.load()));
         VAFController controller = fxmlLoader.getController();
         controller.initIndex(index);
-        controller.initSliders();
+        controller.initComboBoxes();
         stage.show();
     }
 
