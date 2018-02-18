@@ -36,7 +36,7 @@ public class LanguageController implements Initializable {
         RadioButton selectedRadioButton = (RadioButton) languageGroup.getSelectedToggle();
         String language = selectedRadioButton.getText();
         if(data != null)
-            data.language = language;
+            data.setLanguage(language);
         else {
             Context.getInstance().setDefaultLanguage(language);
         }

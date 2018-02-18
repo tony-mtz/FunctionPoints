@@ -17,7 +17,16 @@ public class ProjectObject {
     public String projectName;
     public String productName;
     public String creator;
-    public String language; 
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    private String language;
     public String comments;
 
     public void setProjectName(String projectName) {
@@ -56,10 +65,13 @@ public class ProjectObject {
 
     public int createNewData() {
         ProjectData data = new ProjectData();
+        data.setLanguage(this.language);
         projData.add(data);
         System.out.println("Length: " + projData.size());
         return projData.indexOf(data);
     }
     
-    
+    public void setProjectData(int index, ProjectData data) {
+        projData.set(index, data);
+    }
 }

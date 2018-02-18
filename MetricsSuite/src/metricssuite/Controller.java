@@ -34,7 +34,6 @@ import javafx.stage.Stage;
 import utils.ProjectObject;
 
 import com.google.gson.Gson;
-import com.sun.javafx.robot.impl.FXRobotHelper;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -233,7 +232,7 @@ public class Controller implements Initializable{
                 Context.getInstance().setProjectObject(newProject);
                 System.out.println("Context proj size: " + Context.getInstance().getProjectObject().projData.size());
 
-                Context.getInstance().getProjectObject().language= projFile.language;
+                Context.getInstance().getProjectObject().setLanguage(projFile.getLanguage());
                 Context.getInstance().getProjectObject().comments = projFile.comments;
                 Context.getInstance().getProjectObject().creator = projFile.creator;
                 Context.getInstance().getProjectObject().productName =projFile.productName;
@@ -268,6 +267,7 @@ public class Controller implements Initializable{
                 for(int i =0; i<projFile.projData.size(); i++){
 
                     addTab();
+//<<<<<<< HEAD
 //                FXMLLoader loader = new FXMLLoader();
 //                loader.setLocation(getClass().getResource("FPTab.fxml"));
 //                FPTabController t = loader.getController();
@@ -293,6 +293,12 @@ public class Controller implements Initializable{
                             }
                         }
                     }
+//=======
+                    FXMLLoader loader = new FXMLLoader();
+                    loader.setLocation(getClass().getResource("FPTab.fxml"));
+                    FPTabController t = loader.getController();
+                    t.initProjectData(projFile.projData.get(i));
+//>>>>>>> a5638c4c6eeeb9655b7c9072b69d9c4ebdd31d01
                 }
             System.out.println(Context.getInstance().getProjectObject().productName);
             //System.out.println("Context size at the end of open: " +Context.getInstance().getProjectObject().projData.size());
