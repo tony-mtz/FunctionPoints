@@ -29,7 +29,7 @@ public class Context {
         defaultLanguage = newLanguage;
     }
     
-    private ProjectObject obj = new ProjectObject();
+    private ProjectObject obj;// = new ProjectObject();
     
     public ProjectObject getProjectObject(){
         return obj;
