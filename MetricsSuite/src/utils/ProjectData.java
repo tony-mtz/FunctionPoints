@@ -49,6 +49,7 @@ public class ProjectData {
     public int wfIntLogicFiles;
     public int wfExtIntFiles;
     private int[] valueFactors;
+    public int pjfpTotal;
 
     public ProjectData() {
         //language = new SimpleStringProperty();
@@ -64,6 +65,7 @@ public class ProjectData {
         wfIntLogicFiles = 10;
         wfExtIntFiles = 7;
         valueFactors = new int[14];
+        pjfpTotal =0;
        // vafSum = new SimpleIntegerProperty();
 
         

@@ -35,6 +35,7 @@ public class NewProjectController implements Initializable{
     
     
     @FXML public Button btnOk;
+    @FXML public Button btnCancel;
     @FXML public TextField projName;
     @FXML public TextField productName;
     @FXML public TextField creator;
@@ -69,11 +70,17 @@ public class NewProjectController implements Initializable{
         Context.getInstance().getProjectObject().setProjectName(projN);
         Context.getInstance().getProjectObject().setComments(commentsTxt);
         
-        Stage stage = (Stage) btnOk.getScene().getWindow();
-        
-        
+        Stage stage = (Stage) btnOk.getScene().getWindow();      
        
         stage.close();
+        System.out.println("closing newproj window");
+    }
+    
+    @FXML
+    public void cancelCreate(ActionEvent Event){         
+        Stage stage = (Stage) btnCancel.getScene().getWindow();             
+        stage.close();
+        //maybe open last loade file...
         System.out.println("closing newproj window");
     }
     

@@ -67,7 +67,7 @@
          </rowConstraints>
          <children>
             <Button fx:id="btnOk" mnemonicParsing="false" onAction="#createProject" prefHeight="25.0" prefWidth="98.0" text="Ok" GridPane.columnIndex="1" />
-            <Button id="btnCancel" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Cancel" GridPane.columnIndex="2" />
+            <Button fx:id="btnCancel" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Cancel" GridPane.columnIndex="2" onAction="#cancelCreate"/>
          </children>
       </GridPane>
    </children>

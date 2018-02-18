@@ -70,6 +70,7 @@ public class Controller implements Initializable{
             tabPane.getTabs().add(tab);
             tab.setContent(FXMLLoader.load(this.getClass().getResource("FPTab.fxml")));
             Context.getInstance().setMenuTab(Boolean.FALSE);
+            
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -182,14 +183,13 @@ public class Controller implements Initializable{
         FileChooser.ExtensionFilter extentionFilter = new FileChooser.ExtensionFilter("ms files (*.ms)", "*.ms");
         fileChooser.getExtensionFilters().add(extentionFilter);        
         File selectedFile = fileChooser.showOpenDialog(null);        
-
         if(selectedFile != null){
-            selectedFile.getAbsolutePath();          
-           
+            selectedFile.getAbsolutePath();                     
             System.out.println(selectedFile.toString());
+            Context.getInstance().setPath(selectedFile.toString());
+            System.out.println(Context.getInstance().getPath());
             Gson gson = FxGson.create();
-            ProjectObject projFile;
-            
+            ProjectObject projFile;            
             try {
                 projFile = gson.fromJson(new FileReader(selectedFile.toString()), ProjectObject.class);
                 Context.getInstance().setProjectObject(projFile);
@@ -203,31 +203,23 @@ public class Controller implements Initializable{
                 }
                 tabPane = new TabPane();
                 gridPane.add(tabPane, 0,1,1,1);
-                
-                
-                
-                
-                
-                
-//                
                 //populate new tabs if any
                 for(int i =0; i<size; i++){
-
-                    addTab();
-                }
-//            
+                    addTab();                    
+                }                
                 for(int i =0; i<size; i++){
                 SingleSelectionModel<Tab> selectionModel = tabPane.getSelectionModel();
                     selectionModel.select(i);
                     Node n = selectionModel.getSelectedItem().getContent();
                     AnchorPane ap = (AnchorPane) selectionModel.getSelectedItem().getContent();
                     ObservableList<Node> comp = ap.getChildren();
-
+                                        
                     for(Node node: comp){
+                        //System.out.println("node id: " +node.getId().toString());
                         if (node instanceof TextField){
                             if(((TextField) node).getId() != null){
-//                                System.out.println(((TextField) node).getId() +
-//                                        ((TextField) node).getText());
+                                System.out.println(((TextField) node).getId() +
+                                        ((TextField) node).getText());
                                 if(((TextField) node).getId().equals("extInp")){                           
                                     ((TextField) node).setText((Integer.toString(Context.getInstance().getProjectObject().projData.get(i).extInputs)));
                                 }
@@ -245,7 +237,40 @@ public class Controller implements Initializable{
                                 }
                                 
                             }
+                        }else if(node instanceof Toggle){
+//                            System.out.print("toggle group: " +((Toggle) node).getToggleGroup().toString());  
+//                            System.out.println(((RadioButton)node).getToggleGroup()); 
+//                            System.out.println("radiob : " + ((RadioButton)node).getToggleGroup().getSelectedToggle()); 
+//                            RadioButton rb = (RadioButton) ((Toggle) node).getToggleGroup().getSelectedToggle();
+                            RadioButton rb = (RadioButton) ((Toggle) node).getToggleGroup().getSelectedToggle();
+                            
+                            //RadioButton rb = (RadioButton)tog;
+                            System.out.println(rb.getId()); 
+                            System.out.println(Integer.parseInt(rb.getText())); 
+                            //if(tog.toggleGroupProperty().getName()){
+                               
+                                
+                                
+                            //}
+                        }else if(node instanceof RadioButton){
+//                            System.out.print("toggle group: " +((Toggle) node).getToggleGroup().toString());  
+//                            System.out.println(((RadioButton)node).getToggleGroup()); 
+//                            System.out.println("radiob : " + ((RadioButton)node).getToggleGroup().getSelectedToggle()); 
+//                            RadioButton rb = (RadioButton) ((Toggle) node).getToggleGroup().getSelectedToggle();
+                            RadioButton rb = (RadioButton) ( (RadioButton)node).getToggleGroup().getSelectedToggle();
+                            
+                            //RadioButton rb = (RadioButton)tog;
+                            System.out.println(rb.getId()); 
+                            System.out.println(Integer.parseInt(rb.getText())); 
+                            //if(tog.toggleGroupProperty().getName()){
+                            if(((RadioButton) node).getId().equals("rbExtInp6")){                           
+                                    ((RadioButton) node).setSelected(true);
+                                }
+                                
+                                
+                            //}
                         }
+                                
                     }
                 }
                 

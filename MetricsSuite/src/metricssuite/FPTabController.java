@@ -38,6 +38,13 @@ public class FPTabController implements Initializable{
     @FXML private ToggleGroup externalInquiries;
     @FXML private ToggleGroup internalLogicalFiles;
     @FXML private ToggleGroup externalLogicalFiles;
+    
+    @FXML private RadioButton rbExtInp3;
+    @FXML private RadioButton rbExtInp4;
+    @FXML private RadioButton rbExtInp6;
+    
+    
+    
 
     @FXML private TextField extInpResults;
     @FXML private TextField externalOutputResults;
@@ -73,6 +80,7 @@ public class FPTabController implements Initializable{
     void calculateFunctionPoints() {
         int total = (int) (data.getTotalFactors() * (0.65 + (0.01 * data.getValueFactorSum())));
         fpTotal.setText(String.valueOf(total));
+        Context.getInstance().getProjectObject().projData.get(index).pjfpTotal = total;
     }
 
     @FXML
@@ -134,6 +142,8 @@ public class FPTabController implements Initializable{
             data = Context.getInstance().getProjectObject().projData.get(Context.getInstance().incr());
             //for vaf to get the correct ref
             index = Context.getInstance().returnCounter();
+            
+           // externalInputs.selectedToggleProperty().
            
         }
             
@@ -219,6 +229,8 @@ public class FPTabController implements Initializable{
         });
         data.languageProperty().addListener((observable, oldValue, newValue) -> language.setText(newValue));
         setDefaultValues();
+        
+        calculateFunctionPoints();
     }
 
     public void initProjectData(ProjectData loadData) {
