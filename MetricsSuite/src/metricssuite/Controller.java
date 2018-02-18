@@ -156,8 +156,8 @@ public class Controller implements Initializable{
                     //System.out.println(((TextField) node).getText());
                     //System.out.println(((TextField) node).getId());
                     if(((TextField) node).getId() != null){
-                        System.out.println(((TextField) node).getId() +
-                                ((TextField) node).getText());
+//                        System.out.println(((TextField) node).getId() +
+//                                ((TextField) node).getText());
                         if(((TextField) node).getId().equals("extInp")){                           
                             Context.getInstance().getProjectObject().projData.get(i).extInputs = Integer.parseInt(((TextField) node).getText());
                         }
@@ -284,8 +284,8 @@ public class Controller implements Initializable{
                     for(Node node: comp){
                         if (node instanceof TextField){
                             if(((TextField) node).getId() != null){
-                                System.out.println(((TextField) node).getId() +
-                                        ((TextField) node).getText());
+//                                System.out.println(((TextField) node).getId() +
+//                                        ((TextField) node).getText());
                                 if(((TextField) node).getId().equals("extInp")){                           
                                     ((TextField) node).setText((Integer.toString(Context.getInstance().getProjectObject().projData.get(i).extInputs)));
                                 }
