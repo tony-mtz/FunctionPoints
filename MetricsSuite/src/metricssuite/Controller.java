@@ -139,7 +139,7 @@ public class Controller implements Initializable{
      */
     @FXML
     public void saveProject(Event event){
-        
+        /*
         //this selects the tab (0) (1) ....(n)
         int index = Context.getInstance().getProjectObject().projData.size();
         //System.out.println(index);
@@ -182,7 +182,7 @@ public class Controller implements Initializable{
                 }
             }
         }
-               
+               */
         //chose file name..ect
         //save to gson before writing
         Gson gson = new Gson();
@@ -232,7 +232,7 @@ public class Controller implements Initializable{
                 Context.getInstance().setProjectObject(newProject);
                 System.out.println("Context proj size: " + Context.getInstance().getProjectObject().projData.size());
 
-                Context.getInstance().getProjectObject().setLanguage(projFile.getLanguage());
+//                Context.getInstance().getProjectObject().setLanguage(projFile.getLanguage());
                 Context.getInstance().getProjectObject().comments = projFile.comments;
                 Context.getInstance().getProjectObject().creator = projFile.creator;
                 Context.getInstance().getProjectObject().productName =projFile.productName;
