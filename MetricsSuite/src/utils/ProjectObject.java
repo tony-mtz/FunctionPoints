@@ -71,5 +71,7 @@ public class ProjectObject {
         return projData.indexOf(data);
     }
     
-    
+    public void setProjectData(int index, ProjectData data) {
+        projData.set(index, data);
+    }
 }

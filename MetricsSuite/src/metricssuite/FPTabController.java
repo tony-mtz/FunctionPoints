@@ -106,6 +106,15 @@ public class FPTabController implements Initializable{
         return Integer.parseInt(chk.getText());
     }
 
+    void setDefaultValues() {
+        extInpResults.setText((String.valueOf(data.extInputs * data.wfExtInputs)));
+        externalOutputResults.setText((String.valueOf(data.extOutputs * data.wfExtOutputs)));
+        externalInquiriesResults.setText((String.valueOf(data.extInquiries * data.wfExtInquiries)));
+        externalLogicalFilesResults.setText((String.valueOf(data.extIntFiles * data.wfExtIntFiles)));
+        language.setText(data.getLanguage());
+        total.setText(String.valueOf(data.getTotalFactors()));
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         index = Context.getInstance().createNewData();
@@ -126,7 +135,6 @@ public class FPTabController implements Initializable{
             extInpResults.setText(String.valueOf(data.extInputs * complexity));
             total.setText(String.valueOf(data.getTotalFactors()));
         });
-        extInpResults.setText((String.valueOf(data.extInputs * data.wfExtInputs)));
         extOut.setOnAction(event -> {
             int result = updateText(extOut, externalOutputs, externalOutputResults);
             if (result > -1) {
@@ -142,7 +150,6 @@ public class FPTabController implements Initializable{
             externalOutputResults.setText(String.valueOf(data.extOutputs * complexity));
             total.setText(String.valueOf(data.getTotalFactors()));
         });
-        externalOutputResults.setText((String.valueOf(data.extOutputs * data.wfExtOutputs)));
         extInq.setOnAction(event -> {
             int result = updateText(extInq, externalInquiries, externalInquiriesResults);
             if (result > -1) {
@@ -158,7 +165,6 @@ public class FPTabController implements Initializable{
             externalInquiriesResults.setText(String.valueOf(data.extInquiries * complexity));
             total.setText(String.valueOf(data.getTotalFactors()));
         });
-        externalInquiriesResults.setText((String.valueOf(data.extInquiries * data.wfExtInquiries)));
         intFiles.setOnAction(event -> {
             int result = updateText(intFiles, internalLogicalFiles, internalLogicalFilesResults);
             if (result > -1) {
@@ -190,13 +196,17 @@ public class FPTabController implements Initializable{
             externalLogicalFilesResults.setText(String.valueOf(data.extIntFiles * complexity));
             total.setText(String.valueOf(data.getTotalFactors()));
         });
-        externalLogicalFilesResults.setText((String.valueOf(data.extIntFiles * data.wfExtIntFiles)));
         data.vafSumProperty().addListener((observable, oldValue, newValue) -> {
             vafSum.setText(String.valueOf(newValue));
         });
         data.languageProperty().addListener((observable, oldValue, newValue) -> language.setText(newValue));
-        language.setText(data.getLanguage());
-        total.setText(String.valueOf(data.getTotalFactors()));
+        setDefaultValues();
+    }
+
+    public void initProjectData(ProjectData loadData) {
+        Context.getInstance().getProjectObject().setProjectData(index, loadData);
+        data = loadData;
+        setDefaultValues();
     }
     
     public int getIndex(){

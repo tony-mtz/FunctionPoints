@@ -267,31 +267,10 @@ public class Controller implements Initializable{
                 for(int i =0; i<projFile.projData.size(); i++){
 
                     addTab();
-//                FXMLLoader loader = new FXMLLoader();
-//                loader.setLocation(getClass().getResource("FPTab.fxml"));
-//                FPTabController t = loader.getController();
-                
-                }
-            
-                for(int i =0; i<projFile.projData.size(); i++){
-                SingleSelectionModel<Tab> selectionModel = tabPane.getSelectionModel();
-                    selectionModel.select(i);
-                    Node n = selectionModel.getSelectedItem().getContent();
-                    AnchorPane ap = (AnchorPane) selectionModel.getSelectedItem().getContent();
-                    ObservableList<Node> comp = ap.getChildren();
-
-                    for(Node node: comp){
-                        if (node instanceof TextField){
-                            if(((TextField) node).getId() != null){
-                                System.out.println(((TextField) node).getId() +
-                                        ((TextField) node).getText());
-                                if(((TextField) node).getId().equals("extInp")){                           
-                                    ((TextField) node).setText((Integer.toString(Context.getInstance().getProjectObject().projData.get(i).extInputs)));
-                                }
-
-                            }
-                        }
-                    }
+                    FXMLLoader loader = new FXMLLoader();
+                    loader.setLocation(getClass().getResource("FPTab.fxml"));
+                    FPTabController t = loader.getController();
+                    t.initProjectData(projFile.projData.get(i));
                 }
             System.out.println(Context.getInstance().getProjectObject().productName);
             //System.out.println("Context size at the end of open: " +Context.getInstance().getProjectObject().projData.size());
