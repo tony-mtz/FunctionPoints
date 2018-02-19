@@ -138,6 +138,20 @@ public class FPTabController implements Initializable{
         intFiles.setText(String.valueOf(data.intLogicFiles));
         extFiles.setText(String.valueOf(data.extIntFiles));
         vafSum.setText(String.valueOf(data.getValueFactorSum()));
+        setToggle(4, data.wfExtInputs, externalInputs);
+        setToggle(5, data.wfExtOutputs, externalOutputs);
+        setToggle(4, data.wfExtInquiries, externalInquiries);
+        setToggle(10, data.wfIntLogicFiles, internalLogicalFiles);
+        setToggle(7, data.wfExtIntFiles, externalLogicalFiles);
+    }
+
+
+    void setToggle(int defaultValue, int realValue, ToggleGroup group) {
+        if (defaultValue > realValue) {
+            group.selectToggle(group.getToggles().get(2));
+        } else if (defaultValue < realValue) {
+            group.selectToggle(group.getToggles().get(1));
+        }
     }
 
     @Override

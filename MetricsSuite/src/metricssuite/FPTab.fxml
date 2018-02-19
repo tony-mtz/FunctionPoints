@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="365.0" prefWidth="591.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="metricssuite.FPTabController">
+<AnchorPane prefHeight="365.0" prefWidth="591.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="metricssuite.FPTabController">
    <children>
       <Label layoutX="190.0" layoutY="290.0" text="Current Language:">
          <font>
@@ -95,7 +95,7 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <RadioButton fx:id="rbExtInp4" layoutX="342.0" layoutY="40.0" mnemonicParsing="false" selected="true" text="4">
+      <RadioButton id="4" fx:id="rbExtInp4" layoutX="342.0" layoutY="40.0" mnemonicParsing="false" selected="true" text="4">
          <toggleGroup>
             <ToggleGroup fx:id="externalInputs" />
          </toggleGroup>
