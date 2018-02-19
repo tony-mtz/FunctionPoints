@@ -1,28 +1,19 @@
 package metricssuite;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
 import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
+import utils.ProjectData;
 
-import javax.swing.table.TableColumn;
-import javax.swing.text.TableView;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import utils.ProjectData;
 
 public class FPTabController implements Initializable{
     @FXML private TextField extInp;
@@ -39,13 +30,6 @@ public class FPTabController implements Initializable{
     @FXML private ToggleGroup internalLogicalFiles;
     @FXML private ToggleGroup externalLogicalFiles;
 
-    @FXML private RadioButton rbExtInp3;
-    @FXML private RadioButton rbExtInp4;
-    @FXML private RadioButton rbExtInp6;
-
-
-
-
     @FXML private TextField extInpResults;
     @FXML private TextField externalOutputResults;
     @FXML private TextField externalInquiriesResults;
@@ -55,16 +39,21 @@ public class FPTabController implements Initializable{
     @FXML private TextField language;
     @FXML private TextField codeSize;
     
-    @FXML boolean menuTab = true;
+    @FXML private boolean menuTab = true;
 
-    public int index;
+    private int index;
     private ProjectData data;
     
   
     @FXML void menuTrue(boolean bool){
         menuTab = bool;
     }
-    
+
+    /**
+     * Creates pop-up window for language selection for current Data object.
+     * @param event         None
+     * @throws IOException  FXML loading
+     */
     @FXML
     void popup(Event event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("LanguageWindow.fxml"));
@@ -76,12 +65,21 @@ public class FPTabController implements Initializable{
         stage.show();
     }
 
+    /**
+     * Calculates the current function points and sets output TextField to result.
+     */
     @FXML
     void calculateFunctionPoints() {
         int total = (int) (data.getTotalFactors() * (0.65 + (0.01 * data.getValueFactorSum())));
         fpTotal.setText(String.valueOf(total));
+        data.pjfpTotal = total;
     }
 
+    /**
+     * Creates pop-up window for ValueFactors with current data object.
+     * @param event         None
+     * @throws IOException  FXML loading
+     */
     @FXML
     void vafPopup(Event event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("VAFWindow.fxml"));
@@ -93,13 +91,24 @@ public class FPTabController implements Initializable{
         stage.show();
     }
 
+    /**
+     * Calculates the code size using language ratios and sets output text field to the value.
+     */
     @FXML
     void computeCodeSize() {
         int size = Integer.parseInt(fpTotal.getText()) * Context.getInstance().getCodeRatio(data.getLanguage());
         codeSize.setText(String.valueOf(size));
     }
 
-    int updateText(TextField field, ToggleGroup group, TextField results) {
+    /**
+     * Updates the output result textfield by multiplying the input text
+     * by the complexity factor. Checks to make sure input number is valid.
+     * @param field     Input field for weighting factor
+     * @param group     Complexity ToggleGroup for factor
+     * @param results   Result field for setting valid answer
+     * @return          value calculated, if invalid returns -1
+     */
+    private int updateText(TextField field, ToggleGroup group, TextField results) {
         try {
             int value = Integer.parseInt(field.getText());
             if (value < 0) {
@@ -115,12 +124,20 @@ public class FPTabController implements Initializable{
         }
     }
 
-    int getRadioButtonValue(ToggleGroup group) {
+    /**
+     * Gets the value of the selected radiobutton from a toggle group
+     * @param group     ToggleGroup of RadioButton
+     * @return          Integer value of selected radio button.
+     */
+    private int getRadioButtonValue(ToggleGroup group) {
         RadioButton chk = (RadioButton) group.getSelectedToggle();
         return Integer.parseInt(chk.getText());
     }
 
-    void setDefaultValues() {
+    /**
+     * Sets the default output values for each value field and total, along with function points.
+     */
+    private void setDefaultValues() {
         extInpResults.setText((String.valueOf(data.extInputs * data.wfExtInputs)));
         externalOutputResults.setText((String.valueOf(data.extOutputs * data.wfExtOutputs)));
         externalInquiriesResults.setText((String.valueOf(data.extInquiries * data.wfExtInquiries)));
@@ -128,26 +145,33 @@ public class FPTabController implements Initializable{
         language.setText(data.getLanguage());
         total.setText(String.valueOf(data.getTotalFactors()));
         calculateFunctionPoints();
-        computeCodeSize();
     }
 
-
-    void setDefaultInputs() {
+    /**
+     * Sets the text inputs for each value field and
+     * toggles each radiobutton corresponding to underlying data.
+     */
+    private void setDefaultInputs() {
         extInp.setText(String.valueOf(data.extInputs));
         extOut.setText(String.valueOf(data.extOutputs));
         extInq.setText(String.valueOf(data.extInquiries));
         intFiles.setText(String.valueOf(data.intLogicFiles));
         extFiles.setText(String.valueOf(data.extIntFiles));
         vafSum.setText(String.valueOf(data.getValueFactorSum()));
-        setToggle(4, data.wfExtInputs, externalInputs);
-        setToggle(5, data.wfExtOutputs, externalOutputs);
-        setToggle(4, data.wfExtInquiries, externalInquiries);
-        setToggle(10, data.wfIntLogicFiles, internalLogicalFiles);
-        setToggle(7, data.wfExtIntFiles, externalLogicalFiles);
+        setToggle( data.wfExtInputs, externalInputs);
+        setToggle( data.wfExtOutputs, externalOutputs);
+        setToggle( data.wfExtInquiries, externalInquiries);
+        setToggle(data.wfIntLogicFiles, internalLogicalFiles);
+        setToggle( data.wfExtIntFiles, externalLogicalFiles);
     }
 
-
-    void setToggle(int defaultValue, int realValue, ToggleGroup group) {
+    /**
+     * Sets complexity toggles to corresponding data values.
+     * @param realValue     Underlying factor value in data
+     * @param group         ToggleGroup for complexity factor
+     */
+    private void setToggle(int realValue, ToggleGroup group) {
+        int defaultValue = getRadioButtonValue(group);
         if (defaultValue > realValue) {
             group.selectToggle(group.getToggles().get(2));
         } else if (defaultValue < realValue) {
@@ -155,6 +179,12 @@ public class FPTabController implements Initializable{
         }
     }
 
+    /**
+     * Initializes FPTab window, sets onAction events for each input field and grabs
+     * values from source data.
+     * @param url       None
+     * @param rb        None
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -248,15 +278,17 @@ public class FPTabController implements Initializable{
             externalLogicalFilesResults.setText(String.valueOf(data.extIntFiles * complexity));
             total.setText(String.valueOf(data.getTotalFactors()));
         });
-        data.vafSumProperty().addListener((observable, oldValue, newValue) -> {
-            vafSum.setText(String.valueOf(newValue));
-        });
+        data.vafSumProperty().addListener((observable, oldValue, newValue) -> vafSum.setText(String.valueOf(newValue)));
         data.languageProperty().addListener((observable, oldValue, newValue) -> language.setText(newValue));
         setDefaultValues();
 
         calculateFunctionPoints();
     }
 
+    /**
+     * Initializes the tab with pre-computed data.
+     * @param loadData  ProjectData to load into tab
+     */
     public void initProjectData(ProjectData loadData) {
         Context.getInstance().getProjectObject().setProjectData(index, loadData);
         data = loadData;

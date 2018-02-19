@@ -19,25 +19,8 @@ import javafx.beans.value.ObservableValue;
  */
 public class ProjectData {
     private final IntegerProperty vafSum = new SimpleIntegerProperty();
-
-    public String getLanguage() {
-        return language.get();
-    }
-
-    public StringProperty languageProperty() {
-        return language;
-    }
-
-    public void setLanguage(String language) {
-        this.language.set(language);
-    }
-
     private final StringProperty language = new SimpleStringProperty();
     public int extInputs;
-
-    public void setExtInputs(int extInputs) {
-        this.extInputs = extInputs;
-    }
     public int extOutputs;
     public int extInquiries;
     public int intLogicFiles;
@@ -51,7 +34,7 @@ public class ProjectData {
     private int[] valueFactors;
     public int pjfpTotal;
 
-    public ProjectData() {
+    ProjectData() {
         //language = new SimpleStringProperty();
         setLanguage("Java");
         extInputs = 0;
@@ -67,10 +50,10 @@ public class ProjectData {
         valueFactors = new int[14];
         pjfpTotal =0;
        // vafSum = new SimpleIntegerProperty();
+    }
 
-        
-        
-        
+    public void setExtInputs(int extInputs) {
+        this.extInputs = extInputs;
     }
 
     public IntegerProperty vafSumProperty() {
@@ -88,17 +71,40 @@ public class ProjectData {
     public int getExtIn(){
         return extInputs;
     }
+
     public int getValueFactorAtIndex (int index) {return valueFactors[index];}
     
     public void setValueFactorAtIndex (int index, int value) {
         valueFactors[index] = value;
     }
+
+    public StringProperty languageProperty() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language.set(language);
+    }
+
+    public String getLanguage() {
+        return language.get();
+    }
+
+    /**
+     * Calculates sum of value factors.
+     * @return      Integer sum of value factors.
+     */
     public int getValueFactorSum() {
         int sum = 0;
         for(int i: valueFactors)
             sum += i;
         return sum;
     }
+
+    /**
+     * Calculates total factor count.
+     * @return      Integer value of total factors.
+     */
     public int getTotalFactors() {
         return extInputs * wfExtInputs + extOutputs * wfExtOutputs + extInquiries * wfExtInquiries +
                 intLogicFiles * wfIntLogicFiles + extIntFiles * wfExtIntFiles;
