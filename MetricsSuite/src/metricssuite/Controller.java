@@ -14,6 +14,8 @@ import javafx.beans.binding.Bindings;
 import javafx.beans.binding.StringBinding;
 import javafx.beans.property.ReadOnlyIntegerProperty;
 import static javafx.beans.property.ReadOnlyIntegerProperty.readOnlyIntegerProperty;
+
+import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -115,14 +117,7 @@ public class Controller implements Initializable{
      */
     @FXML
     public void newProject(Event event){
-        try {    
-            if(tabPane!=null){
-                System.out.println(tabPane.getTabs().size());
-                tabPane.getTabs().clear();
-            }
-            tabPane = new TabPane();
-            gridPane.add(tabPane, 0,1,1,1);
-            
+        try {
             VBox vbox = FXMLLoader.load(getClass().getResource("NewProject.fxml"));            
             Stage stage = new Stage();
             Scene scene = new Scene(vbox);
@@ -187,8 +182,6 @@ public class Controller implements Initializable{
         File selectedFile = fileChooser.showOpenDialog(null);        
 
         if(selectedFile != null){
-            selectedFile.getAbsolutePath();          
-           
             System.out.println(selectedFile.toString());
             Gson gson = FxGson.create();
             ProjectObject projFile;
@@ -225,6 +218,17 @@ public class Controller implements Initializable{
  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        Context.getInstance().setMenuBarName("CECS 543 Metrics Suite");
+        Context.getInstance().menuBarNameProperty().addListener((observable, oldValue, newValue) -> {
+            Stage stage = (Stage) gridPane.getScene().getWindow();
+            stage.setTitle(newValue);
+            if(tabPane!=null){
+                System.out.println(tabPane.getTabs().size());
+                tabPane.getTabs().clear();
+            }
+            tabPane = new TabPane();
+            gridPane.add(tabPane, 0,1,1,1);
+        });
     }
     
     

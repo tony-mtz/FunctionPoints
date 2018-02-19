@@ -7,54 +7,41 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane fx:id="gridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="metricssuite.Controller">
-    
-  <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="600.0" minWidth="10.0" prefWidth="600.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="339.0" minWidth="0.0" prefWidth="0.0" />
-  </columnConstraints>
-  <rowConstraints>
-    <RowConstraints maxHeight="128.0" minHeight="0.0" prefHeight="21.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="389.0" minHeight="0.0" prefHeight="389.0" vgrow="SOMETIMES" />
-  </rowConstraints>
-   <children>
-      <MenuBar prefHeight="25.0" prefWidth="421.0" GridPane.columnSpan="2147483647">
-        <menus>
-          <Menu id="mFile" mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem id="mNew" mnemonicParsing="false" onAction="#newProject" text="New" />
-                  <MenuItem id="mOpen" mnemonicParsing="false" onAction="#openFile" text="Open" />
-                  <MenuItem id="mSave" mnemonicParsing="false" onAction="#saveProject" text="Save" />
-                  <MenuItem id="mExit" mnemonicParsing="false" onAction="#exit" text="Exit" />
-            </items>
-          </Menu>
-          <Menu id="mEdit" mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu id="mPreferences" mnemonicParsing="false" text="Preferences">
-            <items>
-              <MenuItem id="mLanguage" mnemonicParsing="false" onAction="#popup" text="Language" />
-            </items>
-          </Menu>
-          <Menu id="mMetrics" mnemonicParsing="false" text="Metrics">
-            <items>
-                <Menu id="mFunctionPoints" mnemonicParsing="false" text="Function Points">
-                    <items>
-                        <MenuItem id="mEnterFPData" mnemonicParsing="false" onAction="#loadTab" text="Enter FP Data" />
-                    </items>
-                </Menu>
-            </items>
+<GridPane fx:id="gridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+          prefHeight="410.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121"
+          xmlns:fx="http://javafx.com/fxml/1" fx:controller="metricssuite.Controller">
+
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="600.0" minWidth="10.0" prefWidth="600.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="339.0" minWidth="0.0" prefWidth="0.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="128.0" minHeight="0.0" prefHeight="21.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="389.0" minHeight="0.0" prefHeight="389.0" vgrow="SOMETIMES"/>
+    </rowConstraints>
+    <MenuBar prefHeight="25.0" prefWidth="421.0" GridPane.columnSpan="2147483647">
+        <Menu id="mFile" mnemonicParsing="false" text="File">
+            <MenuItem id="mNew" mnemonicParsing="false" onAction="#newProject" text="New"/>
+            <MenuItem id="mOpen" mnemonicParsing="false" onAction="#openFile" text="Open"/>
+            <MenuItem id="mSave" mnemonicParsing="false" onAction="#saveProject" text="Save"/>
+            <MenuItem id="mExit" mnemonicParsing="false" onAction="#exit" text="Exit"/>
+        </Menu>
+        <Menu id="mEdit" mnemonicParsing="false" text="Edit">
+            <MenuItem mnemonicParsing="false" text="Delete"/>
+        </Menu>
+        <Menu id="mPreferences" mnemonicParsing="false" text="Preferences">
+            <MenuItem id="mLanguage" mnemonicParsing="false" onAction="#popup" text="Language"/>
+        </Menu>
+        <Menu id="mMetrics" mnemonicParsing="false" text="Metrics">
+            <Menu id="mFunctionPoints" mnemonicParsing="false" text="Function Points">
+                <MenuItem id="mEnterFPData" mnemonicParsing="false" onAction="#loadTab"
+                          text="Enter FP Data"/>
             </Menu>
-            <Menu id="mHelp" mnemonicParsing="false" text="Help">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Delete" />
-               </items>
-            </Menu>
-        </menus>
-      </MenuBar>
-      <!--><TabPane fx:id="tabPane" prefHeight="358.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" GridPane.rowSpan="2147483647" />
-   <-->
-      </children>
+        </Menu>
+        <Menu id="mHelp" mnemonicParsing="false" text="Help">
+            <MenuItem mnemonicParsing="false" text="Delete"/>
+        </Menu>
+    </MenuBar>
+    <!--><TabPane fx:id="tabPane" prefHeight="358.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" GridPane.rowSpan="2147483647" />
+ <-->
 </GridPane>

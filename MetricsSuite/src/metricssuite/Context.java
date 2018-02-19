@@ -1,5 +1,7 @@
 package metricssuite;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import utils.ProjectData;
 import utils.ProjectObject;
 
@@ -7,6 +9,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Context {
+    public String getMenuBarName() {
+        return menuBarName.get();
+    }
+
+    public StringProperty menuBarNameProperty() {
+        return menuBarName;
+    }
+
+    public void setMenuBarName(String menuBarName) {
+        this.menuBarName.set(menuBarName);
+    }
+
+    private final StringProperty menuBarName = new SimpleStringProperty();
     private final static Map<String, Integer> languageCodeSize;
     static
     {
@@ -86,5 +101,5 @@ public class Context {
         return obj.createNewData();
     }
 
-    public int getCodeRatio(String language) { return languageCodeSize.get(language); };
+    public int getCodeRatio(String language) { return languageCodeSize.get(language); }
 }

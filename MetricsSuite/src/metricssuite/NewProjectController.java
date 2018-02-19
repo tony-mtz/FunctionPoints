@@ -59,17 +59,17 @@ public class NewProjectController implements Initializable{
         //pass new project to context
         Context.getInstance().setProjectObject(newProject);
         
-        
-        String projN = new String(projName.getText());
-        String prodN = new String(productName.getText());
-        String creatorS = new String(creator.getText());
-        String commentsTxt = new String(comments.getText());
+        String projN = projName.getText();
+        String prodN = productName.getText();
+        String creatorS = creator.getText();
+        String commentsTxt = comments.getText();
         
         Context.getInstance().getProjectObject().setCreator(creatorS);
         Context.getInstance().getProjectObject().setProductName(prodN);
         Context.getInstance().getProjectObject().setProjectName(projN);
         Context.getInstance().getProjectObject().setComments(commentsTxt);
-        
+        Context.getInstance().setMenuBarName("CECS 543 Metrics Suite - " + projN);
+
         Stage stage = (Stage) btnOk.getScene().getWindow();      
        
         stage.close();

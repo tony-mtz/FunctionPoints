@@ -15,6 +15,9 @@ import java.io.IOException;
 import java.io.Writer;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
+
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -33,19 +36,16 @@ import utils.ProjectObject;
  * @author tonyd
  */
 public class MetricsSuite extends Application {
-    
-    public String title = "CECS 543 Metrics Suite";
+
     @Override
     public void start(Stage primaryStage) throws Exception {
-        
-        
         GridPane grid = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));        
         Scene scene = new Scene(grid);
         primaryStage.setScene(scene);
-        //primaryStage.setTitle(title);
+        primaryStage.setTitle(Context.getInstance().getMenuBarName());
         primaryStage.show();
     }
-    
+
     public static void main(String[] args) {
         launch(args);
     }
