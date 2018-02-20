@@ -37,6 +37,7 @@ public class Context {
         languageCodeSize.put("JavaScript", 54);
         languageCodeSize.put("VBScript", 38);
         languageCodeSize.put("Visual Basic", 50);
+        languageCodeSize.put("None", 0);
     }
     private final static Context instance = new Context();
 

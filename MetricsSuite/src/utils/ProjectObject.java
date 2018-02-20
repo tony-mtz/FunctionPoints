@@ -51,14 +51,14 @@ public class ProjectObject {
           this.projectName = projectName;
           this.productName = productName;
           this.creator = creator;
-          language = "Java";
+          language = "None";
           projData = new ArrayList<>();
           //do this at tab creation instead
           //projData.add(data);
     }
     
     public ProjectObject(){
-          language = "Java";
+          language = "None";
           projData = new ArrayList<>();
 
     }
