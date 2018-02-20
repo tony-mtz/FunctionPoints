@@ -191,21 +191,13 @@ public class Controller implements Initializable{
                 Context.getInstance().setProjectObject(projFile);
                 System.out.println("context: " +Context.getInstance().getProjectObject().projData.size());
                 int size = Context.getInstance().getProjectObject().projData.size();
-                //clear tabs that are opened
-                
-                if(tabPane!=null){
-                    System.out.println(tabPane.getTabs().size());
-                    tabPane.getTabs().clear();
-                }
-                tabPane = new TabPane();
-                gridPane.add(tabPane, 0,1,1,1);
+                Context.getInstance().setMenuBarName("CECS 543 Metrics Suite - " + projFile.projectName);
 
                 //populate new tabs if any
                 for(int i =0; i<size; i++){
 
                     addTab(projFile.projData.get(i));
                 }
-
             System.out.println("End of load size data: " +Context.getInstance().getProjectObject().productName);
             //System.out.println("Context size at the end of open: " +Context.getInstance().getProjectObject().projData.size());
             } catch (FileNotFoundException ex) {

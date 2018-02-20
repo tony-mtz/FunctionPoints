@@ -27,7 +27,6 @@
             <MenuItem id="mExit" mnemonicParsing="false" onAction="#exit" text="Exit"/>
         </Menu>
         <Menu id="mEdit" mnemonicParsing="false" text="Edit">
-            <MenuItem mnemonicParsing="false" text="Delete"/>
         </Menu>
         <Menu id="mPreferences" mnemonicParsing="false" text="Preferences">
             <MenuItem id="mLanguage" mnemonicParsing="false" onAction="#popup" text="Language"/>
@@ -39,7 +38,6 @@
             </Menu>
         </Menu>
         <Menu id="mHelp" mnemonicParsing="false" text="Help">
-            <MenuItem mnemonicParsing="false" text="Delete"/>
         </Menu>
     </MenuBar>
     <!--><TabPane fx:id="tabPane" prefHeight="358.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" GridPane.rowSpan="2147483647" />
