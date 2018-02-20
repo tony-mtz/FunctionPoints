@@ -4,48 +4,28 @@
  * and open the template in the editor.
  */
 package metricssuite;
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
+import com.google.gson.Gson;
 import javafx.application.Platform;
-import javafx.beans.binding.Bindings;
-import javafx.beans.binding.StringBinding;
-import javafx.beans.property.ReadOnlyIntegerProperty;
-import static javafx.beans.property.ReadOnlyIntegerProperty.readOnlyIntegerProperty;
-
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
 import javafx.event.Event;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import utils.ProjectObject;
-
-import com.google.gson.*;
-import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.Writer;
-import javafx.beans.binding.BooleanBinding;
-import javafx.scene.Node;
-import javafx.scene.layout.AnchorPane;
 import org.hildan.fxgson.FxGson;
 import utils.ProjectData;
+import utils.ProjectObject;
+
+import java.io.*;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
 /**
@@ -113,7 +93,7 @@ public class Controller implements Initializable{
     /**
      * Opens new project window
      * Data is saved from NewProjectController btnOk
-     * @param event 
+     * @param event         None
      */
     @FXML
     public void newProject(Event event){
@@ -143,7 +123,7 @@ public class Controller implements Initializable{
      *            And select file to save to 
      *            right now it saves to a predefined file in the local folder 
      * 
-     * @param event 
+     * @param event             None
      */
     @FXML
     public void saveProject(Event event){
@@ -167,7 +147,7 @@ public class Controller implements Initializable{
     /**
      * Load project from selected file
      * 
-     * @param event 
+     * @param event         None
      */
     @FXML
     public void openFile(ActionEvent event){      

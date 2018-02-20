@@ -2,7 +2,6 @@ package metricssuite;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import utils.ProjectData;
 import utils.ProjectObject;
 
 import java.util.HashMap;
@@ -27,7 +26,7 @@ public class Context {
     {
         languageCodeSize = new HashMap<>();
         languageCodeSize.put("Assembler", 209);
-        languageCodeSize.put("Ada", 154);
+        languageCodeSize.put("Ada 95", 154);
         languageCodeSize.put("C", 148);
         languageCodeSize.put("C++", 59);
         languageCodeSize.put("C#", 58);
