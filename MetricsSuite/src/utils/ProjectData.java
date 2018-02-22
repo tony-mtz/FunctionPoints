@@ -30,7 +30,7 @@ public class ProjectData {
     public int wfIntLogicFiles;
     public int wfExtIntFiles;
     private int[] valueFactors;
-    public int pjfpTotal;
+    public double pjfpTotal;
 
     ProjectData() {
         //language = new SimpleStringProperty();

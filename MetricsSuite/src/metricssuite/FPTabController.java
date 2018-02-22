@@ -70,8 +70,8 @@ public class FPTabController implements Initializable{
      */
     @FXML
     void calculateFunctionPoints() {
-        int total = (int) (data.getTotalFactors() * (0.65 + (0.01 * data.getValueFactorSum())));
-        fpTotal.setText(String.valueOf(total));
+        double total = (data.getTotalFactors() * (0.65 + (0.01 * data.getValueFactorSum())));
+        fpTotal.setText(String.format("%.1f",total));
         data.pjfpTotal = total;
     }
 
@@ -96,7 +96,7 @@ public class FPTabController implements Initializable{
      */
     @FXML
     void computeCodeSize() {
-        int size = Integer.parseInt(fpTotal.getText()) * Context.getInstance().getCodeRatio(data.getLanguage());
+        int size = (int) (Double.parseDouble(fpTotal.getText()) * Context.getInstance().getCodeRatio(data.getLanguage()));
         codeSize.setText(String.valueOf(size));
     }
 
