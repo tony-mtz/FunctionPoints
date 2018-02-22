@@ -173,17 +173,7 @@ public class Controller implements Initializable{
                 int size = Context.getInstance().getProjectObject().projData.size();
                 Context.getInstance().setMenuBarName("CECS 543 Metrics Suite - " + projFile.projectName);
                 
-                
-                System.out.println("about to try close tabs...");
-                if(tabPane!=null){
-                    System.out.println("about to close some open tabs :) .....");
-                    System.out.println(tabPane.getTabs().size());
-                    tabPane.getTabs().clear();
-                }else{
-                    System.out.println("NO tabs to close ...");
-                }
-                
-
+                closeTabs();
                 //populate new tabs if any
                 for(int i =0; i<size; i++){
 
@@ -206,19 +196,21 @@ public class Controller implements Initializable{
             Stage stage = (Stage) gridPane.getScene().getWindow();
             stage.setTitle(newValue);
             
-            System.out.println("about to try close tabs...");
-            if(tabPane!=null){
-                System.out.println("about to close some open tabs :) .....");
-                System.out.println(tabPane.getTabs().size());
-                tabPane.getTabs().clear();
-            }else{
-                System.out.println("NO tabs to close ...");
-            }
+            closeTabs();
             tabPane = new TabPane();
             gridPane.add(tabPane, 0,1,1,1);
         });
     }
     
-    
+    public void closeTabs(){
+        System.out.println("about to try close tabs...");
+                if(tabPane!=null){
+                    System.out.println("about to close some open tabs :) .....");
+                    System.out.println(tabPane.getTabs().size());
+                    tabPane.getTabs().clear();
+                }else{
+                    System.out.println("NO tabs to close ...");
+                }
+    }
     
 }
