@@ -82,6 +82,7 @@ public class NewProjectController implements Initializable{
         stage.close();
         //maybe open last loade file...
         System.out.println("closing newproj window");
+        
     }
     
    
