@@ -12,21 +12,18 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
+import javafx.stage.*;
 import org.hildan.fxgson.FxGson;
 import utils.ProjectData;
 import utils.ProjectObject;
 
 import java.io.*;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
-import javafx.scene.control.Menu;
 
 
 /**
@@ -44,7 +41,6 @@ public class Controller implements Initializable{
     private TabPane tabPane;  
     @FXML
     private Menu metrics;
-    
     
     /**
      * Set the setDisable property for metrics on the main menu.
@@ -94,7 +90,8 @@ public class Controller implements Initializable{
 
     @FXML
     private void exit() {       
-        Platform.exit();
+        Window window = gridPane.getScene().getWindow();
+        window.fireEvent(new WindowEvent(window, WindowEvent.WINDOW_CLOSE_REQUEST));
     }
 
     @FXML
@@ -157,6 +154,7 @@ public class Controller implements Initializable{
                 writer.flush();            
                 System.out.println("Fin Saved");
                 System.out.println("Number of tabs: " +Context.getInstance().getProjectObject().projData.size());
+                Context.getInstance().setSaved(true);
         }catch(IOException e){
             System.out.println(e.getMessage());
         }      
@@ -199,6 +197,7 @@ public class Controller implements Initializable{
                 for(int i =0; i<size; i++){
                     addTab(projFile.projData.get(i));
                 }
+                Context.getInstance().setSaved(true);
             System.out.println("End of load size data: " +Context.getInstance().getProjectObject().productName);
             //System.out.println("Context size at the end of open: " +Context.getInstance().getProjectObject().projData.size());
             } catch (FileNotFoundException ex) {
@@ -243,13 +242,27 @@ public class Controller implements Initializable{
         try {
                 Tab tab = new Tab("SMI");
                 tabPane.getTabs().add(tab);
-                FXMLLoader loader = new FXMLLoader(this.getClass().getResource("SMITab.fxml"));
-                tab.setContent(loader.load());
-                SMITabController controller = loader.getController();
-                //controller.initProjectData(data);
+                tab.setContent(FXMLLoader.load(this.getClass().getResource("SMITab.fxml")));
             } catch (IOException e) {
                 e.printStackTrace();
             }
     }
-    
+
+    public boolean shutdown() {
+        if (!Context.getInstance().isSaved()) {
+            Alert closeConfirmation = new Alert(
+                    Alert.AlertType.CONFIRMATION,
+                    "You have unsaved changes. Are you sure you wish to exit?"
+            );
+            Button exitButton = (Button) closeConfirmation.getDialogPane().lookupButton(ButtonType.OK);
+            exitButton.setText("Exit");
+            closeConfirmation.setHeaderText("Confirm Exit");
+            closeConfirmation.initModality(Modality.APPLICATION_MODAL);
+            Optional<ButtonType> closeResponse = closeConfirmation.showAndWait();
+            if (!ButtonType.OK.equals(closeResponse.get())) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

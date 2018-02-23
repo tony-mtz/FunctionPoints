@@ -72,7 +72,7 @@ public class FPTabController implements Initializable{
     void calculateFunctionPoints() {
         double total = (data.getTotalFactors() * (0.65 + (0.01 * data.getValueFactorSum())));
         fpTotal.setText(String.format("%.1f",total));
-        data.pjfpTotal = total;
+        data.setPjfpTotal(total);
     }
 
     /**
@@ -281,8 +281,14 @@ public class FPTabController implements Initializable{
             externalLogicalFilesResults.setText(String.valueOf(data.extIntFiles * complexity));
             total.setText(String.valueOf(data.getTotalFactors()));
         });
-        data.vafSumProperty().addListener((observable, oldValue, newValue) -> vafSum.setText(String.valueOf(newValue)));
-        data.languageProperty().addListener((observable, oldValue, newValue) -> language.setText(newValue));
+        data.vafSumProperty().addListener((observable, oldValue, newValue) -> {
+            vafSum.setText(String.valueOf(newValue));
+            Context.getInstance().setSaved(false);
+        });
+        data.languageProperty().addListener((observable, oldValue, newValue) -> {
+            language.setText(newValue);
+            Context.getInstance().setSaved(false);
+        });
         setDefaultValues();
 
         calculateFunctionPoints();

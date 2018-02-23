@@ -7,10 +7,7 @@ import javafx.beans.binding.NumberBinding;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 
-import java.util.List;
-
 public class SMI {
-    private List list;
     private final SimpleIntegerProperty modulesAdded;
     private final SimpleIntegerProperty modulesChanged;
     private final SimpleIntegerProperty modulesDeleted;

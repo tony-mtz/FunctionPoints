@@ -27,15 +27,17 @@ public class SMITabController implements Initializable{
     @FXML private TableColumn TotalCol;
     @FXML private Button add;
 
-    private ObservableList<SMI> list = FXCollections.observableArrayList();
+    private ObservableList<SMI> list;
 
     @FXML
     private void computeSMI () {
-
+        SMICol.setCellValueFactory(new PropertyValueFactory<SMI, Double>("SMI"));
+        table.refresh();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        list = Context.getInstance().getProjectObject().softMaturityIndex;
         AddCol.setCellValueFactory(new PropertyValueFactory<SMI, Integer>("modulesAdded"));
         AddCol.setCellFactory(TextFieldTableCell.<SMI, Integer>forTableColumn(new IntegerStringConverter()));
         AddCol.setOnEditCommit((EventHandler<TableColumn.CellEditEvent<SMI, Integer>>) event -> {
@@ -45,6 +47,7 @@ public class SMITabController implements Initializable{
                 event.getTableView().getItems().get(i).setPreviousTotal(
                         event.getTableView().getItems().get(i - 1).getTotal());
             }
+            Context.getInstance().setSaved(false);
         });
         ChangeCol.setCellValueFactory(new PropertyValueFactory<SMI, Integer>("modulesChanged"));
         ChangeCol.setCellFactory(TextFieldTableCell.<SMI, Integer>forTableColumn(new IntegerStringConverter()));
@@ -55,6 +58,7 @@ public class SMITabController implements Initializable{
                 event.getTableView().getItems().get(i).setPreviousTotal(
                         event.getTableView().getItems().get(i - 1).getTotal());
             }
+            Context.getInstance().setSaved(false);
         });
         DelCol.setCellValueFactory(new PropertyValueFactory<SMI, Integer>("modulesDeleted"));
         DelCol.setCellFactory(TextFieldTableCell.<SMI, Integer>forTableColumn(new IntegerStringConverter()));
@@ -65,6 +69,7 @@ public class SMITabController implements Initializable{
                 event.getTableView().getItems().get(i).setPreviousTotal(
                         event.getTableView().getItems().get(i - 1).getTotal());
             }
+            Context.getInstance().setSaved(false);
         });
         TotalCol.setCellValueFactory(new PropertyValueFactory<SMI, Double>("total"));
         TotalCol.setCellFactory(new Callback<TableColumn<SMI, Double>, TableCell<SMI, Double>>() {
@@ -82,7 +87,6 @@ public class SMITabController implements Initializable{
                 };
             }
         });
-        SMICol.setCellValueFactory(new PropertyValueFactory<SMI, Double>("SMI"));
         table.setItems(list);
         table.setEditable(true);
         add.setOnAction(event -> {
@@ -91,6 +95,7 @@ public class SMITabController implements Initializable{
                 total = list.get(list.size() - 1).getTotal();
             }
             list.add(new SMI(total));
+            Context.getInstance().setSaved(false);
         });
     }
 }

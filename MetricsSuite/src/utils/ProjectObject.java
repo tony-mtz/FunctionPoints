@@ -5,6 +5,10 @@
  */
 package utils;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import metricssuite.Context;
+
 import java.util.ArrayList;
 
 /**
@@ -46,23 +50,24 @@ public class ProjectObject {
         
     }
     public ArrayList <ProjectData> projData;
-    public ArrayList <SMI> softMaturityIndex;
-    
+    public ObservableList<SMI> softMaturityIndex;
+
     public ProjectObject(String projectName, String productName, String creator){
           this.projectName = projectName;
           this.productName = productName;
           this.creator = creator;
           language = "None";
           projData = new ArrayList<>();
-          softMaturityIndex = new ArrayList<>();
-          
+          softMaturityIndex = FXCollections.observableArrayList();
+
           //do this at tab creation instead
           //projData.add(data);
     }
     
     public ProjectObject(){
-          language = "None";
-          projData = new ArrayList<>();
+        language = "None";
+        projData = new ArrayList<>();
+        softMaturityIndex = FXCollections.observableArrayList();
 
     }
 
@@ -71,6 +76,7 @@ public class ProjectObject {
         data.setLanguage(this.language);
         projData.add(data);
         System.out.println("Length: " + projData.size());
+        Context.getInstance().setSaved(false);
         return projData.indexOf(data);
     }
     

@@ -20,6 +20,7 @@ public class Context {
         this.menuBarName.set(menuBarName);
     }
 
+    private boolean saved = true;
     private final StringProperty menuBarName = new SimpleStringProperty();
     private final static Map<String, Integer> languageCodeSize;
     static
@@ -41,8 +42,14 @@ public class Context {
     }
     private final static Context instance = new Context();
 
-    
-    
+    public boolean isSaved() {
+        return saved;
+    }
+
+    public void setSaved(boolean saved) {
+        this.saved = saved;
+    }
+
     //for loading from files
     private int counter =-1;
     public int incr(){
@@ -85,6 +92,7 @@ public class Context {
 
     public void setDefaultLanguage(String newLanguage) {
         obj.setLanguage(newLanguage);
+        setSaved(false);
     }
     
     private ProjectObject obj;// = new ProjectObject();
@@ -95,6 +103,7 @@ public class Context {
 
     public void setProjectObject(ProjectObject newObj) {
         obj = newObj;
+        setSaved(false);
     }
 
     public int createNewData() {

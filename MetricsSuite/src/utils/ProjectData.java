@@ -10,6 +10,7 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import metricssuite.Context;
 
 /**
  *
@@ -30,10 +31,9 @@ public class ProjectData {
     public int wfIntLogicFiles;
     public int wfExtIntFiles;
     private int[] valueFactors;
-    public double pjfpTotal;
+    private double pjfpTotal;
 
     ProjectData() {
-        //language = new SimpleStringProperty();
         setLanguage("Java");
         extInputs = 0;
         extOutputs = 0;
@@ -47,7 +47,15 @@ public class ProjectData {
         wfExtIntFiles = 7;
         valueFactors = new int[14];
         pjfpTotal =0;
-       // vafSum = new SimpleIntegerProperty();
+    }
+
+    public double getPjfpTotal() {
+        return pjfpTotal;
+    }
+
+    public void setPjfpTotal(double pjfpTotal) {
+        this.pjfpTotal = pjfpTotal;
+        Context.getInstance().setSaved(false);
     }
 
     public void setExtInputs(int extInputs) {
