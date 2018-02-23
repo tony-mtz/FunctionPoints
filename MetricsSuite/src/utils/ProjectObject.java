@@ -46,6 +46,7 @@ public class ProjectObject {
         
     }
     public ArrayList <ProjectData> projData;
+    public ArrayList <SMI> softMaturityIndex;
     
     public ProjectObject(String projectName, String productName, String creator){
           this.projectName = projectName;
@@ -53,6 +54,8 @@ public class ProjectObject {
           this.creator = creator;
           language = "None";
           projData = new ArrayList<>();
+          softMaturityIndex = new ArrayList<>();
+          
           //do this at tab creation instead
           //projData.add(data);
     }

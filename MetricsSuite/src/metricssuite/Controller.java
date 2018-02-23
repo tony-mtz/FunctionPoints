@@ -26,6 +26,7 @@ import utils.ProjectObject;
 import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.scene.control.Menu;
 
 
 /**
@@ -35,12 +36,27 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable{
 
     
+    
     @FXML
     private MenuItem mLanguage;
     @FXML
     private GridPane gridPane;
-//    @FXML
-    private TabPane tabPane;   
+    private TabPane tabPane;  
+    @FXML
+    private Menu metrics;
+    
+    
+    /**
+     * Set the setDisable property for metrics on the main menu.
+     * @param tf 
+     */
+    
+    @FXML
+    public void metricsMenu(boolean tf){
+        System.out.println("in metrics menu method");
+        metrics.setDisable(tf);
+    }
+    
 
     /**
      * tab from file
@@ -108,6 +124,7 @@ public class Controller implements Initializable{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        
     }
     
    
@@ -174,9 +191,23 @@ public class Controller implements Initializable{
                 Context.getInstance().setMenuBarName("CECS 543 Metrics Suite - " + projFile.projectName);
                 
                 closeTabs();
+                metricsMenu(false); //metrics option available
+                //open smi tab first
+                /**
+                try {
+                    Tab tab = new Tab("SMI Tab");
+                    tabPane.getTabs().add(tab);
+                    FXMLLoader loader = new FXMLLoader(this.getClass().getResource("SMITab.fxml"));
+                    tab.setContent(loader.load());
+                    SMITabController controller = loader.getController();
+                    //controller.initProjectData(data);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                * 
+                * */
                 //populate new tabs if any
                 for(int i =0; i<size; i++){
-
                     addTab(projFile.projData.get(i));
                 }
             System.out.println("End of load size data: " +Context.getInstance().getProjectObject().productName);
@@ -191,6 +222,7 @@ public class Controller implements Initializable{
  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        metricsMenu(true);
         Context.getInstance().setMenuBarName("CECS 543 Metrics Suite");
         Context.getInstance().menuBarNameProperty().addListener((observable, oldValue, newValue) -> {
             Stage stage = (Stage) gridPane.getScene().getWindow();
@@ -199,7 +231,10 @@ public class Controller implements Initializable{
             closeTabs();
             tabPane = new TabPane();
             gridPane.add(tabPane, 0,1,1,1);
+            metricsMenu(false); //enable metrics menu
         });
+        
+        
     }
     
     public void closeTabs(){
