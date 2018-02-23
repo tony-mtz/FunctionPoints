@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="metricssuite.SMITabController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="metricssuite.SMITabController">
     <Label layoutX="185.0" layoutY="14.0" text="Software Maturity Index">
         <font>
-          <Font name="System Bold" size="20.0"/>
+          <Font name="System Bold" size="20.0" />
         </font>
     </Label>
     <TableView fx:id="table" layoutX="15.0" layoutY="44.0" prefHeight="294.0" prefWidth="570.0">
       <columns>
-          <TableColumn prefWidth="125.0" text="SMI"/>
-          <TableColumn prefWidth="125.0" text="Modules Added"/>
-          <TableColumn prefWidth="125.0" text="Modules Changed"/>
-          <TableColumn prefWidth="125.0" text="Modules Deleted"/>
-          <TableColumn prefWidth="125.0" text="Total Modules"/>
+          <TableColumn fx:id="SMICol" editable="false" prefWidth="125.0" text="SMI" />
+          <TableColumn fx:id="AddCol" prefWidth="125.0" sortable="false" text="Modules Added" />
+          <TableColumn fx:id="ChangeCol" prefWidth="125.0" sortable="false" text="Modules Changed" />
+          <TableColumn fx:id="DelCol" prefWidth="125.0" sortable="false" text="Modules Deleted" />
+          <TableColumn fx:id="TotalCol" editable="false" prefWidth="125.0" sortable="false" text="Total Modules" />
       </columns>
     </TableView>
+   <Button fx:id="add" layoutX="15.0" layoutY="355.0" mnemonicParsing="false" text="Add Row" />
+   <Button layoutX="236.0" layoutY="355.0" mnemonicParsing="false" onAction="#computeSMI" text="Compute Index" />
 </AnchorPane>
