@@ -64,13 +64,14 @@ public class Controller implements Initializable{
     @FXML
     private void addTab(ProjectData data) {
         try {
+            Context.getInstance().setMenuTab(Boolean.FALSE);
             Tab tab = new Tab("Function Points");
             tabPane.getTabs().add(tab);
             FXMLLoader loader = new FXMLLoader(this.getClass().getResource("FPTab.fxml"));
             tab.setContent(loader.load());
             FPTabController controller = loader.getController();
             controller.initProjectData(data);
-            Context.getInstance().setMenuTab(Boolean.FALSE);
+            
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -193,19 +194,7 @@ public class Controller implements Initializable{
                 closeTabs();
                 metricsMenu(false); //metrics option available
                 //open smi tab first
-                /**
-                try {
-                    Tab tab = new Tab("SMI Tab");
-                    tabPane.getTabs().add(tab);
-                    FXMLLoader loader = new FXMLLoader(this.getClass().getResource("SMITab.fxml"));
-                    tab.setContent(loader.load());
-                    SMITabController controller = loader.getController();
-                    //controller.initProjectData(data);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                * 
-                * */
+                openSMI();
                 //populate new tabs if any
                 for(int i =0; i<size; i++){
                     addTab(projFile.projData.get(i));
@@ -222,7 +211,7 @@ public class Controller implements Initializable{
  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        metricsMenu(true);
+        
         Context.getInstance().setMenuBarName("CECS 543 Metrics Suite");
         Context.getInstance().menuBarNameProperty().addListener((observable, oldValue, newValue) -> {
             Stage stage = (Stage) gridPane.getScene().getWindow();
@@ -232,6 +221,8 @@ public class Controller implements Initializable{
             tabPane = new TabPane();
             gridPane.add(tabPane, 0,1,1,1);
             metricsMenu(false); //enable metrics menu
+            openSMI();
+            
         });
         
         
@@ -240,12 +231,25 @@ public class Controller implements Initializable{
     public void closeTabs(){
         System.out.println("about to try close tabs...");
                 if(tabPane!=null){
-                    System.out.println("about to close some open tabs :) .....");
+                    System.out.println("closing some open tabs :) .....");
                     System.out.println(tabPane.getTabs().size());
                     tabPane.getTabs().clear();
                 }else{
                     System.out.println("NO tabs to close ...");
                 }
+    }
+    
+    public void openSMI(){
+        try {
+                Tab tab = new Tab("SMI Tab");
+                tabPane.getTabs().add(tab);
+                FXMLLoader loader = new FXMLLoader(this.getClass().getResource("SMITab.fxml"));
+                tab.setContent(loader.load());
+                SMITabController controller = loader.getController();
+                //controller.initProjectData(data);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
     }
     
 }
