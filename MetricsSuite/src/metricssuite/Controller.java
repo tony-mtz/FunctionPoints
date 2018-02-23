@@ -48,11 +48,11 @@ public class Controller implements Initializable{
     
     /**
      * Set the setDisable property for metrics on the main menu.
-     * @param tf 
+     * @param tf
      */
     
     @FXML
-    public void metricsMenu(boolean tf){
+    private void metricsMenu(boolean tf){
         System.out.println("in metrics menu method");
         metrics.setDisable(tf);
     }
@@ -87,11 +87,6 @@ public class Controller implements Initializable{
             Tab tab = new Tab("Function Points");            
             tabPane.getTabs().add(tab);
             tab.setContent(FXMLLoader.load(this.getClass().getResource("FPTab.fxml")));
-
-            // TODO: DELETE AND MOVE
-            Tab tab2 = new Tab("SMI");
-            tabPane.getTabs().add(tab2);
-            tab.setContent(FXMLLoader.load(this.getClass().getResource("SMITab.fxml")));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -246,7 +241,7 @@ public class Controller implements Initializable{
     
     public void openSMI(){
         try {
-                Tab tab = new Tab("SMI Tab");
+                Tab tab = new Tab("SMI");
                 tabPane.getTabs().add(tab);
                 FXMLLoader loader = new FXMLLoader(this.getClass().getResource("SMITab.fxml"));
                 tab.setContent(loader.load());

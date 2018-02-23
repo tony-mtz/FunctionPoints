@@ -27,10 +27,7 @@ public class SMITabController implements Initializable{
     @FXML private TableColumn TotalCol;
     @FXML private Button add;
 
-    SMI s1 = new SMI(3, 0, 0, 0);
-    SMI s2 = new SMI(10, 1, 0, 3);
-    SMI s3 = new SMI(1, 1, 1, 13);
-    ObservableList<SMI> list = FXCollections.observableArrayList();
+    private ObservableList<SMI> list = FXCollections.observableArrayList();
 
     @FXML
     private void computeSMI () {
@@ -39,19 +36,36 @@ public class SMITabController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        list.addAll(s1, s2, s3);
         AddCol.setCellValueFactory(new PropertyValueFactory<SMI, Integer>("modulesAdded"));
         AddCol.setCellFactory(TextFieldTableCell.<SMI, Integer>forTableColumn(new IntegerStringConverter()));
-        AddCol.setOnEditCommit((EventHandler<TableColumn.CellEditEvent<SMI, Integer>>) event -> event.getTableView().
-                getItems().get(event.getTablePosition().getRow()).setModulesAdded(event.getNewValue()));
+        AddCol.setOnEditCommit((EventHandler<TableColumn.CellEditEvent<SMI, Integer>>) event -> {
+            int position = event.getTablePosition().getRow();
+            event.getTableView().getItems().get(position).setModulesAdded(event.getNewValue());
+            for (int i = position + 1; i < event.getTableView().getItems().size(); i++) {
+                event.getTableView().getItems().get(i).setPreviousTotal(
+                        event.getTableView().getItems().get(i - 1).getTotal());
+            }
+        });
         ChangeCol.setCellValueFactory(new PropertyValueFactory<SMI, Integer>("modulesChanged"));
         ChangeCol.setCellFactory(TextFieldTableCell.<SMI, Integer>forTableColumn(new IntegerStringConverter()));
-        ChangeCol.setOnEditCommit((EventHandler<TableColumn.CellEditEvent<SMI, Integer>>) event -> event.getTableView().
-                getItems().get(event.getTablePosition().getRow()).setModulesChanged(event.getNewValue()));
+        ChangeCol.setOnEditCommit((EventHandler<TableColumn.CellEditEvent<SMI, Integer>>) event -> {
+            int position = event.getTablePosition().getRow();
+            event.getTableView().getItems().get(position).setModulesChanged(event.getNewValue());
+            for (int i = position + 1; i < event.getTableView().getItems().size(); i++) {
+                event.getTableView().getItems().get(i).setPreviousTotal(
+                        event.getTableView().getItems().get(i - 1).getTotal());
+            }
+        });
         DelCol.setCellValueFactory(new PropertyValueFactory<SMI, Integer>("modulesDeleted"));
         DelCol.setCellFactory(TextFieldTableCell.<SMI, Integer>forTableColumn(new IntegerStringConverter()));
-        DelCol.setOnEditCommit((EventHandler<TableColumn.CellEditEvent<SMI, Integer>>) event -> event.getTableView().
-                getItems().get(event.getTablePosition().getRow()).setModulesDeleted(event.getNewValue()));
+        DelCol.setOnEditCommit((EventHandler<TableColumn.CellEditEvent<SMI, Integer>>) event -> {
+            int position = event.getTablePosition().getRow();
+            event.getTableView().getItems().get(position).setModulesDeleted(event.getNewValue());
+            for (int i = position + 1; i < event.getTableView().getItems().size(); i++) {
+                event.getTableView().getItems().get(i).setPreviousTotal(
+                        event.getTableView().getItems().get(i - 1).getTotal());
+            }
+        });
         TotalCol.setCellValueFactory(new PropertyValueFactory<SMI, Double>("total"));
         TotalCol.setCellFactory(new Callback<TableColumn<SMI, Double>, TableCell<SMI, Double>>() {
             @Override
@@ -72,7 +86,10 @@ public class SMITabController implements Initializable{
         table.setItems(list);
         table.setEditable(true);
         add.setOnAction(event -> {
-            double total = list.get(list.size() - 1).getTotal();
+            double total = 0;
+            if (list.size() > 0) {
+                total = list.get(list.size() - 1).getTotal();
+            }
             list.add(new SMI(total));
         });
     }

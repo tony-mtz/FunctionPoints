@@ -7,36 +7,25 @@ import javafx.beans.binding.NumberBinding;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 
+import java.util.List;
+
 public class SMI {
+    private List list;
     private final SimpleIntegerProperty modulesAdded;
     private final SimpleIntegerProperty modulesChanged;
     private final SimpleIntegerProperty modulesDeleted;
     private final SimpleDoubleProperty SMI;
     private final SimpleDoubleProperty total;
-
-    public SMI(int modulesAdded, int modulesChanged, int modulesDeleted, double previousTotal) {
-        this.modulesAdded = new SimpleIntegerProperty(modulesAdded);
-        this.modulesChanged = new SimpleIntegerProperty(modulesChanged);
-        this.modulesDeleted = new SimpleIntegerProperty(modulesDeleted);
-        this.SMI = new SimpleDoubleProperty();
-        this.total = new SimpleDoubleProperty();
-        NumberBinding add = Bindings.add(this.modulesAdded, previousTotal);
-        NumberBinding minus = Bindings.subtract(add, this.modulesDeleted);
-        this.totalProperty().bind(minus);
-        NumberBinding addDelete = Bindings.add(this.modulesAdded, this.modulesDeleted);
-        NumberBinding changedAddDelete = Bindings.add(this.modulesChanged, addDelete);
-        NumberBinding minusTotal = Bindings.subtract(this.total, changedAddDelete);
-        NumberBinding SMIFinal = Bindings.divide(minusTotal, this.total);
-        this.SMIProperty().bind(SMIFinal);
-    }
+    private final SimpleDoubleProperty previousTotal;
 
     public SMI(double previousTotal) {
+        this.previousTotal = new SimpleDoubleProperty(previousTotal);
         this.modulesAdded = new SimpleIntegerProperty(0);
         this.modulesChanged = new SimpleIntegerProperty(0);
         this.modulesDeleted = new SimpleIntegerProperty(0);
         this.SMI = new SimpleDoubleProperty();
         this.total = new SimpleDoubleProperty();
-        NumberBinding add = Bindings.add(this.modulesAdded, previousTotal);
+        NumberBinding add = Bindings.add(this.modulesAdded, this.previousTotal);
         NumberBinding minus = Bindings.subtract(add, this.modulesDeleted);
         this.totalProperty().bind(minus);
         NumberBinding addDelete = Bindings.add(this.modulesAdded, this.modulesDeleted);
@@ -46,6 +35,17 @@ public class SMI {
         this.SMIProperty().bind(SMIFinal);
     }
 
+    public double getPreviousTotal() {
+        return previousTotal.get();
+    }
+
+    public SimpleDoubleProperty previousTotalProperty() {
+        return previousTotal;
+    }
+
+    public void setPreviousTotal(double previousTotal) {
+        this.previousTotal.set(previousTotal);
+    }
 
     public int getModulesAdded() {
         return modulesAdded.get();
