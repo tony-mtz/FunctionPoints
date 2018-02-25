@@ -38,6 +38,9 @@ public class SMITabController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         list = Context.getInstance().getProjectObject().softMaturityIndex;
+        for (SMI smi:list) {
+            smi.setBindings();
+        }
         AddCol.setCellValueFactory(new PropertyValueFactory<SMI, Integer>("modulesAdded"));
         AddCol.setCellFactory(TextFieldTableCell.<SMI, Integer>forTableColumn(new IntegerStringConverter()));
         AddCol.setOnEditCommit((EventHandler<TableColumn.CellEditEvent<SMI, Integer>>) event -> {
@@ -54,10 +57,6 @@ public class SMITabController implements Initializable{
         ChangeCol.setOnEditCommit((EventHandler<TableColumn.CellEditEvent<SMI, Integer>>) event -> {
             int position = event.getTablePosition().getRow();
             event.getTableView().getItems().get(position).setModulesChanged(event.getNewValue());
-            for (int i = position + 1; i < event.getTableView().getItems().size(); i++) {
-                event.getTableView().getItems().get(i).setPreviousTotal(
-                        event.getTableView().getItems().get(i - 1).getTotal());
-            }
             Context.getInstance().setSaved(false);
         });
         DelCol.setCellValueFactory(new PropertyValueFactory<SMI, Integer>("modulesDeleted"));

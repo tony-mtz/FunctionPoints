@@ -22,14 +22,7 @@ public class SMI {
         this.modulesDeleted = new SimpleIntegerProperty(0);
         this.SMI = new SimpleDoubleProperty();
         this.total = new SimpleDoubleProperty();
-        NumberBinding add = Bindings.add(this.modulesAdded, this.previousTotal);
-        NumberBinding minus = Bindings.subtract(add, this.modulesDeleted);
-        this.totalProperty().bind(minus);
-        NumberBinding addDelete = Bindings.add(this.modulesAdded, this.modulesDeleted);
-        NumberBinding changedAddDelete = Bindings.add(this.modulesChanged, addDelete);
-        NumberBinding minusTotal = Bindings.subtract(this.total, changedAddDelete);
-        NumberBinding SMIFinal = Bindings.divide(minusTotal, this.total);
-        this.SMIProperty().bind(SMIFinal);
+        setBindings();
     }
 
     public double getPreviousTotal() {
@@ -102,5 +95,16 @@ public class SMI {
 
     public void setTotal(int total) {
         this.total.set(total);
+    }
+
+    public void setBindings() {
+        NumberBinding add = Bindings.add(this.modulesAdded, this.previousTotal);
+        NumberBinding minus = Bindings.subtract(add, this.modulesDeleted);
+        this.totalProperty().bind(minus);
+        NumberBinding addDelete = Bindings.add(this.modulesAdded, this.modulesDeleted);
+        NumberBinding changedAddDelete = Bindings.add(this.modulesChanged, addDelete);
+        NumberBinding minusTotal = Bindings.subtract(this.total, changedAddDelete);
+        NumberBinding SMIFinal = Bindings.divide(minusTotal, this.total);
+        this.SMIProperty().bind(SMIFinal);
     }
 }
