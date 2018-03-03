@@ -1,8 +1,6 @@
 package metricssuite;
 
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -19,20 +17,19 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class SMITabController implements Initializable{
-    @FXML TableView table;
-    @FXML private TableColumn SMICol;
-    @FXML private TableColumn AddCol;
-    @FXML private TableColumn ChangeCol;
-    @FXML private TableColumn DelCol;
-    @FXML private TableColumn TotalCol;
+    @FXML
+    TableView<SMI> table;
+    @FXML private TableColumn<SMI, Double> SMICol;
+    @FXML private TableColumn<SMI, Integer> AddCol;
+    @FXML private TableColumn<SMI, Integer> ChangeCol;
+    @FXML private TableColumn<SMI, Integer> DelCol;
+    @FXML private TableColumn<SMI, Double> TotalCol;
     @FXML private Button add;
 
     private ObservableList<SMI> list;
 
     @FXML
     private void computeSMI () {
-        SMICol.setCellValueFactory(new PropertyValueFactory<SMI, Double>("SMI"));
-        table.refresh();
     }
 
     @Override
@@ -41,9 +38,9 @@ public class SMITabController implements Initializable{
         for (SMI smi:list) {
             smi.setBindings();
         }
-        AddCol.setCellValueFactory(new PropertyValueFactory<SMI, Integer>("modulesAdded"));
-        AddCol.setCellFactory(TextFieldTableCell.<SMI, Integer>forTableColumn(new IntegerStringConverter()));
-        AddCol.setOnEditCommit((EventHandler<TableColumn.CellEditEvent<SMI, Integer>>) event -> {
+        AddCol.setCellValueFactory(new PropertyValueFactory<>("modulesAdded"));
+        AddCol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        AddCol.setOnEditCommit(event -> {
             int position = event.getTablePosition().getRow();
             event.getTableView().getItems().get(position).setModulesAdded(event.getNewValue());
             for (int i = position + 1; i < event.getTableView().getItems().size(); i++) {
@@ -52,16 +49,16 @@ public class SMITabController implements Initializable{
             }
             Context.getInstance().setSaved(false);
         });
-        ChangeCol.setCellValueFactory(new PropertyValueFactory<SMI, Integer>("modulesChanged"));
-        ChangeCol.setCellFactory(TextFieldTableCell.<SMI, Integer>forTableColumn(new IntegerStringConverter()));
-        ChangeCol.setOnEditCommit((EventHandler<TableColumn.CellEditEvent<SMI, Integer>>) event -> {
+        ChangeCol.setCellValueFactory(new PropertyValueFactory<>("modulesChanged"));
+        ChangeCol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        ChangeCol.setOnEditCommit(event -> {
             int position = event.getTablePosition().getRow();
             event.getTableView().getItems().get(position).setModulesChanged(event.getNewValue());
             Context.getInstance().setSaved(false);
         });
-        DelCol.setCellValueFactory(new PropertyValueFactory<SMI, Integer>("modulesDeleted"));
-        DelCol.setCellFactory(TextFieldTableCell.<SMI, Integer>forTableColumn(new IntegerStringConverter()));
-        DelCol.setOnEditCommit((EventHandler<TableColumn.CellEditEvent<SMI, Integer>>) event -> {
+        DelCol.setCellValueFactory(new PropertyValueFactory<>("modulesDeleted"));
+        DelCol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        DelCol.setOnEditCommit(event -> {
             int position = event.getTablePosition().getRow();
             event.getTableView().getItems().get(position).setModulesDeleted(event.getNewValue());
             for (int i = position + 1; i < event.getTableView().getItems().size(); i++) {
@@ -70,7 +67,7 @@ public class SMITabController implements Initializable{
             }
             Context.getInstance().setSaved(false);
         });
-        TotalCol.setCellValueFactory(new PropertyValueFactory<SMI, Double>("total"));
+        TotalCol.setCellValueFactory(new PropertyValueFactory<>("total"));
         TotalCol.setCellFactory(new Callback<TableColumn<SMI, Double>, TableCell<SMI, Double>>() {
             @Override
             public TableCell call(TableColumn<SMI, Double> param) {
@@ -86,6 +83,7 @@ public class SMITabController implements Initializable{
                 };
             }
         });
+        SMICol.setCellValueFactory(new PropertyValueFactory<>("SMI"));
         table.setItems(list);
         table.setEditable(true);
         add.setOnAction(event -> {

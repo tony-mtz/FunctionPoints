@@ -44,7 +44,7 @@ public class Controller implements Initializable{
     
     /**
      * Set the setDisable property for metrics on the main menu.
-     * @param tf
+     * @param tf        value to set setDisable to
      */
     
     @FXML
@@ -169,9 +169,10 @@ public class Controller implements Initializable{
     public void openFile(ActionEvent event){      
         
         Context.getInstance().resetIncr();
-        //get file from file chooser        
+        //get file from file chooser
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Project");
+
         //extension filter
         FileChooser.ExtensionFilter extentionFilter = new FileChooser.ExtensionFilter("ms files (*.ms)", "*.ms");
         fileChooser.getExtensionFilters().add(extentionFilter);        
@@ -183,6 +184,7 @@ public class Controller implements Initializable{
             ProjectObject projFile;
             
             try {
+                Context.getInstance().setMenuBarName("CECS 543 Metrics Suite");
                 projFile = gson.fromJson(new FileReader(selectedFile.toString()), ProjectObject.class);
                 Context.getInstance().setProjectObject(projFile);
                 System.out.println("context: " +Context.getInstance().getProjectObject().projData.size());
