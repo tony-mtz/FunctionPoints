@@ -19,11 +19,15 @@ import javafx.stage.*;
 import org.hildan.fxgson.FxGson;
 import utils.ProjectData;
 import utils.ProjectObject;
+import utils.ProjectCode;
 
 import java.io.*;
 import java.net.URL;
+import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 
 
 /**
@@ -41,6 +45,10 @@ public class Controller implements Initializable{
     private TabPane tabPane;  
     @FXML
     private Menu metrics;
+    @FXML
+    private SplitPane splitPane;
+    @FXML
+    private AnchorPane rightPane;
     
     /**
      * Set the setDisable property for metrics on the main menu.
@@ -209,10 +217,35 @@ public class Controller implements Initializable{
             System.out.println("nothing");
         }
     }
+    
+    @FXML
+    public void addCode(ActionEvent event){      
+        
+        Context.getInstance().resetIncr();
+        //get file from file chooser
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select Files");
+
+        //extension filter
+        FileChooser.ExtensionFilter extentionFilter = new FileChooser.ExtensionFilter("java files (*.java)", "*.java");
+        fileChooser.getExtensionFilters().add(extentionFilter);        
+        List<File> selectedFile = fileChooser.showOpenMultipleDialog(null);//.showOpenDialog(null);        
+        
+        if(selectedFile != null){
+            for(int i=0; i!=selectedFile.size(); i++){
+                ProjectCode projCode = new ProjectCode(selectedFile.get(i).toString(), 
+                        selectedFile.get(i).getName());
+                System.out.println(selectedFile.get(i).toString());
+                System.out.println(selectedFile.get(i).getName());
+            Context.getInstance().getProjectObject().projCode.add(projCode);
+        
+            }
+        }
+    }
  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+         //
         Context.getInstance().setMenuBarName("CECS 543 Metrics Suite");
         Context.getInstance().menuBarNameProperty().addListener((observable, oldValue, newValue) -> {
             Stage stage = (Stage) gridPane.getScene().getWindow();
@@ -220,7 +253,12 @@ public class Controller implements Initializable{
             
             closeTabs();
             tabPane = new TabPane();
-            gridPane.add(tabPane, 0,1,1,1);
+            //SplitPane split = new SplitPane();
+            //splitPane.getItems().add(tabPane);
+           
+            
+            //gridPane.add(split, 0,1,1,1);
+            rightPane.getChildren().add(tabPane);
             metricsMenu(false); //enable metrics menu
             openSMI();
             

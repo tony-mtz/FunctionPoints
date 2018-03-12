@@ -51,6 +51,7 @@ public class ProjectObject {
     }
     public ArrayList <ProjectData> projData;
     public ObservableList<SMI> softMaturityIndex;
+    public ArrayList <ProjectCode> projCode;
 
     public ProjectObject(String projectName, String productName, String creator){
           this.projectName = projectName;
@@ -59,6 +60,7 @@ public class ProjectObject {
           language = "None";
           projData = new ArrayList<>();
           softMaturityIndex = FXCollections.observableArrayList();
+          projCode = new ArrayList<>();
 
           //do this at tab creation instead
           //projData.add(data);
@@ -68,6 +70,7 @@ public class ProjectObject {
         language = "None";
         projData = new ArrayList<>();
         softMaturityIndex = FXCollections.observableArrayList();
+        projCode = new ArrayList<>();
 
     }
 
