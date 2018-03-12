@@ -253,11 +253,6 @@ public class Controller implements Initializable{
             
             closeTabs();
             tabPane = new TabPane();
-            //SplitPane split = new SplitPane();
-            //splitPane.getItems().add(tabPane);
-           
-            
-            //gridPane.add(split, 0,1,1,1);
             rightPane.getChildren().add(tabPane);
             metricsMenu(false); //enable metrics menu
             openSMI();
