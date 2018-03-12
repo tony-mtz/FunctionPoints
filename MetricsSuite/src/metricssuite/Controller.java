@@ -221,7 +221,7 @@ public class Controller implements Initializable{
     @FXML
     public void addCode(ActionEvent event){      
         
-        Context.getInstance().resetIncr();
+        
         //get file from file chooser
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Files");
