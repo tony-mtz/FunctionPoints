@@ -304,6 +304,10 @@ public class FPTabController implements Initializable{
         setDefaultValues();
         setDefaultInputs();
     }
+
+    public void setName(String name) {
+        data.setName(name);
+    }
     
     public int getIndex(){
         return index;

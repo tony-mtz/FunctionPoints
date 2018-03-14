@@ -19,6 +19,7 @@ import metricssuite.Context;
 public class ProjectData {
     private final IntegerProperty vafSum = new SimpleIntegerProperty();
     private final StringProperty language = new SimpleStringProperty();
+    private final StringProperty name = new SimpleStringProperty();
     public int extInputs;
     public int extOutputs;
     public int extInquiries;
@@ -47,6 +48,18 @@ public class ProjectData {
         wfExtIntFiles = 7;
         valueFactors = new int[14];
         pjfpTotal =0;
+    }
+
+    public String getName() {
+        return name.get();
+    }
+
+    public StringProperty nameProperty() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name.set(name);
     }
 
     public double getPjfpTotal() {

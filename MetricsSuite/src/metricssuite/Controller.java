@@ -5,7 +5,6 @@
  */
 package metricssuite;
 import com.google.gson.Gson;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -13,21 +12,23 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.*;
+import javafx.util.Callback;
 import org.hildan.fxgson.FxGson;
+import utils.ProjectCode;
 import utils.ProjectData;
 import utils.ProjectObject;
-import utils.ProjectCode;
+import utils.TextFieldTreeCellImpl;
 
 import java.io.*;
 import java.net.URL;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
+import java.util.function.Consumer;
 
 
 /**
@@ -49,6 +50,9 @@ public class Controller implements Initializable{
     private SplitPane splitPane;
     @FXML
     private AnchorPane rightPane;
+    @FXML
+    private AnchorPane leftPane;
+    private TreeView<String> treeView;
     
     /**
      * Set the setDisable property for metrics on the main menu.
@@ -69,13 +73,14 @@ public class Controller implements Initializable{
     private void addTab(ProjectData data) {
         try {
             Context.getInstance().setMenuTab(Boolean.FALSE);
-            Tab tab = new Tab("Function Points");
+            String name = data.getName();
+            Tab tab = new Tab("Function Points - " + name);
             tabPane.getTabs().add(tab);
             FXMLLoader loader = new FXMLLoader(this.getClass().getResource("FPTab.fxml"));
             tab.setContent(loader.load());
             FPTabController controller = loader.getController();
             controller.initProjectData(data);
-            
+            treeView.getRoot().getChildren().add(new TreeItem<>("Function Point - " + name));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -88,9 +93,14 @@ public class Controller implements Initializable{
     private void loadTab(){
          try {             
             Context.getInstance().setMenuTab(Boolean.TRUE);
-            Tab tab = new Tab("Function Points");            
+            String name = promptForName();
+            Tab tab = new Tab("Function Points - " + name);
             tabPane.getTabs().add(tab);
-            tab.setContent(FXMLLoader.load(this.getClass().getResource("FPTab.fxml")));
+            FXMLLoader loader = new FXMLLoader(this.getClass().getResource("FPTab.fxml"));
+            tab.setContent(loader.load());
+            FPTabController controller = loader.getController();
+            controller.setName(name);
+            treeView.getRoot().getChildren().add(new TreeItem<>("Function Point - " + name));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -237,8 +247,8 @@ public class Controller implements Initializable{
                         selectedFile.get(i).getName());
                 System.out.println(selectedFile.get(i).toString());
                 System.out.println(selectedFile.get(i).getName());
-            Context.getInstance().getProjectObject().projCode.add(projCode);
-        
+                Context.getInstance().getProjectObject().projCode.add(projCode);
+                treeView.getRoot().getChildren().add(new TreeItem<>(projCode.getName()));
             }
         }
     }
@@ -254,12 +264,28 @@ public class Controller implements Initializable{
             closeTabs();
             tabPane = new TabPane();
             rightPane.getChildren().add(tabPane);
+            tabPane.prefHeightProperty().bind(rightPane.heightProperty());
+            tabPane.prefWidthProperty().bind(rightPane.widthProperty());
             metricsMenu(false); //enable metrics menu
             openSMI();
-            
+            initializeTreeView();
         });
-        
-        
+    }
+
+
+    private void initializeTreeView() {
+        TreeItem<String> rootNode = new TreeItem<>(Context.getInstance().getProjectObject().projectName);
+        rootNode.setExpanded(true);
+        rootNode.getChildren().add(new TreeItem<>("SMI"));
+        for (ProjectCode code : Context.getInstance().getProjectObject().projCode) {
+            TreeItem<String> codeLeaf = new TreeItem<>(code.getName());
+            rootNode.getChildren().add(codeLeaf);
+        }
+        treeView = new TreeView<>(rootNode);
+        treeView.setCellFactory(param -> new TextFieldTreeCellImpl());
+        treeView.prefHeightProperty().bind(leftPane.heightProperty());
+        treeView.prefWidthProperty().bind(leftPane.widthProperty());
+        leftPane.getChildren().add(treeView);
     }
     
     public void closeTabs(){
@@ -283,6 +309,18 @@ public class Controller implements Initializable{
             }
     }
 
+
+    public String promptForName() {
+        TextInputDialog dialog = new TextInputDialog();
+
+        dialog.setTitle("Function Points");
+        dialog.setHeaderText("Enter a name for this tab:");
+        dialog.setContentText("Name:");
+
+        Optional<String> result = dialog.showAndWait();
+        return result.get();
+    }
+
     public boolean shutdown() {
         if (!Context.getInstance().isSaved()) {
             Alert closeConfirmation = new Alert(
@@ -294,9 +332,7 @@ public class Controller implements Initializable{
             closeConfirmation.setHeaderText("Confirm Exit");
             closeConfirmation.initModality(Modality.APPLICATION_MODAL);
             Optional<ButtonType> closeResponse = closeConfirmation.showAndWait();
-            if (!ButtonType.OK.equals(closeResponse.get())) {
-                return false;
-            }
+            return ButtonType.OK.equals(closeResponse.get());
         }
         return true;
     }
