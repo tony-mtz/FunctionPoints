@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package metricssuite;
+
 import com.google.gson.Gson;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -29,18 +30,16 @@ import java.util.*;
 
 
 /**
- *
  * @author tonyd
  */
-public class Controller implements Initializable{
+public class Controller implements Initializable {
 
-    
-    
+
     @FXML
     private MenuItem mLanguage;
     @FXML
     private GridPane gridPane;
-    private TabPane tabPane;  
+    private TabPane tabPane;
     @FXML
     private Menu metrics;
     @FXML
@@ -51,20 +50,21 @@ public class Controller implements Initializable{
     private AnchorPane leftPane;
     private TreeView<String> treeView;
     private HashMap<String, Tab> openFPTabs = new HashMap<>();
-    private Set<String> openCodeTabs= new HashSet<>();
+    private Set<String> openCodeTabs = new HashSet<>();
     private Tab smiTab;
-    
+
     /**
      * Set the setDisable property for metrics on the main menu.
-     * @param tf        value to set setDisable to
+     *
+     * @param tf value to set setDisable to
      */
-    
+
     @FXML
-    private void metricsMenu(boolean tf){
+    private void metricsMenu(boolean tf) {
         System.out.println("in metrics menu method");
         metrics.setDisable(tf);
     }
-    
+
 
     /**
      * tab from file
@@ -92,9 +92,9 @@ public class Controller implements Initializable{
      * create from main menu
      */
     @FXML
-    private void loadTab(){
-         try {
-             String FPName = promptForName();
+    private void loadTab() {
+        try {
+            String FPName = promptForName();
             String name = "Function Points - " + FPName;
             Tab tab = new Tab(name);
             tabPane.getTabs().add(tab);
@@ -111,142 +111,144 @@ public class Controller implements Initializable{
     }
 
     @FXML
-    private void exit() {       
+    private void exit() {
         Window window = gridPane.getScene().getWindow();
         window.fireEvent(new WindowEvent(window, WindowEvent.WINDOW_CLOSE_REQUEST));
     }
 
     @FXML
-    void popup(Event event) throws IOException{
-            
+    void popup(Event event) throws IOException {
+
         VBox vbox = FXMLLoader.load(getClass().getResource("LanguageWindow.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(vbox);
         stage.setScene(scene);
         stage.show();
     }
-    
+
     /**
      * Opens new project window
      * Data is saved from NewProjectController btnOk
-     * @param event         None
+     *
+     * @param event None
      */
     @FXML
-    public void newProject(Event event){
+    public void newProject(Event event) {
         try {
-            VBox vbox = FXMLLoader.load(getClass().getResource("NewProject.fxml"));            
+            VBox vbox = FXMLLoader.load(getClass().getResource("NewProject.fxml"));
             Stage stage = new Stage();
             Scene scene = new Scene(vbox);
             stage.setScene(scene);
             stage.setTitle("New Project");
             stage.show();
-            
+
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
     }
-    
-   
+
+
     /**
      * Saves project
-     * 
+     * <p>
      * Currently: still need:
-     *            reference language
-     *            weighting factors
-     *             input total
-     *            computed fp
-     * 
-     *            And select file to save to 
-     *            right now it saves to a predefined file in the local folder 
-     * 
-     * @param event             None
+     * reference language
+     * weighting factors
+     * input total
+     * computed fp
+     * <p>
+     * And select file to save to
+     * right now it saves to a predefined file in the local folder
+     *
+     * @param event None
      */
     @FXML
-    public void saveProject(Event event){
-       
+    public void saveProject(Event event) {
+
         //chose file name..ect
         //save to gson before writing
         Gson gson = FxGson.create();//new Gson();
-        String dataString = gson.toJson(Context.getInstance().getProjectObject(), ProjectObject.class );        
-        try{
-                File file = new File("temp1" +".ms");
-                Writer writer = new BufferedWriter(new FileWriter(file));
-                writer.write(dataString);
-                writer.flush();            
-                System.out.println("Fin Saved");
-                System.out.println("Number of tabs: " +Context.getInstance().getProjectObject().projData.size());
-                Context.getInstance().setSaved(true);
-        }catch(IOException e){
+        String dataString = gson.toJson(Context.getInstance().getProjectObject(), ProjectObject.class);
+        try {
+            File file = new File("temp1" + ".ms");
+            Writer writer = new BufferedWriter(new FileWriter(file));
+            writer.write(dataString);
+            writer.flush();
+            System.out.println("Fin Saved");
+            System.out.println("Number of tabs: " + Context.getInstance().getProjectObject().projData.size());
+            Context.getInstance().setSaved(true);
+        } catch (IOException e) {
             System.out.println(e.getMessage());
-        }      
-        
+        }
+
     }
+
     /**
      * Load project from selected file
-     * 
-     * @param event         None
+     *
+     * @param event None
      */
     @FXML
-    public void openFile(ActionEvent event){      
-        
+    public void openFile(ActionEvent event) {
+
         //get file from file chooser
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Project");
 
         //extension filter
         FileChooser.ExtensionFilter extentionFilter = new FileChooser.ExtensionFilter("ms files (*.ms)", "*.ms");
-        fileChooser.getExtensionFilters().add(extentionFilter);        
-        File selectedFile = fileChooser.showOpenDialog(null);        
+        fileChooser.getExtensionFilters().add(extentionFilter);
+        File selectedFile = fileChooser.showOpenDialog(null);
 
-        if(selectedFile != null){
+        if (selectedFile != null) {
             System.out.println(selectedFile.toString());
             Gson gson = FxGson.create();
             ProjectObject projFile;
-            
+
             try {
                 Context.getInstance().setMenuBarName("CECS 543 Metrics Suite");
                 projFile = gson.fromJson(new FileReader(selectedFile.toString()), ProjectObject.class);
                 Context.getInstance().setProjectObject(projFile);
-                System.out.println("context: " +Context.getInstance().getProjectObject().projData.size());
+                System.out.println("context: " + Context.getInstance().getProjectObject().projData.size());
                 int size = Context.getInstance().getProjectObject().projData.size();
                 Context.getInstance().setMenuBarName("CECS 543 Metrics Suite - " + projFile.projectName);
-                
+
                 closeTabs();
                 metricsMenu(false); //metrics option available
                 //open smi tab first
                 openSMI();
                 //populate new tabs if any
-                for(int i =0; i<size; i++){
+                for (int i = 0; i < size; i++) {
                     addTab(projFile.projData.get(i), true);
                 }
                 Context.getInstance().setSaved(true);
-            System.out.println("End of load size data: " +Context.getInstance().getProjectObject().productName);
-            //System.out.println("Context size at the end of open: " +Context.getInstance().getProjectObject().projData.size());
+                System.out.println("End of load size data: " + Context.getInstance().getProjectObject().productName);
+                //System.out.println("Context size at the end of open: " +Context.getInstance().getProjectObject().projData.size());
             } catch (FileNotFoundException ex) {
                 System.out.println(ex.getMessage());
             }
-        }else{
+        } else {
             System.out.println("nothing");
         }
     }
-    
+
     @FXML
-    public void addCode(ActionEvent event){      
-        
-        
+    public void addCode(ActionEvent event) {
+
+
         //get file from file chooser
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Files");
 
         //extension filter
         FileChooser.ExtensionFilter extentionFilter = new FileChooser.ExtensionFilter("java files (*.java)", "*.java");
-        fileChooser.getExtensionFilters().add(extentionFilter);        
+        fileChooser.getExtensionFilters().add(extentionFilter);
         List<File> selectedFile = fileChooser.showOpenMultipleDialog(null);//.showOpenDialog(null);        
-        
-        if(selectedFile != null){
-            for(int i=0; i!=selectedFile.size(); i++){
-                ProjectCode projCode = new ProjectCode(selectedFile.get(i).toString(), 
+
+        if (selectedFile != null) {
+            for (int i = 0; i != selectedFile.size(); i++) {
+                ProjectCode projCode = new ProjectCode(selectedFile.get(i).toString(),
                         selectedFile.get(i).getName());
                 System.out.println(selectedFile.get(i).toString());
                 System.out.println(selectedFile.get(i).getName());
@@ -255,15 +257,15 @@ public class Controller implements Initializable{
             }
         }
     }
- 
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-         //
+        //
         Context.getInstance().setMenuBarName("CECS 543 Metrics Suite");
         Context.getInstance().menuBarNameProperty().addListener((observable, oldValue, newValue) -> {
             Stage stage = (Stage) gridPane.getScene().getWindow();
             stage.setTitle(newValue);
-            
+
             closeTabs();
             tabPane = new TabPane();
             rightPane.getChildren().add(tabPane);
@@ -290,28 +292,28 @@ public class Controller implements Initializable{
         treeView.prefWidthProperty().bind(leftPane.widthProperty());
         leftPane.getChildren().add(treeView);
     }
-    
-    public void closeTabs(){
+
+    public void closeTabs() {
         System.out.println("about to try close tabs...");
-                if(tabPane!=null){
-                    System.out.println("closing some open tabs :) .....");
-                    System.out.println(tabPane.getTabs().size());
-                    tabPane.getTabs().clear();
-                }else{
-                    System.out.println("NO tabs to close ...");
-                }
+        if (tabPane != null) {
+            System.out.println("closing some open tabs :) .....");
+            System.out.println(tabPane.getTabs().size());
+            tabPane.getTabs().clear();
+        } else {
+            System.out.println("NO tabs to close ...");
+        }
     }
-    
-    public void openSMI(){
+
+    public void openSMI() {
         try {
-                Tab tab = new Tab("SMI");
-                smiTab = tab;
-                tab.setOnClosed(e -> smiTab = null);
-                tabPane.getTabs().add(tab);
-                tab.setContent(FXMLLoader.load(this.getClass().getResource("SMITab.fxml")));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            Tab tab = new Tab("SMI");
+            smiTab = tab;
+            tab.setOnClosed(e -> smiTab = null);
+            tabPane.getTabs().add(tab);
+            tab.setContent(FXMLLoader.load(this.getClass().getResource("SMITab.fxml")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -345,7 +347,7 @@ public class Controller implements Initializable{
     public void openTab(String tabName) {
         // Bad string manipulation I know, probably need to change this all later
         System.out.println(tabName);
-        if (openFPTabs.containsKey(tabName) || openCodeTabs.contains(tabName)){
+        if (openFPTabs.containsKey(tabName) || openCodeTabs.contains(tabName)) {
             return;
         }
         if (tabName.startsWith("Function Points -")) {
@@ -392,7 +394,7 @@ public class Controller implements Initializable{
         deleteButton.setText("Delete");
         deleteConfirmation.setHeaderText("Confirm Delete");
         Optional<ButtonType> deleteResponse = deleteConfirmation.showAndWait();
-        if(ButtonType.OK.equals(deleteResponse.get())) {
+        if (ButtonType.OK.equals(deleteResponse.get())) {
             if (tabName.startsWith("Function Points -")) {
                 deleteFPTab(tabName);
                 return true;

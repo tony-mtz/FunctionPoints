@@ -8,7 +8,6 @@ package utils;
 import java.util.ArrayList;
 
 /**
- *
  * @author tony
  */
 public class ProjectCode {
@@ -35,6 +34,6 @@ public class ProjectCode {
         this.path = path;
         this.name = name;
     }
-    
-    
+
+
 }

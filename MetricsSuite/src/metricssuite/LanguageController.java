@@ -31,7 +31,7 @@ public class LanguageController implements Initializable {
         Stage stage = (Stage) done.getScene().getWindow();
         RadioButton selectedRadioButton = (RadioButton) languageGroup.getSelectedToggle();
         String language = selectedRadioButton.getText();
-        if(data != null)
+        if (data != null)
             data.setLanguage(language);
         else {
             Context.getInstance().setDefaultLanguage(language);
@@ -41,10 +41,11 @@ public class LanguageController implements Initializable {
 
     /**
      * Sets tab to corresponding ProjectData if necessary.
-     * @param index     Index of the selected ProjectData in projData list.
+     *
+     * @param data Selected ProjectData in projData list.
      */
-    public void initData(int index) {
-        data = Context.getInstance().getProjectObject().projData.get(index);
+    public void initData(ProjectData data) {
+        this.data = data;
     }
 }
 

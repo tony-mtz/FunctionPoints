@@ -24,8 +24,8 @@ public class Context {
     private boolean saved = true;
     private final StringProperty menuBarName = new SimpleStringProperty();
     private final static Map<String, Integer> languageCodeSize;
-    static
-    {
+
+    static {
         languageCodeSize = new HashMap<>();
         languageCodeSize.put("Assembler", 209);
         languageCodeSize.put("Ada 95", 154);
@@ -41,6 +41,7 @@ public class Context {
         languageCodeSize.put("Visual Basic", 50);
         languageCodeSize.put("None", 0);
     }
+
     private final static Context instance = new Context();
 
     public boolean isSaved() {
@@ -51,7 +52,7 @@ public class Context {
         this.saved = saved;
     }
 
-    private String path= "";
+    private String path = "";
 
     public String getPath() {
         return path;
@@ -73,10 +74,10 @@ public class Context {
         obj.setLanguage(newLanguage);
         setSaved(false);
     }
-    
+
     private ProjectObject obj;// = new ProjectObject();
-    
-    public ProjectObject getProjectObject(){
+
+    public ProjectObject getProjectObject() {
         return obj;
     }
 
@@ -89,7 +90,9 @@ public class Context {
         return obj.createNewData(name);
     }
 
-    public int getCodeRatio(String language) { return languageCodeSize.get(language); }
+    public int getCodeRatio(String language) {
+        return languageCodeSize.get(language);
+    }
 
     public ProjectData getProjectDataByName(String name) {
         return obj.getDataByName(name);

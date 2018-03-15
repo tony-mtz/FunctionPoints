@@ -16,7 +16,6 @@ import javafx.stage.WindowEvent;
 
 
 /**
- *
  * @author tonyd
  */
 public class MetricsSuite extends Application {
@@ -40,5 +39,5 @@ public class MetricsSuite extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }

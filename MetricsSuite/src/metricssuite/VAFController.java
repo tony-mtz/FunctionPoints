@@ -15,23 +15,39 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class VAFController implements Initializable {
-    @FXML private ComboBox<Integer> comboZero;
-    @FXML private ComboBox<Integer> comboOne;
-    @FXML private ComboBox<Integer> comboTwo;
-    @FXML private ComboBox<Integer> comboThree;
-    @FXML private ComboBox<Integer> comboFour;
-    @FXML private ComboBox<Integer> comboFive;
-    @FXML private ComboBox<Integer> comboSix;
-    @FXML private ComboBox<Integer> comboSeven;
-    @FXML private ComboBox<Integer> comboEight;
-    @FXML private ComboBox<Integer> comboNine;
-    @FXML private ComboBox<Integer> comboTen;
-    @FXML private ComboBox<Integer> comboEleven;
-    @FXML private ComboBox<Integer> comboTwelve;
-    @FXML private ComboBox<Integer> comboThirteen;
+    @FXML
+    private ComboBox<Integer> comboZero;
+    @FXML
+    private ComboBox<Integer> comboOne;
+    @FXML
+    private ComboBox<Integer> comboTwo;
+    @FXML
+    private ComboBox<Integer> comboThree;
+    @FXML
+    private ComboBox<Integer> comboFour;
+    @FXML
+    private ComboBox<Integer> comboFive;
+    @FXML
+    private ComboBox<Integer> comboSix;
+    @FXML
+    private ComboBox<Integer> comboSeven;
+    @FXML
+    private ComboBox<Integer> comboEight;
+    @FXML
+    private ComboBox<Integer> comboNine;
+    @FXML
+    private ComboBox<Integer> comboTen;
+    @FXML
+    private ComboBox<Integer> comboEleven;
+    @FXML
+    private ComboBox<Integer> comboTwelve;
+    @FXML
+    private ComboBox<Integer> comboThirteen;
 
-    @FXML private Button cancel;
-    @FXML private Button done;
+    @FXML
+    private Button cancel;
+    @FXML
+    private Button done;
 
     private List<Integer> items = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4, 5));
     private ArrayList<ComboBox<Integer>> comboBoxes = new ArrayList<>();
@@ -48,8 +64,8 @@ public class VAFController implements Initializable {
      * Saves current value factor selections in underlying data and closes window.
      */
     @FXML
-    private void submit(){
-        for(int i = 0; i < comboBoxes.size(); i++) {
+    private void submit() {
+        for (int i = 0; i < comboBoxes.size(); i++) {
             data.setValueFactorAtIndex(i, comboBoxes.get(i).getValue());
         }
         data.setVafSum();
@@ -59,8 +75,9 @@ public class VAFController implements Initializable {
 
     /**
      * Initializes view and puts each ComboBox in the comboBoxes list.
-     * @param url       None
-     * @param rb        None
+     *
+     * @param url None
+     * @param rb  None
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -82,7 +99,8 @@ public class VAFController implements Initializable {
 
     /**
      * Initializes window with ProjectData object.
-     * @param data     ProjectData object for Value Factors
+     *
+     * @param data ProjectData object for Value Factors
      */
     public void initData(ProjectData data) {
         this.data = data;
@@ -93,7 +111,7 @@ public class VAFController implements Initializable {
      * to 0-5.
      */
     public void initComboBoxes() {
-        for (int i=0; i<comboBoxes.size(); i++) {
+        for (int i = 0; i < comboBoxes.size(); i++) {
             ComboBox box = comboBoxes.get(i);
             box.setItems(FXCollections.observableArrayList(items));
             box.setValue(data.getValueFactorAtIndex(i));

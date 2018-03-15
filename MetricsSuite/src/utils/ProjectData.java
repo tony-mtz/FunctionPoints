@@ -13,7 +13,6 @@ import javafx.beans.property.StringProperty;
 import metricssuite.Context;
 
 /**
- *
  * @author tony
  */
 public class ProjectData {
@@ -47,7 +46,7 @@ public class ProjectData {
         wfIntLogicFiles = 10;
         wfExtIntFiles = 7;
         valueFactors = new int[14];
-        pjfpTotal =0;
+        pjfpTotal = 0;
     }
 
     public String getName() {
@@ -87,13 +86,15 @@ public class ProjectData {
         vafSumProperty().set(getValueFactorSum());
     }
 
-    public int getExtIn(){
+    public int getExtIn() {
         return extInputs;
     }
 
-    public int getValueFactorAtIndex (int index) {return valueFactors[index];}
-    
-    public void setValueFactorAtIndex (int index, int value) {
+    public int getValueFactorAtIndex(int index) {
+        return valueFactors[index];
+    }
+
+    public void setValueFactorAtIndex(int index, int value) {
         valueFactors[index] = value;
     }
 
@@ -111,18 +112,20 @@ public class ProjectData {
 
     /**
      * Calculates sum of value factors.
-     * @return      Integer sum of value factors.
+     *
+     * @return Integer sum of value factors.
      */
     public int getValueFactorSum() {
         int sum = 0;
-        for(int i: valueFactors)
+        for (int i : valueFactors)
             sum += i;
         return sum;
     }
 
     /**
      * Calculates total factor count.
-     * @return      Integer value of total factors.
+     *
+     * @return Integer value of total factors.
      */
     public int getTotalFactors() {
         return extInputs * wfExtInputs + extOutputs * wfExtOutputs + extInquiries * wfExtInquiries +

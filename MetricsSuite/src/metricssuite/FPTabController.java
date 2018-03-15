@@ -15,44 +15,66 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class FPTabController implements Initializable{
-    @FXML private TextField extInp;
-    @FXML private TextField extOut;
-    @FXML private TextField extInq;
-    @FXML private TextField intFiles;
-    @FXML private TextField extFiles;
-    @FXML private TextField vafSum;
-    @FXML private TextField fpTotal;
+public class FPTabController implements Initializable {
+    @FXML
+    private TextField extInp;
+    @FXML
+    private TextField extOut;
+    @FXML
+    private TextField extInq;
+    @FXML
+    private TextField intFiles;
+    @FXML
+    private TextField extFiles;
+    @FXML
+    private TextField vafSum;
+    @FXML
+    private TextField fpTotal;
 
-    @FXML private ToggleGroup externalInputs;
-    @FXML private ToggleGroup externalOutputs;
-    @FXML private ToggleGroup externalInquiries;
-    @FXML private ToggleGroup internalLogicalFiles;
-    @FXML private ToggleGroup externalLogicalFiles;
+    @FXML
+    private ToggleGroup externalInputs;
+    @FXML
+    private ToggleGroup externalOutputs;
+    @FXML
+    private ToggleGroup externalInquiries;
+    @FXML
+    private ToggleGroup internalLogicalFiles;
+    @FXML
+    private ToggleGroup externalLogicalFiles;
 
-    @FXML private TextField extInpResults;
-    @FXML private TextField externalOutputResults;
-    @FXML private TextField externalInquiriesResults;
-    @FXML private TextField internalLogicalFilesResults;
-    @FXML private TextField externalLogicalFilesResults;
-    @FXML private TextField total;
-    @FXML private TextField language;
-    @FXML private TextField codeSize;
-    
-    @FXML private boolean menuTab = true;
+    @FXML
+    private TextField extInpResults;
+    @FXML
+    private TextField externalOutputResults;
+    @FXML
+    private TextField externalInquiriesResults;
+    @FXML
+    private TextField internalLogicalFilesResults;
+    @FXML
+    private TextField externalLogicalFilesResults;
+    @FXML
+    private TextField total;
+    @FXML
+    private TextField language;
+    @FXML
+    private TextField codeSize;
 
-    private int index;
+    @FXML
+    private boolean menuTab = true;
+
     private ProjectData data;
-    
-  
-    @FXML void menuTrue(boolean bool){
+
+
+    @FXML
+    void menuTrue(boolean bool) {
         menuTab = bool;
     }
 
     /**
      * Creates pop-up window for language selection for current Data object.
-     * @param event         None
-     * @throws IOException  FXML loading
+     *
+     * @param event None
+     * @throws IOException FXML loading
      */
     @FXML
     void popup(Event event) throws IOException {
@@ -60,8 +82,8 @@ public class FPTabController implements Initializable{
         Stage stage = new Stage();
         stage.setScene(new Scene(fxmlLoader.load()));
         LanguageController controller = fxmlLoader.getController();
-        controller.initData(index);
-        
+        controller.initData(data);
+
         stage.show();
     }
 
@@ -71,14 +93,15 @@ public class FPTabController implements Initializable{
     @FXML
     void calculateFunctionPoints() {
         double total = (data.getTotalFactors() * (0.65 + (0.01 * data.getValueFactorSum())));
-        fpTotal.setText(String.format("%.1f",total));
+        fpTotal.setText(String.format("%.1f", total));
         data.setPjfpTotal(total);
     }
 
     /**
      * Creates pop-up window for ValueFactors with current data object.
-     * @param event         None
-     * @throws IOException  FXML loading
+     *
+     * @param event None
+     * @throws IOException FXML loading
      */
     @FXML
     void vafPopup(Event event) throws IOException {
@@ -103,10 +126,11 @@ public class FPTabController implements Initializable{
     /**
      * Updates the output result textfield by multiplying the input text
      * by the complexity factor. Checks to make sure input number is valid.
-     * @param field     Input field for weighting factor
-     * @param group     Complexity ToggleGroup for factor
-     * @param results   Result field for setting valid answer
-     * @return          value calculated, if invalid returns -1
+     *
+     * @param field   Input field for weighting factor
+     * @param group   Complexity ToggleGroup for factor
+     * @param results Result field for setting valid answer
+     * @return value calculated, if invalid returns -1
      */
     private int updateText(TextField field, ToggleGroup group, TextField results) {
         try {
@@ -116,9 +140,9 @@ public class FPTabController implements Initializable{
             }
             RadioButton chk = (RadioButton) group.getSelectedToggle();
             int complexity = Integer.parseInt(chk.getText());
-            results.setText(String.valueOf(complexity*value));
+            results.setText(String.valueOf(complexity * value));
             return value;
-        } catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             System.out.println("Invalid input.");
             return -1;
         }
@@ -126,8 +150,9 @@ public class FPTabController implements Initializable{
 
     /**
      * Gets the value of the selected radiobutton from a toggle group
-     * @param group     ToggleGroup of RadioButton
-     * @return          Integer value of selected radio button.
+     *
+     * @param group ToggleGroup of RadioButton
+     * @return Integer value of selected radio button.
      */
     private int getRadioButtonValue(ToggleGroup group) {
         RadioButton chk = (RadioButton) group.getSelectedToggle();
@@ -158,17 +183,18 @@ public class FPTabController implements Initializable{
         intFiles.setText(String.valueOf(data.intLogicFiles));
         extFiles.setText(String.valueOf(data.extIntFiles));
         vafSum.setText(String.valueOf(data.getValueFactorSum()));
-        setToggle( data.wfExtInputs, externalInputs);
-        setToggle( data.wfExtOutputs, externalOutputs);
-        setToggle( data.wfExtInquiries, externalInquiries);
+        setToggle(data.wfExtInputs, externalInputs);
+        setToggle(data.wfExtOutputs, externalOutputs);
+        setToggle(data.wfExtInquiries, externalInquiries);
         setToggle(data.wfIntLogicFiles, internalLogicalFiles);
-        setToggle( data.wfExtIntFiles, externalLogicalFiles);
+        setToggle(data.wfExtIntFiles, externalLogicalFiles);
     }
 
     /**
      * Sets complexity toggles to corresponding data values.
-     * @param realValue     Underlying factor value in data
-     * @param group         ToggleGroup for complexity factor
+     *
+     * @param realValue Underlying factor value in data
+     * @param group     ToggleGroup for complexity factor
      */
     private void setToggle(int realValue, ToggleGroup group) {
         int defaultValue = getRadioButtonValue(group);
@@ -182,8 +208,9 @@ public class FPTabController implements Initializable{
     /**
      * Initializes FPTab window, sets onAction events for each input field and grabs
      * values from source data.
-     * @param url       None
-     * @param rb        None
+     *
+     * @param url None
+     * @param rb  None
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -191,18 +218,20 @@ public class FPTabController implements Initializable{
 
     /**
      * Initializes the tab with pre-computed data.
-     * @param loadData  ProjectData to load into tab
+     *
+     * @param loadData ProjectData to load into tab
      */
     public void initProjectData(ProjectData loadData) {
         data = loadData;
-        setTextFields();
-        setDefaultValues();
-        setDefaultInputs();
-        calculateFunctionPoints();
+        setValuesInputs();
     }
 
     public void initNewProject(String name) {
         data = Context.getInstance().createNewData(name);
+        setValuesInputs();
+    }
+
+    private void setValuesInputs() {
         setTextFields();
         setDefaultValues();
         setDefaultInputs();

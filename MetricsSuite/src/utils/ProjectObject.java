@@ -12,12 +12,11 @@ import metricssuite.Context;
 import java.util.ArrayList;
 
 /**
- *
  * @author tonyd
  */
 public class ProjectObject {
-    
-    
+
+
     public String projectName;
     public String productName;
     public String creator;
@@ -44,26 +43,27 @@ public class ProjectObject {
     public void setCreator(String creator) {
         this.creator = creator;
     }
-    
-    public void setComments(String comments){
-        this.comments = comments;
-        
-    }
-    public ArrayList <ProjectData> projData;
-    public ObservableList<SMI> softMaturityIndex;
-    public ArrayList <ProjectCode> projCode;
 
-    public ProjectObject(String projectName, String productName, String creator){
-          this.projectName = projectName;
-          this.productName = productName;
-          this.creator = creator;
-          language = "None";
-          projData = new ArrayList<>();
-          softMaturityIndex = FXCollections.observableArrayList();
-          projCode = new ArrayList<>();
+    public void setComments(String comments) {
+        this.comments = comments;
+
     }
-    
-    public ProjectObject(){
+
+    public ArrayList<ProjectData> projData;
+    public ObservableList<SMI> softMaturityIndex;
+    public ArrayList<ProjectCode> projCode;
+
+    public ProjectObject(String projectName, String productName, String creator) {
+        this.projectName = projectName;
+        this.productName = productName;
+        this.creator = creator;
+        language = "None";
+        projData = new ArrayList<>();
+        softMaturityIndex = FXCollections.observableArrayList();
+        projCode = new ArrayList<>();
+    }
+
+    public ProjectObject() {
         language = "None";
         projData = new ArrayList<>();
         softMaturityIndex = FXCollections.observableArrayList();

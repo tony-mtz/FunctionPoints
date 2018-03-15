@@ -16,26 +16,32 @@ import utils.SMI;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SMITabController implements Initializable{
+public class SMITabController implements Initializable {
     @FXML
     TableView<SMI> table;
-    @FXML private TableColumn<SMI, Double> SMICol;
-    @FXML private TableColumn<SMI, Integer> AddCol;
-    @FXML private TableColumn<SMI, Integer> ChangeCol;
-    @FXML private TableColumn<SMI, Integer> DelCol;
-    @FXML private TableColumn<SMI, Double> TotalCol;
-    @FXML private Button add;
+    @FXML
+    private TableColumn<SMI, Double> SMICol;
+    @FXML
+    private TableColumn<SMI, Integer> AddCol;
+    @FXML
+    private TableColumn<SMI, Integer> ChangeCol;
+    @FXML
+    private TableColumn<SMI, Integer> DelCol;
+    @FXML
+    private TableColumn<SMI, Double> TotalCol;
+    @FXML
+    private Button add;
 
     private ObservableList<SMI> list;
 
     @FXML
-    private void computeSMI () {
+    private void computeSMI() {
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         list = Context.getInstance().getProjectObject().softMaturityIndex;
-        for (SMI smi:list) {
+        for (SMI smi : list) {
             smi.setBindings();
         }
         AddCol.setCellValueFactory(new PropertyValueFactory<>("modulesAdded"));
@@ -68,7 +74,7 @@ public class SMITabController implements Initializable{
             Context.getInstance().setSaved(false);
         });
         TotalCol.setCellValueFactory(new PropertyValueFactory<>("total"));
-        TotalCol.setCellFactory(new Callback<TableColumn<SMI, Double>, TableCell<SMI, Double>>() {
+        TotalCol.setCellFactory(new Callback<>() {
             @Override
             public TableCell call(TableColumn<SMI, Double> param) {
                 return new TableCell<SMI, Double>() {
