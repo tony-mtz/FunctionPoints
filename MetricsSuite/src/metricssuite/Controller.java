@@ -7,6 +7,7 @@ package metricssuite;
 import com.google.gson.Gson;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,7 +17,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.*;
-import javafx.util.Callback;
 import org.hildan.fxgson.FxGson;
 import utils.ProjectCode;
 import utils.ProjectData;
@@ -25,10 +25,7 @@ import utils.TextFieldTreeCellImpl;
 
 import java.io.*;
 import java.net.URL;
-import java.util.List;
-import java.util.Optional;
-import java.util.ResourceBundle;
-import java.util.function.Consumer;
+import java.util.*;
 
 
 /**
@@ -53,6 +50,9 @@ public class Controller implements Initializable{
     @FXML
     private AnchorPane leftPane;
     private TreeView<String> treeView;
+    private HashMap<String, Tab> openFPTabs = new HashMap<>();
+    private Set<String> openCodeTabs= new HashSet<>();
+    private Tab smiTab;
     
     /**
      * Set the setDisable property for metrics on the main menu.
@@ -73,19 +73,22 @@ public class Controller implements Initializable{
     private void addTab(ProjectData data) {
         try {
             Context.getInstance().setMenuTab(Boolean.FALSE);
-            String name = data.getName();
-            Tab tab = new Tab("Function Points - " + name);
+            System.out.println(data.getTotalFactors());
+            String name = "Function Points - " + data.getName();
+            Tab tab = new Tab(name);
             tabPane.getTabs().add(tab);
+            openFPTabs.put(name, tab);
+            tab.setOnClosed(e -> openFPTabs.remove(name));
             FXMLLoader loader = new FXMLLoader(this.getClass().getResource("FPTab.fxml"));
             tab.setContent(loader.load());
             FPTabController controller = loader.getController();
             controller.initProjectData(data);
-            treeView.getRoot().getChildren().add(new TreeItem<>("Function Point - " + name));
+            treeView.getRoot().getChildren().add(new TreeItem<>(name));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    
+
     /**
      * create from main menu
      */
@@ -93,14 +96,16 @@ public class Controller implements Initializable{
     private void loadTab(){
          try {             
             Context.getInstance().setMenuTab(Boolean.TRUE);
-            String name = promptForName();
-            Tab tab = new Tab("Function Points - " + name);
+            String name = "Function Points - " +  promptForName();
+            Tab tab = new Tab(name);
             tabPane.getTabs().add(tab);
+            openFPTabs.put(name, tab);
+            tab.setOnClosed(e -> openFPTabs.remove(name));
             FXMLLoader loader = new FXMLLoader(this.getClass().getResource("FPTab.fxml"));
             tab.setContent(loader.load());
             FPTabController controller = loader.getController();
             controller.setName(name);
-            treeView.getRoot().getChildren().add(new TreeItem<>("Function Point - " + name));
+            treeView.getRoot().getChildren().add(new TreeItem<>(name));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -282,7 +287,7 @@ public class Controller implements Initializable{
             rootNode.getChildren().add(codeLeaf);
         }
         treeView = new TreeView<>(rootNode);
-        treeView.setCellFactory(param -> new TextFieldTreeCellImpl());
+        treeView.setCellFactory(param -> new TextFieldTreeCellImpl(this));
         treeView.prefHeightProperty().bind(leftPane.heightProperty());
         treeView.prefWidthProperty().bind(leftPane.widthProperty());
         leftPane.getChildren().add(treeView);
@@ -302,6 +307,8 @@ public class Controller implements Initializable{
     public void openSMI(){
         try {
                 Tab tab = new Tab("SMI");
+                smiTab = tab;
+                tab.setOnClosed(e -> smiTab = null);
                 tabPane.getTabs().add(tab);
                 tab.setContent(FXMLLoader.load(this.getClass().getResource("SMITab.fxml")));
             } catch (IOException e) {
@@ -335,5 +342,61 @@ public class Controller implements Initializable{
             return ButtonType.OK.equals(closeResponse.get());
         }
         return true;
+    }
+
+    public void openTab(String tabName) {
+        // Bad string manipulation I know, probably need to change this all later
+        System.out.println(tabName);
+        if (openFPTabs.containsKey(tabName) || openCodeTabs.contains(tabName)){
+            return;
+        }
+        if (tabName.startsWith("Function Points -")) {
+            String name = tabName.substring(18);
+            System.out.println(name);
+            ProjectData data = Context.getInstance().getProjectataByName(name);
+            if (data != null) {
+                System.out.println(data.getName());
+                addTab(data);
+            }
+            return;
+        } else if (tabName.endsWith(".java")) {
+            System.out.println("HELLLO?");
+        } else if (tabName.equals("SMI") && smiTab == null) {
+            openSMI();
+        }
+    }
+
+    public void closeOpenTab(String tabName) {
+        Tab tab = null;
+        if (tabName.equals("SMI")) {
+            tab = smiTab;
+        } else if (tabName.startsWith("Function Points -")) {
+            tab = openFPTabs.get(tabName);
+        }
+        if (tab == null) {
+            return;
+        }
+        EventHandler<Event> handler = tab.getOnClosed();
+        if (null != handler) {
+            handler.handle(null);
+        }
+        tabPane.getTabs().remove(tab);
+    }
+
+    public void deleteTab(String tabName) {
+        if (tabName.equals("SMI")) {
+            return;
+        }
+        Alert deleteConfirmation = new Alert(
+                Alert.AlertType.CONFIRMATION,
+                "Are you sure you wish to delete this file?"
+        );
+        Button deleteButton = (Button) deleteConfirmation.getDialogPane().lookupButton(ButtonType.OK);
+        deleteButton.setText("Delete");
+        deleteConfirmation.setHeaderText("Confirm Delete");
+        Optional<ButtonType> deleteResponse = deleteConfirmation.showAndWait();
+        if(ButtonType.OK.equals(deleteResponse.get())) {
+            System.out.println("DELETE");
+        }
     }
 }

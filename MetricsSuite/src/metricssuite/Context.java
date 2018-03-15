@@ -2,6 +2,7 @@ package metricssuite;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import utils.ProjectData;
 import utils.ProjectObject;
 
 import java.util.HashMap;
@@ -111,4 +112,8 @@ public class Context {
     }
 
     public int getCodeRatio(String language) { return languageCodeSize.get(language); }
+
+    public ProjectData getProjectataByName(String name) {
+        return obj.getDataByName(name);
+    }
 }

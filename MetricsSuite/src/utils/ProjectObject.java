@@ -82,6 +82,15 @@ public class ProjectObject {
         Context.getInstance().setSaved(false);
         return projData.indexOf(data);
     }
+
+    public ProjectData getDataByName(String name) {
+        for (ProjectData data : projData) {
+            if (data.getName().equals(name)) {
+                return data;
+            }
+        }
+        return null;
+    }
     
     public void setProjectData(int index, ProjectData data) {
         projData.set(index, data);
