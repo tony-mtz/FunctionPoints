@@ -51,28 +51,6 @@ public class Context {
         this.saved = saved;
     }
 
-    //for loading from files
-    private int counter =-1;
-    public int incr(){
-        counter +=1;
-        return counter;
-          
-    }
-    public int returnCounter(){
-        return counter;
-    }
-    public void resetIncr(){
-        counter = -1;
-    }
-    //for loading a new tab from menu
-    private boolean tabL = false;
-    public void setMenuTab(Boolean bool){
-        tabL = bool;
-    }
-    
-    public boolean menuTab(){
-        return tabL;
-    }
     private String path= "";
 
     public String getPath() {
@@ -107,13 +85,13 @@ public class Context {
         setSaved(false);
     }
 
-    public int createNewData() {
-        return obj.createNewData();
+    public ProjectData createNewData(String name) {
+        return obj.createNewData(name);
     }
 
     public int getCodeRatio(String language) { return languageCodeSize.get(language); }
 
-    public ProjectData getProjectataByName(String name) {
+    public ProjectData getProjectDataByName(String name) {
         return obj.getDataByName(name);
     }
 }

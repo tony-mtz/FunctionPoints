@@ -82,11 +82,10 @@ public class VAFController implements Initializable {
 
     /**
      * Initializes window with ProjectData object.
-     * @param index     Index of ProjectData in projData list.
+     * @param data     ProjectData object for Value Factors
      */
-    public void initIndex(Integer index) {
-        this.index = index;
-        data = Context.getInstance().getProjectObject().projData.get(index);
+    public void initData(ProjectData data) {
+        this.data = data;
     }
 
     /**

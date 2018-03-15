@@ -70,10 +70,8 @@ public class Controller implements Initializable{
      * tab from file
      */
     @FXML
-    private void addTab(ProjectData data) {
+    private void addTab(ProjectData data, Boolean create) {
         try {
-            Context.getInstance().setMenuTab(Boolean.FALSE);
-            System.out.println(data.getTotalFactors());
             String name = "Function Points - " + data.getName();
             Tab tab = new Tab(name);
             tabPane.getTabs().add(tab);
@@ -83,7 +81,8 @@ public class Controller implements Initializable{
             tab.setContent(loader.load());
             FPTabController controller = loader.getController();
             controller.initProjectData(data);
-            treeView.getRoot().getChildren().add(new TreeItem<>(name));
+            if (create)
+                treeView.getRoot().getChildren().add(new TreeItem<>(name));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -94,9 +93,9 @@ public class Controller implements Initializable{
      */
     @FXML
     private void loadTab(){
-         try {             
-            Context.getInstance().setMenuTab(Boolean.TRUE);
-            String name = "Function Points - " +  promptForName();
+         try {
+             String FPName = promptForName();
+            String name = "Function Points - " + FPName;
             Tab tab = new Tab(name);
             tabPane.getTabs().add(tab);
             openFPTabs.put(name, tab);
@@ -104,7 +103,7 @@ public class Controller implements Initializable{
             FXMLLoader loader = new FXMLLoader(this.getClass().getResource("FPTab.fxml"));
             tab.setContent(loader.load());
             FPTabController controller = loader.getController();
-            controller.setName(name);
+            controller.initNewProject(FPName);
             treeView.getRoot().getChildren().add(new TreeItem<>(name));
         } catch (IOException e) {
             e.printStackTrace();
@@ -191,7 +190,6 @@ public class Controller implements Initializable{
     @FXML
     public void openFile(ActionEvent event){      
         
-        Context.getInstance().resetIncr();
         //get file from file chooser
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Project");
@@ -220,7 +218,7 @@ public class Controller implements Initializable{
                 openSMI();
                 //populate new tabs if any
                 for(int i =0; i<size; i++){
-                    addTab(projFile.projData.get(i));
+                    addTab(projFile.projData.get(i), true);
                 }
                 Context.getInstance().setSaved(true);
             System.out.println("End of load size data: " +Context.getInstance().getProjectObject().productName);
@@ -317,7 +315,7 @@ public class Controller implements Initializable{
     }
 
 
-    public String promptForName() {
+    private String promptForName() {
         TextInputDialog dialog = new TextInputDialog();
 
         dialog.setTitle("Function Points");
@@ -353,12 +351,11 @@ public class Controller implements Initializable{
         if (tabName.startsWith("Function Points -")) {
             String name = tabName.substring(18);
             System.out.println(name);
-            ProjectData data = Context.getInstance().getProjectataByName(name);
+            ProjectData data = Context.getInstance().getProjectDataByName(name);
             if (data != null) {
                 System.out.println(data.getName());
-                addTab(data);
+                addTab(data, false);
             }
-            return;
         } else if (tabName.endsWith(".java")) {
             System.out.println("HELLLO?");
         } else if (tabName.equals("SMI") && smiTab == null) {
@@ -383,9 +380,9 @@ public class Controller implements Initializable{
         tabPane.getTabs().remove(tab);
     }
 
-    public void deleteTab(String tabName) {
+    public Boolean deleteTab(String tabName) {
         if (tabName.equals("SMI")) {
-            return;
+            return false;
         }
         Alert deleteConfirmation = new Alert(
                 Alert.AlertType.CONFIRMATION,
@@ -396,7 +393,16 @@ public class Controller implements Initializable{
         deleteConfirmation.setHeaderText("Confirm Delete");
         Optional<ButtonType> deleteResponse = deleteConfirmation.showAndWait();
         if(ButtonType.OK.equals(deleteResponse.get())) {
-            System.out.println("DELETE");
+            if (tabName.startsWith("Function Points -")) {
+                deleteFPTab(tabName);
+                return true;
+            }
         }
+        return false;
+    }
+
+    private void deleteFPTab(String tabName) {
+        closeOpenTab(tabName);
+        Context.getInstance().getProjectObject().removeDataByName(tabName.substring(18));
     }
 }

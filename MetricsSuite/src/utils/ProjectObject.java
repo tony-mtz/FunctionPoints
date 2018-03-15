@@ -61,9 +61,6 @@ public class ProjectObject {
           projData = new ArrayList<>();
           softMaturityIndex = FXCollections.observableArrayList();
           projCode = new ArrayList<>();
-
-          //do this at tab creation instead
-          //projData.add(data);
     }
     
     public ProjectObject(){
@@ -74,13 +71,13 @@ public class ProjectObject {
 
     }
 
-    public int createNewData() {
-        ProjectData data = new ProjectData();
+    public ProjectData createNewData(String name) {
+        ProjectData data = new ProjectData(name);
         data.setLanguage(this.language);
         projData.add(data);
         System.out.println("Length: " + projData.size());
         Context.getInstance().setSaved(false);
-        return projData.indexOf(data);
+        return data;
     }
 
     public ProjectData getDataByName(String name) {
@@ -91,10 +88,15 @@ public class ProjectObject {
         }
         return null;
     }
-    
-    public void setProjectData(int index, ProjectData data) {
-        projData.set(index, data);
+
+    public void removeDataByName(String name) {
+        ProjectData removeData = null;
+        for (ProjectData data : projData) {
+            if (data.getName().equals(name)) {
+                removeData = data;
+            }
+        }
+        if (removeData != null)
+            projData.remove(removeData);
     }
-    
-    
 }

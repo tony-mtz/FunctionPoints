@@ -86,7 +86,7 @@ public class FPTabController implements Initializable{
         Stage stage = new Stage();
         stage.setScene(new Scene(fxmlLoader.load()));
         VAFController controller = fxmlLoader.getController();
-        controller.initIndex(index);
+        controller.initData(data);
         controller.initComboBoxes();
         stage.show();
     }
@@ -187,24 +187,33 @@ public class FPTabController implements Initializable{
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+    }
 
-        //for creating new project
-        if(Context.getInstance().menuTab()){
-            System.out.println("creating new tabs from menu");
-             index = Context.getInstance().createNewData();
-             data = Context.getInstance().getProjectObject().projData.get(index);
-             
-        }else{
-            System.out.println("tabs from open ");
-            data = Context.getInstance().getProjectObject().projData.get(Context.getInstance().incr());
-            //for vaf to get the correct ref
-            index = Context.getInstance().returnCounter();
+    /**
+     * Initializes the tab with pre-computed data.
+     * @param loadData  ProjectData to load into tab
+     */
+    public void initProjectData(ProjectData loadData) {
+        data = loadData;
+        setTextFields();
+        setDefaultValues();
+        setDefaultInputs();
+        calculateFunctionPoints();
+    }
 
-           // externalInputs.selectedToggleProperty().
+    public void initNewProject(String name) {
+        data = Context.getInstance().createNewData(name);
+        setTextFields();
+        setDefaultValues();
+        setDefaultInputs();
+        calculateFunctionPoints();
+    }
 
-        }
-            
-        
+    public void setName(String name) {
+        data.setName(name);
+    }
+
+    private void setTextFields() {
         extInp.setOnAction(event -> {
             int result = updateText(extInp, externalInputs, extInpResults);
             if (result > -1) {
@@ -289,29 +298,7 @@ public class FPTabController implements Initializable{
             language.setText(newValue);
             Context.getInstance().setSaved(false);
         });
-        setDefaultValues();
-
-        calculateFunctionPoints();
     }
 
-    /**
-     * Initializes the tab with pre-computed data.
-     * @param loadData  ProjectData to load into tab
-     */
-    public void initProjectData(ProjectData loadData) {
-        Context.getInstance().getProjectObject().setProjectData(index, loadData);
-        data = loadData;
-        setDefaultValues();
-        setDefaultInputs();
-    }
 
-    public void setName(String name) {
-        data.setName(name);
-    }
-    
-    public int getIndex(){
-        return index;
-    }
-
-   
 }

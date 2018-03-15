@@ -19,7 +19,10 @@ public class TextFieldTreeCellImpl extends TreeCell<String> {
         menu.getItems().add(new SeparatorMenuItem());
         MenuItem deleteMenuItem = new MenuItem("Delete");
         menu.getItems().add(deleteMenuItem);
-        deleteMenuItem.setOnAction(e -> controller.deleteTab(getText()));
+        deleteMenuItem.setOnAction(e -> {
+            if (controller.deleteTab(getText()))
+                getTreeItem().getParent().getChildren().remove(getTreeItem());
+        });
     }
 
     @Override

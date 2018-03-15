@@ -34,8 +34,8 @@ public class ProjectData {
     private int[] valueFactors;
     private double pjfpTotal;
 
-    ProjectData() {
-        setLanguage("Java");
+    ProjectData(String name) {
+        setName(name);
         extInputs = 0;
         extOutputs = 0;
         extInquiries = 0;
