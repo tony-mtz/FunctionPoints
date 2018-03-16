@@ -5,6 +5,7 @@
  */
 package metricssuite;
 
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -13,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import org.antlr.runtime.RecognitionException;
 
 
 /**
@@ -36,8 +38,17 @@ public class MetricsSuite extends Application {
         });
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, RecognitionException {
         launch(args);
+        
+        //delete after done testing
+        Halstead jv = new Halstead();
+        jv.par("Test2.java");
+        System.out.println("operands : "+jv.getUniqueOperands());
+        System.out.println("operators : "+jv.getUniqueOperators());
+        System.out.println("total operands: " + jv.getTotalOperands());
+        System.out.println("total operators: " + jv.getTotalOperators());
+        //end delete
     }
 
 }

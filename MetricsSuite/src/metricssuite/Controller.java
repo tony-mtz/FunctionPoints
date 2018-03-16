@@ -247,10 +247,14 @@ public class Controller implements Initializable {
         List<File> selectedFile = fileChooser.showOpenMultipleDialog(null);//.showOpenDialog(null);        
 
         if (selectedFile != null) {
+            //tabs with file name for each
+            //add to text area
             for (int i = 0; i != selectedFile.size(); i++) {
                 ProjectCode projCode = new ProjectCode(selectedFile.get(i).toString(),
                         selectedFile.get(i).getName());
-                System.out.println(selectedFile.get(i).toString());
+                
+                System.out.println("File name: " +selectedFile.get(i).toString());
+                System.out.println("File length in bytes: " +selectedFile.get(i).length());
                 System.out.println(selectedFile.get(i).getName());
                 Context.getInstance().getProjectObject().projCode.add(projCode);
                 treeView.getRoot().getChildren().add(new TreeItem<>(projCode.getName()));
