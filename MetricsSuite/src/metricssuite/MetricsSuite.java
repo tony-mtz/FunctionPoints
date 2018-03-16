@@ -43,7 +43,7 @@ public class MetricsSuite extends Application {
         
         //delete after done testing
         Halstead jv = new Halstead();
-        jv.par("Test2.java");
+        jv.parse("Test2.java");
         System.out.println("operands : "+jv.getUniqueOperands());
         System.out.println("operators : "+jv.getUniqueOperators());
         System.out.println("total operands: " + jv.getTotalOperands());

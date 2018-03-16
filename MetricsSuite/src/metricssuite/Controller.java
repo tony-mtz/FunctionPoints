@@ -27,6 +27,9 @@ import utils.TextFieldTreeCellImpl;
 import java.io.*;
 import java.net.URL;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.antlr.runtime.RecognitionException;
 
 
 /**
@@ -50,6 +53,7 @@ public class Controller implements Initializable {
     private AnchorPane leftPane;
     private TreeView<String> treeView;
     private HashMap<String, Tab> openFPTabs = new HashMap<>();
+    private HashMap<String, Tab> openFileTabs = new HashMap<>();
     private Set<String> openCodeTabs = new HashSet<>();
     private Tab smiTab;
 
@@ -249,18 +253,89 @@ public class Controller implements Initializable {
         if (selectedFile != null) {
             //tabs with file name for each
             //add to text area
-            for (int i = 0; i != selectedFile.size(); i++) {
-                ProjectCode projCode = new ProjectCode(selectedFile.get(i).toString(),
-                        selectedFile.get(i).getName());
-                
-                System.out.println("File name: " +selectedFile.get(i).toString());
-                System.out.println("File length in bytes: " +selectedFile.get(i).length());
-                System.out.println(selectedFile.get(i).getName());
-                Context.getInstance().getProjectObject().projCode.add(projCode);
+//            for (int i = 0; i != selectedFile.size(); i++) {
+//                ProjectCode projCode = new ProjectCode(selectedFile.get(i).toString(),
+//                        selectedFile.get(i).getName());
+//                
+//                //add tab
+//                
+//                System.out.println("File name: " +selectedFile.get(i).toString());
+//                System.out.println("File length in bytes: " +selectedFile.get(i).length());
+//                System.out.println(selectedFile.get(i).getName());
+//                Context.getInstance().getProjectObject().projCode.add(projCode);
+//                treeView.getRoot().getChildren().add(new TreeItem<>(projCode.getName()));
+//            }
+            for( File file : selectedFile){
+                ProjectCode projCode = new ProjectCode(file.toString(), file.getName());
+                openCodeTab(file);
                 treeView.getRoot().getChildren().add(new TreeItem<>(projCode.getName()));
             }
         }
     }
+    
+    public void openCodeTab(File file) {
+        try {
+            String name = file.getName();
+            
+            TextArea textArea = new TextArea();
+            
+            JavaMetrics.reset();
+            Halstead hal = new Halstead();
+            hal.parse(file.toString());
+            
+            String fileText = "File name: " + name + "\n";
+            fileText += "File length in bytes: "+ file.length() +"\n";
+            fileText += "File white space : "+hal.getWhiteSpace() +"\n";
+            fileText += "File comment space in bytes: ?" + "\n";
+            fileText += "Comment percentage of file: " + "\n";
+            fileText += "Halstead metrics: \n";
+            fileText += "   Unique operators: " +hal.getUniqueOperators() + "\n";
+            fileText += "   Unique operands: " +hal.getUniqueOperands() + "\n";
+            fileText += "   Total operators: " +hal.getTotalOperators() + "\n";
+            fileText += "   Total operands: " +hal.getTotalOperands() + "\n";
+            fileText += "   Program length (N) = " +hal.getProgLength() + "\n";
+            fileText += "   Program vocabulary (n) = " +hal.getVocabulary()+ "\n";
+            fileText += "   Volume = "+ hal.getVolume() + "\n";
+            fileText += "   Difficulty = "+ hal.getDifficulty() + "\n";
+            fileText += "   Effort = " + hal.getEffort() + " Time = " + hal.getTime();
+            fileText += "(" + hal.getTimeMin() + " minutes or " + hal.getTimeHour() + " hours or ";
+            fileText += "??? person months ) \n";
+            fileText += "Bugs expected = " + hal.getBugsExpected() + "\n \n \n \n";
+            
+            fileText += "McCabe's Cyclomatic Complexity: \n";
+            fileText += hal.getMc();
+            
+            
+            
+            textArea.setText(fileText);
+            //textArea.setText("File white space : "+hal.getWhiteSpace());
+            //textArea.setText("File name: " + name + "\n");
+            
+            
+            Tab tab = new Tab(name, textArea);
+            
+            tabPane.getTabs().add(tab);
+            openFileTabs.put(name, tab);
+            tab.setOnClosed(e->openFileTabs.remove(name));
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (RecognitionException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
+    
+//    Tab tab = new Tab(name);
+//            tabPane.getTabs().add(tab);
+//            openFPTabs.put(name, tab);
+//            tab.setOnClosed(e -> openFPTabs.remove(name));
+//            FXMLLoader loader = new FXMLLoader(this.getClass().getResource("FPTab.fxml"));
+//            tab.setContent(loader.load());
+//            FPTabController controller = loader.getController();
+//            controller.initNewProject(FPName);
+//            treeView.getRoot().getChildren().add(new TreeItem<>(name));
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

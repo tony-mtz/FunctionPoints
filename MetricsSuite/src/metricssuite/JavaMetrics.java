@@ -33,6 +33,14 @@ public class JavaMetrics {
     
     static Set<String> mccabeValues = new LinkedHashSet<String>();
     
+    public static void reset(){
+        uniqueKeywords.clear();
+        uniqueIdentifiers.clear();
+        uIDSym.clear();
+        uniqueConstants.clear();
+        uniqueSpecial.clear();
+        mccabeValues.clear();
+    }
    
     
 }

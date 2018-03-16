@@ -88,7 +88,7 @@ public class SMITabController implements Initializable {
                     }
                 };
             }
-        });
+        }); 
         SMICol.setCellValueFactory(new PropertyValueFactory<>("SMI"));
         table.setItems(list);
         table.setEditable(true);
