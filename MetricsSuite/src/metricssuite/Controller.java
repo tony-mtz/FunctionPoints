@@ -226,6 +226,12 @@ public class Controller implements Initializable {
                 for (int i = 0; i < size; i++) {
                     addTab(projFile.projData.get(i), true);
                 }
+                
+                int sizeCode = Context.getInstance().getProjectObject().projCode.size();
+                for (int i = 0; i < sizeCode; i++) {
+                    openCodeTab(new File(projFile.projCode.get(i).getPath()));
+                }
+                
                 Context.getInstance().setSaved(true);
                 System.out.println("End of load size data: " + Context.getInstance().getProjectObject().productName);
                 //System.out.println("Context size at the end of open: " +Context.getInstance().getProjectObject().projData.size());
@@ -253,20 +259,9 @@ public class Controller implements Initializable {
         if (selectedFile != null) {
             //tabs with file name for each
             //add to text area
-//            for (int i = 0; i != selectedFile.size(); i++) {
-//                ProjectCode projCode = new ProjectCode(selectedFile.get(i).toString(),
-//                        selectedFile.get(i).getName());
-//                
-//                //add tab
-//                
-//                System.out.println("File name: " +selectedFile.get(i).toString());
-//                System.out.println("File length in bytes: " +selectedFile.get(i).length());
-//                System.out.println(selectedFile.get(i).getName());
-//                Context.getInstance().getProjectObject().projCode.add(projCode);
-//                treeView.getRoot().getChildren().add(new TreeItem<>(projCode.getName()));
-//            }
             for( File file : selectedFile){
                 ProjectCode projCode = new ProjectCode(file.toString(), file.getName());
+                Context.getInstance().getProjectObject().projCode.add(projCode);
                 openCodeTab(file);
                 treeView.getRoot().getChildren().add(new TreeItem<>(projCode.getName()));
             }
@@ -304,16 +299,8 @@ public class Controller implements Initializable {
             
             fileText += "McCabe's Cyclomatic Complexity: \n";
             fileText += hal.getMc();
-            
-            
-            
             textArea.setText(fileText);
-            //textArea.setText("File white space : "+hal.getWhiteSpace());
-            //textArea.setText("File name: " + name + "\n");
-            
-            
-            Tab tab = new Tab(name, textArea);
-            
+            Tab tab = new Tab(name, textArea);            
             tabPane.getTabs().add(tab);
             openFileTabs.put(name, tab);
             tab.setOnClosed(e->openFileTabs.remove(name));
@@ -325,17 +312,6 @@ public class Controller implements Initializable {
         }
     }
     
-    
-    
-//    Tab tab = new Tab(name);
-//            tabPane.getTabs().add(tab);
-//            openFPTabs.put(name, tab);
-//            tab.setOnClosed(e -> openFPTabs.remove(name));
-//            FXMLLoader loader = new FXMLLoader(this.getClass().getResource("FPTab.fxml"));
-//            tab.setContent(loader.load());
-//            FPTabController controller = loader.getController();
-//            controller.initNewProject(FPName);
-//            treeView.getRoot().getChildren().add(new TreeItem<>(name));
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
