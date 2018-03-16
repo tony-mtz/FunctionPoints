@@ -6,6 +6,7 @@
 package utils;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * @author tony
@@ -33,6 +34,14 @@ public class ProjectCode {
     public ProjectCode(String path, String name) {
         this.path = path;
         this.name = name;
+    }
+
+
+    public boolean equals(String n) {
+        if (this.name.equalsIgnoreCase(n)) {
+            return true;
+        }
+        return false;
     }
 
 

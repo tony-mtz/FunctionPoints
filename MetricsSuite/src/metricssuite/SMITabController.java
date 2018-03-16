@@ -74,21 +74,21 @@ public class SMITabController implements Initializable {
             Context.getInstance().setSaved(false);
         });
         TotalCol.setCellValueFactory(new PropertyValueFactory<>("total"));
-//        TotalCol.setCellFactory(new Callback<>() {
-//            @Override
-//            public TableCell call(TableColumn<SMI, Double> param) {
-//                return new TableCell<SMI, Double>() {
-//                    @Override
-//                    protected void updateItem(Double item, boolean empty) {
-//                        super.updateItem(item, empty);
-//                        if (item == null || empty) {
-//                            setText(null);
-//                            setStyle("");
-//                        } else setText(String.valueOf(item.intValue()));
-//                    }
-//                };
-//            }
-//        }); 
+        TotalCol.setCellFactory(new Callback<>() {
+            @Override
+            public TableCell call(TableColumn<SMI, Double> param) {
+                return new TableCell<SMI, Double>() {
+                    @Override
+                    protected void updateItem(Double item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (item == null || empty) {
+                            setText(null);
+                            setStyle("");
+                        } else setText(String.valueOf(item.intValue()));
+                    }
+                };
+            }
+        }); 
         SMICol.setCellValueFactory(new PropertyValueFactory<>("SMI"));
         table.setItems(list);
         table.setEditable(true);

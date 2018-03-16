@@ -54,7 +54,6 @@ public class Controller implements Initializable {
     private TreeView<String> treeView;
     private HashMap<String, Tab> openFPTabs = new HashMap<>();
     private HashMap<String, Tab> openFileTabs = new HashMap<>();
-    private Set<String> openCodeTabs = new HashSet<>();
     private Tab smiTab;
 
     /**
@@ -402,7 +401,7 @@ public class Controller implements Initializable {
     public void openTab(String tabName) {
         // Bad string manipulation I know, probably need to change this all later
         System.out.println(tabName);
-        if (openFPTabs.containsKey(tabName) || openCodeTabs.contains(tabName)) {
+        if (openFPTabs.containsKey(tabName) || openFileTabs.containsKey(tabName)){
             return;
         }
         if (tabName.startsWith("Function Points -")) {
@@ -413,8 +412,20 @@ public class Controller implements Initializable {
                 System.out.println(data.getName());
                 addTab(data, false);
             }
+        //not many java files to iter    
         } else if (tabName.endsWith(".java")) {
-            System.out.println("HELLLO?");
+            Integer indx = null;
+            int size = Context.getInstance().getProjectObject().projCode.size();
+            for(int j=0; j!= size; j++){
+                if(Context.getInstance().getProjectObject().projCode.get(j).getName().equalsIgnoreCase(tabName))
+                    indx= j;
+            }            
+            if(indx != null){
+                System.out.println("indx: "+ indx);
+                System.out.println(Context.getInstance().getProjectObject().projCode.equals(tabName));
+                openCodeTab(new File(Context.getInstance().getProjectObject().projCode.get(indx).getPath()));
+                
+            }
         } else if (tabName.equals("SMI") && smiTab == null) {
             openSMI();
         }
@@ -426,6 +437,8 @@ public class Controller implements Initializable {
             tab = smiTab;
         } else if (tabName.startsWith("Function Points -")) {
             tab = openFPTabs.get(tabName);
+        } else if (tabName.endsWith(".java")){
+            tab = openFileTabs.get(tabName);
         }
         if (tab == null) {
             return;
