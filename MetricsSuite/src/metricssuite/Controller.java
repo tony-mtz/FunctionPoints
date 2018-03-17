@@ -26,6 +26,7 @@ import utils.TextFieldTreeCellImpl;
 
 import java.io.*;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -278,6 +279,8 @@ public class Controller implements Initializable {
     }
     
     public void openCodeTab(File file) {
+        
+        DecimalFormat df = new DecimalFormat("#.###");
         try {
             if(openFileTabs.containsKey(file.getName()))
                 return;
@@ -301,12 +304,12 @@ public class Controller implements Initializable {
             fileText += "   Total operands: " +hal.getTotalOperands() + "\n";
             fileText += "   Program length (N) = " +hal.getProgLength() + "\n";
             fileText += "   Program vocabulary (n) = " +hal.getVocabulary()+ "\n";
-            fileText += "   Volume = "+ hal.getVolume() + "\n";
-            fileText += "   Difficulty = "+ hal.getDifficulty() + "\n";
-            fileText += "   Effort = " + hal.getEffort() + " Time = " + hal.getTime();
-            fileText += "(" + hal.getTimeMin() + " minutes or " + hal.getTimeHour() + " hours or ";
-            fileText += "??? person months ) \n";
-            fileText += "   Bugs expected = " + hal.getBugsExpected() + "\n \n \n \n";
+            fileText += "   Volume = "+ df.format(hal.getVolume()) + "\n";
+            fileText += "   Difficulty = "+ df.format(hal.getDifficulty()) + "\n";
+            fileText += "   Effort = " + df.format(hal.getEffort()) + " Time = " + df.format(hal.getTime());
+            fileText += "(" + df.format(hal.getTimeMin()) + " minutes or " + df.format(hal.getTimeHour()) + " hours or ";
+            fileText +=  df.format(hal.getPersonMonths()) + " person months ) \n";
+            fileText += "   Bugs expected = " + df.format(hal.getBugsExpected()) + "\n \n \n \n";
             
             fileText += "McCabe's Cyclomatic Complexity: \n";
             fileText += hal.getMc();

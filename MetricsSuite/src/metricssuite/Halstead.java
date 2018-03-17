@@ -128,7 +128,7 @@ public class Halstead {
         time = effort/18;
         timeMin = time/60;
         timeHour = timeMin/60;
-        //personMonths = ?
+        personMonths = timeHour/140;
         bugsExpected = volume/3000;
         for(String s: JavaMetrics.mccabeValues){
             mc += "   " + s + "\n";

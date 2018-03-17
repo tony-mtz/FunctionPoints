@@ -5,7 +5,6 @@
  */
 package metricssuite;
 
-import com.sun.java_cup.internal.runtime.Symbol;
 import java.io.IOException;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -24,10 +23,7 @@ import org.antlr.runtime.RecognitionException;
  */
 public class JavaMetrics {
     static Set<String> uniqueKeywords = new LinkedHashSet<String>();
-    static Set<String> uniqueIdentifiers= new LinkedHashSet<String>();
-    
-    static Set<Symbol> uIDSym=new LinkedHashSet<Symbol>();
-    
+    static Set<String> uniqueIdentifiers= new LinkedHashSet<String>();    
     static Set<String> uniqueConstants = new LinkedHashSet<String>();
     static Set<String> uniqueSpecial = new LinkedHashSet<String>();
     
@@ -36,7 +32,6 @@ public class JavaMetrics {
     public static void reset(){
         uniqueKeywords.clear();
         uniqueIdentifiers.clear();
-        uIDSym.clear();
         uniqueConstants.clear();
         uniqueSpecial.clear();
         mccabeValues.clear();
