@@ -279,7 +279,7 @@ public class Controller implements Initializable {
     }
     
     public void openCodeTab(File file) {
-        
+        double calc = 0;
         DecimalFormat df = new DecimalFormat("#.###");
         try {
             if(openFileTabs.containsKey(file.getName()))
@@ -295,8 +295,10 @@ public class Controller implements Initializable {
             String fileText = "File name: " + name + "\n";
             fileText += "File length in bytes: "+ file.length() +"\n";
             fileText += "File white space : "+hal.getWhiteSpace() +"\n";
-            fileText += "File comment space in bytes: ?" + "\n";
-            fileText += "Comment percentage of file: " + "\n";
+            fileText += "File comment space in bytes: " +hal.getCommentSpaceBytes() + "\n";
+            calc = (double)hal.getCommentSpaceBytes()/file.length() * 100;
+            
+            fileText += "Comment percentage of file: " + df.format(calc) +"% \n";
             fileText += "Halstead metrics: \n";
             fileText += "   Unique operators: " +hal.getUniqueOperators() + "\n";
             fileText += "   Unique operands: " +hal.getUniqueOperands() + "\n";

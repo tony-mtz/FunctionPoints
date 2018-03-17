@@ -33,6 +33,7 @@ public class Halstead {
     private double timeMin = 0;
     private double timeHour = 0;
     private double personMonths = 0;
+    private double bugsExpected =0;
     private String mc = "";
 
     public String getMc() {
@@ -49,8 +50,7 @@ public class Halstead {
 
     public double getPersonMonths() {
         return personMonths;
-    }
-    private double bugsExpected =0;
+    }    
     
     public int getTotalOperators() {
         return totalOperators;
@@ -122,8 +122,8 @@ public class Halstead {
         totalOperands = parser.identcount;
         progLength = totalOperands + totalOperators;
         vocabulary = uniqueOperands + uniqueOperators;
-        volume = progLength * (Math.log(vocabulary)/Math.log(2));
-        difficulty = (uniqueOperators/2) * ( totalOperands/uniqueOperands);
+        volume = progLength * (Math.log((double)vocabulary)/Math.log(2));
+        difficulty = ((double)uniqueOperators/2) * ( (double)totalOperands/uniqueOperands);
         effort = difficulty * volume;
         time = effort/18;
         timeMin = time/60;
@@ -133,6 +133,18 @@ public class Halstead {
         for(String s: JavaMetrics.mccabeValues){
             mc += "   " + s + "\n";
         }
+        
+        String out ="";
+        //get bytes of all comments
+        //traverse tokens
+        for (int index = 0; index < tokens.size(); index++){
+            String l = tokens.toString(index, index);
+            if(l.contains("//") || l.contains("/*"))
+            out +=l;
+            //System.out.println(l);
+        }
+        //System.out.println(out);
+        commentSpaceBytes = out.getBytes().length;   
         
     }
     
