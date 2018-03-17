@@ -74,7 +74,7 @@ public class SMITabController implements Initializable {
             Context.getInstance().setSaved(false);
         });
         TotalCol.setCellValueFactory(new PropertyValueFactory<>("total"));
-        TotalCol.setCellFactory(new Callback<>() {
+        TotalCol.setCellFactory(new Callback<TableColumn<SMI, Double>, TableCell<SMI, Double>>() {
             @Override
             public TableCell call(TableColumn<SMI, Double> param) {
                 return new TableCell<SMI, Double>() {

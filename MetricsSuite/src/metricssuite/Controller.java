@@ -364,6 +364,7 @@ public class Controller implements Initializable {
 
     public void closeTabs() {
         System.out.println("about to try close tabs...");
+        openFPTabs.clear();
         if (tabPane != null) {
             System.out.println("closing some open tabs :) .....");
             System.out.println(tabPane.getTabs().size());
