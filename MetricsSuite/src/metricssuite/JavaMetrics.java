@@ -8,8 +8,6 @@ package metricssuite;
 import java.io.IOException;
 import java.util.LinkedHashSet;
 import java.util.Set;
-//import jdk.nashorn.internal.ir.Symbol;
-
 
 import java.io.IOException;
 import org.antlr.runtime.ANTLRFileStream;
