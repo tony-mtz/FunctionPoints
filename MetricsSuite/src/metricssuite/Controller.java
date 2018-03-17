@@ -294,7 +294,7 @@ public class Controller implements Initializable {
             fileText += "   Effort = " + hal.getEffort() + " Time = " + hal.getTime();
             fileText += "(" + hal.getTimeMin() + " minutes or " + hal.getTimeHour() + " hours or ";
             fileText += "??? person months ) \n";
-            fileText += "Bugs expected = " + hal.getBugsExpected() + "\n \n \n \n";
+            fileText += "   Bugs expected = " + hal.getBugsExpected() + "\n \n \n \n";
             
             fileText += "McCabe's Cyclomatic Complexity: \n";
             fileText += hal.getMc();
@@ -466,6 +466,9 @@ public class Controller implements Initializable {
             if (tabName.startsWith("Function Points -")) {
                 deleteFPTab(tabName);
                 return true;
+            }else if(tabName.endsWith(".java")){
+                deleteCodeTab(tabName);
+                return true;
             }
         }
         return false;
@@ -474,5 +477,10 @@ public class Controller implements Initializable {
     private void deleteFPTab(String tabName) {
         closeOpenTab(tabName);
         Context.getInstance().getProjectObject().removeDataByName(tabName.substring(18));
+    }
+    
+    private void deleteCodeTab(String tabName) {
+        closeOpenTab(tabName);
+        Context.getInstance().getProjectObject().removeCodeByName(tabName);
     }
 }

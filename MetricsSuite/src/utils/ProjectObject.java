@@ -99,4 +99,18 @@ public class ProjectObject {
         if (removeData != null)
             projData.remove(removeData);
     }
+    
+    public void removeCodeByName(String name) {
+        Integer indx = null;
+        int size = projCode.size();
+        for(int j=0; j!= size; j++){
+            if(projCode.get(j).getName().equalsIgnoreCase(name))
+                indx= j;
+        }   
+        ProjectCode projC = null;
+        if(indx != null){
+            projC = projCode.get(indx);
+            projCode.remove(projC);
+        }
+    }
 }
