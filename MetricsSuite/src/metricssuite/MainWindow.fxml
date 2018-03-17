@@ -39,6 +39,7 @@
       <Menu id="mProjectCode" mnemonicParsing="false" text="Project code">
          <items>
             <MenuItem id="mAddCode" mnemonicParsing="false" onAction="#addCode" text="Add code" />
+            <MenuItem id="mprojectCodeStatistics" mnemonicParsing="false" onAction="#projectCodeStatistics" text="Project code statistics" />
          </items>
       </Menu>
         <Menu id="mHelp" mnemonicParsing="false" text="Help">

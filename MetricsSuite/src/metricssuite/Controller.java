@@ -226,10 +226,10 @@ public class Controller implements Initializable {
                     addTab(projFile.projData.get(i), true);
                 }
                 
-                int sizeCode = Context.getInstance().getProjectObject().projCode.size();
-                for (int i = 0; i < sizeCode; i++) {
-                    openCodeTab(new File(projFile.projCode.get(i).getPath()));
-                }
+//                int sizeCode = Context.getInstance().getProjectObject().projCode.size();
+//                for (int i = 0; i < sizeCode; i++) {
+//                    openCodeTab(new File(projFile.projCode.get(i).getPath()));
+//                }
                 
                 Context.getInstance().setSaved(true);
                 System.out.println("End of load size data: " + Context.getInstance().getProjectObject().productName);
@@ -261,9 +261,18 @@ public class Controller implements Initializable {
             for( File file : selectedFile){
                 ProjectCode projCode = new ProjectCode(file.toString(), file.getName());
                 Context.getInstance().getProjectObject().projCode.add(projCode);
-                openCodeTab(file);
+                //openCodeTab(file);
                 treeView.getRoot().getChildren().add(new TreeItem<>(projCode.getName()));
             }
+        }
+    }
+    
+    @FXML
+    public void projectCodeStatistics(ActionEvent event){
+        int size = Context.getInstance().getProjectObject().projCode.size();
+        for(int i=0; i!= size; i++){
+            openCodeTab(new File(Context.getInstance().getProjectObject().projCode.get(i).getPath()));
+            
         }
     }
     
