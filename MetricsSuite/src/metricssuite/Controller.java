@@ -198,6 +198,7 @@ public class Controller implements Initializable {
         //get file from file chooser
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Project");
+        openFileTabs.clear();
 
         //extension filter
         FileChooser.ExtensionFilter extentionFilter = new FileChooser.ExtensionFilter("ms files (*.ms)", "*.ms");
@@ -278,6 +279,8 @@ public class Controller implements Initializable {
     
     public void openCodeTab(File file) {
         try {
+            if(openFileTabs.containsKey(file.getName()))
+                return;
             String name = file.getName();
             
             TextArea textArea = new TextArea();
@@ -448,6 +451,7 @@ public class Controller implements Initializable {
             tab = openFPTabs.get(tabName);
         } else if (tabName.endsWith(".java")){
             tab = openFileTabs.get(tabName);
+            openFileTabs.remove(tabName);
         }
         if (tab == null) {
             return;
