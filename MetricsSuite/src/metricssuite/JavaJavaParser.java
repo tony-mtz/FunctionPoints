@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 /media/tony/disk2/_git/cs543/JavaJava.g 2018-03-17 13:13:08
+// $ANTLR 3.5.1 /media/tony/disk2/_git/cs543/JavaJava.g 2018-03-20 20:46:17
 
 package metricssuite;
 
@@ -234,7 +234,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "compilationUnit"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:82:1: compilationUnit : ( annotations ( packageDeclaration ( importDeclaration )* ( typeDeclaration )* | classOrInterfaceDeclaration ( typeDeclaration )* ) | ( packageDeclaration )? ( importDeclaration )* ( typeDeclaration )* );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:83:1: compilationUnit : ( annotations ( packageDeclaration ( importDeclaration )* ( typeDeclaration )* | classOrInterfaceDeclaration ( typeDeclaration )* ) | ( packageDeclaration )? ( importDeclaration )* ( typeDeclaration )* );
 	public final JavaJavaParser.compilationUnit_return compilationUnit() throws RecognitionException {
 		JavaJavaParser.compilationUnit_return retval = new JavaJavaParser.compilationUnit_return();
 		retval.start = input.LT(1);
@@ -256,7 +256,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 1) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:83:5: ( annotations ( packageDeclaration ( importDeclaration )* ( typeDeclaration )* | classOrInterfaceDeclaration ( typeDeclaration )* ) | ( packageDeclaration )? ( importDeclaration )* ( typeDeclaration )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:84:5: ( annotations ( packageDeclaration ( importDeclaration )* ( typeDeclaration )* | classOrInterfaceDeclaration ( typeDeclaration )* ) | ( packageDeclaration )? ( importDeclaration )* ( typeDeclaration )* )
 			int alt8=2;
 			int LA8_0 = input.LA(1);
 			if ( (LA8_0==54) ) {
@@ -282,7 +282,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt8) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:83:9: annotations ( packageDeclaration ( importDeclaration )* ( typeDeclaration )* | classOrInterfaceDeclaration ( typeDeclaration )* )
+					// /media/tony/disk2/_git/cs543/JavaJava.g:84:9: annotations ( packageDeclaration ( importDeclaration )* ( typeDeclaration )* | classOrInterfaceDeclaration ( typeDeclaration )* )
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -293,7 +293,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, annotations1.getTree());
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:84:9: ( packageDeclaration ( importDeclaration )* ( typeDeclaration )* | classOrInterfaceDeclaration ( typeDeclaration )* )
+					// /media/tony/disk2/_git/cs543/JavaJava.g:85:9: ( packageDeclaration ( importDeclaration )* ( typeDeclaration )* | classOrInterfaceDeclaration ( typeDeclaration )* )
 					int alt4=2;
 					int LA4_0 = input.LA(1);
 					if ( (LA4_0==88) ) {
@@ -312,7 +312,7 @@ public class JavaJavaParser extends Parser {
 
 					switch (alt4) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:84:13: packageDeclaration ( importDeclaration )* ( typeDeclaration )*
+							// /media/tony/disk2/_git/cs543/JavaJava.g:85:13: packageDeclaration ( importDeclaration )* ( typeDeclaration )*
 							{
 							pushFollow(FOLLOW_packageDeclaration_in_compilationUnit87);
 							packageDeclaration2=packageDeclaration();
@@ -320,7 +320,7 @@ public class JavaJavaParser extends Parser {
 							if (state.failed) return retval;
 							if ( state.backtracking==0 ) adaptor.addChild(root_0, packageDeclaration2.getTree());
 
-							// /media/tony/disk2/_git/cs543/JavaJava.g:84:32: ( importDeclaration )*
+							// /media/tony/disk2/_git/cs543/JavaJava.g:85:32: ( importDeclaration )*
 							loop1:
 							while (true) {
 								int alt1=2;
@@ -331,7 +331,7 @@ public class JavaJavaParser extends Parser {
 
 								switch (alt1) {
 								case 1 :
-									// /media/tony/disk2/_git/cs543/JavaJava.g:84:32: importDeclaration
+									// /media/tony/disk2/_git/cs543/JavaJava.g:85:32: importDeclaration
 									{
 									pushFollow(FOLLOW_importDeclaration_in_compilationUnit89);
 									importDeclaration3=importDeclaration();
@@ -347,7 +347,7 @@ public class JavaJavaParser extends Parser {
 								}
 							}
 
-							// /media/tony/disk2/_git/cs543/JavaJava.g:84:51: ( typeDeclaration )*
+							// /media/tony/disk2/_git/cs543/JavaJava.g:85:51: ( typeDeclaration )*
 							loop2:
 							while (true) {
 								int alt2=2;
@@ -358,7 +358,7 @@ public class JavaJavaParser extends Parser {
 
 								switch (alt2) {
 								case 1 :
-									// /media/tony/disk2/_git/cs543/JavaJava.g:84:51: typeDeclaration
+									// /media/tony/disk2/_git/cs543/JavaJava.g:85:51: typeDeclaration
 									{
 									pushFollow(FOLLOW_typeDeclaration_in_compilationUnit92);
 									typeDeclaration4=typeDeclaration();
@@ -377,7 +377,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:85:13: classOrInterfaceDeclaration ( typeDeclaration )*
+							// /media/tony/disk2/_git/cs543/JavaJava.g:86:13: classOrInterfaceDeclaration ( typeDeclaration )*
 							{
 							pushFollow(FOLLOW_classOrInterfaceDeclaration_in_compilationUnit107);
 							classOrInterfaceDeclaration5=classOrInterfaceDeclaration();
@@ -385,7 +385,7 @@ public class JavaJavaParser extends Parser {
 							if (state.failed) return retval;
 							if ( state.backtracking==0 ) adaptor.addChild(root_0, classOrInterfaceDeclaration5.getTree());
 
-							// /media/tony/disk2/_git/cs543/JavaJava.g:85:41: ( typeDeclaration )*
+							// /media/tony/disk2/_git/cs543/JavaJava.g:86:41: ( typeDeclaration )*
 							loop3:
 							while (true) {
 								int alt3=2;
@@ -396,7 +396,7 @@ public class JavaJavaParser extends Parser {
 
 								switch (alt3) {
 								case 1 :
-									// /media/tony/disk2/_git/cs543/JavaJava.g:85:41: typeDeclaration
+									// /media/tony/disk2/_git/cs543/JavaJava.g:86:41: typeDeclaration
 									{
 									pushFollow(FOLLOW_typeDeclaration_in_compilationUnit109);
 									typeDeclaration6=typeDeclaration();
@@ -420,12 +420,12 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:87:9: ( packageDeclaration )? ( importDeclaration )* ( typeDeclaration )*
+					// /media/tony/disk2/_git/cs543/JavaJava.g:88:9: ( packageDeclaration )? ( importDeclaration )* ( typeDeclaration )*
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:87:9: ( packageDeclaration )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:88:9: ( packageDeclaration )?
 					int alt5=2;
 					int LA5_0 = input.LA(1);
 					if ( (LA5_0==88) ) {
@@ -433,7 +433,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt5) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:87:9: packageDeclaration
+							// /media/tony/disk2/_git/cs543/JavaJava.g:88:9: packageDeclaration
 							{
 							pushFollow(FOLLOW_packageDeclaration_in_compilationUnit130);
 							packageDeclaration7=packageDeclaration();
@@ -446,7 +446,7 @@ public class JavaJavaParser extends Parser {
 
 					}
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:87:29: ( importDeclaration )*
+					// /media/tony/disk2/_git/cs543/JavaJava.g:88:29: ( importDeclaration )*
 					loop6:
 					while (true) {
 						int alt6=2;
@@ -457,7 +457,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt6) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:87:29: importDeclaration
+							// /media/tony/disk2/_git/cs543/JavaJava.g:88:29: importDeclaration
 							{
 							pushFollow(FOLLOW_importDeclaration_in_compilationUnit133);
 							importDeclaration8=importDeclaration();
@@ -473,7 +473,7 @@ public class JavaJavaParser extends Parser {
 						}
 					}
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:87:48: ( typeDeclaration )*
+					// /media/tony/disk2/_git/cs543/JavaJava.g:88:48: ( typeDeclaration )*
 					loop7:
 					while (true) {
 						int alt7=2;
@@ -484,7 +484,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt7) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:87:48: typeDeclaration
+							// /media/tony/disk2/_git/cs543/JavaJava.g:88:48: typeDeclaration
 							{
 							pushFollow(FOLLOW_typeDeclaration_in_compilationUnit136);
 							typeDeclaration9=typeDeclaration();
@@ -534,7 +534,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "packageDeclaration"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:90:1: packageDeclaration : 'package' qualifiedName ';' ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:91:1: packageDeclaration : 'package' qualifiedName ';' ;
 	public final JavaJavaParser.packageDeclaration_return packageDeclaration() throws RecognitionException {
 		JavaJavaParser.packageDeclaration_return retval = new JavaJavaParser.packageDeclaration_return();
 		retval.start = input.LT(1);
@@ -552,8 +552,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 2) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:91:5: ( 'package' qualifiedName ';' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:91:9: 'package' qualifiedName ';'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:92:5: ( 'package' qualifiedName ';' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:92:9: 'package' qualifiedName ';'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -610,7 +610,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "importDeclaration"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:94:1: importDeclaration : 'import' ( 'static' )? qualifiedName ( '.' '*' )? ';' ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:95:1: importDeclaration : 'import' ( 'static' )? qualifiedName ( '.' '*' )? ';' ;
 	public final JavaJavaParser.importDeclaration_return importDeclaration() throws RecognitionException {
 		JavaJavaParser.importDeclaration_return retval = new JavaJavaParser.importDeclaration_return();
 		retval.start = input.LT(1);
@@ -634,8 +634,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 3) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:95:5: ( 'import' ( 'static' )? qualifiedName ( '.' '*' )? ';' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:95:9: 'import' ( 'static' )? qualifiedName ( '.' '*' )? ';'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:96:5: ( 'import' ( 'static' )? qualifiedName ( '.' '*' )? ';' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:96:9: 'import' ( 'static' )? qualifiedName ( '.' '*' )? ';'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -647,7 +647,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {importKWCount++;}
-			// /media/tony/disk2/_git/cs543/JavaJava.g:95:37: ( 'static' )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:96:37: ( 'static' )?
 			int alt9=2;
 			int LA9_0 = input.LA(1);
 			if ( (LA9_0==94) ) {
@@ -655,7 +655,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt9) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:95:37: 'static'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:96:37: 'static'
 					{
 					string_literal14=(Token)match(input,94,FOLLOW_94_in_importDeclaration190); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -675,7 +675,7 @@ public class JavaJavaParser extends Parser {
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, qualifiedName15.getTree());
 
 			if ( state.backtracking==0 ) {importIDCount++;}
-			// /media/tony/disk2/_git/cs543/JavaJava.g:95:80: ( '.' '*' )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:96:80: ( '.' '*' )?
 			int alt10=2;
 			int LA10_0 = input.LA(1);
 			if ( (LA10_0==43) ) {
@@ -683,7 +683,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt10) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:95:81: '.' '*'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:96:81: '.' '*'
 					{
 					char_literal16=(Token)match(input,43,FOLLOW_43_in_importDeclaration198); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -743,7 +743,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "typeDeclaration"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:98:1: typeDeclaration : ( classOrInterfaceDeclaration | ';' );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:99:1: typeDeclaration : ( classOrInterfaceDeclaration | ';' );
 	public final JavaJavaParser.typeDeclaration_return typeDeclaration() throws RecognitionException {
 		JavaJavaParser.typeDeclaration_return retval = new JavaJavaParser.typeDeclaration_return();
 		retval.start = input.LT(1);
@@ -759,7 +759,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 4) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:99:5: ( classOrInterfaceDeclaration | ';' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:100:5: ( classOrInterfaceDeclaration | ';' )
 			int alt11=2;
 			int LA11_0 = input.LA(1);
 			if ( (LA11_0==ENUM||LA11_0==54||LA11_0==59||LA11_0==66||LA11_0==74||LA11_0==83||(LA11_0 >= 89 && LA11_0 <= 91)||(LA11_0 >= 94 && LA11_0 <= 95)) ) {
@@ -778,7 +778,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt11) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:99:9: classOrInterfaceDeclaration
+					// /media/tony/disk2/_git/cs543/JavaJava.g:100:9: classOrInterfaceDeclaration
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -792,7 +792,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:100:9: ';'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:101:9: ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -838,7 +838,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "classOrInterfaceDeclaration"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:103:1: classOrInterfaceDeclaration : classOrInterfaceModifiers ( classDeclaration | interfaceDeclaration ) ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:104:1: classOrInterfaceDeclaration : classOrInterfaceModifiers ( classDeclaration | interfaceDeclaration ) ;
 	public final JavaJavaParser.classOrInterfaceDeclaration_return classOrInterfaceDeclaration() throws RecognitionException {
 		JavaJavaParser.classOrInterfaceDeclaration_return retval = new JavaJavaParser.classOrInterfaceDeclaration_return();
 		retval.start = input.LT(1);
@@ -854,8 +854,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 5) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:104:5: ( classOrInterfaceModifiers ( classDeclaration | interfaceDeclaration ) )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:104:9: classOrInterfaceModifiers ( classDeclaration | interfaceDeclaration )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:105:5: ( classOrInterfaceModifiers ( classDeclaration | interfaceDeclaration ) )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:105:9: classOrInterfaceModifiers ( classDeclaration | interfaceDeclaration )
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -866,7 +866,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, classOrInterfaceModifiers21.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:104:35: ( classDeclaration | interfaceDeclaration )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:105:35: ( classDeclaration | interfaceDeclaration )
 			int alt12=2;
 			int LA12_0 = input.LA(1);
 			if ( (LA12_0==ENUM||LA12_0==66) ) {
@@ -885,7 +885,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt12) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:104:36: classDeclaration
+					// /media/tony/disk2/_git/cs543/JavaJava.g:105:36: classDeclaration
 					{
 					pushFollow(FOLLOW_classDeclaration_in_classOrInterfaceDeclaration270);
 					classDeclaration22=classDeclaration();
@@ -896,7 +896,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:104:55: interfaceDeclaration
+					// /media/tony/disk2/_git/cs543/JavaJava.g:105:55: interfaceDeclaration
 					{
 					pushFollow(FOLLOW_interfaceDeclaration_in_classOrInterfaceDeclaration274);
 					interfaceDeclaration23=interfaceDeclaration();
@@ -941,7 +941,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "classOrInterfaceModifiers"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:107:1: classOrInterfaceModifiers : ( classOrInterfaceModifier )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:108:1: classOrInterfaceModifiers : ( classOrInterfaceModifier )* ;
 	public final JavaJavaParser.classOrInterfaceModifiers_return classOrInterfaceModifiers() throws RecognitionException {
 		JavaJavaParser.classOrInterfaceModifiers_return retval = new JavaJavaParser.classOrInterfaceModifiers_return();
 		retval.start = input.LT(1);
@@ -955,13 +955,13 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 6) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:108:5: ( ( classOrInterfaceModifier )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:108:9: ( classOrInterfaceModifier )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:109:5: ( ( classOrInterfaceModifier )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:109:9: ( classOrInterfaceModifier )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:108:9: ( classOrInterfaceModifier )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:109:9: ( classOrInterfaceModifier )*
 			loop13:
 			while (true) {
 				int alt13=2;
@@ -979,7 +979,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt13) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:108:9: classOrInterfaceModifier
+					// /media/tony/disk2/_git/cs543/JavaJava.g:109:9: classOrInterfaceModifier
 					{
 					pushFollow(FOLLOW_classOrInterfaceModifier_in_classOrInterfaceModifiers298);
 					classOrInterfaceModifier24=classOrInterfaceModifier();
@@ -1027,7 +1027,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "classOrInterfaceModifier"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:111:1: classOrInterfaceModifier : ( annotation | 'public' | 'protected' | 'private' | 'abstract' | 'static' | 'final' | 'strictfp' );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:112:1: classOrInterfaceModifier : ( annotation | 'public' | 'protected' | 'private' | 'abstract' | 'static' | 'final' | 'strictfp' );
 	public final JavaJavaParser.classOrInterfaceModifier_return classOrInterfaceModifier() throws RecognitionException {
 		JavaJavaParser.classOrInterfaceModifier_return retval = new JavaJavaParser.classOrInterfaceModifier_return();
 		retval.start = input.LT(1);
@@ -1055,7 +1055,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 7) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:112:5: ( annotation | 'public' | 'protected' | 'private' | 'abstract' | 'static' | 'final' | 'strictfp' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:113:5: ( annotation | 'public' | 'protected' | 'private' | 'abstract' | 'static' | 'final' | 'strictfp' )
 			int alt14=8;
 			switch ( input.LA(1) ) {
 			case 54:
@@ -1106,7 +1106,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt14) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:112:9: annotation
+					// /media/tony/disk2/_git/cs543/JavaJava.g:113:9: annotation
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -1120,7 +1120,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:113:9: 'public'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:114:9: 'public'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -1136,7 +1136,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:115:9: 'protected'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:116:9: 'protected'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -1151,7 +1151,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:116:9: 'private'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:117:9: 'private'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -1166,7 +1166,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:117:9: 'abstract'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:118:9: 'abstract'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -1181,7 +1181,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:118:9: 'static'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:119:9: 'static'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -1196,7 +1196,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:119:9: 'final'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:120:9: 'final'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -1211,7 +1211,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:120:9: 'strictfp'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:121:9: 'strictfp'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -1257,7 +1257,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "modifiers"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:123:1: modifiers : ( modifier )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:124:1: modifiers : ( modifier )* ;
 	public final JavaJavaParser.modifiers_return modifiers() throws RecognitionException {
 		JavaJavaParser.modifiers_return retval = new JavaJavaParser.modifiers_return();
 		retval.start = input.LT(1);
@@ -1271,13 +1271,13 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 8) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:124:5: ( ( modifier )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:124:9: ( modifier )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:125:5: ( ( modifier )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:125:9: ( modifier )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:124:9: ( modifier )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:125:9: ( modifier )*
 			loop15:
 			while (true) {
 				int alt15=2;
@@ -1295,7 +1295,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt15) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:124:9: modifier
+					// /media/tony/disk2/_git/cs543/JavaJava.g:125:9: modifier
 					{
 					pushFollow(FOLLOW_modifier_in_modifiers445);
 					modifier33=modifier();
@@ -1343,7 +1343,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "classDeclaration"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:127:1: classDeclaration : ( normalClassDeclaration | enumDeclaration );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:128:1: classDeclaration : ( normalClassDeclaration | enumDeclaration );
 	public final JavaJavaParser.classDeclaration_return classDeclaration() throws RecognitionException {
 		JavaJavaParser.classDeclaration_return retval = new JavaJavaParser.classDeclaration_return();
 		retval.start = input.LT(1);
@@ -1358,7 +1358,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 9) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:128:5: ( normalClassDeclaration | enumDeclaration )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:129:5: ( normalClassDeclaration | enumDeclaration )
 			int alt16=2;
 			int LA16_0 = input.LA(1);
 			if ( (LA16_0==66) ) {
@@ -1377,7 +1377,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt16) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:128:9: normalClassDeclaration
+					// /media/tony/disk2/_git/cs543/JavaJava.g:129:9: normalClassDeclaration
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -1391,7 +1391,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:129:9: enumDeclaration
+					// /media/tony/disk2/_git/cs543/JavaJava.g:130:9: enumDeclaration
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -1436,7 +1436,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "normalClassDeclaration"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:132:1: normalClassDeclaration : 'class' Identifier ( typeParameters )? ( 'extends' type )? ( 'implements' typeList )? classBody ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:133:1: normalClassDeclaration : 'class' Identifier ( typeParameters )? ( 'extends' type )? ( 'implements' typeList )? classBody ;
 	public final JavaJavaParser.normalClassDeclaration_return normalClassDeclaration() throws RecognitionException {
 		JavaJavaParser.normalClassDeclaration_return retval = new JavaJavaParser.normalClassDeclaration_return();
 		retval.start = input.LT(1);
@@ -1461,8 +1461,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 10) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:133:5: ( 'class' Identifier ( typeParameters )? ( 'extends' type )? ( 'implements' typeList )? classBody )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:133:9: 'class' Identifier ( typeParameters )? ( 'extends' type )? ( 'implements' typeList )? classBody
+			// /media/tony/disk2/_git/cs543/JavaJava.g:134:5: ( 'class' Identifier ( typeParameters )? ( 'extends' type )? ( 'implements' typeList )? classBody )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:134:9: 'class' Identifier ( typeParameters )? ( 'extends' type )? ( 'implements' typeList )? classBody
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -1481,7 +1481,7 @@ public class JavaJavaParser extends Parser {
 
 			if ( state.backtracking==0 ) { className=(Identifier37!=null?Identifier37.getText():null); classCount++;}
 			if ( state.backtracking==0 ) {keywordCount++; JavaMetrics.uniqueKeywords.add("class"); id((Identifier37!=null?Identifier37.getText():null));}
-			// /media/tony/disk2/_git/cs543/JavaJava.g:133:153: ( typeParameters )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:134:153: ( typeParameters )?
 			int alt17=2;
 			int LA17_0 = input.LA(1);
 			if ( (LA17_0==49) ) {
@@ -1489,7 +1489,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt17) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:133:153: typeParameters
+					// /media/tony/disk2/_git/cs543/JavaJava.g:134:153: typeParameters
 					{
 					pushFollow(FOLLOW_typeParameters_in_normalClassDeclaration505);
 					typeParameters38=typeParameters();
@@ -1502,7 +1502,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:134:9: ( 'extends' type )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:135:9: ( 'extends' type )?
 			int alt18=2;
 			int LA18_0 = input.LA(1);
 			if ( (LA18_0==72) ) {
@@ -1510,7 +1510,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt18) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:134:10: 'extends' type
+					// /media/tony/disk2/_git/cs543/JavaJava.g:135:10: 'extends' type
 					{
 					string_literal39=(Token)match(input,72,FOLLOW_72_in_normalClassDeclaration517); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -1530,7 +1530,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:135:9: ( 'implements' typeList )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:136:9: ( 'implements' typeList )?
 			int alt19=2;
 			int LA19_0 = input.LA(1);
 			if ( (LA19_0==79) ) {
@@ -1538,7 +1538,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt19) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:135:10: 'implements' typeList
+					// /media/tony/disk2/_git/cs543/JavaJava.g:136:10: 'implements' typeList
 					{
 					string_literal41=(Token)match(input,79,FOLLOW_79_in_normalClassDeclaration534); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -1596,7 +1596,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "typeParameters"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:139:1: typeParameters : '<' typeParameter ( ',' typeParameter )* '>' ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:140:1: typeParameters : '<' typeParameter ( ',' typeParameter )* '>' ;
 	public final JavaJavaParser.typeParameters_return typeParameters() throws RecognitionException {
 		JavaJavaParser.typeParameters_return retval = new JavaJavaParser.typeParameters_return();
 		retval.start = input.LT(1);
@@ -1617,8 +1617,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 11) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:140:5: ( '<' typeParameter ( ',' typeParameter )* '>' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:140:9: '<' typeParameter ( ',' typeParameter )* '>'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:141:5: ( '<' typeParameter ( ',' typeParameter )* '>' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:141:9: '<' typeParameter ( ',' typeParameter )* '>'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -1636,7 +1636,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, typeParameter45.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:140:36: ( ',' typeParameter )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:141:36: ( ',' typeParameter )*
 			loop20:
 			while (true) {
 				int alt20=2;
@@ -1647,7 +1647,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt20) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:140:37: ',' typeParameter
+					// /media/tony/disk2/_git/cs543/JavaJava.g:141:37: ',' typeParameter
 					{
 					char_literal46=(Token)match(input,39,FOLLOW_39_in_typeParameters580); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -1709,7 +1709,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "typeParameter"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:143:1: typeParameter : Identifier ( 'extends' typeBound )? ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:144:1: typeParameter : Identifier ( 'extends' typeBound )? ;
 	public final JavaJavaParser.typeParameter_return typeParameter() throws RecognitionException {
 		JavaJavaParser.typeParameter_return retval = new JavaJavaParser.typeParameter_return();
 		retval.start = input.LT(1);
@@ -1727,8 +1727,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 12) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:144:5: ( Identifier ( 'extends' typeBound )? )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:144:9: Identifier ( 'extends' typeBound )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:145:5: ( Identifier ( 'extends' typeBound )? )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:145:9: Identifier ( 'extends' typeBound )?
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -1739,7 +1739,7 @@ public class JavaJavaParser extends Parser {
 			adaptor.addChild(root_0, Identifier49_tree);
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:144:19: ( 'extends' typeBound )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:145:19: ( 'extends' typeBound )?
 			int alt21=2;
 			int LA21_0 = input.LA(1);
 			if ( (LA21_0==72) ) {
@@ -1747,7 +1747,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt21) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:144:20: 'extends' typeBound
+					// /media/tony/disk2/_git/cs543/JavaJava.g:145:20: 'extends' typeBound
 					{
 					string_literal50=(Token)match(input,72,FOLLOW_72_in_typeParameter614); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -1799,7 +1799,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "typeBound"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:147:1: typeBound : type ( '&' type )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:148:1: typeBound : type ( '&' type )* ;
 	public final JavaJavaParser.typeBound_return typeBound() throws RecognitionException {
 		JavaJavaParser.typeBound_return retval = new JavaJavaParser.typeBound_return();
 		retval.start = input.LT(1);
@@ -1816,8 +1816,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 13) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:148:5: ( type ( '&' type )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:148:9: type ( '&' type )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:149:5: ( type ( '&' type )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:149:9: type ( '&' type )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -1828,7 +1828,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, type52.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:148:14: ( '&' type )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:149:14: ( '&' type )*
 			loop22:
 			while (true) {
 				int alt22=2;
@@ -1839,7 +1839,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt22) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:148:15: '&' type
+					// /media/tony/disk2/_git/cs543/JavaJava.g:149:15: '&' type
 					{
 					char_literal53=(Token)match(input,30,FOLLOW_30_in_typeBound649); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -1893,7 +1893,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "enumDeclaration"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:151:1: enumDeclaration : ENUM Identifier ( 'implements' typeList )? enumBody ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:152:1: enumDeclaration : ENUM Identifier ( 'implements' typeList )? enumBody ;
 	public final JavaJavaParser.enumDeclaration_return enumDeclaration() throws RecognitionException {
 		JavaJavaParser.enumDeclaration_return retval = new JavaJavaParser.enumDeclaration_return();
 		retval.start = input.LT(1);
@@ -1914,8 +1914,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 14) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:152:5: ( ENUM Identifier ( 'implements' typeList )? enumBody )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:152:9: ENUM Identifier ( 'implements' typeList )? enumBody
+			// /media/tony/disk2/_git/cs543/JavaJava.g:153:5: ( ENUM Identifier ( 'implements' typeList )? enumBody )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:153:9: ENUM Identifier ( 'implements' typeList )? enumBody
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -1932,7 +1932,7 @@ public class JavaJavaParser extends Parser {
 			adaptor.addChild(root_0, Identifier56_tree);
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:152:25: ( 'implements' typeList )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:153:25: ( 'implements' typeList )?
 			int alt23=2;
 			int LA23_0 = input.LA(1);
 			if ( (LA23_0==79) ) {
@@ -1940,7 +1940,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt23) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:152:26: 'implements' typeList
+					// /media/tony/disk2/_git/cs543/JavaJava.g:153:26: 'implements' typeList
 					{
 					string_literal57=(Token)match(input,79,FOLLOW_79_in_enumDeclaration677); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -1998,7 +1998,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "enumBody"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:155:1: enumBody : '{' ( enumConstants )? ( ',' )? ( enumBodyDeclarations )? '}' ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:156:1: enumBody : '{' ( enumConstants )? ( ',' )? ( enumBodyDeclarations )? '}' ;
 	public final JavaJavaParser.enumBody_return enumBody() throws RecognitionException {
 		JavaJavaParser.enumBody_return retval = new JavaJavaParser.enumBody_return();
 		retval.start = input.LT(1);
@@ -2019,8 +2019,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 15) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:156:5: ( '{' ( enumConstants )? ( ',' )? ( enumBodyDeclarations )? '}' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:156:9: '{' ( enumConstants )? ( ',' )? ( enumBodyDeclarations )? '}'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:157:5: ( '{' ( enumConstants )? ( ',' )? ( enumBodyDeclarations )? '}' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:157:9: '{' ( enumConstants )? ( ',' )? ( enumBodyDeclarations )? '}'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -2032,7 +2032,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("{");}
-			// /media/tony/disk2/_git/cs543/JavaJava.g:156:23: ( enumConstants )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:157:23: ( enumConstants )?
 			int alt24=2;
 			int LA24_0 = input.LA(1);
 			if ( (LA24_0==Identifier||LA24_0==54) ) {
@@ -2040,7 +2040,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt24) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:156:23: enumConstants
+					// /media/tony/disk2/_git/cs543/JavaJava.g:157:23: enumConstants
 					{
 					pushFollow(FOLLOW_enumConstants_in_enumBody708);
 					enumConstants61=enumConstants();
@@ -2053,7 +2053,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:156:38: ( ',' )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:157:38: ( ',' )?
 			int alt25=2;
 			int LA25_0 = input.LA(1);
 			if ( (LA25_0==39) ) {
@@ -2061,7 +2061,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt25) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:156:38: ','
+					// /media/tony/disk2/_git/cs543/JavaJava.g:157:38: ','
 					{
 					char_literal62=(Token)match(input,39,FOLLOW_39_in_enumBody711); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -2074,7 +2074,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:156:43: ( enumBodyDeclarations )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:157:43: ( enumBodyDeclarations )?
 			int alt26=2;
 			int LA26_0 = input.LA(1);
 			if ( (LA26_0==48) ) {
@@ -2082,7 +2082,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt26) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:156:43: enumBodyDeclarations
+					// /media/tony/disk2/_git/cs543/JavaJava.g:157:43: enumBodyDeclarations
 					{
 					pushFollow(FOLLOW_enumBodyDeclarations_in_enumBody714);
 					enumBodyDeclarations63=enumBodyDeclarations();
@@ -2134,7 +2134,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "enumConstants"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:159:1: enumConstants : enumConstant ( ',' enumConstant )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:160:1: enumConstants : enumConstant ( ',' enumConstant )* ;
 	public final JavaJavaParser.enumConstants_return enumConstants() throws RecognitionException {
 		JavaJavaParser.enumConstants_return retval = new JavaJavaParser.enumConstants_return();
 		retval.start = input.LT(1);
@@ -2151,8 +2151,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 16) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:160:5: ( enumConstant ( ',' enumConstant )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:160:9: enumConstant ( ',' enumConstant )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:161:5: ( enumConstant ( ',' enumConstant )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:161:9: enumConstant ( ',' enumConstant )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -2163,7 +2163,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, enumConstant65.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:160:22: ( ',' enumConstant )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:161:22: ( ',' enumConstant )*
 			loop27:
 			while (true) {
 				int alt27=2;
@@ -2178,7 +2178,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt27) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:160:23: ',' enumConstant
+					// /media/tony/disk2/_git/cs543/JavaJava.g:161:23: ',' enumConstant
 					{
 					char_literal66=(Token)match(input,39,FOLLOW_39_in_enumConstants741); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -2233,7 +2233,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "enumConstant"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:163:1: enumConstant : ( annotations )? Identifier ( arguments )? ( classBody )? ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:164:1: enumConstant : ( annotations )? Identifier ( arguments )? ( classBody )? ;
 	public final JavaJavaParser.enumConstant_return enumConstant() throws RecognitionException {
 		JavaJavaParser.enumConstant_return retval = new JavaJavaParser.enumConstant_return();
 		retval.start = input.LT(1);
@@ -2251,13 +2251,13 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 17) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:164:5: ( ( annotations )? Identifier ( arguments )? ( classBody )? )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:164:9: ( annotations )? Identifier ( arguments )? ( classBody )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:165:5: ( ( annotations )? Identifier ( arguments )? ( classBody )? )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:165:9: ( annotations )? Identifier ( arguments )? ( classBody )?
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:164:9: ( annotations )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:165:9: ( annotations )?
 			int alt28=2;
 			int LA28_0 = input.LA(1);
 			if ( (LA28_0==54) ) {
@@ -2265,7 +2265,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt28) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:164:9: annotations
+					// /media/tony/disk2/_git/cs543/JavaJava.g:165:9: annotations
 					{
 					pushFollow(FOLLOW_annotations_in_enumConstant770);
 					annotations68=annotations();
@@ -2284,7 +2284,7 @@ public class JavaJavaParser extends Parser {
 			adaptor.addChild(root_0, Identifier69_tree);
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:164:33: ( arguments )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:165:33: ( arguments )?
 			int alt29=2;
 			int LA29_0 = input.LA(1);
 			if ( (LA29_0==32) ) {
@@ -2292,7 +2292,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt29) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:164:33: arguments
+					// /media/tony/disk2/_git/cs543/JavaJava.g:165:33: arguments
 					{
 					pushFollow(FOLLOW_arguments_in_enumConstant775);
 					arguments70=arguments();
@@ -2305,7 +2305,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:164:44: ( classBody )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:165:44: ( classBody )?
 			int alt30=2;
 			int LA30_0 = input.LA(1);
 			if ( (LA30_0==108) ) {
@@ -2313,7 +2313,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt30) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:164:44: classBody
+					// /media/tony/disk2/_git/cs543/JavaJava.g:165:44: classBody
 					{
 					pushFollow(FOLLOW_classBody_in_enumConstant778);
 					classBody71=classBody();
@@ -2358,7 +2358,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "enumBodyDeclarations"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:167:1: enumBodyDeclarations : ';' ( classBodyDeclaration )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:168:1: enumBodyDeclarations : ';' ( classBodyDeclaration )* ;
 	public final JavaJavaParser.enumBodyDeclarations_return enumBodyDeclarations() throws RecognitionException {
 		JavaJavaParser.enumBodyDeclarations_return retval = new JavaJavaParser.enumBodyDeclarations_return();
 		retval.start = input.LT(1);
@@ -2374,8 +2374,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 18) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:168:5: ( ';' ( classBodyDeclaration )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:168:9: ';' ( classBodyDeclaration )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:169:5: ( ';' ( classBodyDeclaration )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:169:9: ';' ( classBodyDeclaration )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -2386,7 +2386,7 @@ public class JavaJavaParser extends Parser {
 			adaptor.addChild(root_0, char_literal72_tree);
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:168:13: ( classBodyDeclaration )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:169:13: ( classBodyDeclaration )*
 			loop31:
 			while (true) {
 				int alt31=2;
@@ -2397,7 +2397,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt31) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:168:14: classBodyDeclaration
+					// /media/tony/disk2/_git/cs543/JavaJava.g:169:14: classBodyDeclaration
 					{
 					pushFollow(FOLLOW_classBodyDeclaration_in_enumBodyDeclarations805);
 					classBodyDeclaration73=classBodyDeclaration();
@@ -2445,7 +2445,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "interfaceDeclaration"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:171:1: interfaceDeclaration : ( normalInterfaceDeclaration | annotationTypeDeclaration );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:172:1: interfaceDeclaration : ( normalInterfaceDeclaration | annotationTypeDeclaration );
 	public final JavaJavaParser.interfaceDeclaration_return interfaceDeclaration() throws RecognitionException {
 		JavaJavaParser.interfaceDeclaration_return retval = new JavaJavaParser.interfaceDeclaration_return();
 		retval.start = input.LT(1);
@@ -2460,7 +2460,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 19) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:172:5: ( normalInterfaceDeclaration | annotationTypeDeclaration )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:173:5: ( normalInterfaceDeclaration | annotationTypeDeclaration )
 			int alt32=2;
 			int LA32_0 = input.LA(1);
 			if ( (LA32_0==83) ) {
@@ -2479,7 +2479,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt32) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:172:9: normalInterfaceDeclaration
+					// /media/tony/disk2/_git/cs543/JavaJava.g:173:9: normalInterfaceDeclaration
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -2493,7 +2493,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:173:9: annotationTypeDeclaration
+					// /media/tony/disk2/_git/cs543/JavaJava.g:174:9: annotationTypeDeclaration
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -2538,7 +2538,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "normalInterfaceDeclaration"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:176:1: normalInterfaceDeclaration : 'interface' Identifier ( typeParameters )? ( 'extends' typeList )? interfaceBody ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:177:1: normalInterfaceDeclaration : 'interface' Identifier ( typeParameters )? ( 'extends' typeList )? interfaceBody ;
 	public final JavaJavaParser.normalInterfaceDeclaration_return normalInterfaceDeclaration() throws RecognitionException {
 		JavaJavaParser.normalInterfaceDeclaration_return retval = new JavaJavaParser.normalInterfaceDeclaration_return();
 		retval.start = input.LT(1);
@@ -2560,8 +2560,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 20) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:177:5: ( 'interface' Identifier ( typeParameters )? ( 'extends' typeList )? interfaceBody )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:177:9: 'interface' Identifier ( typeParameters )? ( 'extends' typeList )? interfaceBody
+			// /media/tony/disk2/_git/cs543/JavaJava.g:178:5: ( 'interface' Identifier ( typeParameters )? ( 'extends' typeList )? interfaceBody )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:178:9: 'interface' Identifier ( typeParameters )? ( 'extends' typeList )? interfaceBody
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -2580,7 +2580,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {id((Identifier77!=null?Identifier77.getText():null));}
-			// /media/tony/disk2/_git/cs543/JavaJava.g:177:118: ( typeParameters )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:178:118: ( typeParameters )?
 			int alt33=2;
 			int LA33_0 = input.LA(1);
 			if ( (LA33_0==49) ) {
@@ -2588,7 +2588,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt33) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:177:118: typeParameters
+					// /media/tony/disk2/_git/cs543/JavaJava.g:178:118: typeParameters
 					{
 					pushFollow(FOLLOW_typeParameters_in_normalInterfaceDeclaration871);
 					typeParameters78=typeParameters();
@@ -2601,7 +2601,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:177:134: ( 'extends' typeList )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:178:134: ( 'extends' typeList )?
 			int alt34=2;
 			int LA34_0 = input.LA(1);
 			if ( (LA34_0==72) ) {
@@ -2609,7 +2609,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt34) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:177:135: 'extends' typeList
+					// /media/tony/disk2/_git/cs543/JavaJava.g:178:135: 'extends' typeList
 					{
 					string_literal79=(Token)match(input,72,FOLLOW_72_in_normalInterfaceDeclaration875); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -2667,7 +2667,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "typeList"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:180:1: typeList : type ( ',' type )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:181:1: typeList : type ( ',' type )* ;
 	public final JavaJavaParser.typeList_return typeList() throws RecognitionException {
 		JavaJavaParser.typeList_return retval = new JavaJavaParser.typeList_return();
 		retval.start = input.LT(1);
@@ -2684,8 +2684,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 21) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:181:5: ( type ( ',' type )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:181:9: type ( ',' type )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:182:5: ( type ( ',' type )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:182:9: type ( ',' type )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -2696,7 +2696,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, type82.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:181:14: ( ',' type )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:182:14: ( ',' type )*
 			loop35:
 			while (true) {
 				int alt35=2;
@@ -2707,7 +2707,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt35) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:181:15: ',' type
+					// /media/tony/disk2/_git/cs543/JavaJava.g:182:15: ',' type
 					{
 					char_literal83=(Token)match(input,39,FOLLOW_39_in_typeList908); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -2762,7 +2762,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "classBody"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:184:1: classBody : '{' ( classBodyDeclaration )* '}' ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:185:1: classBody : '{' ( classBodyDeclaration )* '}' ;
 	public final JavaJavaParser.classBody_return classBody() throws RecognitionException {
 		JavaJavaParser.classBody_return retval = new JavaJavaParser.classBody_return();
 		retval.start = input.LT(1);
@@ -2780,8 +2780,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 22) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:185:5: ( '{' ( classBodyDeclaration )* '}' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:185:9: '{' ( classBodyDeclaration )* '}'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:186:5: ( '{' ( classBodyDeclaration )* '}' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:186:9: '{' ( classBodyDeclaration )* '}'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -2793,7 +2793,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("{");}
-			// /media/tony/disk2/_git/cs543/JavaJava.g:185:23: ( classBodyDeclaration )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:186:23: ( classBodyDeclaration )*
 			loop36:
 			while (true) {
 				int alt36=2;
@@ -2804,7 +2804,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt36) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:185:23: classBodyDeclaration
+					// /media/tony/disk2/_git/cs543/JavaJava.g:186:23: classBodyDeclaration
 					{
 					pushFollow(FOLLOW_classBodyDeclaration_in_classBody941);
 					classBodyDeclaration86=classBodyDeclaration();
@@ -2859,7 +2859,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "interfaceBody"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:188:1: interfaceBody : '{' ( interfaceBodyDeclaration )* '}' ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:189:1: interfaceBody : '{' ( interfaceBodyDeclaration )* '}' ;
 	public final JavaJavaParser.interfaceBody_return interfaceBody() throws RecognitionException {
 		JavaJavaParser.interfaceBody_return retval = new JavaJavaParser.interfaceBody_return();
 		retval.start = input.LT(1);
@@ -2877,8 +2877,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 23) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:189:5: ( '{' ( interfaceBodyDeclaration )* '}' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:189:9: '{' ( interfaceBodyDeclaration )* '}'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:190:5: ( '{' ( interfaceBodyDeclaration )* '}' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:190:9: '{' ( interfaceBodyDeclaration )* '}'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -2890,7 +2890,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("{");}
-			// /media/tony/disk2/_git/cs543/JavaJava.g:189:22: ( interfaceBodyDeclaration )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:190:22: ( interfaceBodyDeclaration )*
 			loop37:
 			while (true) {
 				int alt37=2;
@@ -2901,7 +2901,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt37) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:189:22: interfaceBodyDeclaration
+					// /media/tony/disk2/_git/cs543/JavaJava.g:190:22: interfaceBodyDeclaration
 					{
 					pushFollow(FOLLOW_interfaceBodyDeclaration_in_interfaceBody971);
 					interfaceBodyDeclaration89=interfaceBodyDeclaration();
@@ -2956,7 +2956,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "classBodyDeclaration"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:192:1: classBodyDeclaration : ( ';' | ( 'static' )? block | modifiers memberDecl );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:193:1: classBodyDeclaration : ( ';' | ( 'static' )? block | modifiers memberDecl );
 	public final JavaJavaParser.classBodyDeclaration_return classBodyDeclaration() throws RecognitionException {
 		JavaJavaParser.classBodyDeclaration_return retval = new JavaJavaParser.classBodyDeclaration_return();
 		retval.start = input.LT(1);
@@ -2976,7 +2976,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 24) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:193:5: ( ';' | ( 'static' )? block | modifiers memberDecl )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:194:5: ( ';' | ( 'static' )? block | modifiers memberDecl )
 			int alt39=3;
 			switch ( input.LA(1) ) {
 			case 48:
@@ -3051,7 +3051,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt39) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:193:9: ';'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:194:9: ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -3066,12 +3066,12 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:194:9: ( 'static' )? block
+					// /media/tony/disk2/_git/cs543/JavaJava.g:195:9: ( 'static' )? block
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:194:9: ( 'static' )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:195:9: ( 'static' )?
 					int alt38=2;
 					int LA38_0 = input.LA(1);
 					if ( (LA38_0==94) ) {
@@ -3079,7 +3079,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt38) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:194:9: 'static'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:195:9: 'static'
 							{
 							string_literal92=(Token)match(input,94,FOLLOW_94_in_classBodyDeclaration1006); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -3102,7 +3102,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:195:9: modifiers memberDecl
+					// /media/tony/disk2/_git/cs543/JavaJava.g:196:9: modifiers memberDecl
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -3153,7 +3153,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "memberDecl"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:198:1: memberDecl : ( genericMethodOrConstructorDecl | memberDeclaration | 'void' Identifier voidMethodDeclaratorRest | Identifier constructorDeclaratorRest | interfaceDeclaration | classDeclaration );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:199:1: memberDecl : ( genericMethodOrConstructorDecl | memberDeclaration | 'void' Identifier voidMethodDeclaratorRest | Identifier constructorDeclaratorRest | interfaceDeclaration | classDeclaration );
 	public final JavaJavaParser.memberDecl_return memberDecl() throws RecognitionException {
 		JavaJavaParser.memberDecl_return retval = new JavaJavaParser.memberDecl_return();
 		retval.start = input.LT(1);
@@ -3178,7 +3178,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 25) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:199:5: ( genericMethodOrConstructorDecl | memberDeclaration | 'void' Identifier voidMethodDeclaratorRest | Identifier constructorDeclaratorRest | interfaceDeclaration | classDeclaration )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:200:5: ( genericMethodOrConstructorDecl | memberDeclaration | 'void' Identifier voidMethodDeclaratorRest | Identifier constructorDeclaratorRest | interfaceDeclaration | classDeclaration )
 			int alt40=6;
 			switch ( input.LA(1) ) {
 			case 49:
@@ -3248,7 +3248,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt40) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:199:9: genericMethodOrConstructorDecl
+					// /media/tony/disk2/_git/cs543/JavaJava.g:200:9: genericMethodOrConstructorDecl
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -3263,7 +3263,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:200:9: memberDeclaration
+					// /media/tony/disk2/_git/cs543/JavaJava.g:201:9: memberDeclaration
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -3277,7 +3277,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:201:9: 'void' Identifier voidMethodDeclaratorRest
+					// /media/tony/disk2/_git/cs543/JavaJava.g:202:9: 'void' Identifier voidMethodDeclaratorRest
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -3306,7 +3306,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:202:9: Identifier constructorDeclaratorRest
+					// /media/tony/disk2/_git/cs543/JavaJava.g:203:9: Identifier constructorDeclaratorRest
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -3328,7 +3328,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:203:9: interfaceDeclaration
+					// /media/tony/disk2/_git/cs543/JavaJava.g:204:9: interfaceDeclaration
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -3342,7 +3342,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:204:9: classDeclaration
+					// /media/tony/disk2/_git/cs543/JavaJava.g:205:9: classDeclaration
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -3387,7 +3387,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "memberDeclaration"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:207:1: memberDeclaration : type ( methodDeclaration | fieldDeclaration ) ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:208:1: memberDeclaration : type ( methodDeclaration | fieldDeclaration ) ;
 	public final JavaJavaParser.memberDeclaration_return memberDeclaration() throws RecognitionException {
 		JavaJavaParser.memberDeclaration_return retval = new JavaJavaParser.memberDeclaration_return();
 		retval.start = input.LT(1);
@@ -3403,8 +3403,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 26) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:208:5: ( type ( methodDeclaration | fieldDeclaration ) )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:208:9: type ( methodDeclaration | fieldDeclaration )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:209:5: ( type ( methodDeclaration | fieldDeclaration ) )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:209:9: type ( methodDeclaration | fieldDeclaration )
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -3415,7 +3415,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, type105.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:208:14: ( methodDeclaration | fieldDeclaration )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:209:14: ( methodDeclaration | fieldDeclaration )
 			int alt41=2;
 			int LA41_0 = input.LA(1);
 			if ( (LA41_0==Identifier) ) {
@@ -3451,7 +3451,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt41) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:208:15: methodDeclaration
+					// /media/tony/disk2/_git/cs543/JavaJava.g:209:15: methodDeclaration
 					{
 					if ( state.backtracking==0 ) {inMethod=true;}
 					pushFollow(FOLLOW_methodDeclaration_in_memberDeclaration1145);
@@ -3463,7 +3463,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:208:54: fieldDeclaration
+					// /media/tony/disk2/_git/cs543/JavaJava.g:209:54: fieldDeclaration
 					{
 					if ( state.backtracking==0 ) {inMethod=false;}
 					pushFollow(FOLLOW_fieldDeclaration_in_memberDeclaration1153);
@@ -3509,7 +3509,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "genericMethodOrConstructorDecl"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:211:1: genericMethodOrConstructorDecl : typeParameters genericMethodOrConstructorRest ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:212:1: genericMethodOrConstructorDecl : typeParameters genericMethodOrConstructorRest ;
 	public final JavaJavaParser.genericMethodOrConstructorDecl_return genericMethodOrConstructorDecl() throws RecognitionException {
 		JavaJavaParser.genericMethodOrConstructorDecl_return retval = new JavaJavaParser.genericMethodOrConstructorDecl_return();
 		retval.start = input.LT(1);
@@ -3524,8 +3524,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 27) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:212:5: ( typeParameters genericMethodOrConstructorRest )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:212:9: typeParameters genericMethodOrConstructorRest
+			// /media/tony/disk2/_git/cs543/JavaJava.g:213:5: ( typeParameters genericMethodOrConstructorRest )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:213:9: typeParameters genericMethodOrConstructorRest
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -3574,7 +3574,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "genericMethodOrConstructorRest"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:215:1: genericMethodOrConstructorRest : ( ( type | 'void' ) Identifier methodDeclaratorRest | Identifier constructorDeclaratorRest );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:216:1: genericMethodOrConstructorRest : ( ( type | 'void' ) Identifier methodDeclaratorRest | Identifier constructorDeclaratorRest );
 	public final JavaJavaParser.genericMethodOrConstructorRest_return genericMethodOrConstructorRest() throws RecognitionException {
 		JavaJavaParser.genericMethodOrConstructorRest_return retval = new JavaJavaParser.genericMethodOrConstructorRest_return();
 		retval.start = input.LT(1);
@@ -3596,7 +3596,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 28) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:216:5: ( ( type | 'void' ) Identifier methodDeclaratorRest | Identifier constructorDeclaratorRest )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:217:5: ( ( type | 'void' ) Identifier methodDeclaratorRest | Identifier constructorDeclaratorRest )
 			int alt43=2;
 			int LA43_0 = input.LA(1);
 			if ( (LA43_0==Identifier) ) {
@@ -3635,12 +3635,12 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt43) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:216:9: ( type | 'void' ) Identifier methodDeclaratorRest
+					// /media/tony/disk2/_git/cs543/JavaJava.g:217:9: ( type | 'void' ) Identifier methodDeclaratorRest
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:216:9: ( type | 'void' )
+					// /media/tony/disk2/_git/cs543/JavaJava.g:217:9: ( type | 'void' )
 					int alt42=2;
 					int LA42_0 = input.LA(1);
 					if ( (LA42_0==Identifier||LA42_0==60||LA42_0==62||LA42_0==65||LA42_0==70||LA42_0==76||LA42_0==82||LA42_0==84||LA42_0==93) ) {
@@ -3659,7 +3659,7 @@ public class JavaJavaParser extends Parser {
 
 					switch (alt42) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:216:10: type
+							// /media/tony/disk2/_git/cs543/JavaJava.g:217:10: type
 							{
 							pushFollow(FOLLOW_type_in_genericMethodOrConstructorRest1199);
 							type110=type();
@@ -3670,7 +3670,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:216:17: 'void'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:217:17: 'void'
 							{
 							string_literal111=(Token)match(input,105,FOLLOW_105_in_genericMethodOrConstructorRest1203); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -3699,7 +3699,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:217:9: Identifier constructorDeclaratorRest
+					// /media/tony/disk2/_git/cs543/JavaJava.g:218:9: Identifier constructorDeclaratorRest
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -3751,7 +3751,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "methodDeclaration"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:220:1: methodDeclaration : Identifier methodDeclaratorRest ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:221:1: methodDeclaration : Identifier methodDeclaratorRest ;
 	public final JavaJavaParser.methodDeclaration_return methodDeclaration() throws RecognitionException {
 		JavaJavaParser.methodDeclaration_return retval = new JavaJavaParser.methodDeclaration_return();
 		retval.start = input.LT(1);
@@ -3767,8 +3767,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 29) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:221:5: ( Identifier methodDeclaratorRest )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:221:9: Identifier methodDeclaratorRest
+			// /media/tony/disk2/_git/cs543/JavaJava.g:222:5: ( Identifier methodDeclaratorRest )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:222:9: Identifier methodDeclaratorRest
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -3825,7 +3825,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "fieldDeclaration"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:231:1: fieldDeclaration : variableDeclarators ';' ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:232:1: fieldDeclaration : variableDeclarators ';' ;
 	public final JavaJavaParser.fieldDeclaration_return fieldDeclaration() throws RecognitionException {
 		JavaJavaParser.fieldDeclaration_return retval = new JavaJavaParser.fieldDeclaration_return();
 		retval.start = input.LT(1);
@@ -3841,8 +3841,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 30) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:232:5: ( variableDeclarators ';' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:232:8: variableDeclarators ';'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:233:5: ( variableDeclarators ';' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:233:8: variableDeclarators ';'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -3892,7 +3892,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "interfaceBodyDeclaration"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:235:1: interfaceBodyDeclaration : ( modifiers interfaceMemberDecl | ';' );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:236:1: interfaceBodyDeclaration : ( modifiers interfaceMemberDecl | ';' );
 	public final JavaJavaParser.interfaceBodyDeclaration_return interfaceBodyDeclaration() throws RecognitionException {
 		JavaJavaParser.interfaceBodyDeclaration_return retval = new JavaJavaParser.interfaceBodyDeclaration_return();
 		retval.start = input.LT(1);
@@ -3909,7 +3909,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 31) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:236:5: ( modifiers interfaceMemberDecl | ';' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:237:5: ( modifiers interfaceMemberDecl | ';' )
 			int alt44=2;
 			int LA44_0 = input.LA(1);
 			if ( (LA44_0==ENUM||LA44_0==Identifier||LA44_0==49||LA44_0==54||(LA44_0 >= 59 && LA44_0 <= 60)||LA44_0==62||(LA44_0 >= 65 && LA44_0 <= 66)||LA44_0==70||LA44_0==74||LA44_0==76||(LA44_0 >= 82 && LA44_0 <= 85)||(LA44_0 >= 89 && LA44_0 <= 91)||(LA44_0 >= 93 && LA44_0 <= 95)||LA44_0==98||LA44_0==102||(LA44_0 >= 105 && LA44_0 <= 106)) ) {
@@ -3928,7 +3928,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt44) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:236:9: modifiers interfaceMemberDecl
+					// /media/tony/disk2/_git/cs543/JavaJava.g:237:9: modifiers interfaceMemberDecl
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -3948,7 +3948,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:237:9: ';'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:238:9: ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -3993,7 +3993,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "interfaceMemberDecl"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:240:1: interfaceMemberDecl : ( interfaceMethodOrFieldDecl | interfaceGenericMethodDecl | 'void' Identifier voidInterfaceMethodDeclaratorRest | interfaceDeclaration | classDeclaration );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:241:1: interfaceMemberDecl : ( interfaceMethodOrFieldDecl | interfaceGenericMethodDecl | 'void' Identifier voidInterfaceMethodDeclaratorRest | interfaceDeclaration | classDeclaration );
 	public final JavaJavaParser.interfaceMemberDecl_return interfaceMemberDecl() throws RecognitionException {
 		JavaJavaParser.interfaceMemberDecl_return retval = new JavaJavaParser.interfaceMemberDecl_return();
 		retval.start = input.LT(1);
@@ -4015,7 +4015,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 32) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:241:5: ( interfaceMethodOrFieldDecl | interfaceGenericMethodDecl | 'void' Identifier voidInterfaceMethodDeclaratorRest | interfaceDeclaration | classDeclaration )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:242:5: ( interfaceMethodOrFieldDecl | interfaceGenericMethodDecl | 'void' Identifier voidInterfaceMethodDeclaratorRest | interfaceDeclaration | classDeclaration )
 			int alt45=5;
 			switch ( input.LA(1) ) {
 			case Identifier:
@@ -4061,7 +4061,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt45) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:241:9: interfaceMethodOrFieldDecl
+					// /media/tony/disk2/_git/cs543/JavaJava.g:242:9: interfaceMethodOrFieldDecl
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -4075,7 +4075,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:242:9: interfaceGenericMethodDecl
+					// /media/tony/disk2/_git/cs543/JavaJava.g:243:9: interfaceGenericMethodDecl
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -4089,7 +4089,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:243:9: 'void' Identifier voidInterfaceMethodDeclaratorRest
+					// /media/tony/disk2/_git/cs543/JavaJava.g:244:9: 'void' Identifier voidInterfaceMethodDeclaratorRest
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -4117,7 +4117,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:244:9: interfaceDeclaration
+					// /media/tony/disk2/_git/cs543/JavaJava.g:245:9: interfaceDeclaration
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -4131,7 +4131,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:245:9: classDeclaration
+					// /media/tony/disk2/_git/cs543/JavaJava.g:246:9: classDeclaration
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -4176,7 +4176,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "interfaceMethodOrFieldDecl"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:248:1: interfaceMethodOrFieldDecl : type Identifier interfaceMethodOrFieldRest ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:249:1: interfaceMethodOrFieldDecl : type Identifier interfaceMethodOrFieldRest ;
 	public final JavaJavaParser.interfaceMethodOrFieldDecl_return interfaceMethodOrFieldDecl() throws RecognitionException {
 		JavaJavaParser.interfaceMethodOrFieldDecl_return retval = new JavaJavaParser.interfaceMethodOrFieldDecl_return();
 		retval.start = input.LT(1);
@@ -4193,8 +4193,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 33) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:249:5: ( type Identifier interfaceMethodOrFieldRest )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:249:9: type Identifier interfaceMethodOrFieldRest
+			// /media/tony/disk2/_git/cs543/JavaJava.g:250:5: ( type Identifier interfaceMethodOrFieldRest )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:250:9: type Identifier interfaceMethodOrFieldRest
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -4250,7 +4250,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "interfaceMethodOrFieldRest"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:252:1: interfaceMethodOrFieldRest : ( constantDeclaratorsRest ';' | interfaceMethodDeclaratorRest );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:253:1: interfaceMethodOrFieldRest : ( constantDeclaratorsRest ';' | interfaceMethodDeclaratorRest );
 	public final JavaJavaParser.interfaceMethodOrFieldRest_return interfaceMethodOrFieldRest() throws RecognitionException {
 		JavaJavaParser.interfaceMethodOrFieldRest_return retval = new JavaJavaParser.interfaceMethodOrFieldRest_return();
 		retval.start = input.LT(1);
@@ -4267,7 +4267,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 34) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:253:5: ( constantDeclaratorsRest ';' | interfaceMethodDeclaratorRest )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:254:5: ( constantDeclaratorsRest ';' | interfaceMethodDeclaratorRest )
 			int alt46=2;
 			int LA46_0 = input.LA(1);
 			if ( (LA46_0==50||LA46_0==55) ) {
@@ -4286,7 +4286,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt46) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:253:9: constantDeclaratorsRest ';'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:254:9: constantDeclaratorsRest ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -4307,7 +4307,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:254:9: interfaceMethodDeclaratorRest
+					// /media/tony/disk2/_git/cs543/JavaJava.g:255:9: interfaceMethodDeclaratorRest
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -4352,7 +4352,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "methodDeclaratorRest"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:257:1: methodDeclaratorRest : formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ( methodBody | ';' ) ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:258:1: methodDeclaratorRest : formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ( methodBody | ';' ) ;
 	public final JavaJavaParser.methodDeclaratorRest_return methodDeclaratorRest() throws RecognitionException {
 		JavaJavaParser.methodDeclaratorRest_return retval = new JavaJavaParser.methodDeclaratorRest_return();
 		retval.start = input.LT(1);
@@ -4376,8 +4376,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 35) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:258:5: ( formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ( methodBody | ';' ) )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:258:9: formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ( methodBody | ';' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:259:5: ( formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ( methodBody | ';' ) )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:259:9: formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ( methodBody | ';' )
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -4388,7 +4388,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, formalParameters136.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:258:26: ( '[' ']' )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:259:26: ( '[' ']' )*
 			loop47:
 			while (true) {
 				int alt47=2;
@@ -4399,7 +4399,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt47) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:258:27: '[' ']'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:259:27: '[' ']'
 					{
 					char_literal137=(Token)match(input,55,FOLLOW_55_in_methodDeclaratorRest1466); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -4423,7 +4423,7 @@ public class JavaJavaParser extends Parser {
 				}
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:259:9: ( 'throws' qualifiedNameList )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:260:9: ( 'throws' qualifiedNameList )?
 			int alt48=2;
 			int LA48_0 = input.LA(1);
 			if ( (LA48_0==101) ) {
@@ -4431,7 +4431,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt48) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:259:10: 'throws' qualifiedNameList
+					// /media/tony/disk2/_git/cs543/JavaJava.g:260:10: 'throws' qualifiedNameList
 					{
 					string_literal139=(Token)match(input,101,FOLLOW_101_in_methodDeclaratorRest1484); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -4451,7 +4451,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:260:9: ( methodBody | ';' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:261:9: ( methodBody | ';' )
 			int alt49=2;
 			int LA49_0 = input.LA(1);
 			if ( (LA49_0==108) ) {
@@ -4470,7 +4470,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt49) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:260:13: methodBody
+					// /media/tony/disk2/_git/cs543/JavaJava.g:261:13: methodBody
 					{
 					pushFollow(FOLLOW_methodBody_in_methodDeclaratorRest1504);
 					methodBody141=methodBody();
@@ -4481,7 +4481,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:261:13: ';'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:262:13: ';'
 					{
 					char_literal142=(Token)match(input,48,FOLLOW_48_in_methodDeclaratorRest1518); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -4526,7 +4526,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "voidMethodDeclaratorRest"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:265:1: voidMethodDeclaratorRest : formalParameters ( 'throws' qualifiedNameList )? ( methodBody | ';' ) ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:266:1: voidMethodDeclaratorRest : formalParameters ( 'throws' qualifiedNameList )? ( methodBody | ';' ) ;
 	public final JavaJavaParser.voidMethodDeclaratorRest_return voidMethodDeclaratorRest() throws RecognitionException {
 		JavaJavaParser.voidMethodDeclaratorRest_return retval = new JavaJavaParser.voidMethodDeclaratorRest_return();
 		retval.start = input.LT(1);
@@ -4546,8 +4546,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 36) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:266:5: ( formalParameters ( 'throws' qualifiedNameList )? ( methodBody | ';' ) )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:266:9: formalParameters ( 'throws' qualifiedNameList )? ( methodBody | ';' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:267:5: ( formalParameters ( 'throws' qualifiedNameList )? ( methodBody | ';' ) )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:267:9: formalParameters ( 'throws' qualifiedNameList )? ( methodBody | ';' )
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -4558,7 +4558,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, formalParameters143.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:266:26: ( 'throws' qualifiedNameList )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:267:26: ( 'throws' qualifiedNameList )?
 			int alt50=2;
 			int LA50_0 = input.LA(1);
 			if ( (LA50_0==101) ) {
@@ -4566,7 +4566,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt50) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:266:27: 'throws' qualifiedNameList
+					// /media/tony/disk2/_git/cs543/JavaJava.g:267:27: 'throws' qualifiedNameList
 					{
 					string_literal144=(Token)match(input,101,FOLLOW_101_in_voidMethodDeclaratorRest1554); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -4586,7 +4586,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:267:9: ( methodBody | ';' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:268:9: ( methodBody | ';' )
 			int alt51=2;
 			int LA51_0 = input.LA(1);
 			if ( (LA51_0==108) ) {
@@ -4605,7 +4605,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt51) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:267:13: methodBody
+					// /media/tony/disk2/_git/cs543/JavaJava.g:268:13: methodBody
 					{
 					pushFollow(FOLLOW_methodBody_in_voidMethodDeclaratorRest1573);
 					methodBody146=methodBody();
@@ -4616,7 +4616,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:268:13: ';'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:269:13: ';'
 					{
 					char_literal147=(Token)match(input,48,FOLLOW_48_in_voidMethodDeclaratorRest1587); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -4662,7 +4662,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "interfaceMethodDeclaratorRest"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:272:1: interfaceMethodDeclaratorRest : formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ';' ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:273:1: interfaceMethodDeclaratorRest : formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ';' ;
 	public final JavaJavaParser.interfaceMethodDeclaratorRest_return interfaceMethodDeclaratorRest() throws RecognitionException {
 		JavaJavaParser.interfaceMethodDeclaratorRest_return retval = new JavaJavaParser.interfaceMethodDeclaratorRest_return();
 		retval.start = input.LT(1);
@@ -4685,8 +4685,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 37) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:273:5: ( formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ';' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:273:8: formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ';'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:274:5: ( formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ';' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:274:8: formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ';'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -4697,7 +4697,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, formalParameters148.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:273:25: ( '[' ']' )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:274:25: ( '[' ']' )*
 			loop52:
 			while (true) {
 				int alt52=2;
@@ -4708,7 +4708,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt52) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:273:26: '[' ']'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:274:26: '[' ']'
 					{
 					char_literal149=(Token)match(input,55,FOLLOW_55_in_interfaceMethodDeclaratorRest1624); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -4732,7 +4732,7 @@ public class JavaJavaParser extends Parser {
 				}
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:273:56: ( 'throws' qualifiedNameList )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:274:56: ( 'throws' qualifiedNameList )?
 			int alt53=2;
 			int LA53_0 = input.LA(1);
 			if ( (LA53_0==101) ) {
@@ -4740,7 +4740,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt53) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:273:57: 'throws' qualifiedNameList
+					// /media/tony/disk2/_git/cs543/JavaJava.g:274:57: 'throws' qualifiedNameList
 					{
 					string_literal151=(Token)match(input,101,FOLLOW_101_in_interfaceMethodDeclaratorRest1635); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -4799,7 +4799,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "interfaceGenericMethodDecl"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:276:1: interfaceGenericMethodDecl : typeParameters ( type | 'void' ) Identifier interfaceMethodDeclaratorRest ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:277:1: interfaceGenericMethodDecl : typeParameters ( type | 'void' ) Identifier interfaceMethodDeclaratorRest ;
 	public final JavaJavaParser.interfaceGenericMethodDecl_return interfaceGenericMethodDecl() throws RecognitionException {
 		JavaJavaParser.interfaceGenericMethodDecl_return retval = new JavaJavaParser.interfaceGenericMethodDecl_return();
 		retval.start = input.LT(1);
@@ -4819,8 +4819,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 38) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:277:5: ( typeParameters ( type | 'void' ) Identifier interfaceMethodDeclaratorRest )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:277:9: typeParameters ( type | 'void' ) Identifier interfaceMethodDeclaratorRest
+			// /media/tony/disk2/_git/cs543/JavaJava.g:278:5: ( typeParameters ( type | 'void' ) Identifier interfaceMethodDeclaratorRest )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:278:9: typeParameters ( type | 'void' ) Identifier interfaceMethodDeclaratorRest
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -4831,7 +4831,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, typeParameters154.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:277:24: ( type | 'void' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:278:24: ( type | 'void' )
 			int alt54=2;
 			int LA54_0 = input.LA(1);
 			if ( (LA54_0==Identifier||LA54_0==60||LA54_0==62||LA54_0==65||LA54_0==70||LA54_0==76||LA54_0==82||LA54_0==84||LA54_0==93) ) {
@@ -4850,7 +4850,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt54) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:277:25: type
+					// /media/tony/disk2/_git/cs543/JavaJava.g:278:25: type
 					{
 					pushFollow(FOLLOW_type_in_interfaceGenericMethodDecl1670);
 					type155=type();
@@ -4861,7 +4861,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:277:32: 'void'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:278:32: 'void'
 					{
 					string_literal156=(Token)match(input,105,FOLLOW_105_in_interfaceGenericMethodDecl1674); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -4920,7 +4920,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "voidInterfaceMethodDeclaratorRest"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:281:1: voidInterfaceMethodDeclaratorRest : formalParameters ( 'throws' qualifiedNameList )? ';' ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:282:1: voidInterfaceMethodDeclaratorRest : formalParameters ( 'throws' qualifiedNameList )? ';' ;
 	public final JavaJavaParser.voidInterfaceMethodDeclaratorRest_return voidInterfaceMethodDeclaratorRest() throws RecognitionException {
 		JavaJavaParser.voidInterfaceMethodDeclaratorRest_return retval = new JavaJavaParser.voidInterfaceMethodDeclaratorRest_return();
 		retval.start = input.LT(1);
@@ -4939,8 +4939,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 39) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:282:5: ( formalParameters ( 'throws' qualifiedNameList )? ';' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:282:8: formalParameters ( 'throws' qualifiedNameList )? ';'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:283:5: ( formalParameters ( 'throws' qualifiedNameList )? ';' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:283:8: formalParameters ( 'throws' qualifiedNameList )? ';'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -4951,7 +4951,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, formalParameters159.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:282:25: ( 'throws' qualifiedNameList )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:283:25: ( 'throws' qualifiedNameList )?
 			int alt55=2;
 			int LA55_0 = input.LA(1);
 			if ( (LA55_0==101) ) {
@@ -4959,7 +4959,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt55) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:282:26: 'throws' qualifiedNameList
+					// /media/tony/disk2/_git/cs543/JavaJava.g:283:26: 'throws' qualifiedNameList
 					{
 					string_literal160=(Token)match(input,101,FOLLOW_101_in_voidInterfaceMethodDeclaratorRest1716); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -5018,7 +5018,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "constructorDeclaratorRest"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:285:1: constructorDeclaratorRest : formalParameters ( 'throws' qualifiedNameList )? constructorBody ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:286:1: constructorDeclaratorRest : formalParameters ( 'throws' qualifiedNameList )? constructorBody ;
 	public final JavaJavaParser.constructorDeclaratorRest_return constructorDeclaratorRest() throws RecognitionException {
 		JavaJavaParser.constructorDeclaratorRest_return retval = new JavaJavaParser.constructorDeclaratorRest_return();
 		retval.start = input.LT(1);
@@ -5036,8 +5036,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 40) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:286:5: ( formalParameters ( 'throws' qualifiedNameList )? constructorBody )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:286:9: formalParameters ( 'throws' qualifiedNameList )? constructorBody
+			// /media/tony/disk2/_git/cs543/JavaJava.g:287:5: ( formalParameters ( 'throws' qualifiedNameList )? constructorBody )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:287:9: formalParameters ( 'throws' qualifiedNameList )? constructorBody
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -5048,7 +5048,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, formalParameters163.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:286:26: ( 'throws' qualifiedNameList )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:287:26: ( 'throws' qualifiedNameList )?
 			int alt56=2;
 			int LA56_0 = input.LA(1);
 			if ( (LA56_0==101) ) {
@@ -5056,7 +5056,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt56) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:286:27: 'throws' qualifiedNameList
+					// /media/tony/disk2/_git/cs543/JavaJava.g:287:27: 'throws' qualifiedNameList
 					{
 					string_literal164=(Token)match(input,101,FOLLOW_101_in_constructorDeclaratorRest1751); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -5114,7 +5114,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "constantDeclarator"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:289:1: constantDeclarator : Identifier constantDeclaratorRest ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:290:1: constantDeclarator : Identifier constantDeclaratorRest ;
 	public final JavaJavaParser.constantDeclarator_return constantDeclarator() throws RecognitionException {
 		JavaJavaParser.constantDeclarator_return retval = new JavaJavaParser.constantDeclarator_return();
 		retval.start = input.LT(1);
@@ -5130,8 +5130,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 41) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:290:5: ( Identifier constantDeclaratorRest )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:290:9: Identifier constantDeclaratorRest
+			// /media/tony/disk2/_git/cs543/JavaJava.g:291:5: ( Identifier constantDeclaratorRest )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:291:9: Identifier constantDeclaratorRest
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -5181,7 +5181,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "variableDeclarators"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:293:1: variableDeclarators : variableDeclarator ( ',' variableDeclarator )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:294:1: variableDeclarators : variableDeclarator ( ',' variableDeclarator )* ;
 	public final JavaJavaParser.variableDeclarators_return variableDeclarators() throws RecognitionException {
 		JavaJavaParser.variableDeclarators_return retval = new JavaJavaParser.variableDeclarators_return();
 		retval.start = input.LT(1);
@@ -5198,8 +5198,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 42) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:294:5: ( variableDeclarator ( ',' variableDeclarator )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:294:9: variableDeclarator ( ',' variableDeclarator )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:295:5: ( variableDeclarator ( ',' variableDeclarator )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:295:9: variableDeclarator ( ',' variableDeclarator )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -5210,7 +5210,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, variableDeclarator169.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:294:28: ( ',' variableDeclarator )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:295:28: ( ',' variableDeclarator )*
 			loop57:
 			while (true) {
 				int alt57=2;
@@ -5221,7 +5221,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt57) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:294:29: ',' variableDeclarator
+					// /media/tony/disk2/_git/cs543/JavaJava.g:295:29: ',' variableDeclarator
 					{
 					char_literal170=(Token)match(input,39,FOLLOW_39_in_variableDeclarators1808); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -5277,7 +5277,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "variableDeclarator"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:297:1: variableDeclarator : variableDeclaratorId ( '=' variableInitializer )? ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:298:1: variableDeclarator : variableDeclaratorId ( '=' variableInitializer )? ;
 	public final JavaJavaParser.variableDeclarator_return variableDeclarator() throws RecognitionException {
 		JavaJavaParser.variableDeclarator_return retval = new JavaJavaParser.variableDeclarator_return();
 		retval.start = input.LT(1);
@@ -5294,8 +5294,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 43) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:298:5: ( variableDeclaratorId ( '=' variableInitializer )? )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:298:9: variableDeclaratorId ( '=' variableInitializer )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:299:5: ( variableDeclaratorId ( '=' variableInitializer )? )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:299:9: variableDeclaratorId ( '=' variableInitializer )?
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -5306,7 +5306,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, variableDeclaratorId172.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:298:30: ( '=' variableInitializer )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:299:30: ( '=' variableInitializer )?
 			int alt58=2;
 			int LA58_0 = input.LA(1);
 			if ( (LA58_0==50) ) {
@@ -5314,7 +5314,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt58) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:298:31: '=' variableInitializer
+					// /media/tony/disk2/_git/cs543/JavaJava.g:299:31: '=' variableInitializer
 					{
 					char_literal173=(Token)match(input,50,FOLLOW_50_in_variableDeclarator1838); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -5365,7 +5365,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "constantDeclaratorsRest"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:301:1: constantDeclaratorsRest : constantDeclaratorRest ( ',' constantDeclarator )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:302:1: constantDeclaratorsRest : constantDeclaratorRest ( ',' constantDeclarator )* ;
 	public final JavaJavaParser.constantDeclaratorsRest_return constantDeclaratorsRest() throws RecognitionException {
 		JavaJavaParser.constantDeclaratorsRest_return retval = new JavaJavaParser.constantDeclaratorsRest_return();
 		retval.start = input.LT(1);
@@ -5382,8 +5382,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 44) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:302:5: ( constantDeclaratorRest ( ',' constantDeclarator )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:302:9: constantDeclaratorRest ( ',' constantDeclarator )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:303:5: ( constantDeclaratorRest ( ',' constantDeclarator )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:303:9: constantDeclaratorRest ( ',' constantDeclarator )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -5394,7 +5394,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, constantDeclaratorRest175.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:302:32: ( ',' constantDeclarator )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:303:32: ( ',' constantDeclarator )*
 			loop59:
 			while (true) {
 				int alt59=2;
@@ -5405,7 +5405,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt59) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:302:33: ',' constantDeclarator
+					// /media/tony/disk2/_git/cs543/JavaJava.g:303:33: ',' constantDeclarator
 					{
 					char_literal176=(Token)match(input,39,FOLLOW_39_in_constantDeclaratorsRest1868); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -5460,7 +5460,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "constantDeclaratorRest"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:305:1: constantDeclaratorRest : ( '[' ']' )* '=' variableInitializer ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:306:1: constantDeclaratorRest : ( '[' ']' )* '=' variableInitializer ;
 	public final JavaJavaParser.constantDeclaratorRest_return constantDeclaratorRest() throws RecognitionException {
 		JavaJavaParser.constantDeclaratorRest_return retval = new JavaJavaParser.constantDeclaratorRest_return();
 		retval.start = input.LT(1);
@@ -5480,13 +5480,13 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 45) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:306:5: ( ( '[' ']' )* '=' variableInitializer )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:306:9: ( '[' ']' )* '=' variableInitializer
+			// /media/tony/disk2/_git/cs543/JavaJava.g:307:5: ( ( '[' ']' )* '=' variableInitializer )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:307:9: ( '[' ']' )* '=' variableInitializer
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:306:9: ( '[' ']' )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:307:9: ( '[' ']' )*
 			loop60:
 			while (true) {
 				int alt60=2;
@@ -5497,7 +5497,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt60) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:306:10: '[' ']'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:307:10: '[' ']'
 					{
 					char_literal178=(Token)match(input,55,FOLLOW_55_in_constantDeclaratorRest1894); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -5565,7 +5565,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "variableDeclaratorId"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:309:1: variableDeclaratorId : Identifier ( '[' ']' ) ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:310:1: variableDeclaratorId : Identifier ( '[' ']' ) ;
 	public final JavaJavaParser.variableDeclaratorId_return variableDeclaratorId() throws RecognitionException {
 		JavaJavaParser.variableDeclaratorId_return retval = new JavaJavaParser.variableDeclaratorId_return();
 		retval.start = input.LT(1);
@@ -5584,8 +5584,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 46) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:310:5: ( Identifier ( '[' ']' ) )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:310:9: Identifier ( '[' ']' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:311:5: ( Identifier ( '[' ']' ) )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:311:9: Identifier ( '[' ']' )
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -5609,8 +5609,8 @@ public class JavaJavaParser extends Parser {
 			                                         
 			                      }
 			                    }
-			// /media/tony/disk2/_git/cs543/JavaJava.g:322:23: ( '[' ']' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:322:24: '[' ']'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:323:23: ( '[' ']' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:323:24: '[' ']'
 			{
 			char_literal183=(Token)match(input,55,FOLLOW_55_in_variableDeclaratorId1935); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
@@ -5660,7 +5660,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "variableInitializer"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:325:1: variableInitializer : ( arrayInitializer | expression );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:326:1: variableInitializer : ( arrayInitializer | expression );
 	public final JavaJavaParser.variableInitializer_return variableInitializer() throws RecognitionException {
 		JavaJavaParser.variableInitializer_return retval = new JavaJavaParser.variableInitializer_return();
 		retval.start = input.LT(1);
@@ -5675,7 +5675,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 47) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:326:5: ( arrayInitializer | expression )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:327:5: ( arrayInitializer | expression )
 			int alt61=2;
 			int LA61_0 = input.LA(1);
 			if ( (LA61_0==108) ) {
@@ -5694,7 +5694,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt61) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:326:9: arrayInitializer
+					// /media/tony/disk2/_git/cs543/JavaJava.g:327:9: arrayInitializer
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -5708,7 +5708,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:327:9: expression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:328:9: expression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -5753,7 +5753,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "arrayInitializer"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:330:1: arrayInitializer : '{' ( variableInitializer ( ',' variableInitializer )* ( ',' )? )? '}' ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:331:1: arrayInitializer : '{' ( variableInitializer ( ',' variableInitializer )* ( ',' )? )? '}' ;
 	public final JavaJavaParser.arrayInitializer_return arrayInitializer() throws RecognitionException {
 		JavaJavaParser.arrayInitializer_return retval = new JavaJavaParser.arrayInitializer_return();
 		retval.start = input.LT(1);
@@ -5776,8 +5776,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 48) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:331:5: ( '{' ( variableInitializer ( ',' variableInitializer )* ( ',' )? )? '}' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:331:9: '{' ( variableInitializer ( ',' variableInitializer )* ( ',' )? )? '}'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:332:5: ( '{' ( variableInitializer ( ',' variableInitializer )* ( ',' )? )? '}' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:332:9: '{' ( variableInitializer ( ',' variableInitializer )* ( ',' )? )? '}'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -5789,7 +5789,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("{");}
-			// /media/tony/disk2/_git/cs543/JavaJava.g:331:22: ( variableInitializer ( ',' variableInitializer )* ( ',' )? )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:332:22: ( variableInitializer ( ',' variableInitializer )* ( ',' )? )?
 			int alt64=2;
 			int LA64_0 = input.LA(1);
 			if ( ((LA64_0 >= CharacterLiteral && LA64_0 <= DecimalLiteral)||LA64_0==FloatingPointLiteral||(LA64_0 >= HexLiteral && LA64_0 <= Identifier)||(LA64_0 >= OctalLiteral && LA64_0 <= StringLiteral)||LA64_0==25||LA64_0==32||(LA64_0 >= 36 && LA64_0 <= 37)||(LA64_0 >= 40 && LA64_0 <= 41)||LA64_0==60||LA64_0==62||LA64_0==65||LA64_0==70||LA64_0==73||LA64_0==76||LA64_0==82||LA64_0==84||(LA64_0 >= 86 && LA64_0 <= 87)||LA64_0==93||LA64_0==96||LA64_0==99||LA64_0==103||LA64_0==105||LA64_0==108||LA64_0==113) ) {
@@ -5797,7 +5797,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt64) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:331:23: variableInitializer ( ',' variableInitializer )* ( ',' )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:332:23: variableInitializer ( ',' variableInitializer )* ( ',' )?
 					{
 					pushFollow(FOLLOW_variableInitializer_in_arrayInitializer2001);
 					variableInitializer188=variableInitializer();
@@ -5805,7 +5805,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, variableInitializer188.getTree());
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:331:43: ( ',' variableInitializer )*
+					// /media/tony/disk2/_git/cs543/JavaJava.g:332:43: ( ',' variableInitializer )*
 					loop62:
 					while (true) {
 						int alt62=2;
@@ -5820,7 +5820,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt62) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:331:44: ',' variableInitializer
+							// /media/tony/disk2/_git/cs543/JavaJava.g:332:44: ',' variableInitializer
 							{
 							char_literal189=(Token)match(input,39,FOLLOW_39_in_arrayInitializer2004); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -5843,7 +5843,7 @@ public class JavaJavaParser extends Parser {
 						}
 					}
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:331:80: ( ',' )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:332:80: ( ',' )?
 					int alt63=2;
 					int LA63_0 = input.LA(1);
 					if ( (LA63_0==39) ) {
@@ -5851,7 +5851,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt63) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:331:81: ','
+							// /media/tony/disk2/_git/cs543/JavaJava.g:332:81: ','
 							{
 							char_literal191=(Token)match(input,39,FOLLOW_39_in_arrayInitializer2013); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -5908,7 +5908,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "modifier"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:334:1: modifier : ( annotation | 'public' | 'protected' | 'private' | 'static' | 'abstract' | 'final' | 'native' | 'synchronized' | 'transient' | 'volatile' | 'strictfp' );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:335:1: modifier : ( annotation | 'public' | 'protected' | 'private' | 'static' | 'abstract' | 'final' | 'native' | 'synchronized' | 'transient' | 'volatile' | 'strictfp' );
 	public final JavaJavaParser.modifier_return modifier() throws RecognitionException {
 		JavaJavaParser.modifier_return retval = new JavaJavaParser.modifier_return();
 		retval.start = input.LT(1);
@@ -5944,7 +5944,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 49) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:335:5: ( annotation | 'public' | 'protected' | 'private' | 'static' | 'abstract' | 'final' | 'native' | 'synchronized' | 'transient' | 'volatile' | 'strictfp' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:336:5: ( annotation | 'public' | 'protected' | 'private' | 'static' | 'abstract' | 'final' | 'native' | 'synchronized' | 'transient' | 'volatile' | 'strictfp' )
 			int alt65=12;
 			switch ( input.LA(1) ) {
 			case 54:
@@ -6015,7 +6015,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt65) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:335:9: annotation
+					// /media/tony/disk2/_git/cs543/JavaJava.g:336:9: annotation
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6029,7 +6029,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:336:9: 'public'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:337:9: 'public'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6044,7 +6044,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:337:9: 'protected'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:338:9: 'protected'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6059,7 +6059,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:338:9: 'private'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:339:9: 'private'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6074,7 +6074,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:339:9: 'static'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:340:9: 'static'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6089,7 +6089,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:340:9: 'abstract'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:341:9: 'abstract'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6104,7 +6104,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:341:9: 'final'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:342:9: 'final'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6119,7 +6119,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:342:9: 'native'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:343:9: 'native'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6134,7 +6134,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 9 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:343:9: 'synchronized'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:344:9: 'synchronized'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6149,7 +6149,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 10 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:344:9: 'transient'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:345:9: 'transient'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6164,7 +6164,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 11 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:345:9: 'volatile'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:346:9: 'volatile'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6179,7 +6179,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 12 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:346:9: 'strictfp'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:347:9: 'strictfp'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6225,7 +6225,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "packageOrTypeName"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:349:1: packageOrTypeName : qualifiedName ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:350:1: packageOrTypeName : qualifiedName ;
 	public final JavaJavaParser.packageOrTypeName_return packageOrTypeName() throws RecognitionException {
 		JavaJavaParser.packageOrTypeName_return retval = new JavaJavaParser.packageOrTypeName_return();
 		retval.start = input.LT(1);
@@ -6239,8 +6239,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 50) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:350:5: ( qualifiedName )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:350:9: qualifiedName
+			// /media/tony/disk2/_git/cs543/JavaJava.g:351:5: ( qualifiedName )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:351:9: qualifiedName
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -6283,7 +6283,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "enumConstantName"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:353:1: enumConstantName : Identifier ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:354:1: enumConstantName : Identifier ;
 	public final JavaJavaParser.enumConstantName_return enumConstantName() throws RecognitionException {
 		JavaJavaParser.enumConstantName_return retval = new JavaJavaParser.enumConstantName_return();
 		retval.start = input.LT(1);
@@ -6298,8 +6298,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 51) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:354:5: ( Identifier )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:354:9: Identifier
+			// /media/tony/disk2/_git/cs543/JavaJava.g:355:5: ( Identifier )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:355:9: Identifier
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -6343,7 +6343,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "typeName"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:357:1: typeName : qualifiedName ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:358:1: typeName : qualifiedName ;
 	public final JavaJavaParser.typeName_return typeName() throws RecognitionException {
 		JavaJavaParser.typeName_return retval = new JavaJavaParser.typeName_return();
 		retval.start = input.LT(1);
@@ -6357,8 +6357,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 52) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:358:5: ( qualifiedName )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:358:9: qualifiedName
+			// /media/tony/disk2/_git/cs543/JavaJava.g:359:5: ( qualifiedName )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:359:9: qualifiedName
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -6401,7 +6401,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "type"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:361:1: type : ( classOrInterfaceType ( '[' ']' )* | primitiveType ( '[' ']' )* );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:362:1: type : ( classOrInterfaceType ( '[' ']' )* | primitiveType ( '[' ']' )* );
 	public final JavaJavaParser.type_return type() throws RecognitionException {
 		JavaJavaParser.type_return retval = new JavaJavaParser.type_return();
 		retval.start = input.LT(1);
@@ -6424,7 +6424,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 53) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:362:2: ( classOrInterfaceType ( '[' ']' )* | primitiveType ( '[' ']' )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:363:2: ( classOrInterfaceType ( '[' ']' )* | primitiveType ( '[' ']' )* )
 			int alt68=2;
 			int LA68_0 = input.LA(1);
 			if ( (LA68_0==Identifier) ) {
@@ -6443,7 +6443,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt68) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:362:4: classOrInterfaceType ( '[' ']' )*
+					// /media/tony/disk2/_git/cs543/JavaJava.g:363:4: classOrInterfaceType ( '[' ']' )*
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6454,7 +6454,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, classOrInterfaceType208.getTree());
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:362:25: ( '[' ']' )*
+					// /media/tony/disk2/_git/cs543/JavaJava.g:363:25: ( '[' ']' )*
 					loop66:
 					while (true) {
 						int alt66=2;
@@ -6465,7 +6465,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt66) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:362:26: '[' ']'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:363:26: '[' ']'
 							{
 							char_literal209=(Token)match(input,55,FOLLOW_55_in_type2258); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -6492,7 +6492,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:363:4: primitiveType ( '[' ']' )*
+					// /media/tony/disk2/_git/cs543/JavaJava.g:364:4: primitiveType ( '[' ']' )*
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6504,7 +6504,7 @@ public class JavaJavaParser extends Parser {
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, primitiveType211.getTree());
 
 					if ( state.backtracking==0 ) {primitive=true;}
-					// /media/tony/disk2/_git/cs543/JavaJava.g:363:35: ( '[' ']' )*
+					// /media/tony/disk2/_git/cs543/JavaJava.g:364:35: ( '[' ']' )*
 					loop67:
 					while (true) {
 						int alt67=2;
@@ -6515,7 +6515,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt67) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:363:36: '[' ']'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:364:36: '[' ']'
 							{
 							char_literal212=(Token)match(input,55,FOLLOW_55_in_type2276); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -6573,7 +6573,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "classOrInterfaceType"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:368:1: classOrInterfaceType : I7= Identifier ( typeArguments )? ( '.' Identifier ( typeArguments )? )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:369:1: classOrInterfaceType : I7= Identifier ( typeArguments )? ( '.' Identifier ( typeArguments )? )* ;
 	public final JavaJavaParser.classOrInterfaceType_return classOrInterfaceType() throws RecognitionException {
 		JavaJavaParser.classOrInterfaceType_return retval = new JavaJavaParser.classOrInterfaceType_return();
 		retval.start = input.LT(1);
@@ -6594,8 +6594,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 54) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:369:2: (I7= Identifier ( typeArguments )? ( '.' Identifier ( typeArguments )? )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:369:4: I7= Identifier ( typeArguments )? ( '.' Identifier ( typeArguments )? )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:370:2: (I7= Identifier ( typeArguments )? ( '.' Identifier ( typeArguments )? )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:370:4: I7= Identifier ( typeArguments )? ( '.' Identifier ( typeArguments )? )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -6607,7 +6607,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) { id((I7!=null?I7.getText():null));}
-			// /media/tony/disk2/_git/cs543/JavaJava.g:369:35: ( typeArguments )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:370:35: ( typeArguments )?
 			int alt69=2;
 			int LA69_0 = input.LA(1);
 			if ( (LA69_0==49) ) {
@@ -6618,7 +6618,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt69) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:369:35: typeArguments
+					// /media/tony/disk2/_git/cs543/JavaJava.g:370:35: typeArguments
 					{
 					pushFollow(FOLLOW_typeArguments_in_classOrInterfaceType2303);
 					typeArguments214=typeArguments();
@@ -6631,7 +6631,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:369:50: ( '.' Identifier ( typeArguments )? )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:370:50: ( '.' Identifier ( typeArguments )? )*
 			loop71:
 			while (true) {
 				int alt71=2;
@@ -6642,7 +6642,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt71) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:369:51: '.' Identifier ( typeArguments )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:370:51: '.' Identifier ( typeArguments )?
 					{
 					char_literal215=(Token)match(input,43,FOLLOW_43_in_classOrInterfaceType2307); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -6657,7 +6657,7 @@ public class JavaJavaParser extends Parser {
 					adaptor.addChild(root_0, Identifier216_tree);
 					}
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:369:76: ( typeArguments )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:370:76: ( typeArguments )?
 					int alt70=2;
 					int LA70_0 = input.LA(1);
 					if ( (LA70_0==49) ) {
@@ -6668,7 +6668,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt70) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:369:76: typeArguments
+							// /media/tony/disk2/_git/cs543/JavaJava.g:370:76: typeArguments
 							{
 							pushFollow(FOLLOW_typeArguments_in_classOrInterfaceType2313);
 							typeArguments217=typeArguments();
@@ -6721,7 +6721,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "primitiveType"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:372:1: primitiveType : ( 'boolean' | 'char' | 'byte' | 'short' | 'int' | 'long' | 'float' | 'double' );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:373:1: primitiveType : ( 'boolean' | 'char' | 'byte' | 'short' | 'int' | 'long' | 'float' | 'double' );
 	public final JavaJavaParser.primitiveType_return primitiveType() throws RecognitionException {
 		JavaJavaParser.primitiveType_return retval = new JavaJavaParser.primitiveType_return();
 		retval.start = input.LT(1);
@@ -6750,7 +6750,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 55) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:373:5: ( 'boolean' | 'char' | 'byte' | 'short' | 'int' | 'long' | 'float' | 'double' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:374:5: ( 'boolean' | 'char' | 'byte' | 'short' | 'int' | 'long' | 'float' | 'double' )
 			int alt72=8;
 			switch ( input.LA(1) ) {
 			case 60:
@@ -6801,7 +6801,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt72) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:373:9: 'boolean'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:374:9: 'boolean'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6816,7 +6816,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:374:9: 'char'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:375:9: 'char'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6831,7 +6831,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:375:9: 'byte'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:376:9: 'byte'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6846,7 +6846,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:376:9: 'short'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:377:9: 'short'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6861,7 +6861,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:377:9: 'int'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:378:9: 'int'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6876,7 +6876,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:378:9: 'long'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:379:9: 'long'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6891,7 +6891,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:379:9: 'float'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:380:9: 'float'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6906,7 +6906,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:380:9: 'double'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:381:9: 'double'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6952,7 +6952,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "variableModifier"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:383:1: variableModifier : ( 'final' | annotation );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:384:1: variableModifier : ( 'final' | annotation );
 	public final JavaJavaParser.variableModifier_return variableModifier() throws RecognitionException {
 		JavaJavaParser.variableModifier_return retval = new JavaJavaParser.variableModifier_return();
 		retval.start = input.LT(1);
@@ -6968,7 +6968,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 56) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:384:5: ( 'final' | annotation )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:385:5: ( 'final' | annotation )
 			int alt73=2;
 			int LA73_0 = input.LA(1);
 			if ( (LA73_0==74) ) {
@@ -6987,7 +6987,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt73) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:384:9: 'final'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:385:9: 'final'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -7002,7 +7002,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:385:9: annotation
+					// /media/tony/disk2/_git/cs543/JavaJava.g:386:9: annotation
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -7047,7 +7047,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "typeArguments"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:388:1: typeArguments : '<' typeArgument ( ',' typeArgument )* '>' ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:389:1: typeArguments : '<' typeArgument ( ',' typeArgument )* '>' ;
 	public final JavaJavaParser.typeArguments_return typeArguments() throws RecognitionException {
 		JavaJavaParser.typeArguments_return retval = new JavaJavaParser.typeArguments_return();
 		retval.start = input.LT(1);
@@ -7068,8 +7068,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 57) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:389:5: ( '<' typeArgument ( ',' typeArgument )* '>' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:389:9: '<' typeArgument ( ',' typeArgument )* '>'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:390:5: ( '<' typeArgument ( ',' typeArgument )* '>' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:390:9: '<' typeArgument ( ',' typeArgument )* '>'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -7087,7 +7087,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, typeArgument229.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:389:36: ( ',' typeArgument )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:390:36: ( ',' typeArgument )*
 			loop74:
 			while (true) {
 				int alt74=2;
@@ -7098,7 +7098,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt74) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:389:37: ',' typeArgument
+					// /media/tony/disk2/_git/cs543/JavaJava.g:390:37: ',' typeArgument
 					{
 					char_literal230=(Token)match(input,39,FOLLOW_39_in_typeArguments2484); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -7160,7 +7160,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "typeArgument"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:392:1: typeArgument : ( type | '?' ( ( 'extends' | 'super' ) type )? );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:393:1: typeArgument : ( type | '?' ( ( 'extends' | 'super' ) type )? );
 	public final JavaJavaParser.typeArgument_return typeArgument() throws RecognitionException {
 		JavaJavaParser.typeArgument_return retval = new JavaJavaParser.typeArgument_return();
 		retval.start = input.LT(1);
@@ -7181,7 +7181,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 58) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:393:5: ( type | '?' ( ( 'extends' | 'super' ) type )? )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:394:5: ( type | '?' ( ( 'extends' | 'super' ) type )? )
 			int alt77=2;
 			int LA77_0 = input.LA(1);
 			if ( (LA77_0==Identifier||LA77_0==60||LA77_0==62||LA77_0==65||LA77_0==70||LA77_0==76||LA77_0==82||LA77_0==84||LA77_0==93) ) {
@@ -7200,7 +7200,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt77) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:393:9: type
+					// /media/tony/disk2/_git/cs543/JavaJava.g:394:9: type
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -7214,7 +7214,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:394:9: '?' ( ( 'extends' | 'super' ) type )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:395:9: '?' ( ( 'extends' | 'super' ) type )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -7225,7 +7225,7 @@ public class JavaJavaParser extends Parser {
 					adaptor.addChild(root_0, char_literal234_tree);
 					}
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:394:13: ( ( 'extends' | 'super' ) type )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:395:13: ( ( 'extends' | 'super' ) type )?
 					int alt76=2;
 					int LA76_0 = input.LA(1);
 					if ( (LA76_0==72||LA76_0==96) ) {
@@ -7233,9 +7233,9 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt76) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:394:14: ( 'extends' | 'super' ) type
+							// /media/tony/disk2/_git/cs543/JavaJava.g:395:14: ( 'extends' | 'super' ) type
 							{
-							// /media/tony/disk2/_git/cs543/JavaJava.g:394:14: ( 'extends' | 'super' )
+							// /media/tony/disk2/_git/cs543/JavaJava.g:395:14: ( 'extends' | 'super' )
 							int alt75=2;
 							int LA75_0 = input.LA(1);
 							if ( (LA75_0==72) ) {
@@ -7254,7 +7254,7 @@ public class JavaJavaParser extends Parser {
 
 							switch (alt75) {
 								case 1 :
-									// /media/tony/disk2/_git/cs543/JavaJava.g:394:15: 'extends'
+									// /media/tony/disk2/_git/cs543/JavaJava.g:395:15: 'extends'
 									{
 									string_literal235=(Token)match(input,72,FOLLOW_72_in_typeArgument2529); if (state.failed) return retval;
 									if ( state.backtracking==0 ) {
@@ -7266,7 +7266,7 @@ public class JavaJavaParser extends Parser {
 									}
 									break;
 								case 2 :
-									// /media/tony/disk2/_git/cs543/JavaJava.g:394:86: 'super'
+									// /media/tony/disk2/_git/cs543/JavaJava.g:395:86: 'super'
 									{
 									string_literal236=(Token)match(input,96,FOLLOW_96_in_typeArgument2534); if (state.failed) return retval;
 									if ( state.backtracking==0 ) {
@@ -7325,7 +7325,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "qualifiedNameList"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:397:1: qualifiedNameList : qualifiedName ( ',' qualifiedName )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:398:1: qualifiedNameList : qualifiedName ( ',' qualifiedName )* ;
 	public final JavaJavaParser.qualifiedNameList_return qualifiedNameList() throws RecognitionException {
 		JavaJavaParser.qualifiedNameList_return retval = new JavaJavaParser.qualifiedNameList_return();
 		retval.start = input.LT(1);
@@ -7342,8 +7342,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 59) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:398:5: ( qualifiedName ( ',' qualifiedName )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:398:9: qualifiedName ( ',' qualifiedName )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:399:5: ( qualifiedName ( ',' qualifiedName )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:399:9: qualifiedName ( ',' qualifiedName )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -7354,7 +7354,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, qualifiedName238.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:398:23: ( ',' qualifiedName )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:399:23: ( ',' qualifiedName )*
 			loop78:
 			while (true) {
 				int alt78=2;
@@ -7365,7 +7365,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt78) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:398:24: ',' qualifiedName
+					// /media/tony/disk2/_git/cs543/JavaJava.g:399:24: ',' qualifiedName
 					{
 					char_literal239=(Token)match(input,39,FOLLOW_39_in_qualifiedNameList2568); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -7420,7 +7420,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "formalParameters"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:401:1: formalParameters : '(' ( formalParameterDecls )? ')' ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:402:1: formalParameters : '(' ( formalParameterDecls )? ')' ;
 	public final JavaJavaParser.formalParameters_return formalParameters() throws RecognitionException {
 		JavaJavaParser.formalParameters_return retval = new JavaJavaParser.formalParameters_return();
 		retval.start = input.LT(1);
@@ -7438,8 +7438,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 60) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:402:5: ( '(' ( formalParameterDecls )? ')' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:402:9: '(' ( formalParameterDecls )? ')'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:403:5: ( '(' ( formalParameterDecls )? ')' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:403:9: '(' ( formalParameterDecls )? ')'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -7451,7 +7451,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("(");}
-			// /media/tony/disk2/_git/cs543/JavaJava.g:402:23: ( formalParameterDecls )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:403:23: ( formalParameterDecls )?
 			int alt79=2;
 			int LA79_0 = input.LA(1);
 			if ( (LA79_0==Identifier||LA79_0==54||LA79_0==60||LA79_0==62||LA79_0==65||LA79_0==70||LA79_0==74||LA79_0==76||LA79_0==82||LA79_0==84||LA79_0==93) ) {
@@ -7459,7 +7459,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt79) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:402:23: formalParameterDecls
+					// /media/tony/disk2/_git/cs543/JavaJava.g:403:23: formalParameterDecls
 					{
 					pushFollow(FOLLOW_formalParameterDecls_in_formalParameters2597);
 					formalParameterDecls242=formalParameterDecls();
@@ -7511,7 +7511,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "formalParameterDecls"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:405:1: formalParameterDecls : variableModifiers type formalParameterDeclsRest ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:406:1: formalParameterDecls : variableModifiers type formalParameterDeclsRest ;
 	public final JavaJavaParser.formalParameterDecls_return formalParameterDecls() throws RecognitionException {
 		JavaJavaParser.formalParameterDecls_return retval = new JavaJavaParser.formalParameterDecls_return();
 		retval.start = input.LT(1);
@@ -7527,8 +7527,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 61) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:406:5: ( variableModifiers type formalParameterDeclsRest )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:406:9: variableModifiers type formalParameterDeclsRest
+			// /media/tony/disk2/_git/cs543/JavaJava.g:407:5: ( variableModifiers type formalParameterDeclsRest )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:407:9: variableModifiers type formalParameterDeclsRest
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -7584,7 +7584,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "formalParameterDeclsRest"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:409:1: formalParameterDeclsRest : ( variableDeclaratorId ( ',' formalParameterDecls )? | '...' variableDeclaratorId );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:410:1: formalParameterDeclsRest : ( variableDeclaratorId ( ',' formalParameterDecls )? | '...' variableDeclaratorId );
 	public final JavaJavaParser.formalParameterDeclsRest_return formalParameterDeclsRest() throws RecognitionException {
 		JavaJavaParser.formalParameterDeclsRest_return retval = new JavaJavaParser.formalParameterDeclsRest_return();
 		retval.start = input.LT(1);
@@ -7604,7 +7604,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 62) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:410:5: ( variableDeclaratorId ( ',' formalParameterDecls )? | '...' variableDeclaratorId )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:411:5: ( variableDeclaratorId ( ',' formalParameterDecls )? | '...' variableDeclaratorId )
 			int alt81=2;
 			int LA81_0 = input.LA(1);
 			if ( (LA81_0==Identifier) ) {
@@ -7623,7 +7623,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt81) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:410:9: variableDeclaratorId ( ',' formalParameterDecls )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:411:9: variableDeclaratorId ( ',' formalParameterDecls )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -7634,7 +7634,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, variableDeclaratorId247.getTree());
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:410:30: ( ',' formalParameterDecls )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:411:30: ( ',' formalParameterDecls )?
 					int alt80=2;
 					int LA80_0 = input.LA(1);
 					if ( (LA80_0==39) ) {
@@ -7642,7 +7642,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt80) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:410:31: ',' formalParameterDecls
+							// /media/tony/disk2/_git/cs543/JavaJava.g:411:31: ',' formalParameterDecls
 							{
 							char_literal248=(Token)match(input,39,FOLLOW_39_in_formalParameterDeclsRest2658); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -7665,7 +7665,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:411:9: '...' variableDeclaratorId
+					// /media/tony/disk2/_git/cs543/JavaJava.g:412:9: '...' variableDeclaratorId
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -7716,7 +7716,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "methodBody"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:414:1: methodBody : block ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:415:1: methodBody : block ;
 	public final JavaJavaParser.methodBody_return methodBody() throws RecognitionException {
 		JavaJavaParser.methodBody_return retval = new JavaJavaParser.methodBody_return();
 		retval.start = input.LT(1);
@@ -7730,8 +7730,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 63) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:415:5: ( block )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:415:8: block
+			// /media/tony/disk2/_git/cs543/JavaJava.g:416:5: ( block )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:416:8: block
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -7775,7 +7775,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "constructorBody"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:418:1: constructorBody : '{' ( explicitConstructorInvocation )? ( blockStatement )* '}' ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:419:1: constructorBody : '{' ( explicitConstructorInvocation )? ( blockStatement )* '}' ;
 	public final JavaJavaParser.constructorBody_return constructorBody() throws RecognitionException {
 		JavaJavaParser.constructorBody_return retval = new JavaJavaParser.constructorBody_return();
 		retval.start = input.LT(1);
@@ -7794,8 +7794,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 64) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:419:5: ( '{' ( explicitConstructorInvocation )? ( blockStatement )* '}' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:419:9: '{' ( explicitConstructorInvocation )? ( blockStatement )* '}'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:420:5: ( '{' ( explicitConstructorInvocation )? ( blockStatement )* '}' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:420:9: '{' ( explicitConstructorInvocation )? ( blockStatement )* '}'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -7807,7 +7807,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("{");}
-			// /media/tony/disk2/_git/cs543/JavaJava.g:419:22: ( explicitConstructorInvocation )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:420:22: ( explicitConstructorInvocation )?
 			int alt82=2;
 			switch ( input.LA(1) ) {
 				case 49:
@@ -8002,7 +8002,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt82) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:419:22: explicitConstructorInvocation
+					// /media/tony/disk2/_git/cs543/JavaJava.g:420:22: explicitConstructorInvocation
 					{
 					pushFollow(FOLLOW_explicitConstructorInvocation_in_constructorBody2722);
 					explicitConstructorInvocation254=explicitConstructorInvocation();
@@ -8015,7 +8015,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:419:53: ( blockStatement )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:420:53: ( blockStatement )*
 			loop83:
 			while (true) {
 				int alt83=2;
@@ -8026,7 +8026,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt83) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:419:53: blockStatement
+					// /media/tony/disk2/_git/cs543/JavaJava.g:420:53: blockStatement
 					{
 					pushFollow(FOLLOW_blockStatement_in_constructorBody2725);
 					blockStatement255=blockStatement();
@@ -8081,7 +8081,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "explicitConstructorInvocation"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:422:1: explicitConstructorInvocation : ( ( nonWildcardTypeArguments )? ( 'this' | 'super' ) arguments ';' | primary '.' ( nonWildcardTypeArguments )? 'super' arguments ';' );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:423:1: explicitConstructorInvocation : ( ( nonWildcardTypeArguments )? ( 'this' | 'super' ) arguments ';' | primary '.' ( nonWildcardTypeArguments )? 'super' arguments ';' );
 	public final JavaJavaParser.explicitConstructorInvocation_return explicitConstructorInvocation() throws RecognitionException {
 		JavaJavaParser.explicitConstructorInvocation_return retval = new JavaJavaParser.explicitConstructorInvocation_return();
 		retval.start = input.LT(1);
@@ -8111,7 +8111,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 65) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:423:5: ( ( nonWildcardTypeArguments )? ( 'this' | 'super' ) arguments ';' | primary '.' ( nonWildcardTypeArguments )? 'super' arguments ';' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:424:5: ( ( nonWildcardTypeArguments )? ( 'this' | 'super' ) arguments ';' | primary '.' ( nonWildcardTypeArguments )? 'super' arguments ';' )
 			int alt87=2;
 			switch ( input.LA(1) ) {
 			case 49:
@@ -8176,12 +8176,12 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt87) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:423:9: ( nonWildcardTypeArguments )? ( 'this' | 'super' ) arguments ';'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:424:9: ( nonWildcardTypeArguments )? ( 'this' | 'super' ) arguments ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:423:9: ( nonWildcardTypeArguments )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:424:9: ( nonWildcardTypeArguments )?
 					int alt84=2;
 					int LA84_0 = input.LA(1);
 					if ( (LA84_0==49) ) {
@@ -8189,7 +8189,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt84) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:423:9: nonWildcardTypeArguments
+							// /media/tony/disk2/_git/cs543/JavaJava.g:424:9: nonWildcardTypeArguments
 							{
 							pushFollow(FOLLOW_nonWildcardTypeArguments_in_explicitConstructorInvocation2749);
 							nonWildcardTypeArguments257=nonWildcardTypeArguments();
@@ -8202,7 +8202,7 @@ public class JavaJavaParser extends Parser {
 
 					}
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:423:35: ( 'this' | 'super' )
+					// /media/tony/disk2/_git/cs543/JavaJava.g:424:35: ( 'this' | 'super' )
 					int alt85=2;
 					int LA85_0 = input.LA(1);
 					if ( (LA85_0==99) ) {
@@ -8221,7 +8221,7 @@ public class JavaJavaParser extends Parser {
 
 					switch (alt85) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:423:36: 'this'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:424:36: 'this'
 							{
 							string_literal258=(Token)match(input,99,FOLLOW_99_in_explicitConstructorInvocation2753); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -8233,7 +8233,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:423:101: 'super'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:424:101: 'super'
 							{
 							string_literal259=(Token)match(input,96,FOLLOW_96_in_explicitConstructorInvocation2758); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -8263,7 +8263,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:424:9: primary '.' ( nonWildcardTypeArguments )? 'super' arguments ';'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:425:9: primary '.' ( nonWildcardTypeArguments )? 'super' arguments ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8281,7 +8281,7 @@ public class JavaJavaParser extends Parser {
 					}
 
 					if ( state.backtracking==0 ) {s(".");}
-					// /media/tony/disk2/_git/cs543/JavaJava.g:424:30: ( nonWildcardTypeArguments )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:425:30: ( nonWildcardTypeArguments )?
 					int alt86=2;
 					int LA86_0 = input.LA(1);
 					if ( (LA86_0==49) ) {
@@ -8289,7 +8289,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt86) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:424:30: nonWildcardTypeArguments
+							// /media/tony/disk2/_git/cs543/JavaJava.g:425:30: nonWildcardTypeArguments
 							{
 							pushFollow(FOLLOW_nonWildcardTypeArguments_in_explicitConstructorInvocation2782);
 							nonWildcardTypeArguments264=nonWildcardTypeArguments();
@@ -8355,7 +8355,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "qualifiedName"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:428:1: qualifiedName : I1= Identifier ( '.' I2= Identifier )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:429:1: qualifiedName : I1= Identifier ( '.' I2= Identifier )* ;
 	public final JavaJavaParser.qualifiedName_return qualifiedName() throws RecognitionException {
 		JavaJavaParser.qualifiedName_return retval = new JavaJavaParser.qualifiedName_return();
 		retval.start = input.LT(1);
@@ -8374,8 +8374,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 66) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:429:5: (I1= Identifier ( '.' I2= Identifier )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:429:9: I1= Identifier ( '.' I2= Identifier )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:430:5: (I1= Identifier ( '.' I2= Identifier )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:430:9: I1= Identifier ( '.' I2= Identifier )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -8387,7 +8387,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {myID  = (I1!=null?I1.getText():null);}
-			// /media/tony/disk2/_git/cs543/JavaJava.g:429:43: ( '.' I2= Identifier )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:430:43: ( '.' I2= Identifier )*
 			loop88:
 			while (true) {
 				int alt88=2;
@@ -8402,7 +8402,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt88) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:429:44: '.' I2= Identifier
+					// /media/tony/disk2/_git/cs543/JavaJava.g:430:44: '.' I2= Identifier
 					{
 					char_literal268=(Token)match(input,43,FOLLOW_43_in_qualifiedName2818); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -8458,7 +8458,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "literal"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:432:1: literal : ( integerLiteral | FloatingPointLiteral | CharacterLiteral | StringLiteral | booleanLiteral | 'null' );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:433:1: literal : ( integerLiteral | FloatingPointLiteral | CharacterLiteral | StringLiteral | booleanLiteral | 'null' );
 	public final JavaJavaParser.literal_return literal() throws RecognitionException {
 		JavaJavaParser.literal_return retval = new JavaJavaParser.literal_return();
 		retval.start = input.LT(1);
@@ -8481,7 +8481,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 67) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:433:5: ( integerLiteral | FloatingPointLiteral | CharacterLiteral | StringLiteral | booleanLiteral | 'null' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:434:5: ( integerLiteral | FloatingPointLiteral | CharacterLiteral | StringLiteral | booleanLiteral | 'null' )
 			int alt89=6;
 			switch ( input.LA(1) ) {
 			case DecimalLiteral:
@@ -8525,7 +8525,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt89) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:433:9: integerLiteral
+					// /media/tony/disk2/_git/cs543/JavaJava.g:434:9: integerLiteral
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8539,7 +8539,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:434:9: FloatingPointLiteral
+					// /media/tony/disk2/_git/cs543/JavaJava.g:435:9: FloatingPointLiteral
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8554,7 +8554,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:435:9: CharacterLiteral
+					// /media/tony/disk2/_git/cs543/JavaJava.g:436:9: CharacterLiteral
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8569,7 +8569,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:436:9: StringLiteral
+					// /media/tony/disk2/_git/cs543/JavaJava.g:437:9: StringLiteral
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8584,7 +8584,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:437:9: booleanLiteral
+					// /media/tony/disk2/_git/cs543/JavaJava.g:438:9: booleanLiteral
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8598,7 +8598,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:438:9: 'null'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:439:9: 'null'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8644,7 +8644,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "integerLiteral"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:441:1: integerLiteral : ( HexLiteral | OctalLiteral | DecimalLiteral );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:442:1: integerLiteral : ( HexLiteral | OctalLiteral | DecimalLiteral );
 	public final JavaJavaParser.integerLiteral_return integerLiteral() throws RecognitionException {
 		JavaJavaParser.integerLiteral_return retval = new JavaJavaParser.integerLiteral_return();
 		retval.start = input.LT(1);
@@ -8663,7 +8663,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 68) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:442:5: ( HexLiteral | OctalLiteral | DecimalLiteral )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:443:5: ( HexLiteral | OctalLiteral | DecimalLiteral )
 			int alt90=3;
 			switch ( input.LA(1) ) {
 			case HexLiteral:
@@ -8689,7 +8689,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt90) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:442:9: HexLiteral
+					// /media/tony/disk2/_git/cs543/JavaJava.g:443:9: HexLiteral
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8704,7 +8704,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:443:9: OctalLiteral
+					// /media/tony/disk2/_git/cs543/JavaJava.g:444:9: OctalLiteral
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8719,7 +8719,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:444:9: DecimalLiteral
+					// /media/tony/disk2/_git/cs543/JavaJava.g:445:9: DecimalLiteral
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8765,7 +8765,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "booleanLiteral"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:447:1: booleanLiteral : ( 'true' | 'false' );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:448:1: booleanLiteral : ( 'true' | 'false' );
 	public final JavaJavaParser.booleanLiteral_return booleanLiteral() throws RecognitionException {
 		JavaJavaParser.booleanLiteral_return retval = new JavaJavaParser.booleanLiteral_return();
 		retval.start = input.LT(1);
@@ -8782,7 +8782,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 69) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:448:5: ( 'true' | 'false' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:449:5: ( 'true' | 'false' )
 			int alt91=2;
 			int LA91_0 = input.LA(1);
 			if ( (LA91_0==103) ) {
@@ -8801,7 +8801,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt91) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:448:9: 'true'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:449:9: 'true'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8816,7 +8816,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:449:9: 'false'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:450:9: 'false'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8862,7 +8862,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "annotations"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:454:1: annotations : ( annotation )+ ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:455:1: annotations : ( annotation )+ ;
 	public final JavaJavaParser.annotations_return annotations() throws RecognitionException {
 		JavaJavaParser.annotations_return retval = new JavaJavaParser.annotations_return();
 		retval.start = input.LT(1);
@@ -8876,13 +8876,13 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 70) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:455:5: ( ( annotation )+ )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:455:9: ( annotation )+
+			// /media/tony/disk2/_git/cs543/JavaJava.g:456:5: ( ( annotation )+ )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:456:9: ( annotation )+
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:455:9: ( annotation )+
+			// /media/tony/disk2/_git/cs543/JavaJava.g:456:9: ( annotation )+
 			int cnt92=0;
 			loop92:
 			while (true) {
@@ -8902,7 +8902,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt92) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:455:9: annotation
+					// /media/tony/disk2/_git/cs543/JavaJava.g:456:9: annotation
 					{
 					pushFollow(FOLLOW_annotation_in_annotations3011);
 					annotation280=annotation();
@@ -8954,7 +8954,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "annotation"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:458:1: annotation : '@' annotationName ( '(' ( elementValuePairs | elementValue )? ')' )? ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:459:1: annotation : '@' annotationName ( '(' ( elementValuePairs | elementValue )? ')' )? ;
 	public final JavaJavaParser.annotation_return annotation() throws RecognitionException {
 		JavaJavaParser.annotation_return retval = new JavaJavaParser.annotation_return();
 		retval.start = input.LT(1);
@@ -8976,8 +8976,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 71) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:459:5: ( '@' annotationName ( '(' ( elementValuePairs | elementValue )? ')' )? )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:459:9: '@' annotationName ( '(' ( elementValuePairs | elementValue )? ')' )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:460:5: ( '@' annotationName ( '(' ( elementValuePairs | elementValue )? ')' )? )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:460:9: '@' annotationName ( '(' ( elementValuePairs | elementValue )? ')' )?
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -8994,7 +8994,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, annotationName282.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:459:28: ( '(' ( elementValuePairs | elementValue )? ')' )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:460:28: ( '(' ( elementValuePairs | elementValue )? ')' )?
 			int alt94=2;
 			int LA94_0 = input.LA(1);
 			if ( (LA94_0==32) ) {
@@ -9002,7 +9002,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt94) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:459:30: '(' ( elementValuePairs | elementValue )? ')'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:460:30: '(' ( elementValuePairs | elementValue )? ')'
 					{
 					char_literal283=(Token)match(input,32,FOLLOW_32_in_annotation3037); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -9011,7 +9011,7 @@ public class JavaJavaParser extends Parser {
 					}
 
 					if ( state.backtracking==0 ) {s("(");}
-					// /media/tony/disk2/_git/cs543/JavaJava.g:459:44: ( elementValuePairs | elementValue )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:460:44: ( elementValuePairs | elementValue )?
 					int alt93=3;
 					int LA93_0 = input.LA(1);
 					if ( (LA93_0==Identifier) ) {
@@ -9028,7 +9028,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt93) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:459:46: elementValuePairs
+							// /media/tony/disk2/_git/cs543/JavaJava.g:460:46: elementValuePairs
 							{
 							pushFollow(FOLLOW_elementValuePairs_in_annotation3043);
 							elementValuePairs284=elementValuePairs();
@@ -9039,7 +9039,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:459:66: elementValue
+							// /media/tony/disk2/_git/cs543/JavaJava.g:460:66: elementValue
 							{
 							pushFollow(FOLLOW_elementValue_in_annotation3047);
 							elementValue285=elementValue();
@@ -9096,7 +9096,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "annotationName"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:462:1: annotationName : t1= Identifier ( '.' Identifier )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:463:1: annotationName : t1= Identifier ( '.' Identifier )* ;
 	public final JavaJavaParser.annotationName_return annotationName() throws RecognitionException {
 		JavaJavaParser.annotationName_return retval = new JavaJavaParser.annotationName_return();
 		retval.start = input.LT(1);
@@ -9115,8 +9115,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 72) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:463:5: (t1= Identifier ( '.' Identifier )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:463:7: t1= Identifier ( '.' Identifier )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:464:5: (t1= Identifier ( '.' Identifier )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:464:7: t1= Identifier ( '.' Identifier )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -9128,7 +9128,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {id((t1!=null?t1.getText():null)); }
-			// /media/tony/disk2/_git/cs543/JavaJava.g:463:38: ( '.' Identifier )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:464:38: ( '.' Identifier )*
 			loop95:
 			while (true) {
 				int alt95=2;
@@ -9139,7 +9139,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt95) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:463:39: '.' Identifier
+					// /media/tony/disk2/_git/cs543/JavaJava.g:464:39: '.' Identifier
 					{
 					char_literal287=(Token)match(input,43,FOLLOW_43_in_annotationName3086); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -9194,7 +9194,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "elementValuePairs"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:466:1: elementValuePairs : elementValuePair ( ',' elementValuePair )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:467:1: elementValuePairs : elementValuePair ( ',' elementValuePair )* ;
 	public final JavaJavaParser.elementValuePairs_return elementValuePairs() throws RecognitionException {
 		JavaJavaParser.elementValuePairs_return retval = new JavaJavaParser.elementValuePairs_return();
 		retval.start = input.LT(1);
@@ -9211,8 +9211,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 73) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:467:5: ( elementValuePair ( ',' elementValuePair )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:467:9: elementValuePair ( ',' elementValuePair )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:468:5: ( elementValuePair ( ',' elementValuePair )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:468:9: elementValuePair ( ',' elementValuePair )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -9223,7 +9223,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, elementValuePair289.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:467:26: ( ',' elementValuePair )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:468:26: ( ',' elementValuePair )*
 			loop96:
 			while (true) {
 				int alt96=2;
@@ -9234,7 +9234,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt96) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:467:27: ',' elementValuePair
+					// /media/tony/disk2/_git/cs543/JavaJava.g:468:27: ',' elementValuePair
 					{
 					char_literal290=(Token)match(input,39,FOLLOW_39_in_elementValuePairs3114); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -9289,7 +9289,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "elementValuePair"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:470:1: elementValuePair : Identifier '=' elementValue ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:471:1: elementValuePair : Identifier '=' elementValue ;
 	public final JavaJavaParser.elementValuePair_return elementValuePair() throws RecognitionException {
 		JavaJavaParser.elementValuePair_return retval = new JavaJavaParser.elementValuePair_return();
 		retval.start = input.LT(1);
@@ -9307,8 +9307,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 74) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:471:5: ( Identifier '=' elementValue )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:471:9: Identifier '=' elementValue
+			// /media/tony/disk2/_git/cs543/JavaJava.g:472:5: ( Identifier '=' elementValue )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:472:9: Identifier '=' elementValue
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -9365,7 +9365,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "elementValue"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:474:1: elementValue : ( conditionalExpression | annotation | elementValueArrayInitializer );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:475:1: elementValue : ( conditionalExpression | annotation | elementValueArrayInitializer );
 	public final JavaJavaParser.elementValue_return elementValue() throws RecognitionException {
 		JavaJavaParser.elementValue_return retval = new JavaJavaParser.elementValue_return();
 		retval.start = input.LT(1);
@@ -9381,7 +9381,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 75) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:475:5: ( conditionalExpression | annotation | elementValueArrayInitializer )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:476:5: ( conditionalExpression | annotation | elementValueArrayInitializer )
 			int alt97=3;
 			switch ( input.LA(1) ) {
 			case CharacterLiteral:
@@ -9435,7 +9435,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt97) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:475:9: conditionalExpression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:476:9: conditionalExpression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -9449,7 +9449,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:476:9: annotation
+					// /media/tony/disk2/_git/cs543/JavaJava.g:477:9: annotation
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -9463,7 +9463,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:477:9: elementValueArrayInitializer
+					// /media/tony/disk2/_git/cs543/JavaJava.g:478:9: elementValueArrayInitializer
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -9508,7 +9508,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "elementValueArrayInitializer"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:480:1: elementValueArrayInitializer : '{' ( elementValue ( ',' elementValue )* )? ( ',' )? '}' ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:481:1: elementValueArrayInitializer : '{' ( elementValue ( ',' elementValue )* )? ( ',' )? '}' ;
 	public final JavaJavaParser.elementValueArrayInitializer_return elementValueArrayInitializer() throws RecognitionException {
 		JavaJavaParser.elementValueArrayInitializer_return retval = new JavaJavaParser.elementValueArrayInitializer_return();
 		retval.start = input.LT(1);
@@ -9531,8 +9531,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 76) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:481:5: ( '{' ( elementValue ( ',' elementValue )* )? ( ',' )? '}' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:481:9: '{' ( elementValue ( ',' elementValue )* )? ( ',' )? '}'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:482:5: ( '{' ( elementValue ( ',' elementValue )* )? ( ',' )? '}' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:482:9: '{' ( elementValue ( ',' elementValue )* )? ( ',' )? '}'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -9544,7 +9544,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("{");}
-			// /media/tony/disk2/_git/cs543/JavaJava.g:481:22: ( elementValue ( ',' elementValue )* )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:482:22: ( elementValue ( ',' elementValue )* )?
 			int alt99=2;
 			int LA99_0 = input.LA(1);
 			if ( ((LA99_0 >= CharacterLiteral && LA99_0 <= DecimalLiteral)||LA99_0==FloatingPointLiteral||(LA99_0 >= HexLiteral && LA99_0 <= Identifier)||(LA99_0 >= OctalLiteral && LA99_0 <= StringLiteral)||LA99_0==25||LA99_0==32||(LA99_0 >= 36 && LA99_0 <= 37)||(LA99_0 >= 40 && LA99_0 <= 41)||LA99_0==54||LA99_0==60||LA99_0==62||LA99_0==65||LA99_0==70||LA99_0==73||LA99_0==76||LA99_0==82||LA99_0==84||(LA99_0 >= 86 && LA99_0 <= 87)||LA99_0==93||LA99_0==96||LA99_0==99||LA99_0==103||LA99_0==105||LA99_0==108||LA99_0==113) ) {
@@ -9552,7 +9552,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt99) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:481:23: elementValue ( ',' elementValue )*
+					// /media/tony/disk2/_git/cs543/JavaJava.g:482:23: elementValue ( ',' elementValue )*
 					{
 					pushFollow(FOLLOW_elementValue_in_elementValueArrayInitializer3217);
 					elementValue299=elementValue();
@@ -9560,7 +9560,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, elementValue299.getTree());
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:481:36: ( ',' elementValue )*
+					// /media/tony/disk2/_git/cs543/JavaJava.g:482:36: ( ',' elementValue )*
 					loop98:
 					while (true) {
 						int alt98=2;
@@ -9575,7 +9575,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt98) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:481:37: ',' elementValue
+							// /media/tony/disk2/_git/cs543/JavaJava.g:482:37: ',' elementValue
 							{
 							char_literal300=(Token)match(input,39,FOLLOW_39_in_elementValueArrayInitializer3220); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -9603,7 +9603,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:481:67: ( ',' )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:482:67: ( ',' )?
 			int alt100=2;
 			int LA100_0 = input.LA(1);
 			if ( (LA100_0==39) ) {
@@ -9611,7 +9611,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt100) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:481:68: ','
+					// /media/tony/disk2/_git/cs543/JavaJava.g:482:68: ','
 					{
 					char_literal302=(Token)match(input,39,FOLLOW_39_in_elementValueArrayInitializer3230); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -9663,7 +9663,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "annotationTypeDeclaration"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:484:1: annotationTypeDeclaration : '@' 'interface' Identifier annotationTypeBody ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:485:1: annotationTypeDeclaration : '@' 'interface' Identifier annotationTypeBody ;
 	public final JavaJavaParser.annotationTypeDeclaration_return annotationTypeDeclaration() throws RecognitionException {
 		JavaJavaParser.annotationTypeDeclaration_return retval = new JavaJavaParser.annotationTypeDeclaration_return();
 		retval.start = input.LT(1);
@@ -9683,8 +9683,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 77) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:485:5: ( '@' 'interface' Identifier annotationTypeBody )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:485:9: '@' 'interface' Identifier annotationTypeBody
+			// /media/tony/disk2/_git/cs543/JavaJava.g:486:5: ( '@' 'interface' Identifier annotationTypeBody )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:486:9: '@' 'interface' Identifier annotationTypeBody
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -9746,7 +9746,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "annotationTypeBody"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:488:1: annotationTypeBody : '{' ( annotationTypeElementDeclaration )* '}' ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:489:1: annotationTypeBody : '{' ( annotationTypeElementDeclaration )* '}' ;
 	public final JavaJavaParser.annotationTypeBody_return annotationTypeBody() throws RecognitionException {
 		JavaJavaParser.annotationTypeBody_return retval = new JavaJavaParser.annotationTypeBody_return();
 		retval.start = input.LT(1);
@@ -9764,8 +9764,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 78) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:489:5: ( '{' ( annotationTypeElementDeclaration )* '}' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:489:9: '{' ( annotationTypeElementDeclaration )* '}'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:490:5: ( '{' ( annotationTypeElementDeclaration )* '}' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:490:9: '{' ( annotationTypeElementDeclaration )* '}'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -9777,7 +9777,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("{");}
-			// /media/tony/disk2/_git/cs543/JavaJava.g:489:22: ( annotationTypeElementDeclaration )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:490:22: ( annotationTypeElementDeclaration )*
 			loop101:
 			while (true) {
 				int alt101=2;
@@ -9788,7 +9788,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt101) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:489:23: annotationTypeElementDeclaration
+					// /media/tony/disk2/_git/cs543/JavaJava.g:490:23: annotationTypeElementDeclaration
 					{
 					pushFollow(FOLLOW_annotationTypeElementDeclaration_in_annotationTypeBody3294);
 					annotationTypeElementDeclaration309=annotationTypeElementDeclaration();
@@ -9843,7 +9843,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "annotationTypeElementDeclaration"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:492:1: annotationTypeElementDeclaration : modifiers annotationTypeElementRest ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:493:1: annotationTypeElementDeclaration : modifiers annotationTypeElementRest ;
 	public final JavaJavaParser.annotationTypeElementDeclaration_return annotationTypeElementDeclaration() throws RecognitionException {
 		JavaJavaParser.annotationTypeElementDeclaration_return retval = new JavaJavaParser.annotationTypeElementDeclaration_return();
 		retval.start = input.LT(1);
@@ -9858,8 +9858,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 79) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:493:5: ( modifiers annotationTypeElementRest )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:493:9: modifiers annotationTypeElementRest
+			// /media/tony/disk2/_git/cs543/JavaJava.g:494:5: ( modifiers annotationTypeElementRest )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:494:9: modifiers annotationTypeElementRest
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -9908,7 +9908,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "annotationTypeElementRest"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:496:1: annotationTypeElementRest : ( type annotationMethodOrConstantRest ';' | normalClassDeclaration ( ';' )? | normalInterfaceDeclaration ( ';' )? | enumDeclaration ( ';' )? | annotationTypeDeclaration ( ';' )? );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:497:1: annotationTypeElementRest : ( type annotationMethodOrConstantRest ';' | normalClassDeclaration ( ';' )? | normalInterfaceDeclaration ( ';' )? | enumDeclaration ( ';' )? | annotationTypeDeclaration ( ';' )? );
 	public final JavaJavaParser.annotationTypeElementRest_return annotationTypeElementRest() throws RecognitionException {
 		JavaJavaParser.annotationTypeElementRest_return retval = new JavaJavaParser.annotationTypeElementRest_return();
 		retval.start = input.LT(1);
@@ -9937,7 +9937,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 80) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:497:5: ( type annotationMethodOrConstantRest ';' | normalClassDeclaration ( ';' )? | normalInterfaceDeclaration ( ';' )? | enumDeclaration ( ';' )? | annotationTypeDeclaration ( ';' )? )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:498:5: ( type annotationMethodOrConstantRest ';' | normalClassDeclaration ( ';' )? | normalInterfaceDeclaration ( ';' )? | enumDeclaration ( ';' )? | annotationTypeDeclaration ( ';' )? )
 			int alt106=5;
 			switch ( input.LA(1) ) {
 			case Identifier:
@@ -9981,7 +9981,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt106) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:497:9: type annotationMethodOrConstantRest ';'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:498:9: type annotationMethodOrConstantRest ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10007,7 +10007,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:498:9: normalClassDeclaration ( ';' )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:499:9: normalClassDeclaration ( ';' )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10018,7 +10018,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, normalClassDeclaration316.getTree());
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:498:32: ( ';' )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:499:32: ( ';' )?
 					int alt102=2;
 					int LA102_0 = input.LA(1);
 					if ( (LA102_0==48) ) {
@@ -10026,7 +10026,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt102) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:498:32: ';'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:499:32: ';'
 							{
 							char_literal317=(Token)match(input,48,FOLLOW_48_in_annotationTypeElementRest3363); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -10042,7 +10042,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:499:9: normalInterfaceDeclaration ( ';' )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:500:9: normalInterfaceDeclaration ( ';' )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10053,7 +10053,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, normalInterfaceDeclaration318.getTree());
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:499:36: ( ';' )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:500:36: ( ';' )?
 					int alt103=2;
 					int LA103_0 = input.LA(1);
 					if ( (LA103_0==48) ) {
@@ -10061,7 +10061,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt103) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:499:36: ';'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:500:36: ';'
 							{
 							char_literal319=(Token)match(input,48,FOLLOW_48_in_annotationTypeElementRest3376); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -10077,7 +10077,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:500:9: enumDeclaration ( ';' )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:501:9: enumDeclaration ( ';' )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10088,7 +10088,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, enumDeclaration320.getTree());
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:500:25: ( ';' )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:501:25: ( ';' )?
 					int alt104=2;
 					int LA104_0 = input.LA(1);
 					if ( (LA104_0==48) ) {
@@ -10096,7 +10096,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt104) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:500:25: ';'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:501:25: ';'
 							{
 							char_literal321=(Token)match(input,48,FOLLOW_48_in_annotationTypeElementRest3389); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -10112,7 +10112,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:501:9: annotationTypeDeclaration ( ';' )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:502:9: annotationTypeDeclaration ( ';' )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10123,7 +10123,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, annotationTypeDeclaration322.getTree());
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:501:35: ( ';' )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:502:35: ( ';' )?
 					int alt105=2;
 					int LA105_0 = input.LA(1);
 					if ( (LA105_0==48) ) {
@@ -10131,7 +10131,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt105) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:501:35: ';'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:502:35: ';'
 							{
 							char_literal323=(Token)match(input,48,FOLLOW_48_in_annotationTypeElementRest3402); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -10178,7 +10178,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "annotationMethodOrConstantRest"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:504:1: annotationMethodOrConstantRest : ( annotationMethodRest | annotationConstantRest );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:505:1: annotationMethodOrConstantRest : ( annotationMethodRest | annotationConstantRest );
 	public final JavaJavaParser.annotationMethodOrConstantRest_return annotationMethodOrConstantRest() throws RecognitionException {
 		JavaJavaParser.annotationMethodOrConstantRest_return retval = new JavaJavaParser.annotationMethodOrConstantRest_return();
 		retval.start = input.LT(1);
@@ -10193,7 +10193,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 81) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:505:5: ( annotationMethodRest | annotationConstantRest )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:506:5: ( annotationMethodRest | annotationConstantRest )
 			int alt107=2;
 			int LA107_0 = input.LA(1);
 			if ( (LA107_0==Identifier) ) {
@@ -10229,7 +10229,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt107) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:505:9: annotationMethodRest
+					// /media/tony/disk2/_git/cs543/JavaJava.g:506:9: annotationMethodRest
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10243,7 +10243,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:506:9: annotationConstantRest
+					// /media/tony/disk2/_git/cs543/JavaJava.g:507:9: annotationConstantRest
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10288,7 +10288,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "annotationMethodRest"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:509:1: annotationMethodRest : Identifier '(' ')' ( defaultValue )? ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:510:1: annotationMethodRest : Identifier '(' ')' ( defaultValue )? ;
 	public final JavaJavaParser.annotationMethodRest_return annotationMethodRest() throws RecognitionException {
 		JavaJavaParser.annotationMethodRest_return retval = new JavaJavaParser.annotationMethodRest_return();
 		retval.start = input.LT(1);
@@ -10308,8 +10308,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 82) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:510:5: ( Identifier '(' ')' ( defaultValue )? )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:510:9: Identifier '(' ')' ( defaultValue )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:511:5: ( Identifier '(' ')' ( defaultValue )? )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:511:9: Identifier '(' ')' ( defaultValue )?
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -10335,7 +10335,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s(")");}
-			// /media/tony/disk2/_git/cs543/JavaJava.g:510:73: ( defaultValue )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:511:73: ( defaultValue )?
 			int alt108=2;
 			int LA108_0 = input.LA(1);
 			if ( (LA108_0==68) ) {
@@ -10343,7 +10343,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt108) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:510:73: defaultValue
+					// /media/tony/disk2/_git/cs543/JavaJava.g:511:73: defaultValue
 					{
 					pushFollow(FOLLOW_defaultValue_in_annotationMethodRest3472);
 					defaultValue329=defaultValue();
@@ -10388,7 +10388,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "annotationConstantRest"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:513:1: annotationConstantRest : variableDeclarators ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:514:1: annotationConstantRest : variableDeclarators ;
 	public final JavaJavaParser.annotationConstantRest_return annotationConstantRest() throws RecognitionException {
 		JavaJavaParser.annotationConstantRest_return retval = new JavaJavaParser.annotationConstantRest_return();
 		retval.start = input.LT(1);
@@ -10402,8 +10402,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 83) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:514:5: ( variableDeclarators )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:514:9: variableDeclarators
+			// /media/tony/disk2/_git/cs543/JavaJava.g:515:5: ( variableDeclarators )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:515:9: variableDeclarators
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -10446,7 +10446,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "defaultValue"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:517:1: defaultValue : 'default' elementValue ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:518:1: defaultValue : 'default' elementValue ;
 	public final JavaJavaParser.defaultValue_return defaultValue() throws RecognitionException {
 		JavaJavaParser.defaultValue_return retval = new JavaJavaParser.defaultValue_return();
 		retval.start = input.LT(1);
@@ -10462,8 +10462,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 84) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:518:5: ( 'default' elementValue )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:518:9: 'default' elementValue
+			// /media/tony/disk2/_git/cs543/JavaJava.g:519:5: ( 'default' elementValue )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:519:9: 'default' elementValue
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -10513,7 +10513,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "block"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:523:1: block : '{' ( blockStatement )* '}' ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:524:1: block : '{' ( blockStatement )* '}' ;
 	public final JavaJavaParser.block_return block() throws RecognitionException {
 		JavaJavaParser.block_return retval = new JavaJavaParser.block_return();
 		retval.start = input.LT(1);
@@ -10531,8 +10531,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 85) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:524:5: ( '{' ( blockStatement )* '}' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:524:9: '{' ( blockStatement )* '}'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:525:5: ( '{' ( blockStatement )* '}' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:525:9: '{' ( blockStatement )* '}'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -10544,7 +10544,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("{");}
-			// /media/tony/disk2/_git/cs543/JavaJava.g:524:23: ( blockStatement )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:525:23: ( blockStatement )*
 			loop109:
 			while (true) {
 				int alt109=2;
@@ -10555,7 +10555,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt109) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:524:23: blockStatement
+					// /media/tony/disk2/_git/cs543/JavaJava.g:525:23: blockStatement
 					{
 					pushFollow(FOLLOW_blockStatement_in_block3548);
 					blockStatement334=blockStatement();
@@ -10610,7 +10610,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "blockStatement"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:527:1: blockStatement : ( localVariableDeclarationStatement | classOrInterfaceDeclaration | statement );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:528:1: blockStatement : ( localVariableDeclarationStatement | classOrInterfaceDeclaration | statement );
 	public final JavaJavaParser.blockStatement_return blockStatement() throws RecognitionException {
 		JavaJavaParser.blockStatement_return retval = new JavaJavaParser.blockStatement_return();
 		retval.start = input.LT(1);
@@ -10626,7 +10626,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 86) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:528:5: ( localVariableDeclarationStatement | classOrInterfaceDeclaration | statement )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:529:5: ( localVariableDeclarationStatement | classOrInterfaceDeclaration | statement )
 			int alt110=3;
 			switch ( input.LA(1) ) {
 			case 74:
@@ -10846,7 +10846,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt110) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:528:10: localVariableDeclarationStatement
+					// /media/tony/disk2/_git/cs543/JavaJava.g:529:10: localVariableDeclarationStatement
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10860,7 +10860,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:529:9: classOrInterfaceDeclaration
+					// /media/tony/disk2/_git/cs543/JavaJava.g:530:9: classOrInterfaceDeclaration
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10874,7 +10874,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:530:8: statement
+					// /media/tony/disk2/_git/cs543/JavaJava.g:531:8: statement
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10919,7 +10919,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "localVariableDeclarationStatement"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:533:1: localVariableDeclarationStatement : localVariableDeclaration ';' ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:534:1: localVariableDeclarationStatement : localVariableDeclaration ';' ;
 	public final JavaJavaParser.localVariableDeclarationStatement_return localVariableDeclarationStatement() throws RecognitionException {
 		JavaJavaParser.localVariableDeclarationStatement_return retval = new JavaJavaParser.localVariableDeclarationStatement_return();
 		retval.start = input.LT(1);
@@ -10935,8 +10935,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 87) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:534:5: ( localVariableDeclaration ';' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:534:10: localVariableDeclaration ';'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:535:5: ( localVariableDeclaration ';' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:535:10: localVariableDeclaration ';'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -10987,7 +10987,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "localVariableDeclaration"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:537:1: localVariableDeclaration : variableModifiers type variableDeclarators ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:538:1: localVariableDeclaration : variableModifiers type variableDeclarators ;
 	public final JavaJavaParser.localVariableDeclaration_return localVariableDeclaration() throws RecognitionException {
 		JavaJavaParser.localVariableDeclaration_return retval = new JavaJavaParser.localVariableDeclaration_return();
 		retval.start = input.LT(1);
@@ -11003,8 +11003,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 88) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:538:5: ( variableModifiers type variableDeclarators )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:538:9: variableModifiers type variableDeclarators
+			// /media/tony/disk2/_git/cs543/JavaJava.g:539:5: ( variableModifiers type variableDeclarators )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:539:9: variableModifiers type variableDeclarators
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -11060,7 +11060,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "variableModifiers"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:541:1: variableModifiers : ( variableModifier )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:542:1: variableModifiers : ( variableModifier )* ;
 	public final JavaJavaParser.variableModifiers_return variableModifiers() throws RecognitionException {
 		JavaJavaParser.variableModifiers_return retval = new JavaJavaParser.variableModifiers_return();
 		retval.start = input.LT(1);
@@ -11074,13 +11074,13 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 89) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:542:5: ( ( variableModifier )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:542:9: ( variableModifier )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:543:5: ( ( variableModifier )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:543:9: ( variableModifier )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:542:9: ( variableModifier )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:543:9: ( variableModifier )*
 			loop111:
 			while (true) {
 				int alt111=2;
@@ -11091,7 +11091,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt111) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:542:9: variableModifier
+					// /media/tony/disk2/_git/cs543/JavaJava.g:543:9: variableModifier
 					{
 					pushFollow(FOLLOW_variableModifier_in_variableModifiers3674);
 					variableModifier344=variableModifier();
@@ -11139,7 +11139,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "statement"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:545:1: statement : ( block | ASSERT expression ( ':' expression )? ';' | 'if' parExpression statement ( options {k=1; } : 'else' statement )? | 'for' '(' forControl ')' statement | 'while' parExpression statement | 'do' statement 'while' parExpression ';' | 'try' block ( catches 'finally' block | catches | 'finally' block ) | 'switch' parExpression '{' switchBlockStatementGroups '}' | 'synchronized' parExpression block | 'return' ( expression )? ';' | 'throw' expression ';' | 'break' ( Identifier )? ';' | 'continue' ( Identifier )? ';' | ';' | statementExpression ';' | Identifier ':' statement );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:546:1: statement : ( block | ASSERT expression ( ':' expression )? ';' | 'if' parExpression statement ( options {k=1; } : 'else' statement )? | 'for' '(' forControl ')' statement | 'while' parExpression statement | 'do' statement 'while' parExpression ';' | 'try' block ( catches 'finally' block | catches | 'finally' block ) | 'switch' parExpression '{' switchBlockStatementGroups '}' | 'synchronized' parExpression block | 'return' ( expression )? ';' | 'throw' expression ';' | 'break' ( Identifier )? ';' | 'continue' ( Identifier )? ';' | ';' | statementExpression ';' | Identifier ':' statement );
 	public final JavaJavaParser.statement_return statement() throws RecognitionException {
 		JavaJavaParser.statement_return retval = new JavaJavaParser.statement_return();
 		retval.start = input.LT(1);
@@ -11243,7 +11243,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 90) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:546:5: ( block | ASSERT expression ( ':' expression )? ';' | 'if' parExpression statement ( options {k=1; } : 'else' statement )? | 'for' '(' forControl ')' statement | 'while' parExpression statement | 'do' statement 'while' parExpression ';' | 'try' block ( catches 'finally' block | catches | 'finally' block ) | 'switch' parExpression '{' switchBlockStatementGroups '}' | 'synchronized' parExpression block | 'return' ( expression )? ';' | 'throw' expression ';' | 'break' ( Identifier )? ';' | 'continue' ( Identifier )? ';' | ';' | statementExpression ';' | Identifier ':' statement )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:547:5: ( block | ASSERT expression ( ':' expression )? ';' | 'if' parExpression statement ( options {k=1; } : 'else' statement )? | 'for' '(' forControl ')' statement | 'while' parExpression statement | 'do' statement 'while' parExpression ';' | 'try' block ( catches 'finally' block | catches | 'finally' block ) | 'switch' parExpression '{' switchBlockStatementGroups '}' | 'synchronized' parExpression block | 'return' ( expression )? ';' | 'throw' expression ';' | 'break' ( Identifier )? ';' | 'continue' ( Identifier )? ';' | ';' | statementExpression ';' | Identifier ':' statement )
 			int alt118=16;
 			switch ( input.LA(1) ) {
 			case 108:
@@ -11381,7 +11381,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt118) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:546:7: block
+					// /media/tony/disk2/_git/cs543/JavaJava.g:547:7: block
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11395,7 +11395,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:547:9: ASSERT expression ( ':' expression )? ';'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:548:9: ASSERT expression ( ':' expression )? ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11412,7 +11412,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression347.getTree());
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:547:27: ( ':' expression )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:548:27: ( ':' expression )?
 					int alt112=2;
 					int LA112_0 = input.LA(1);
 					if ( (LA112_0==47) ) {
@@ -11420,7 +11420,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt112) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:547:28: ':' expression
+							// /media/tony/disk2/_git/cs543/JavaJava.g:548:28: ':' expression
 							{
 							char_literal348=(Token)match(input,47,FOLLOW_47_in_statement3707); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -11448,7 +11448,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:548:9: 'if' parExpression statement ( options {k=1; } : 'else' statement )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:549:9: 'if' parExpression statement ( options {k=1; } : 'else' statement )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11472,7 +11472,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, statement353.getTree());
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:548:99: ( options {k=1; } : 'else' statement )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:549:99: ( options {k=1; } : 'else' statement )?
 					int alt113=2;
 					int LA113_0 = input.LA(1);
 					if ( (LA113_0==71) ) {
@@ -11483,7 +11483,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt113) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:548:115: 'else' statement
+							// /media/tony/disk2/_git/cs543/JavaJava.g:549:115: 'else' statement
 							{
 							string_literal354=(Token)match(input,71,FOLLOW_71_in_statement3738); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -11506,7 +11506,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:549:9: 'for' '(' forControl ')' statement
+					// /media/tony/disk2/_git/cs543/JavaJava.g:550:9: 'for' '(' forControl ')' statement
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11547,7 +11547,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:550:9: 'while' parExpression statement
+					// /media/tony/disk2/_git/cs543/JavaJava.g:551:9: 'while' parExpression statement
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11574,7 +11574,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:551:9: 'do' statement 'while' parExpression ';'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:552:9: 'do' statement 'while' parExpression ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11615,7 +11615,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:552:9: 'try' block ( catches 'finally' block | catches | 'finally' block )
+					// /media/tony/disk2/_git/cs543/JavaJava.g:553:9: 'try' block ( catches 'finally' block | catches | 'finally' block )
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11633,7 +11633,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, block370.getTree());
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:553:9: ( catches 'finally' block | catches | 'finally' block )
+					// /media/tony/disk2/_git/cs543/JavaJava.g:554:9: ( catches 'finally' block | catches | 'finally' block )
 					int alt114=3;
 					int LA114_0 = input.LA(1);
 					if ( (LA114_0==64) ) {
@@ -11672,7 +11672,7 @@ public class JavaJavaParser extends Parser {
 
 					switch (alt114) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:553:11: catches 'finally' block
+							// /media/tony/disk2/_git/cs543/JavaJava.g:554:11: catches 'finally' block
 							{
 							pushFollow(FOLLOW_catches_in_statement3832);
 							catches371=catches();
@@ -11696,7 +11696,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:554:11: catches
+							// /media/tony/disk2/_git/cs543/JavaJava.g:555:11: catches
 							{
 							pushFollow(FOLLOW_catches_in_statement3849);
 							catches374=catches();
@@ -11707,7 +11707,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 3 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:555:13: 'finally' block
+							// /media/tony/disk2/_git/cs543/JavaJava.g:556:13: 'finally' block
 							{
 							string_literal375=(Token)match(input,75,FOLLOW_75_in_statement3863); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -11730,7 +11730,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:557:9: 'switch' parExpression '{' switchBlockStatementGroups '}'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:558:9: 'switch' parExpression '{' switchBlockStatementGroups '}'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11769,7 +11769,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 9 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:558:9: 'synchronized' parExpression block
+					// /media/tony/disk2/_git/cs543/JavaJava.g:559:9: 'synchronized' parExpression block
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11796,7 +11796,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 10 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:559:9: 'return' ( expression )? ';'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:560:9: 'return' ( expression )? ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11808,7 +11808,7 @@ public class JavaJavaParser extends Parser {
 					}
 
 					if ( state.backtracking==0 ) {keywordCount++;JavaMetrics.uniqueKeywords.add("return");}
-					// /media/tony/disk2/_git/cs543/JavaJava.g:559:77: ( expression )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:560:77: ( expression )?
 					int alt115=2;
 					int LA115_0 = input.LA(1);
 					if ( ((LA115_0 >= CharacterLiteral && LA115_0 <= DecimalLiteral)||LA115_0==FloatingPointLiteral||(LA115_0 >= HexLiteral && LA115_0 <= Identifier)||(LA115_0 >= OctalLiteral && LA115_0 <= StringLiteral)||LA115_0==25||LA115_0==32||(LA115_0 >= 36 && LA115_0 <= 37)||(LA115_0 >= 40 && LA115_0 <= 41)||LA115_0==60||LA115_0==62||LA115_0==65||LA115_0==70||LA115_0==73||LA115_0==76||LA115_0==82||LA115_0==84||(LA115_0 >= 86 && LA115_0 <= 87)||LA115_0==93||LA115_0==96||LA115_0==99||LA115_0==103||LA115_0==105||LA115_0==113) ) {
@@ -11816,7 +11816,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt115) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:559:77: expression
+							// /media/tony/disk2/_git/cs543/JavaJava.g:560:77: expression
 							{
 							pushFollow(FOLLOW_expression_in_statement3925);
 							expression386=expression();
@@ -11839,7 +11839,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 11 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:560:9: 'throw' expression ';'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:561:9: 'throw' expression ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11867,7 +11867,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 12 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:561:9: 'break' ( Identifier )? ';'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:562:9: 'break' ( Identifier )? ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11879,7 +11879,7 @@ public class JavaJavaParser extends Parser {
 					}
 
 					if ( state.backtracking==0 ) {keywordCount++;JavaMetrics.uniqueKeywords.add("break"); System.out.println("FOUND BREAK");}
-					// /media/tony/disk2/_git/cs543/JavaJava.g:561:109: ( Identifier )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:562:109: ( Identifier )?
 					int alt116=2;
 					int LA116_0 = input.LA(1);
 					if ( (LA116_0==Identifier) ) {
@@ -11887,7 +11887,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt116) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:561:109: Identifier
+							// /media/tony/disk2/_git/cs543/JavaJava.g:562:109: Identifier
 							{
 							Identifier392=(Token)match(input,Identifier,FOLLOW_Identifier_in_statement3960); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -11911,7 +11911,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 13 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:562:9: 'continue' ( Identifier )? ';'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:563:9: 'continue' ( Identifier )? ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11923,7 +11923,7 @@ public class JavaJavaParser extends Parser {
 					}
 
 					if ( state.backtracking==0 ) {keywordCount++;JavaMetrics.uniqueKeywords.add("continue");}
-					// /media/tony/disk2/_git/cs543/JavaJava.g:562:81: ( Identifier )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:563:81: ( Identifier )?
 					int alt117=2;
 					int LA117_0 = input.LA(1);
 					if ( (LA117_0==Identifier) ) {
@@ -11931,7 +11931,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt117) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:562:81: Identifier
+							// /media/tony/disk2/_git/cs543/JavaJava.g:563:81: Identifier
 							{
 							Identifier395=(Token)match(input,Identifier,FOLLOW_Identifier_in_statement3980); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -11955,7 +11955,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 14 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:563:9: ';'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:564:9: ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11970,7 +11970,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 15 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:564:9: statementExpression ';'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:565:9: statementExpression ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11991,7 +11991,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 16 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:565:9: Identifier ':' statement
+					// /media/tony/disk2/_git/cs543/JavaJava.g:566:9: Identifier ':' statement
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -12049,7 +12049,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "catches"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:568:1: catches : catchClause ( catchClause )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:569:1: catches : catchClause ( catchClause )* ;
 	public final JavaJavaParser.catches_return catches() throws RecognitionException {
 		JavaJavaParser.catches_return retval = new JavaJavaParser.catches_return();
 		retval.start = input.LT(1);
@@ -12064,8 +12064,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 91) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:569:5: ( catchClause ( catchClause )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:569:9: catchClause ( catchClause )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:570:5: ( catchClause ( catchClause )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:570:9: catchClause ( catchClause )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -12076,7 +12076,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, catchClause403.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:569:21: ( catchClause )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:570:21: ( catchClause )*
 			loop119:
 			while (true) {
 				int alt119=2;
@@ -12087,7 +12087,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt119) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:569:22: catchClause
+					// /media/tony/disk2/_git/cs543/JavaJava.g:570:22: catchClause
 					{
 					pushFollow(FOLLOW_catchClause_in_catches4056);
 					catchClause404=catchClause();
@@ -12135,7 +12135,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "catchClause"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:572:1: catchClause : 'catch' '(' formalParameter ')' block ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:573:1: catchClause : 'catch' '(' formalParameter ')' block ;
 	public final JavaJavaParser.catchClause_return catchClause() throws RecognitionException {
 		JavaJavaParser.catchClause_return retval = new JavaJavaParser.catchClause_return();
 		retval.start = input.LT(1);
@@ -12156,8 +12156,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 92) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:573:5: ( 'catch' '(' formalParameter ')' block )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:573:9: 'catch' '(' formalParameter ')' block
+			// /media/tony/disk2/_git/cs543/JavaJava.g:574:5: ( 'catch' '(' formalParameter ')' block )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:574:9: 'catch' '(' formalParameter ')' block
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -12227,7 +12227,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "formalParameter"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:576:1: formalParameter : variableModifiers type variableDeclaratorId ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:577:1: formalParameter : variableModifiers type variableDeclaratorId ;
 	public final JavaJavaParser.formalParameter_return formalParameter() throws RecognitionException {
 		JavaJavaParser.formalParameter_return retval = new JavaJavaParser.formalParameter_return();
 		retval.start = input.LT(1);
@@ -12243,8 +12243,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 93) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:577:5: ( variableModifiers type variableDeclaratorId )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:577:9: variableModifiers type variableDeclaratorId
+			// /media/tony/disk2/_git/cs543/JavaJava.g:578:5: ( variableModifiers type variableDeclaratorId )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:578:9: variableModifiers type variableDeclaratorId
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -12299,7 +12299,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "switchBlockStatementGroups"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:580:1: switchBlockStatementGroups : ( switchBlockStatementGroup )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:581:1: switchBlockStatementGroups : ( switchBlockStatementGroup )* ;
 	public final JavaJavaParser.switchBlockStatementGroups_return switchBlockStatementGroups() throws RecognitionException {
 		JavaJavaParser.switchBlockStatementGroups_return retval = new JavaJavaParser.switchBlockStatementGroups_return();
 		retval.start = input.LT(1);
@@ -12313,13 +12313,13 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 94) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:581:5: ( ( switchBlockStatementGroup )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:581:9: ( switchBlockStatementGroup )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:582:5: ( ( switchBlockStatementGroup )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:582:9: ( switchBlockStatementGroup )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:581:9: ( switchBlockStatementGroup )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:582:9: ( switchBlockStatementGroup )*
 			loop120:
 			while (true) {
 				int alt120=2;
@@ -12330,7 +12330,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt120) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:581:10: switchBlockStatementGroup
+					// /media/tony/disk2/_git/cs543/JavaJava.g:582:10: switchBlockStatementGroup
 					{
 					pushFollow(FOLLOW_switchBlockStatementGroup_in_switchBlockStatementGroups4145);
 					switchBlockStatementGroup413=switchBlockStatementGroup();
@@ -12378,7 +12378,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "switchBlockStatementGroup"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:588:1: switchBlockStatementGroup : ( switchLabel )+ ( blockStatement )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:589:1: switchBlockStatementGroup : ( switchLabel )+ ( blockStatement )* ;
 	public final JavaJavaParser.switchBlockStatementGroup_return switchBlockStatementGroup() throws RecognitionException {
 		JavaJavaParser.switchBlockStatementGroup_return retval = new JavaJavaParser.switchBlockStatementGroup_return();
 		retval.start = input.LT(1);
@@ -12393,13 +12393,13 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 95) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:589:5: ( ( switchLabel )+ ( blockStatement )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:589:9: ( switchLabel )+ ( blockStatement )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:590:5: ( ( switchLabel )+ ( blockStatement )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:590:9: ( switchLabel )+ ( blockStatement )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:589:9: ( switchLabel )+
+			// /media/tony/disk2/_git/cs543/JavaJava.g:590:9: ( switchLabel )+
 			int cnt121=0;
 			loop121:
 			while (true) {
@@ -12422,7 +12422,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt121) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:589:9: switchLabel
+					// /media/tony/disk2/_git/cs543/JavaJava.g:590:9: switchLabel
 					{
 					pushFollow(FOLLOW_switchLabel_in_switchBlockStatementGroup4172);
 					switchLabel414=switchLabel();
@@ -12442,7 +12442,7 @@ public class JavaJavaParser extends Parser {
 				cnt121++;
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:589:22: ( blockStatement )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:590:22: ( blockStatement )*
 			loop122:
 			while (true) {
 				int alt122=2;
@@ -12453,7 +12453,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt122) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:589:22: blockStatement
+					// /media/tony/disk2/_git/cs543/JavaJava.g:590:22: blockStatement
 					{
 					pushFollow(FOLLOW_blockStatement_in_switchBlockStatementGroup4175);
 					blockStatement415=blockStatement();
@@ -12501,7 +12501,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "switchLabel"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:592:1: switchLabel : ( 'case' constantExpression ':' | 'case' enumConstantName ':' | 'default' ':' );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:593:1: switchLabel : ( 'case' constantExpression ':' | 'case' enumConstantName ':' | 'default' ':' );
 	public final JavaJavaParser.switchLabel_return switchLabel() throws RecognitionException {
 		JavaJavaParser.switchLabel_return retval = new JavaJavaParser.switchLabel_return();
 		retval.start = input.LT(1);
@@ -12528,7 +12528,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 96) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:593:5: ( 'case' constantExpression ':' | 'case' enumConstantName ':' | 'default' ':' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:594:5: ( 'case' constantExpression ':' | 'case' enumConstantName ':' | 'default' ':' )
 			int alt123=3;
 			int LA123_0 = input.LA(1);
 			if ( (LA123_0==63) ) {
@@ -12611,7 +12611,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt123) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:593:9: 'case' constantExpression ':'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:594:9: 'case' constantExpression ':'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -12638,7 +12638,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:594:9: 'case' enumConstantName ':'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:595:9: 'case' enumConstantName ':'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -12665,7 +12665,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:595:9: 'default' ':'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:596:9: 'default' ':'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -12717,7 +12717,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "forControl"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:598:1: forControl options {k=3; } : ( enhancedForControl | ( forInit )? ';' ( expression )? ';' ( forUpdate )? );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:599:1: forControl options {k=3; } : ( enhancedForControl | ( forInit )? ';' ( expression )? ';' ( forUpdate )? );
 	public final JavaJavaParser.forControl_return forControl() throws RecognitionException {
 		JavaJavaParser.forControl_return retval = new JavaJavaParser.forControl_return();
 		retval.start = input.LT(1);
@@ -12738,12 +12738,12 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 97) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:600:5: ( enhancedForControl | ( forInit )? ';' ( expression )? ';' ( forUpdate )? )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:601:5: ( enhancedForControl | ( forInit )? ';' ( expression )? ';' ( forUpdate )? )
 			int alt127=2;
 			alt127 = dfa127.predict(input);
 			switch (alt127) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:600:9: enhancedForControl
+					// /media/tony/disk2/_git/cs543/JavaJava.g:601:9: enhancedForControl
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -12757,12 +12757,12 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:601:9: ( forInit )? ';' ( expression )? ';' ( forUpdate )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:602:9: ( forInit )? ';' ( expression )? ';' ( forUpdate )?
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:601:9: ( forInit )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:602:9: ( forInit )?
 					int alt124=2;
 					int LA124_0 = input.LA(1);
 					if ( ((LA124_0 >= CharacterLiteral && LA124_0 <= DecimalLiteral)||LA124_0==FloatingPointLiteral||(LA124_0 >= HexLiteral && LA124_0 <= Identifier)||(LA124_0 >= OctalLiteral && LA124_0 <= StringLiteral)||LA124_0==25||LA124_0==32||(LA124_0 >= 36 && LA124_0 <= 37)||(LA124_0 >= 40 && LA124_0 <= 41)||LA124_0==54||LA124_0==60||LA124_0==62||LA124_0==65||LA124_0==70||(LA124_0 >= 73 && LA124_0 <= 74)||LA124_0==76||LA124_0==82||LA124_0==84||(LA124_0 >= 86 && LA124_0 <= 87)||LA124_0==93||LA124_0==96||LA124_0==99||LA124_0==103||LA124_0==105||LA124_0==113) ) {
@@ -12770,7 +12770,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt124) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:601:9: forInit
+							// /media/tony/disk2/_git/cs543/JavaJava.g:602:9: forInit
 							{
 							pushFollow(FOLLOW_forInit_in_forControl4275);
 							forInit425=forInit();
@@ -12789,7 +12789,7 @@ public class JavaJavaParser extends Parser {
 					adaptor.addChild(root_0, char_literal426_tree);
 					}
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:601:22: ( expression )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:602:22: ( expression )?
 					int alt125=2;
 					int LA125_0 = input.LA(1);
 					if ( ((LA125_0 >= CharacterLiteral && LA125_0 <= DecimalLiteral)||LA125_0==FloatingPointLiteral||(LA125_0 >= HexLiteral && LA125_0 <= Identifier)||(LA125_0 >= OctalLiteral && LA125_0 <= StringLiteral)||LA125_0==25||LA125_0==32||(LA125_0 >= 36 && LA125_0 <= 37)||(LA125_0 >= 40 && LA125_0 <= 41)||LA125_0==60||LA125_0==62||LA125_0==65||LA125_0==70||LA125_0==73||LA125_0==76||LA125_0==82||LA125_0==84||(LA125_0 >= 86 && LA125_0 <= 87)||LA125_0==93||LA125_0==96||LA125_0==99||LA125_0==103||LA125_0==105||LA125_0==113) ) {
@@ -12797,7 +12797,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt125) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:601:22: expression
+							// /media/tony/disk2/_git/cs543/JavaJava.g:602:22: expression
 							{
 							pushFollow(FOLLOW_expression_in_forControl4280);
 							expression427=expression();
@@ -12816,7 +12816,7 @@ public class JavaJavaParser extends Parser {
 					adaptor.addChild(root_0, char_literal428_tree);
 					}
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:601:38: ( forUpdate )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:602:38: ( forUpdate )?
 					int alt126=2;
 					int LA126_0 = input.LA(1);
 					if ( ((LA126_0 >= CharacterLiteral && LA126_0 <= DecimalLiteral)||LA126_0==FloatingPointLiteral||(LA126_0 >= HexLiteral && LA126_0 <= Identifier)||(LA126_0 >= OctalLiteral && LA126_0 <= StringLiteral)||LA126_0==25||LA126_0==32||(LA126_0 >= 36 && LA126_0 <= 37)||(LA126_0 >= 40 && LA126_0 <= 41)||LA126_0==60||LA126_0==62||LA126_0==65||LA126_0==70||LA126_0==73||LA126_0==76||LA126_0==82||LA126_0==84||(LA126_0 >= 86 && LA126_0 <= 87)||LA126_0==93||LA126_0==96||LA126_0==99||LA126_0==103||LA126_0==105||LA126_0==113) ) {
@@ -12824,7 +12824,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt126) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:601:38: forUpdate
+							// /media/tony/disk2/_git/cs543/JavaJava.g:602:38: forUpdate
 							{
 							pushFollow(FOLLOW_forUpdate_in_forControl4285);
 							forUpdate429=forUpdate();
@@ -12871,7 +12871,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "forInit"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:604:1: forInit : ( localVariableDeclaration | expressionList );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:605:1: forInit : ( localVariableDeclaration | expressionList );
 	public final JavaJavaParser.forInit_return forInit() throws RecognitionException {
 		JavaJavaParser.forInit_return retval = new JavaJavaParser.forInit_return();
 		retval.start = input.LT(1);
@@ -12886,7 +12886,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 98) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:605:5: ( localVariableDeclaration | expressionList )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:606:5: ( localVariableDeclaration | expressionList )
 			int alt128=2;
 			switch ( input.LA(1) ) {
 			case 54:
@@ -13035,7 +13035,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt128) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:605:9: localVariableDeclaration
+					// /media/tony/disk2/_git/cs543/JavaJava.g:606:9: localVariableDeclaration
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -13049,7 +13049,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:606:9: expressionList
+					// /media/tony/disk2/_git/cs543/JavaJava.g:607:9: expressionList
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -13094,7 +13094,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "enhancedForControl"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:609:1: enhancedForControl : variableModifiers type Identifier ':' expression ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:610:1: enhancedForControl : variableModifiers type Identifier ':' expression ;
 	public final JavaJavaParser.enhancedForControl_return enhancedForControl() throws RecognitionException {
 		JavaJavaParser.enhancedForControl_return retval = new JavaJavaParser.enhancedForControl_return();
 		retval.start = input.LT(1);
@@ -13114,8 +13114,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 99) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:610:5: ( variableModifiers type Identifier ':' expression )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:610:9: variableModifiers type Identifier ':' expression
+			// /media/tony/disk2/_git/cs543/JavaJava.g:611:5: ( variableModifiers type Identifier ':' expression )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:611:9: variableModifiers type Identifier ':' expression
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -13183,7 +13183,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "forUpdate"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:613:1: forUpdate : expressionList ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:614:1: forUpdate : expressionList ;
 	public final JavaJavaParser.forUpdate_return forUpdate() throws RecognitionException {
 		JavaJavaParser.forUpdate_return retval = new JavaJavaParser.forUpdate_return();
 		retval.start = input.LT(1);
@@ -13197,8 +13197,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 100) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:614:5: ( expressionList )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:614:9: expressionList
+			// /media/tony/disk2/_git/cs543/JavaJava.g:615:5: ( expressionList )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:615:9: expressionList
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -13241,7 +13241,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "parExpression"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:619:1: parExpression : '(' expression ')' ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:620:1: parExpression : '(' expression ')' ;
 	public final JavaJavaParser.parExpression_return parExpression() throws RecognitionException {
 		JavaJavaParser.parExpression_return retval = new JavaJavaParser.parExpression_return();
 		retval.start = input.LT(1);
@@ -13259,8 +13259,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 101) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:620:5: ( '(' expression ')' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:620:9: '(' expression ')'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:621:5: ( '(' expression ')' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:621:9: '(' expression ')'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -13317,7 +13317,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "expressionList"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:623:1: expressionList : expression ( ',' expression )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:624:1: expressionList : expression ( ',' expression )* ;
 	public final JavaJavaParser.expressionList_return expressionList() throws RecognitionException {
 		JavaJavaParser.expressionList_return retval = new JavaJavaParser.expressionList_return();
 		retval.start = input.LT(1);
@@ -13334,8 +13334,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 102) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:624:5: ( expression ( ',' expression )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:624:9: expression ( ',' expression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:625:5: ( expression ( ',' expression )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:625:9: expression ( ',' expression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -13346,7 +13346,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression441.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:624:20: ( ',' expression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:625:20: ( ',' expression )*
 			loop129:
 			while (true) {
 				int alt129=2;
@@ -13357,7 +13357,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt129) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:624:21: ',' expression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:625:21: ',' expression
 					{
 					char_literal442=(Token)match(input,39,FOLLOW_39_in_expressionList4422); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -13412,7 +13412,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "statementExpression"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:627:1: statementExpression : expression ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:628:1: statementExpression : expression ;
 	public final JavaJavaParser.statementExpression_return statementExpression() throws RecognitionException {
 		JavaJavaParser.statementExpression_return retval = new JavaJavaParser.statementExpression_return();
 		retval.start = input.LT(1);
@@ -13426,8 +13426,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 103) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:628:5: ( expression )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:628:9: expression
+			// /media/tony/disk2/_git/cs543/JavaJava.g:629:5: ( expression )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:629:9: expression
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -13470,7 +13470,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "constantExpression"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:631:1: constantExpression : expression ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:632:1: constantExpression : expression ;
 	public final JavaJavaParser.constantExpression_return constantExpression() throws RecognitionException {
 		JavaJavaParser.constantExpression_return retval = new JavaJavaParser.constantExpression_return();
 		retval.start = input.LT(1);
@@ -13484,8 +13484,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 104) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:632:5: ( expression )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:632:9: expression
+			// /media/tony/disk2/_git/cs543/JavaJava.g:633:5: ( expression )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:633:9: expression
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -13528,7 +13528,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "expression"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:635:1: expression : conditionalExpression ( assignmentOperator expression )? ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:636:1: expression : conditionalExpression ( assignmentOperator expression )? ;
 	public final JavaJavaParser.expression_return expression() throws RecognitionException {
 		JavaJavaParser.expression_return retval = new JavaJavaParser.expression_return();
 		retval.start = input.LT(1);
@@ -13544,8 +13544,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 105) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:636:5: ( conditionalExpression ( assignmentOperator expression )? )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:636:9: conditionalExpression ( assignmentOperator expression )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:637:5: ( conditionalExpression ( assignmentOperator expression )? )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:637:9: conditionalExpression ( assignmentOperator expression )?
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -13556,7 +13556,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, conditionalExpression446.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:636:31: ( assignmentOperator expression )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:637:31: ( assignmentOperator expression )?
 			int alt130=2;
 			switch ( input.LA(1) ) {
 				case 50:
@@ -13650,7 +13650,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt130) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:636:32: assignmentOperator expression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:637:32: assignmentOperator expression
 					{
 					pushFollow(FOLLOW_assignmentOperator_in_expression4496);
 					assignmentOperator447=assignmentOperator();
@@ -13701,7 +13701,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "assignmentOperator"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:639:1: assignmentOperator : ( '=' | '+=' | '-=' | '*=' | '/=' | '&=' | '|=' | '^=' | '%=' | ( '<' '<' '=' )=>t1= '<' t2= '<' t3= '=' {...}?| ( '>' '>' '>' '=' )=>t1= '>' t2= '>' t3= '>' t4= '=' {...}?| ( '>' '>' '=' )=>t1= '>' t2= '>' t3= '=' {...}?);
+	// /media/tony/disk2/_git/cs543/JavaJava.g:640:1: assignmentOperator : ( '=' | '+=' | '-=' | '*=' | '/=' | '&=' | '|=' | '^=' | '%=' | ( '<' '<' '=' )=>t1= '<' t2= '<' t3= '=' {...}?| ( '>' '>' '>' '=' )=>t1= '>' t2= '>' t3= '>' t4= '=' {...}?| ( '>' '>' '=' )=>t1= '>' t2= '>' t3= '=' {...}?);
 	public final JavaJavaParser.assignmentOperator_return assignmentOperator() throws RecognitionException {
 		JavaJavaParser.assignmentOperator_return retval = new JavaJavaParser.assignmentOperator_return();
 		retval.start = input.LT(1);
@@ -13740,7 +13740,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 106) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:640:5: ( '=' | '+=' | '-=' | '*=' | '/=' | '&=' | '|=' | '^=' | '%=' | ( '<' '<' '=' )=>t1= '<' t2= '<' t3= '=' {...}?| ( '>' '>' '>' '=' )=>t1= '>' t2= '>' t3= '>' t4= '=' {...}?| ( '>' '>' '=' )=>t1= '>' t2= '>' t3= '=' {...}?)
+			// /media/tony/disk2/_git/cs543/JavaJava.g:641:5: ( '=' | '+=' | '-=' | '*=' | '/=' | '&=' | '|=' | '^=' | '%=' | ( '<' '<' '=' )=>t1= '<' t2= '<' t3= '=' {...}?| ( '>' '>' '>' '=' )=>t1= '>' t2= '>' t3= '>' t4= '=' {...}?| ( '>' '>' '=' )=>t1= '>' t2= '>' t3= '=' {...}?)
 			int alt131=12;
 			int LA131_0 = input.LA(1);
 			if ( (LA131_0==50) ) {
@@ -13810,7 +13810,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt131) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:640:9: '='
+					// /media/tony/disk2/_git/cs543/JavaJava.g:641:9: '='
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -13825,7 +13825,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:641:9: '+='
+					// /media/tony/disk2/_git/cs543/JavaJava.g:642:9: '+='
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -13839,7 +13839,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:642:9: '-='
+					// /media/tony/disk2/_git/cs543/JavaJava.g:643:9: '-='
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -13853,7 +13853,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:643:9: '*='
+					// /media/tony/disk2/_git/cs543/JavaJava.g:644:9: '*='
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -13867,7 +13867,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:644:9: '/='
+					// /media/tony/disk2/_git/cs543/JavaJava.g:645:9: '/='
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -13881,7 +13881,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:645:9: '&='
+					// /media/tony/disk2/_git/cs543/JavaJava.g:646:9: '&='
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -13895,7 +13895,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:646:9: '|='
+					// /media/tony/disk2/_git/cs543/JavaJava.g:647:9: '|='
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -13909,7 +13909,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:647:9: '^='
+					// /media/tony/disk2/_git/cs543/JavaJava.g:648:9: '^='
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -13923,7 +13923,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 9 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:648:9: '%='
+					// /media/tony/disk2/_git/cs543/JavaJava.g:649:9: '%='
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -13937,7 +13937,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 10 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:649:9: ( '<' '<' '=' )=>t1= '<' t2= '<' t3= '=' {...}?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:650:9: ( '<' '<' '=' )=>t1= '<' t2= '<' t3= '=' {...}?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -13970,7 +13970,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 11 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:654:9: ( '>' '>' '>' '=' )=>t1= '>' t2= '>' t3= '>' t4= '=' {...}?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:655:9: ( '>' '>' '>' '=' )=>t1= '>' t2= '>' t3= '>' t4= '=' {...}?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -14011,7 +14011,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 12 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:661:9: ( '>' '>' '=' )=>t1= '>' t2= '>' t3= '=' {...}?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:662:9: ( '>' '>' '=' )=>t1= '>' t2= '>' t3= '=' {...}?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -14075,7 +14075,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "conditionalExpression"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:668:1: conditionalExpression : conditionalOrExpression ( '?' expression ':' expression )? ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:669:1: conditionalExpression : conditionalOrExpression ( '?' expression ':' expression )? ;
 	public final JavaJavaParser.conditionalExpression_return conditionalExpression() throws RecognitionException {
 		JavaJavaParser.conditionalExpression_return retval = new JavaJavaParser.conditionalExpression_return();
 		retval.start = input.LT(1);
@@ -14095,8 +14095,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 107) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:669:5: ( conditionalOrExpression ( '?' expression ':' expression )? )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:669:9: conditionalOrExpression ( '?' expression ':' expression )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:670:5: ( conditionalOrExpression ( '?' expression ':' expression )? )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:670:9: conditionalOrExpression ( '?' expression ':' expression )?
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -14107,7 +14107,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, conditionalOrExpression458.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:669:33: ( '?' expression ':' expression )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:670:33: ( '?' expression ':' expression )?
 			int alt132=2;
 			int LA132_0 = input.LA(1);
 			if ( (LA132_0==53) ) {
@@ -14115,7 +14115,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt132) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:669:35: '?' expression ':' expression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:670:35: '?' expression ':' expression
 					{
 					char_literal459=(Token)match(input,53,FOLLOW_53_in_conditionalExpression4752); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -14178,7 +14178,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "conditionalOrExpression"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:672:1: conditionalOrExpression : conditionalAndExpression ( '||' conditionalAndExpression )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:673:1: conditionalOrExpression : conditionalAndExpression ( '||' conditionalAndExpression )* ;
 	public final JavaJavaParser.conditionalOrExpression_return conditionalOrExpression() throws RecognitionException {
 		JavaJavaParser.conditionalOrExpression_return retval = new JavaJavaParser.conditionalOrExpression_return();
 		retval.start = input.LT(1);
@@ -14195,8 +14195,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 108) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:673:5: ( conditionalAndExpression ( '||' conditionalAndExpression )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:673:9: conditionalAndExpression ( '||' conditionalAndExpression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:674:5: ( conditionalAndExpression ( '||' conditionalAndExpression )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:674:9: conditionalAndExpression ( '||' conditionalAndExpression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -14207,7 +14207,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, conditionalAndExpression463.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:673:34: ( '||' conditionalAndExpression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:674:34: ( '||' conditionalAndExpression )*
 			loop133:
 			while (true) {
 				int alt133=2;
@@ -14218,7 +14218,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt133) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:673:36: '||' conditionalAndExpression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:674:36: '||' conditionalAndExpression
 					{
 					string_literal464=(Token)match(input,111,FOLLOW_111_in_conditionalOrExpression4784); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -14273,7 +14273,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "conditionalAndExpression"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:676:1: conditionalAndExpression : inclusiveOrExpression ( '&&' inclusiveOrExpression )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:677:1: conditionalAndExpression : inclusiveOrExpression ( '&&' inclusiveOrExpression )* ;
 	public final JavaJavaParser.conditionalAndExpression_return conditionalAndExpression() throws RecognitionException {
 		JavaJavaParser.conditionalAndExpression_return retval = new JavaJavaParser.conditionalAndExpression_return();
 		retval.start = input.LT(1);
@@ -14290,8 +14290,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 109) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:677:5: ( inclusiveOrExpression ( '&&' inclusiveOrExpression )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:677:9: inclusiveOrExpression ( '&&' inclusiveOrExpression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:678:5: ( inclusiveOrExpression ( '&&' inclusiveOrExpression )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:678:9: inclusiveOrExpression ( '&&' inclusiveOrExpression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -14302,7 +14302,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, inclusiveOrExpression466.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:677:31: ( '&&' inclusiveOrExpression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:678:31: ( '&&' inclusiveOrExpression )*
 			loop134:
 			while (true) {
 				int alt134=2;
@@ -14313,7 +14313,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt134) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:677:33: '&&' inclusiveOrExpression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:678:33: '&&' inclusiveOrExpression
 					{
 					string_literal467=(Token)match(input,29,FOLLOW_29_in_conditionalAndExpression4814); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -14368,7 +14368,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "inclusiveOrExpression"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:680:1: inclusiveOrExpression : exclusiveOrExpression ( '|' exclusiveOrExpression )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:681:1: inclusiveOrExpression : exclusiveOrExpression ( '|' exclusiveOrExpression )* ;
 	public final JavaJavaParser.inclusiveOrExpression_return inclusiveOrExpression() throws RecognitionException {
 		JavaJavaParser.inclusiveOrExpression_return retval = new JavaJavaParser.inclusiveOrExpression_return();
 		retval.start = input.LT(1);
@@ -14385,8 +14385,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 110) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:681:5: ( exclusiveOrExpression ( '|' exclusiveOrExpression )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:681:9: exclusiveOrExpression ( '|' exclusiveOrExpression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:682:5: ( exclusiveOrExpression ( '|' exclusiveOrExpression )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:682:9: exclusiveOrExpression ( '|' exclusiveOrExpression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -14397,7 +14397,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, exclusiveOrExpression469.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:681:31: ( '|' exclusiveOrExpression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:682:31: ( '|' exclusiveOrExpression )*
 			loop135:
 			while (true) {
 				int alt135=2;
@@ -14408,7 +14408,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt135) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:681:33: '|' exclusiveOrExpression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:682:33: '|' exclusiveOrExpression
 					{
 					char_literal470=(Token)match(input,109,FOLLOW_109_in_inclusiveOrExpression4844); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -14463,7 +14463,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "exclusiveOrExpression"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:684:1: exclusiveOrExpression : andExpression ( '^' andExpression )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:685:1: exclusiveOrExpression : andExpression ( '^' andExpression )* ;
 	public final JavaJavaParser.exclusiveOrExpression_return exclusiveOrExpression() throws RecognitionException {
 		JavaJavaParser.exclusiveOrExpression_return retval = new JavaJavaParser.exclusiveOrExpression_return();
 		retval.start = input.LT(1);
@@ -14480,8 +14480,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 111) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:685:5: ( andExpression ( '^' andExpression )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:685:9: andExpression ( '^' andExpression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:686:5: ( andExpression ( '^' andExpression )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:686:9: andExpression ( '^' andExpression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -14492,7 +14492,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, andExpression472.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:685:23: ( '^' andExpression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:686:23: ( '^' andExpression )*
 			loop136:
 			while (true) {
 				int alt136=2;
@@ -14503,7 +14503,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt136) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:685:25: '^' andExpression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:686:25: '^' andExpression
 					{
 					char_literal473=(Token)match(input,57,FOLLOW_57_in_exclusiveOrExpression4874); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -14557,7 +14557,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "andExpression"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:688:1: andExpression : equalityExpression ( '&' equalityExpression )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:689:1: andExpression : equalityExpression ( '&' equalityExpression )* ;
 	public final JavaJavaParser.andExpression_return andExpression() throws RecognitionException {
 		JavaJavaParser.andExpression_return retval = new JavaJavaParser.andExpression_return();
 		retval.start = input.LT(1);
@@ -14574,8 +14574,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 112) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:689:5: ( equalityExpression ( '&' equalityExpression )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:689:9: equalityExpression ( '&' equalityExpression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:690:5: ( equalityExpression ( '&' equalityExpression )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:690:9: equalityExpression ( '&' equalityExpression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -14586,7 +14586,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, equalityExpression475.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:689:28: ( '&' equalityExpression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:690:28: ( '&' equalityExpression )*
 			loop137:
 			while (true) {
 				int alt137=2;
@@ -14597,7 +14597,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt137) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:689:30: '&' equalityExpression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:690:30: '&' equalityExpression
 					{
 					char_literal476=(Token)match(input,30,FOLLOW_30_in_andExpression4902); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -14652,7 +14652,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "equalityExpression"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:692:1: equalityExpression : instanceOfExpression ( ( '==' | '!=' ) instanceOfExpression )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:693:1: equalityExpression : instanceOfExpression ( ( '==' | '!=' ) instanceOfExpression )* ;
 	public final JavaJavaParser.equalityExpression_return equalityExpression() throws RecognitionException {
 		JavaJavaParser.equalityExpression_return retval = new JavaJavaParser.equalityExpression_return();
 		retval.start = input.LT(1);
@@ -14671,8 +14671,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 113) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:693:5: ( instanceOfExpression ( ( '==' | '!=' ) instanceOfExpression )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:693:9: instanceOfExpression ( ( '==' | '!=' ) instanceOfExpression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:694:5: ( instanceOfExpression ( ( '==' | '!=' ) instanceOfExpression )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:694:9: instanceOfExpression ( ( '==' | '!=' ) instanceOfExpression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -14683,7 +14683,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, instanceOfExpression478.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:693:30: ( ( '==' | '!=' ) instanceOfExpression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:694:30: ( ( '==' | '!=' ) instanceOfExpression )*
 			loop139:
 			while (true) {
 				int alt139=2;
@@ -14694,9 +14694,9 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt139) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:693:32: ( '==' | '!=' ) instanceOfExpression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:694:32: ( '==' | '!=' ) instanceOfExpression
 					{
-					// /media/tony/disk2/_git/cs543/JavaJava.g:693:32: ( '==' | '!=' )
+					// /media/tony/disk2/_git/cs543/JavaJava.g:694:32: ( '==' | '!=' )
 					int alt138=2;
 					int LA138_0 = input.LA(1);
 					if ( (LA138_0==51) ) {
@@ -14715,7 +14715,7 @@ public class JavaJavaParser extends Parser {
 
 					switch (alt138) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:693:33: '=='
+							// /media/tony/disk2/_git/cs543/JavaJava.g:694:33: '=='
 							{
 							string_literal479=(Token)match(input,51,FOLLOW_51_in_equalityExpression4933); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -14727,7 +14727,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:693:50: '!='
+							// /media/tony/disk2/_git/cs543/JavaJava.g:694:50: '!='
 							{
 							string_literal480=(Token)match(input,26,FOLLOW_26_in_equalityExpression4938); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -14787,7 +14787,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "instanceOfExpression"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:696:1: instanceOfExpression : relationalExpression ( 'instanceof' type )? ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:697:1: instanceOfExpression : relationalExpression ( 'instanceof' type )? ;
 	public final JavaJavaParser.instanceOfExpression_return instanceOfExpression() throws RecognitionException {
 		JavaJavaParser.instanceOfExpression_return retval = new JavaJavaParser.instanceOfExpression_return();
 		retval.start = input.LT(1);
@@ -14804,8 +14804,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 114) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:697:5: ( relationalExpression ( 'instanceof' type )? )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:697:9: relationalExpression ( 'instanceof' type )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:698:5: ( relationalExpression ( 'instanceof' type )? )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:698:9: relationalExpression ( 'instanceof' type )?
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -14816,7 +14816,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, relationalExpression482.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:697:30: ( 'instanceof' type )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:698:30: ( 'instanceof' type )?
 			int alt140=2;
 			int LA140_0 = input.LA(1);
 			if ( (LA140_0==81) ) {
@@ -14824,7 +14824,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt140) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:697:31: 'instanceof' type
+					// /media/tony/disk2/_git/cs543/JavaJava.g:698:31: 'instanceof' type
 					{
 					string_literal483=(Token)match(input,81,FOLLOW_81_in_instanceOfExpression4968); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -14876,7 +14876,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "relationalExpression"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:700:1: relationalExpression : shiftExpression ( relationalOp shiftExpression )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:701:1: relationalExpression : shiftExpression ( relationalOp shiftExpression )* ;
 	public final JavaJavaParser.relationalExpression_return relationalExpression() throws RecognitionException {
 		JavaJavaParser.relationalExpression_return retval = new JavaJavaParser.relationalExpression_return();
 		retval.start = input.LT(1);
@@ -14892,8 +14892,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 115) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:701:5: ( shiftExpression ( relationalOp shiftExpression )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:701:9: shiftExpression ( relationalOp shiftExpression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:702:5: ( shiftExpression ( relationalOp shiftExpression )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:702:9: shiftExpression ( relationalOp shiftExpression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -14904,7 +14904,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, shiftExpression485.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:701:25: ( relationalOp shiftExpression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:702:25: ( relationalOp shiftExpression )*
 			loop141:
 			while (true) {
 				int alt141=2;
@@ -14926,7 +14926,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt141) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:701:27: relationalOp shiftExpression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:702:27: relationalOp shiftExpression
 					{
 					pushFollow(FOLLOW_relationalOp_in_relationalExpression4996);
 					relationalOp486=relationalOp();
@@ -14980,7 +14980,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "relationalOp"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:704:1: relationalOp : ( ( '<' '=' )=>t1= '<' t2= '=' {...}?| ( '>' '=' )=>t1= '>' t2= '=' {...}?| '<' | '>' );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:705:1: relationalOp : ( ( '<' '=' )=>t1= '<' t2= '=' {...}?| ( '>' '=' )=>t1= '>' t2= '=' {...}?| '<' | '>' );
 	public final JavaJavaParser.relationalOp_return relationalOp() throws RecognitionException {
 		JavaJavaParser.relationalOp_return retval = new JavaJavaParser.relationalOp_return();
 		retval.start = input.LT(1);
@@ -15001,7 +15001,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 116) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:705:5: ( ( '<' '=' )=>t1= '<' t2= '=' {...}?| ( '>' '=' )=>t1= '>' t2= '=' {...}?| '<' | '>' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:706:5: ( ( '<' '=' )=>t1= '<' t2= '=' {...}?| ( '>' '=' )=>t1= '>' t2= '=' {...}?| '<' | '>' )
 			int alt142=4;
 			int LA142_0 = input.LA(1);
 			if ( (LA142_0==49) ) {
@@ -15060,7 +15060,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt142) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:705:9: ( '<' '=' )=>t1= '<' t2= '=' {...}?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:706:9: ( '<' '=' )=>t1= '<' t2= '=' {...}?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -15085,7 +15085,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:708:9: ( '>' '=' )=>t1= '>' t2= '=' {...}?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:709:9: ( '>' '=' )=>t1= '>' t2= '=' {...}?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -15110,7 +15110,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:711:9: '<'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:712:9: '<'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -15125,7 +15125,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:712:9: '>'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:713:9: '>'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -15171,7 +15171,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "shiftExpression"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:715:1: shiftExpression : additiveExpression ( shiftOp additiveExpression )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:716:1: shiftExpression : additiveExpression ( shiftOp additiveExpression )* ;
 	public final JavaJavaParser.shiftExpression_return shiftExpression() throws RecognitionException {
 		JavaJavaParser.shiftExpression_return retval = new JavaJavaParser.shiftExpression_return();
 		retval.start = input.LT(1);
@@ -15187,8 +15187,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 117) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:716:5: ( additiveExpression ( shiftOp additiveExpression )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:716:9: additiveExpression ( shiftOp additiveExpression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:717:5: ( additiveExpression ( shiftOp additiveExpression )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:717:9: additiveExpression ( shiftOp additiveExpression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -15199,7 +15199,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, additiveExpression490.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:716:28: ( shiftOp additiveExpression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:717:28: ( shiftOp additiveExpression )*
 			loop143:
 			while (true) {
 				int alt143=2;
@@ -15236,7 +15236,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt143) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:716:30: shiftOp additiveExpression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:717:30: shiftOp additiveExpression
 					{
 					pushFollow(FOLLOW_shiftOp_in_shiftExpression5129);
 					shiftOp491=shiftOp();
@@ -15290,7 +15290,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "shiftOp"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:719:1: shiftOp : ( ( '<' '<' )=>t1= '<' t2= '<' {...}?| ( '>' '>' '>' )=>t1= '>' t2= '>' t3= '>' {...}?| ( '>' '>' )=>t1= '>' t2= '>' {...}?);
+	// /media/tony/disk2/_git/cs543/JavaJava.g:720:1: shiftOp : ( ( '<' '<' )=>t1= '<' t2= '<' {...}?| ( '>' '>' '>' )=>t1= '>' t2= '>' t3= '>' {...}?| ( '>' '>' )=>t1= '>' t2= '>' {...}?);
 	public final JavaJavaParser.shiftOp_return shiftOp() throws RecognitionException {
 		JavaJavaParser.shiftOp_return retval = new JavaJavaParser.shiftOp_return();
 		retval.start = input.LT(1);
@@ -15309,7 +15309,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 118) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:720:5: ( ( '<' '<' )=>t1= '<' t2= '<' {...}?| ( '>' '>' '>' )=>t1= '>' t2= '>' t3= '>' {...}?| ( '>' '>' )=>t1= '>' t2= '>' {...}?)
+			// /media/tony/disk2/_git/cs543/JavaJava.g:721:5: ( ( '<' '<' )=>t1= '<' t2= '<' {...}?| ( '>' '>' '>' )=>t1= '>' t2= '>' t3= '>' {...}?| ( '>' '>' )=>t1= '>' t2= '>' {...}?)
 			int alt144=3;
 			int LA144_0 = input.LA(1);
 			if ( (LA144_0==49) && (synpred214_JavaJava())) {
@@ -15436,7 +15436,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt144) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:720:9: ( '<' '<' )=>t1= '<' t2= '<' {...}?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:721:9: ( '<' '<' )=>t1= '<' t2= '<' {...}?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -15461,7 +15461,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:723:9: ( '>' '>' '>' )=>t1= '>' t2= '>' t3= '>' {...}?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:724:9: ( '>' '>' '>' )=>t1= '>' t2= '>' t3= '>' {...}?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -15494,7 +15494,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:728:9: ( '>' '>' )=>t1= '>' t2= '>' {...}?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:729:9: ( '>' '>' )=>t1= '>' t2= '>' {...}?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -15550,7 +15550,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "additiveExpression"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:734:1: additiveExpression : multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:735:1: additiveExpression : multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )* ;
 	public final JavaJavaParser.additiveExpression_return additiveExpression() throws RecognitionException {
 		JavaJavaParser.additiveExpression_return retval = new JavaJavaParser.additiveExpression_return();
 		retval.start = input.LT(1);
@@ -15569,8 +15569,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 119) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:735:5: ( multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:735:9: multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:736:5: ( multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:736:9: multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -15581,7 +15581,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, multiplicativeExpression493.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:735:34: ( ( '+' | '-' ) multiplicativeExpression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:736:34: ( ( '+' | '-' ) multiplicativeExpression )*
 			loop146:
 			while (true) {
 				int alt146=2;
@@ -15592,9 +15592,9 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt146) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:735:36: ( '+' | '-' ) multiplicativeExpression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:736:36: ( '+' | '-' ) multiplicativeExpression
 					{
-					// /media/tony/disk2/_git/cs543/JavaJava.g:735:36: ( '+' | '-' )
+					// /media/tony/disk2/_git/cs543/JavaJava.g:736:36: ( '+' | '-' )
 					int alt145=2;
 					int LA145_0 = input.LA(1);
 					if ( (LA145_0==36) ) {
@@ -15613,7 +15613,7 @@ public class JavaJavaParser extends Parser {
 
 					switch (alt145) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:735:37: '+'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:736:37: '+'
 							{
 							char_literal494=(Token)match(input,36,FOLLOW_36_in_additiveExpression5275); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -15625,7 +15625,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:735:52: '-'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:736:52: '-'
 							{
 							char_literal495=(Token)match(input,40,FOLLOW_40_in_additiveExpression5280); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -15685,7 +15685,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "multiplicativeExpression"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:738:1: multiplicativeExpression : unaryExpression ( ( '*' | '/' | '%' ) unaryExpression )* ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:739:1: multiplicativeExpression : unaryExpression ( ( '*' | '/' | '%' ) unaryExpression )* ;
 	public final JavaJavaParser.multiplicativeExpression_return multiplicativeExpression() throws RecognitionException {
 		JavaJavaParser.multiplicativeExpression_return retval = new JavaJavaParser.multiplicativeExpression_return();
 		retval.start = input.LT(1);
@@ -15706,8 +15706,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 120) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:739:5: ( unaryExpression ( ( '*' | '/' | '%' ) unaryExpression )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:739:9: unaryExpression ( ( '*' | '/' | '%' ) unaryExpression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:740:5: ( unaryExpression ( ( '*' | '/' | '%' ) unaryExpression )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:740:9: unaryExpression ( ( '*' | '/' | '%' ) unaryExpression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -15718,7 +15718,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, unaryExpression497.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:739:25: ( ( '*' | '/' | '%' ) unaryExpression )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:740:25: ( ( '*' | '/' | '%' ) unaryExpression )*
 			loop148:
 			while (true) {
 				int alt148=2;
@@ -15729,9 +15729,9 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt148) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:739:27: ( '*' | '/' | '%' ) unaryExpression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:740:27: ( '*' | '/' | '%' ) unaryExpression
 					{
-					// /media/tony/disk2/_git/cs543/JavaJava.g:739:27: ( '*' | '/' | '%' )
+					// /media/tony/disk2/_git/cs543/JavaJava.g:740:27: ( '*' | '/' | '%' )
 					int alt147=3;
 					switch ( input.LA(1) ) {
 					case 34:
@@ -15757,7 +15757,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt147) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:739:29: '*'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:740:29: '*'
 							{
 							char_literal498=(Token)match(input,34,FOLLOW_34_in_multiplicativeExpression5313); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -15769,7 +15769,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:739:45: '/'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:740:45: '/'
 							{
 							char_literal499=(Token)match(input,45,FOLLOW_45_in_multiplicativeExpression5319); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -15781,7 +15781,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 3 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:739:61: '%'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:740:61: '%'
 							{
 							char_literal500=(Token)match(input,27,FOLLOW_27_in_multiplicativeExpression5325); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -15841,7 +15841,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "unaryExpression"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:742:1: unaryExpression : ( '+' unaryExpression | '-' unaryExpression | '++' unaryExpression | '--' unaryExpression | unaryExpressionNotPlusMinus );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:743:1: unaryExpression : ( '+' unaryExpression | '-' unaryExpression | '++' unaryExpression | '--' unaryExpression | unaryExpressionNotPlusMinus );
 	public final JavaJavaParser.unaryExpression_return unaryExpression() throws RecognitionException {
 		JavaJavaParser.unaryExpression_return retval = new JavaJavaParser.unaryExpression_return();
 		retval.start = input.LT(1);
@@ -15867,7 +15867,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 121) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:743:5: ( '+' unaryExpression | '-' unaryExpression | '++' unaryExpression | '--' unaryExpression | unaryExpressionNotPlusMinus )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:744:5: ( '+' unaryExpression | '-' unaryExpression | '++' unaryExpression | '--' unaryExpression | unaryExpressionNotPlusMinus )
 			int alt149=5;
 			switch ( input.LA(1) ) {
 			case 36:
@@ -15927,7 +15927,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt149) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:743:9: '+' unaryExpression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:744:9: '+' unaryExpression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -15947,7 +15947,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:744:9: '-' unaryExpression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:745:9: '-' unaryExpression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -15967,7 +15967,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:745:9: '++' unaryExpression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:746:9: '++' unaryExpression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -15987,7 +15987,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:746:9: '--' unaryExpression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:747:9: '--' unaryExpression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16007,7 +16007,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:747:9: unaryExpressionNotPlusMinus
+					// /media/tony/disk2/_git/cs543/JavaJava.g:748:9: unaryExpressionNotPlusMinus
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16052,7 +16052,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "unaryExpressionNotPlusMinus"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:750:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:751:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );
 	public final JavaJavaParser.unaryExpressionNotPlusMinus_return unaryExpressionNotPlusMinus() throws RecognitionException {
 		JavaJavaParser.unaryExpressionNotPlusMinus_return retval = new JavaJavaParser.unaryExpressionNotPlusMinus_return();
 		retval.start = input.LT(1);
@@ -16078,7 +16078,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 122) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:751:5: ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:752:5: ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? )
 			int alt152=4;
 			switch ( input.LA(1) ) {
 			case 113:
@@ -16137,7 +16137,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt152) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:751:9: '~' unaryExpression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:752:9: '~' unaryExpression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16157,7 +16157,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:752:9: '!' unaryExpression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:753:9: '!' unaryExpression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16177,7 +16177,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:753:9: castExpression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:754:9: castExpression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16191,7 +16191,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:754:9: primary ( selector )* ( '++' | '--' )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:755:9: primary ( selector )* ( '++' | '--' )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16202,7 +16202,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, primary516.getTree());
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:754:17: ( selector )*
+					// /media/tony/disk2/_git/cs543/JavaJava.g:755:17: ( selector )*
 					loop150:
 					while (true) {
 						int alt150=2;
@@ -16213,7 +16213,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt150) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:754:17: selector
+							// /media/tony/disk2/_git/cs543/JavaJava.g:755:17: selector
 							{
 							pushFollow(FOLLOW_selector_in_unaryExpressionNotPlusMinus5459);
 							selector517=selector();
@@ -16229,7 +16229,7 @@ public class JavaJavaParser extends Parser {
 						}
 					}
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:754:27: ( '++' | '--' )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:755:27: ( '++' | '--' )?
 					int alt151=3;
 					int LA151_0 = input.LA(1);
 					if ( (LA151_0==37) ) {
@@ -16240,7 +16240,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt151) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:754:28: '++'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:755:28: '++'
 							{
 							string_literal518=(Token)match(input,37,FOLLOW_37_in_unaryExpressionNotPlusMinus5463); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -16252,7 +16252,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:754:44: '--'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:755:44: '--'
 							{
 							string_literal519=(Token)match(input,41,FOLLOW_41_in_unaryExpressionNotPlusMinus5467); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -16300,7 +16300,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "castExpression"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:757:1: castExpression : ( '(' primitiveType ')' unaryExpression | '(' ( type | expression ) ')' unaryExpressionNotPlusMinus );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:758:1: castExpression : ( '(' primitiveType ')' unaryExpression | '(' ( type | expression ) ')' unaryExpressionNotPlusMinus );
 	public final JavaJavaParser.castExpression_return castExpression() throws RecognitionException {
 		JavaJavaParser.castExpression_return retval = new JavaJavaParser.castExpression_return();
 		retval.start = input.LT(1);
@@ -16326,7 +16326,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 123) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:758:5: ( '(' primitiveType ')' unaryExpression | '(' ( type | expression ) ')' unaryExpressionNotPlusMinus )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:759:5: ( '(' primitiveType ')' unaryExpression | '(' ( type | expression ) ')' unaryExpressionNotPlusMinus )
 			int alt154=2;
 			int LA154_0 = input.LA(1);
 			if ( (LA154_0==32) ) {
@@ -16349,7 +16349,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt154) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:758:8: '(' primitiveType ')' unaryExpression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:759:8: '(' primitiveType ')' unaryExpression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16382,7 +16382,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:759:8: '(' ( type | expression ) ')' unaryExpressionNotPlusMinus
+					// /media/tony/disk2/_git/cs543/JavaJava.g:760:8: '(' ( type | expression ) ')' unaryExpressionNotPlusMinus
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16394,12 +16394,12 @@ public class JavaJavaParser extends Parser {
 					}
 
 					if ( state.backtracking==0 ) {s("(");}
-					// /media/tony/disk2/_git/cs543/JavaJava.g:759:21: ( type | expression )
+					// /media/tony/disk2/_git/cs543/JavaJava.g:760:21: ( type | expression )
 					int alt153=2;
 					alt153 = dfa153.predict(input);
 					switch (alt153) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:759:22: type
+							// /media/tony/disk2/_git/cs543/JavaJava.g:760:22: type
 							{
 							pushFollow(FOLLOW_type_in_castExpression5509);
 							type525=type();
@@ -16410,7 +16410,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:759:29: expression
+							// /media/tony/disk2/_git/cs543/JavaJava.g:760:29: expression
 							{
 							pushFollow(FOLLOW_expression_in_castExpression5513);
 							expression526=expression();
@@ -16469,7 +16469,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "primary"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:762:1: primary : ( parExpression | 'this' ( '.' Identifier )* ( identifierSuffix )? | 'super' superSuffix | literal | 'new' creator |I1= Identifier ( '.' I4= Identifier )* ( identifierSuffix )? | primitiveType ( '[' ']' )* '.' 'class' | 'void' '.' 'class' );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:763:1: primary : ( parExpression | 'this' ( '.' Identifier )* ( identifierSuffix )? | 'super' superSuffix | literal | 'new' creator |I1= Identifier ( '.' I4= Identifier )* ( identifierSuffix )? | primitiveType ( '[' ']' )* '.' 'class' | 'void' '.' 'class' );
 	public final JavaJavaParser.primary_return primary() throws RecognitionException {
 		JavaJavaParser.primary_return retval = new JavaJavaParser.primary_return();
 		retval.start = input.LT(1);
@@ -16519,7 +16519,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 124) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:763:5: ( parExpression | 'this' ( '.' Identifier )* ( identifierSuffix )? | 'super' superSuffix | literal | 'new' creator |I1= Identifier ( '.' I4= Identifier )* ( identifierSuffix )? | primitiveType ( '[' ']' )* '.' 'class' | 'void' '.' 'class' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:764:5: ( parExpression | 'this' ( '.' Identifier )* ( identifierSuffix )? | 'super' superSuffix | literal | 'new' creator |I1= Identifier ( '.' I4= Identifier )* ( identifierSuffix )? | primitiveType ( '[' ']' )* '.' 'class' | 'void' '.' 'class' )
 			int alt160=8;
 			switch ( input.LA(1) ) {
 			case 32:
@@ -16585,7 +16585,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt160) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:763:9: parExpression
+					// /media/tony/disk2/_git/cs543/JavaJava.g:764:9: parExpression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16599,7 +16599,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:764:9: 'this' ( '.' Identifier )* ( identifierSuffix )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:765:9: 'this' ( '.' Identifier )* ( identifierSuffix )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16611,7 +16611,7 @@ public class JavaJavaParser extends Parser {
 					}
 
 					if ( state.backtracking==0 ) {keywordCount++;JavaMetrics.uniqueKeywords.add("this");}
-					// /media/tony/disk2/_git/cs543/JavaJava.g:764:72: ( '.' Identifier )*
+					// /media/tony/disk2/_git/cs543/JavaJava.g:765:72: ( '.' Identifier )*
 					loop155:
 					while (true) {
 						int alt155=2;
@@ -16630,7 +16630,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt155) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:764:73: '.' Identifier
+							// /media/tony/disk2/_git/cs543/JavaJava.g:765:73: '.' Identifier
 							{
 							char_literal531=(Token)match(input,43,FOLLOW_43_in_primary5551); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -16653,7 +16653,7 @@ public class JavaJavaParser extends Parser {
 						}
 					}
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:764:100: ( identifierSuffix )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:765:100: ( identifierSuffix )?
 					int alt156=2;
 					switch ( input.LA(1) ) {
 						case 55:
@@ -16680,7 +16680,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt156) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:764:100: identifierSuffix
+							// /media/tony/disk2/_git/cs543/JavaJava.g:765:100: identifierSuffix
 							{
 							pushFollow(FOLLOW_identifierSuffix_in_primary5559);
 							identifierSuffix533=identifierSuffix();
@@ -16696,7 +16696,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:765:9: 'super' superSuffix
+					// /media/tony/disk2/_git/cs543/JavaJava.g:766:9: 'super' superSuffix
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16717,7 +16717,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:766:9: literal
+					// /media/tony/disk2/_git/cs543/JavaJava.g:767:9: literal
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16731,7 +16731,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:767:9: 'new' creator
+					// /media/tony/disk2/_git/cs543/JavaJava.g:768:9: 'new' creator
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16752,7 +16752,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:768:9: I1= Identifier ( '.' I4= Identifier )* ( identifierSuffix )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:769:9: I1= Identifier ( '.' I4= Identifier )* ( identifierSuffix )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16764,7 +16764,7 @@ public class JavaJavaParser extends Parser {
 					}
 
 					id((I1!=null?I1.getText():null));
-					// /media/tony/disk2/_git/cs543/JavaJava.g:768:41: ( '.' I4= Identifier )*
+					// /media/tony/disk2/_git/cs543/JavaJava.g:769:41: ( '.' I4= Identifier )*
 					loop157:
 					while (true) {
 						int alt157=2;
@@ -16783,7 +16783,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt157) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:768:42: '.' I4= Identifier
+							// /media/tony/disk2/_git/cs543/JavaJava.g:769:42: '.' I4= Identifier
 							{
 							char_literal539=(Token)match(input,43,FOLLOW_43_in_primary5614); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -16806,7 +16806,7 @@ public class JavaJavaParser extends Parser {
 						}
 					}
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:768:73: ( identifierSuffix )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:769:73: ( identifierSuffix )?
 					int alt158=2;
 					switch ( input.LA(1) ) {
 						case 55:
@@ -16833,7 +16833,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt158) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:768:73: identifierSuffix
+							// /media/tony/disk2/_git/cs543/JavaJava.g:769:73: identifierSuffix
 							{
 							pushFollow(FOLLOW_identifierSuffix_in_primary5625);
 							identifierSuffix540=identifierSuffix();
@@ -16849,7 +16849,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:769:9: primitiveType ( '[' ']' )* '.' 'class'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:770:9: primitiveType ( '[' ']' )* '.' 'class'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16860,7 +16860,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, primitiveType541.getTree());
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:769:23: ( '[' ']' )*
+					// /media/tony/disk2/_git/cs543/JavaJava.g:770:23: ( '[' ']' )*
 					loop159:
 					while (true) {
 						int alt159=2;
@@ -16871,7 +16871,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt159) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:769:24: '[' ']'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:770:24: '[' ']'
 							{
 							char_literal542=(Token)match(input,55,FOLLOW_55_in_primary5640); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -16911,7 +16911,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:770:9: 'void' '.' 'class'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:771:9: 'void' '.' 'class'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16971,7 +16971,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "identifierSuffix"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:773:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' innerCreator );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:774:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' innerCreator );
 	public final JavaJavaParser.identifierSuffix_return identifierSuffix() throws RecognitionException {
 		JavaJavaParser.identifierSuffix_return retval = new JavaJavaParser.identifierSuffix_return();
 		retval.start = input.LT(1);
@@ -17019,7 +17019,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 125) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:774:5: ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' innerCreator )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:775:5: ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' innerCreator )
 			int alt163=8;
 			switch ( input.LA(1) ) {
 			case 55:
@@ -17102,12 +17102,12 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt163) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:774:9: ( '[' ']' )+ '.' 'class'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:775:9: ( '[' ']' )+ '.' 'class'
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:774:9: ( '[' ']' )+
+					// /media/tony/disk2/_git/cs543/JavaJava.g:775:9: ( '[' ']' )+
 					int cnt161=0;
 					loop161:
 					while (true) {
@@ -17119,7 +17119,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt161) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:774:10: '[' ']'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:775:10: '[' ']'
 							{
 							char_literal549=(Token)match(input,55,FOLLOW_55_in_identifierSuffix5690); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -17164,12 +17164,12 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:775:9: ( '[' expression ']' )+
+					// /media/tony/disk2/_git/cs543/JavaJava.g:776:9: ( '[' expression ']' )+
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:775:9: ( '[' expression ']' )+
+					// /media/tony/disk2/_git/cs543/JavaJava.g:776:9: ( '[' expression ']' )+
 					int cnt162=0;
 					loop162:
 					while (true) {
@@ -17185,7 +17185,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt162) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:775:10: '[' expression ']'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:776:10: '[' expression ']'
 							{
 							char_literal553=(Token)match(input,55,FOLLOW_55_in_identifierSuffix5716); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -17222,7 +17222,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:776:9: arguments
+					// /media/tony/disk2/_git/cs543/JavaJava.g:777:9: arguments
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -17236,7 +17236,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:777:9: '.' 'class'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:778:9: '.' 'class'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -17258,7 +17258,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:778:9: '.' explicitGenericInvocation
+					// /media/tony/disk2/_git/cs543/JavaJava.g:779:9: '.' explicitGenericInvocation
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -17279,7 +17279,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:779:9: '.' 'this'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:780:9: '.' 'this'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -17301,7 +17301,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:780:9: '.' 'super' arguments
+					// /media/tony/disk2/_git/cs543/JavaJava.g:781:9: '.' 'super' arguments
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -17329,7 +17329,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:781:9: '.' 'new' innerCreator
+					// /media/tony/disk2/_git/cs543/JavaJava.g:782:9: '.' 'new' innerCreator
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -17388,7 +17388,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "creator"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:784:1: creator : ( nonWildcardTypeArguments createdName classCreatorRest | createdName ( arrayCreatorRest | classCreatorRest ) );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:785:1: creator : ( nonWildcardTypeArguments createdName classCreatorRest | createdName ( arrayCreatorRest | classCreatorRest ) );
 	public final JavaJavaParser.creator_return creator() throws RecognitionException {
 		JavaJavaParser.creator_return retval = new JavaJavaParser.creator_return();
 		retval.start = input.LT(1);
@@ -17407,7 +17407,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 126) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:785:5: ( nonWildcardTypeArguments createdName classCreatorRest | createdName ( arrayCreatorRest | classCreatorRest ) )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:786:5: ( nonWildcardTypeArguments createdName classCreatorRest | createdName ( arrayCreatorRest | classCreatorRest ) )
 			int alt165=2;
 			int LA165_0 = input.LA(1);
 			if ( (LA165_0==49) ) {
@@ -17426,7 +17426,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt165) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:785:9: nonWildcardTypeArguments createdName classCreatorRest
+					// /media/tony/disk2/_git/cs543/JavaJava.g:786:9: nonWildcardTypeArguments createdName classCreatorRest
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -17452,7 +17452,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:786:9: createdName ( arrayCreatorRest | classCreatorRest )
+					// /media/tony/disk2/_git/cs543/JavaJava.g:787:9: createdName ( arrayCreatorRest | classCreatorRest )
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -17463,7 +17463,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, createdName572.getTree());
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:786:21: ( arrayCreatorRest | classCreatorRest )
+					// /media/tony/disk2/_git/cs543/JavaJava.g:787:21: ( arrayCreatorRest | classCreatorRest )
 					int alt164=2;
 					int LA164_0 = input.LA(1);
 					if ( (LA164_0==55) ) {
@@ -17482,7 +17482,7 @@ public class JavaJavaParser extends Parser {
 
 					switch (alt164) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:786:22: arrayCreatorRest
+							// /media/tony/disk2/_git/cs543/JavaJava.g:787:22: arrayCreatorRest
 							{
 							pushFollow(FOLLOW_arrayCreatorRest_in_creator5853);
 							arrayCreatorRest573=arrayCreatorRest();
@@ -17493,7 +17493,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:786:41: classCreatorRest
+							// /media/tony/disk2/_git/cs543/JavaJava.g:787:41: classCreatorRest
 							{
 							pushFollow(FOLLOW_classCreatorRest_in_creator5857);
 							classCreatorRest574=classCreatorRest();
@@ -17540,7 +17540,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "createdName"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:789:1: createdName : ( classOrInterfaceType | primitiveType );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:790:1: createdName : ( classOrInterfaceType | primitiveType );
 	public final JavaJavaParser.createdName_return createdName() throws RecognitionException {
 		JavaJavaParser.createdName_return retval = new JavaJavaParser.createdName_return();
 		retval.start = input.LT(1);
@@ -17555,7 +17555,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 127) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:790:5: ( classOrInterfaceType | primitiveType )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:791:5: ( classOrInterfaceType | primitiveType )
 			int alt166=2;
 			int LA166_0 = input.LA(1);
 			if ( (LA166_0==Identifier) ) {
@@ -17574,7 +17574,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt166) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:790:8: classOrInterfaceType
+					// /media/tony/disk2/_git/cs543/JavaJava.g:791:8: classOrInterfaceType
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -17589,7 +17589,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:791:9: primitiveType
+					// /media/tony/disk2/_git/cs543/JavaJava.g:792:9: primitiveType
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -17635,7 +17635,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "innerCreator"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:794:1: innerCreator : ( nonWildcardTypeArguments )? Identifier classCreatorRest ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:795:1: innerCreator : ( nonWildcardTypeArguments )? Identifier classCreatorRest ;
 	public final JavaJavaParser.innerCreator_return innerCreator() throws RecognitionException {
 		JavaJavaParser.innerCreator_return retval = new JavaJavaParser.innerCreator_return();
 		retval.start = input.LT(1);
@@ -17652,13 +17652,13 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 128) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:795:5: ( ( nonWildcardTypeArguments )? Identifier classCreatorRest )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:795:9: ( nonWildcardTypeArguments )? Identifier classCreatorRest
+			// /media/tony/disk2/_git/cs543/JavaJava.g:796:5: ( ( nonWildcardTypeArguments )? Identifier classCreatorRest )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:796:9: ( nonWildcardTypeArguments )? Identifier classCreatorRest
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:795:9: ( nonWildcardTypeArguments )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:796:9: ( nonWildcardTypeArguments )?
 			int alt167=2;
 			int LA167_0 = input.LA(1);
 			if ( (LA167_0==49) ) {
@@ -17666,7 +17666,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt167) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:795:9: nonWildcardTypeArguments
+					// /media/tony/disk2/_git/cs543/JavaJava.g:796:9: nonWildcardTypeArguments
 					{
 					pushFollow(FOLLOW_nonWildcardTypeArguments_in_innerCreator5914);
 					nonWildcardTypeArguments577=nonWildcardTypeArguments();
@@ -17723,7 +17723,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "arrayCreatorRest"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:798:1: arrayCreatorRest : '[' ( ']' ( '[' ']' )* arrayInitializer | expression ']' ( '[' expression ']' )* ( '[' ']' )* ) ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:799:1: arrayCreatorRest : '[' ( ']' ( '[' ']' )* arrayInitializer | expression ']' ( '[' expression ']' )* ( '[' ']' )* ) ;
 	public final JavaJavaParser.arrayCreatorRest_return arrayCreatorRest() throws RecognitionException {
 		JavaJavaParser.arrayCreatorRest_return retval = new JavaJavaParser.arrayCreatorRest_return();
 		retval.start = input.LT(1);
@@ -17757,8 +17757,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 129) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:799:5: ( '[' ( ']' ( '[' ']' )* arrayInitializer | expression ']' ( '[' expression ']' )* ( '[' ']' )* ) )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:799:9: '[' ( ']' ( '[' ']' )* arrayInitializer | expression ']' ( '[' expression ']' )* ( '[' ']' )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:800:5: ( '[' ( ']' ( '[' ']' )* arrayInitializer | expression ']' ( '[' expression ']' )* ( '[' ']' )* ) )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:800:9: '[' ( ']' ( '[' ']' )* arrayInitializer | expression ']' ( '[' expression ']' )* ( '[' ']' )* )
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -17770,7 +17770,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("[");}
-			// /media/tony/disk2/_git/cs543/JavaJava.g:800:9: ( ']' ( '[' ']' )* arrayInitializer | expression ']' ( '[' expression ']' )* ( '[' ']' )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:801:9: ( ']' ( '[' ']' )* arrayInitializer | expression ']' ( '[' expression ']' )* ( '[' ']' )* )
 			int alt171=2;
 			int LA171_0 = input.LA(1);
 			if ( (LA171_0==56) ) {
@@ -17789,7 +17789,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt171) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:800:13: ']' ( '[' ']' )* arrayInitializer
+					// /media/tony/disk2/_git/cs543/JavaJava.g:801:13: ']' ( '[' ']' )* arrayInitializer
 					{
 					char_literal581=(Token)match(input,56,FOLLOW_56_in_arrayCreatorRest5953); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -17797,7 +17797,7 @@ public class JavaJavaParser extends Parser {
 					adaptor.addChild(root_0, char_literal581_tree);
 					}
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:800:17: ( '[' ']' )*
+					// /media/tony/disk2/_git/cs543/JavaJava.g:801:17: ( '[' ']' )*
 					loop168:
 					while (true) {
 						int alt168=2;
@@ -17808,7 +17808,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt168) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:800:18: '[' ']'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:801:18: '[' ']'
 							{
 							char_literal582=(Token)match(input,55,FOLLOW_55_in_arrayCreatorRest5956); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -17841,7 +17841,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:801:13: expression ']' ( '[' expression ']' )* ( '[' ']' )*
+					// /media/tony/disk2/_git/cs543/JavaJava.g:802:13: expression ']' ( '[' expression ']' )* ( '[' ']' )*
 					{
 					pushFollow(FOLLOW_expression_in_arrayCreatorRest5979);
 					expression585=expression();
@@ -17856,7 +17856,7 @@ public class JavaJavaParser extends Parser {
 					}
 
 					if ( state.backtracking==0 ) {s("]");}
-					// /media/tony/disk2/_git/cs543/JavaJava.g:801:38: ( '[' expression ']' )*
+					// /media/tony/disk2/_git/cs543/JavaJava.g:802:38: ( '[' expression ']' )*
 					loop169:
 					while (true) {
 						int alt169=2;
@@ -17871,7 +17871,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt169) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:801:39: '[' expression ']'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:802:39: '[' expression ']'
 							{
 							char_literal587=(Token)match(input,55,FOLLOW_55_in_arrayCreatorRest5986); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -17901,7 +17901,7 @@ public class JavaJavaParser extends Parser {
 						}
 					}
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:801:79: ( '[' ']' )*
+					// /media/tony/disk2/_git/cs543/JavaJava.g:802:79: ( '[' ']' )*
 					loop170:
 					while (true) {
 						int alt170=2;
@@ -17916,7 +17916,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt170) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:801:80: '[' ']'
+							// /media/tony/disk2/_git/cs543/JavaJava.g:802:80: '[' ']'
 							{
 							char_literal590=(Token)match(input,55,FOLLOW_55_in_arrayCreatorRest5998); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -17977,7 +17977,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "classCreatorRest"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:805:1: classCreatorRest : arguments ( classBody )? ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:806:1: classCreatorRest : arguments ( classBody )? ;
 	public final JavaJavaParser.classCreatorRest_return classCreatorRest() throws RecognitionException {
 		JavaJavaParser.classCreatorRest_return retval = new JavaJavaParser.classCreatorRest_return();
 		retval.start = input.LT(1);
@@ -17992,8 +17992,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 130) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:806:5: ( arguments ( classBody )? )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:806:8: arguments ( classBody )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:807:5: ( arguments ( classBody )? )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:807:8: arguments ( classBody )?
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -18005,7 +18005,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, arguments592.getTree());
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:806:43: ( classBody )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:807:43: ( classBody )?
 			int alt172=2;
 			int LA172_0 = input.LA(1);
 			if ( (LA172_0==108) ) {
@@ -18013,7 +18013,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt172) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:806:43: classBody
+					// /media/tony/disk2/_git/cs543/JavaJava.g:807:43: classBody
 					{
 					pushFollow(FOLLOW_classBody_in_classCreatorRest6036);
 					classBody593=classBody();
@@ -18058,7 +18058,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "explicitGenericInvocation"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:809:1: explicitGenericInvocation : nonWildcardTypeArguments Identifier arguments ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:810:1: explicitGenericInvocation : nonWildcardTypeArguments Identifier arguments ;
 	public final JavaJavaParser.explicitGenericInvocation_return explicitGenericInvocation() throws RecognitionException {
 		JavaJavaParser.explicitGenericInvocation_return retval = new JavaJavaParser.explicitGenericInvocation_return();
 		retval.start = input.LT(1);
@@ -18075,8 +18075,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 131) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:810:5: ( nonWildcardTypeArguments Identifier arguments )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:810:9: nonWildcardTypeArguments Identifier arguments
+			// /media/tony/disk2/_git/cs543/JavaJava.g:811:5: ( nonWildcardTypeArguments Identifier arguments )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:811:9: nonWildcardTypeArguments Identifier arguments
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -18132,7 +18132,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "nonWildcardTypeArguments"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:813:1: nonWildcardTypeArguments : '<' typeList '>' ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:814:1: nonWildcardTypeArguments : '<' typeList '>' ;
 	public final JavaJavaParser.nonWildcardTypeArguments_return nonWildcardTypeArguments() throws RecognitionException {
 		JavaJavaParser.nonWildcardTypeArguments_return retval = new JavaJavaParser.nonWildcardTypeArguments_return();
 		retval.start = input.LT(1);
@@ -18150,8 +18150,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 132) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:814:5: ( '<' typeList '>' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:814:9: '<' typeList '>'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:815:5: ( '<' typeList '>' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:815:9: '<' typeList '>'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -18208,7 +18208,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "selector"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:817:1: selector : ( '.' Identifier ( arguments )? | '.' 'this' | '.' 'super' superSuffix | '.' 'new' innerCreator | '[' expression ']' );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:818:1: selector : ( '.' Identifier ( arguments )? | '.' 'this' | '.' 'super' superSuffix | '.' 'new' innerCreator | '[' expression ']' );
 	public final JavaJavaParser.selector_return selector() throws RecognitionException {
 		JavaJavaParser.selector_return retval = new JavaJavaParser.selector_return();
 		retval.start = input.LT(1);
@@ -18245,7 +18245,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 133) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:818:5: ( '.' Identifier ( arguments )? | '.' 'this' | '.' 'super' superSuffix | '.' 'new' innerCreator | '[' expression ']' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:819:5: ( '.' Identifier ( arguments )? | '.' 'this' | '.' 'super' superSuffix | '.' 'new' innerCreator | '[' expression ']' )
 			int alt174=5;
 			int LA174_0 = input.LA(1);
 			if ( (LA174_0==43) ) {
@@ -18296,7 +18296,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt174) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:818:9: '.' Identifier ( arguments )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:819:9: '.' Identifier ( arguments )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -18315,7 +18315,7 @@ public class JavaJavaParser extends Parser {
 					}
 
 					if ( state.backtracking==0 ) {if(primitive) id((Identifier601!=null?Identifier601.getText():null));}
-					// /media/tony/disk2/_git/cs543/JavaJava.g:818:73: ( arguments )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:819:73: ( arguments )?
 					int alt173=2;
 					int LA173_0 = input.LA(1);
 					if ( (LA173_0==32) ) {
@@ -18323,7 +18323,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt173) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:818:73: arguments
+							// /media/tony/disk2/_git/cs543/JavaJava.g:819:73: arguments
 							{
 							pushFollow(FOLLOW_arguments_in_selector6128);
 							arguments602=arguments();
@@ -18339,7 +18339,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:819:9: '.' 'this'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:820:9: '.' 'this'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -18361,7 +18361,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:820:9: '.' 'super' superSuffix
+					// /media/tony/disk2/_git/cs543/JavaJava.g:821:9: '.' 'super' superSuffix
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -18389,7 +18389,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:821:9: '.' 'new' innerCreator
+					// /media/tony/disk2/_git/cs543/JavaJava.g:822:9: '.' 'new' innerCreator
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -18417,7 +18417,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:822:9: '[' expression ']'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:823:9: '[' expression ']'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -18476,7 +18476,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "superSuffix"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:825:1: superSuffix : ( arguments | '.' Identifier ( arguments )? );
+	// /media/tony/disk2/_git/cs543/JavaJava.g:826:1: superSuffix : ( arguments | '.' Identifier ( arguments )? );
 	public final JavaJavaParser.superSuffix_return superSuffix() throws RecognitionException {
 		JavaJavaParser.superSuffix_return retval = new JavaJavaParser.superSuffix_return();
 		retval.start = input.LT(1);
@@ -18495,7 +18495,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 134) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:826:5: ( arguments | '.' Identifier ( arguments )? )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:827:5: ( arguments | '.' Identifier ( arguments )? )
 			int alt176=2;
 			int LA176_0 = input.LA(1);
 			if ( (LA176_0==32) ) {
@@ -18514,7 +18514,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt176) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:826:9: arguments
+					// /media/tony/disk2/_git/cs543/JavaJava.g:827:9: arguments
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -18528,7 +18528,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:827:9: '.' Identifier ( arguments )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:828:9: '.' Identifier ( arguments )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -18547,7 +18547,7 @@ public class JavaJavaParser extends Parser {
 					}
 
 					if ( state.backtracking==0 ) {if(primitive) id((Identifier616!=null?Identifier616.getText():null));}
-					// /media/tony/disk2/_git/cs543/JavaJava.g:827:72: ( arguments )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:828:72: ( arguments )?
 					int alt175=2;
 					int LA175_0 = input.LA(1);
 					if ( (LA175_0==32) ) {
@@ -18555,7 +18555,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt175) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:827:72: arguments
+							// /media/tony/disk2/_git/cs543/JavaJava.g:828:72: arguments
 							{
 							pushFollow(FOLLOW_arguments_in_superSuffix6241);
 							arguments617=arguments();
@@ -18602,7 +18602,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "arguments"
-	// /media/tony/disk2/_git/cs543/JavaJava.g:830:1: arguments : '(' ( expressionList )? ')' ;
+	// /media/tony/disk2/_git/cs543/JavaJava.g:831:1: arguments : '(' ( expressionList )? ')' ;
 	public final JavaJavaParser.arguments_return arguments() throws RecognitionException {
 		JavaJavaParser.arguments_return retval = new JavaJavaParser.arguments_return();
 		retval.start = input.LT(1);
@@ -18620,8 +18620,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 135) ) { return retval; }
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:831:5: ( '(' ( expressionList )? ')' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:831:9: '(' ( expressionList )? ')'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:832:5: ( '(' ( expressionList )? ')' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:832:9: '(' ( expressionList )? ')'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -18633,7 +18633,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("(");}
-			// /media/tony/disk2/_git/cs543/JavaJava.g:831:22: ( expressionList )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:832:22: ( expressionList )?
 			int alt177=2;
 			int LA177_0 = input.LA(1);
 			if ( ((LA177_0 >= CharacterLiteral && LA177_0 <= DecimalLiteral)||LA177_0==FloatingPointLiteral||(LA177_0 >= HexLiteral && LA177_0 <= Identifier)||(LA177_0 >= OctalLiteral && LA177_0 <= StringLiteral)||LA177_0==25||LA177_0==32||(LA177_0 >= 36 && LA177_0 <= 37)||(LA177_0 >= 40 && LA177_0 <= 41)||LA177_0==60||LA177_0==62||LA177_0==65||LA177_0==70||LA177_0==73||LA177_0==76||LA177_0==82||LA177_0==84||(LA177_0 >= 86 && LA177_0 <= 87)||LA177_0==93||LA177_0==96||LA177_0==99||LA177_0==103||LA177_0==105||LA177_0==113) ) {
@@ -18641,7 +18641,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt177) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:831:22: expressionList
+					// /media/tony/disk2/_git/cs543/JavaJava.g:832:22: expressionList
 					{
 					pushFollow(FOLLOW_expressionList_in_arguments6264);
 					expressionList619=expressionList();
@@ -18686,15 +18686,15 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred5_JavaJava
 	public final void synpred5_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:83:9: ( annotations ( packageDeclaration ( importDeclaration )* ( typeDeclaration )* | classOrInterfaceDeclaration ( typeDeclaration )* ) )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:83:9: annotations ( packageDeclaration ( importDeclaration )* ( typeDeclaration )* | classOrInterfaceDeclaration ( typeDeclaration )* )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:84:9: ( annotations ( packageDeclaration ( importDeclaration )* ( typeDeclaration )* | classOrInterfaceDeclaration ( typeDeclaration )* ) )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:84:9: annotations ( packageDeclaration ( importDeclaration )* ( typeDeclaration )* | classOrInterfaceDeclaration ( typeDeclaration )* )
 		{
 		pushFollow(FOLLOW_annotations_in_synpred5_JavaJava73);
 		annotations();
 		state._fsp--;
 		if (state.failed) return;
 
-		// /media/tony/disk2/_git/cs543/JavaJava.g:84:9: ( packageDeclaration ( importDeclaration )* ( typeDeclaration )* | classOrInterfaceDeclaration ( typeDeclaration )* )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:85:9: ( packageDeclaration ( importDeclaration )* ( typeDeclaration )* | classOrInterfaceDeclaration ( typeDeclaration )* )
 		int alt183=2;
 		int LA183_0 = input.LA(1);
 		if ( (LA183_0==88) ) {
@@ -18713,14 +18713,14 @@ public class JavaJavaParser extends Parser {
 
 		switch (alt183) {
 			case 1 :
-				// /media/tony/disk2/_git/cs543/JavaJava.g:84:13: packageDeclaration ( importDeclaration )* ( typeDeclaration )*
+				// /media/tony/disk2/_git/cs543/JavaJava.g:85:13: packageDeclaration ( importDeclaration )* ( typeDeclaration )*
 				{
 				pushFollow(FOLLOW_packageDeclaration_in_synpred5_JavaJava87);
 				packageDeclaration();
 				state._fsp--;
 				if (state.failed) return;
 
-				// /media/tony/disk2/_git/cs543/JavaJava.g:84:32: ( importDeclaration )*
+				// /media/tony/disk2/_git/cs543/JavaJava.g:85:32: ( importDeclaration )*
 				loop180:
 				while (true) {
 					int alt180=2;
@@ -18731,7 +18731,7 @@ public class JavaJavaParser extends Parser {
 
 					switch (alt180) {
 					case 1 :
-						// /media/tony/disk2/_git/cs543/JavaJava.g:84:32: importDeclaration
+						// /media/tony/disk2/_git/cs543/JavaJava.g:85:32: importDeclaration
 						{
 						pushFollow(FOLLOW_importDeclaration_in_synpred5_JavaJava89);
 						importDeclaration();
@@ -18746,7 +18746,7 @@ public class JavaJavaParser extends Parser {
 					}
 				}
 
-				// /media/tony/disk2/_git/cs543/JavaJava.g:84:51: ( typeDeclaration )*
+				// /media/tony/disk2/_git/cs543/JavaJava.g:85:51: ( typeDeclaration )*
 				loop181:
 				while (true) {
 					int alt181=2;
@@ -18757,7 +18757,7 @@ public class JavaJavaParser extends Parser {
 
 					switch (alt181) {
 					case 1 :
-						// /media/tony/disk2/_git/cs543/JavaJava.g:84:51: typeDeclaration
+						// /media/tony/disk2/_git/cs543/JavaJava.g:85:51: typeDeclaration
 						{
 						pushFollow(FOLLOW_typeDeclaration_in_synpred5_JavaJava92);
 						typeDeclaration();
@@ -18775,14 +18775,14 @@ public class JavaJavaParser extends Parser {
 				}
 				break;
 			case 2 :
-				// /media/tony/disk2/_git/cs543/JavaJava.g:85:13: classOrInterfaceDeclaration ( typeDeclaration )*
+				// /media/tony/disk2/_git/cs543/JavaJava.g:86:13: classOrInterfaceDeclaration ( typeDeclaration )*
 				{
 				pushFollow(FOLLOW_classOrInterfaceDeclaration_in_synpred5_JavaJava107);
 				classOrInterfaceDeclaration();
 				state._fsp--;
 				if (state.failed) return;
 
-				// /media/tony/disk2/_git/cs543/JavaJava.g:85:41: ( typeDeclaration )*
+				// /media/tony/disk2/_git/cs543/JavaJava.g:86:41: ( typeDeclaration )*
 				loop182:
 				while (true) {
 					int alt182=2;
@@ -18793,7 +18793,7 @@ public class JavaJavaParser extends Parser {
 
 					switch (alt182) {
 					case 1 :
-						// /media/tony/disk2/_git/cs543/JavaJava.g:85:41: typeDeclaration
+						// /media/tony/disk2/_git/cs543/JavaJava.g:86:41: typeDeclaration
 						{
 						pushFollow(FOLLOW_typeDeclaration_in_synpred5_JavaJava109);
 						typeDeclaration();
@@ -18820,8 +18820,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred112_JavaJava
 	public final void synpred112_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:419:22: ( explicitConstructorInvocation )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:419:22: explicitConstructorInvocation
+		// /media/tony/disk2/_git/cs543/JavaJava.g:420:22: ( explicitConstructorInvocation )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:420:22: explicitConstructorInvocation
 		{
 		pushFollow(FOLLOW_explicitConstructorInvocation_in_synpred112_JavaJava2722);
 		explicitConstructorInvocation();
@@ -18835,10 +18835,10 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred116_JavaJava
 	public final void synpred116_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:423:9: ( ( nonWildcardTypeArguments )? ( 'this' | 'super' ) arguments ';' )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:423:9: ( nonWildcardTypeArguments )? ( 'this' | 'super' ) arguments ';'
+		// /media/tony/disk2/_git/cs543/JavaJava.g:424:9: ( ( nonWildcardTypeArguments )? ( 'this' | 'super' ) arguments ';' )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:424:9: ( nonWildcardTypeArguments )? ( 'this' | 'super' ) arguments ';'
 		{
-		// /media/tony/disk2/_git/cs543/JavaJava.g:423:9: ( nonWildcardTypeArguments )?
+		// /media/tony/disk2/_git/cs543/JavaJava.g:424:9: ( nonWildcardTypeArguments )?
 		int alt191=2;
 		int LA191_0 = input.LA(1);
 		if ( (LA191_0==49) ) {
@@ -18846,7 +18846,7 @@ public class JavaJavaParser extends Parser {
 		}
 		switch (alt191) {
 			case 1 :
-				// /media/tony/disk2/_git/cs543/JavaJava.g:423:9: nonWildcardTypeArguments
+				// /media/tony/disk2/_git/cs543/JavaJava.g:424:9: nonWildcardTypeArguments
 				{
 				pushFollow(FOLLOW_nonWildcardTypeArguments_in_synpred116_JavaJava2749);
 				nonWildcardTypeArguments();
@@ -18882,8 +18882,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred127_JavaJava
 	public final void synpred127_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:455:9: ( annotation )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:455:9: annotation
+		// /media/tony/disk2/_git/cs543/JavaJava.g:456:9: ( annotation )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:456:9: annotation
 		{
 		pushFollow(FOLLOW_annotation_in_synpred127_JavaJava3011);
 		annotation();
@@ -18897,8 +18897,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred150_JavaJava
 	public final void synpred150_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:528:10: ( localVariableDeclarationStatement )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:528:10: localVariableDeclarationStatement
+		// /media/tony/disk2/_git/cs543/JavaJava.g:529:10: ( localVariableDeclarationStatement )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:529:10: localVariableDeclarationStatement
 		{
 		pushFollow(FOLLOW_localVariableDeclarationStatement_in_synpred150_JavaJava3577);
 		localVariableDeclarationStatement();
@@ -18912,8 +18912,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred151_JavaJava
 	public final void synpred151_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:529:9: ( classOrInterfaceDeclaration )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:529:9: classOrInterfaceDeclaration
+		// /media/tony/disk2/_git/cs543/JavaJava.g:530:9: ( classOrInterfaceDeclaration )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:530:9: classOrInterfaceDeclaration
 		{
 		pushFollow(FOLLOW_classOrInterfaceDeclaration_in_synpred151_JavaJava3587);
 		classOrInterfaceDeclaration();
@@ -18927,8 +18927,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred156_JavaJava
 	public final void synpred156_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:548:115: ( 'else' statement )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:548:115: 'else' statement
+		// /media/tony/disk2/_git/cs543/JavaJava.g:549:115: ( 'else' statement )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:549:115: 'else' statement
 		{
 		match(input,71,FOLLOW_71_in_synpred156_JavaJava3738); if (state.failed) return;
 
@@ -18944,8 +18944,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred161_JavaJava
 	public final void synpred161_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:553:11: ( catches 'finally' block )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:553:11: catches 'finally' block
+		// /media/tony/disk2/_git/cs543/JavaJava.g:554:11: ( catches 'finally' block )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:554:11: catches 'finally' block
 		{
 		pushFollow(FOLLOW_catches_in_synpred161_JavaJava3832);
 		catches();
@@ -18966,8 +18966,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred162_JavaJava
 	public final void synpred162_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:554:11: ( catches )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:554:11: catches
+		// /media/tony/disk2/_git/cs543/JavaJava.g:555:11: ( catches )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:555:11: catches
 		{
 		pushFollow(FOLLOW_catches_in_synpred162_JavaJava3849);
 		catches();
@@ -18981,8 +18981,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred177_JavaJava
 	public final void synpred177_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:589:9: ( switchLabel )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:589:9: switchLabel
+		// /media/tony/disk2/_git/cs543/JavaJava.g:590:9: ( switchLabel )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:590:9: switchLabel
 		{
 		pushFollow(FOLLOW_switchLabel_in_synpred177_JavaJava4172);
 		switchLabel();
@@ -18996,8 +18996,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred179_JavaJava
 	public final void synpred179_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:593:9: ( 'case' constantExpression ':' )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:593:9: 'case' constantExpression ':'
+		// /media/tony/disk2/_git/cs543/JavaJava.g:594:9: ( 'case' constantExpression ':' )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:594:9: 'case' constantExpression ':'
 		{
 		match(input,63,FOLLOW_63_in_synpred179_JavaJava4199); if (state.failed) return;
 
@@ -19015,8 +19015,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred180_JavaJava
 	public final void synpred180_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:594:9: ( 'case' enumConstantName ':' )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:594:9: 'case' enumConstantName ':'
+		// /media/tony/disk2/_git/cs543/JavaJava.g:595:9: ( 'case' enumConstantName ':' )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:595:9: 'case' enumConstantName ':'
 		{
 		match(input,63,FOLLOW_63_in_synpred180_JavaJava4214); if (state.failed) return;
 
@@ -19034,8 +19034,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred181_JavaJava
 	public final void synpred181_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:600:9: ( enhancedForControl )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:600:9: enhancedForControl
+		// /media/tony/disk2/_git/cs543/JavaJava.g:601:9: ( enhancedForControl )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:601:9: enhancedForControl
 		{
 		pushFollow(FOLLOW_enhancedForControl_in_synpred181_JavaJava4265);
 		enhancedForControl();
@@ -19049,8 +19049,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred185_JavaJava
 	public final void synpred185_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:605:9: ( localVariableDeclaration )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:605:9: localVariableDeclaration
+		// /media/tony/disk2/_git/cs543/JavaJava.g:606:9: ( localVariableDeclaration )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:606:9: localVariableDeclaration
 		{
 		pushFollow(FOLLOW_localVariableDeclaration_in_synpred185_JavaJava4305);
 		localVariableDeclaration();
@@ -19064,8 +19064,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred187_JavaJava
 	public final void synpred187_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:636:32: ( assignmentOperator expression )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:636:32: assignmentOperator expression
+		// /media/tony/disk2/_git/cs543/JavaJava.g:637:32: ( assignmentOperator expression )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:637:32: assignmentOperator expression
 		{
 		pushFollow(FOLLOW_assignmentOperator_in_synpred187_JavaJava4496);
 		assignmentOperator();
@@ -19084,8 +19084,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred197_JavaJava
 	public final void synpred197_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:649:9: ( '<' '<' '=' )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:649:10: '<' '<' '='
+		// /media/tony/disk2/_git/cs543/JavaJava.g:650:9: ( '<' '<' '=' )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:650:10: '<' '<' '='
 		{
 		match(input,49,FOLLOW_49_in_synpred197_JavaJava4616); if (state.failed) return;
 
@@ -19100,8 +19100,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred198_JavaJava
 	public final void synpred198_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:654:9: ( '>' '>' '>' '=' )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:654:10: '>' '>' '>' '='
+		// /media/tony/disk2/_git/cs543/JavaJava.g:655:9: ( '>' '>' '>' '=' )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:655:10: '>' '>' '>' '='
 		{
 		match(input,52,FOLLOW_52_in_synpred198_JavaJava4656); if (state.failed) return;
 
@@ -19118,8 +19118,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred199_JavaJava
 	public final void synpred199_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:661:9: ( '>' '>' '=' )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:661:10: '>' '>' '='
+		// /media/tony/disk2/_git/cs543/JavaJava.g:662:9: ( '>' '>' '=' )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:662:10: '>' '>' '='
 		{
 		match(input,52,FOLLOW_52_in_synpred199_JavaJava4701); if (state.failed) return;
 
@@ -19134,8 +19134,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred210_JavaJava
 	public final void synpred210_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:705:9: ( '<' '=' )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:705:10: '<' '='
+		// /media/tony/disk2/_git/cs543/JavaJava.g:706:9: ( '<' '=' )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:706:10: '<' '='
 		{
 		match(input,49,FOLLOW_49_in_synpred210_JavaJava5025); if (state.failed) return;
 
@@ -19148,8 +19148,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred211_JavaJava
 	public final void synpred211_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:708:9: ( '>' '=' )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:708:10: '>' '='
+		// /media/tony/disk2/_git/cs543/JavaJava.g:709:9: ( '>' '=' )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:709:10: '>' '='
 		{
 		match(input,52,FOLLOW_52_in_synpred211_JavaJava5059); if (state.failed) return;
 
@@ -19162,8 +19162,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred214_JavaJava
 	public final void synpred214_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:720:9: ( '<' '<' )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:720:10: '<' '<'
+		// /media/tony/disk2/_git/cs543/JavaJava.g:721:9: ( '<' '<' )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:721:10: '<' '<'
 		{
 		match(input,49,FOLLOW_49_in_synpred214_JavaJava5154); if (state.failed) return;
 
@@ -19176,8 +19176,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred215_JavaJava
 	public final void synpred215_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:723:9: ( '>' '>' '>' )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:723:10: '>' '>' '>'
+		// /media/tony/disk2/_git/cs543/JavaJava.g:724:9: ( '>' '>' '>' )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:724:10: '>' '>' '>'
 		{
 		match(input,52,FOLLOW_52_in_synpred215_JavaJava5188); if (state.failed) return;
 
@@ -19192,8 +19192,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred216_JavaJava
 	public final void synpred216_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:728:9: ( '>' '>' )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:728:10: '>' '>'
+		// /media/tony/disk2/_git/cs543/JavaJava.g:729:9: ( '>' '>' )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:729:10: '>' '>'
 		{
 		match(input,52,FOLLOW_52_in_synpred216_JavaJava5228); if (state.failed) return;
 
@@ -19206,8 +19206,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred228_JavaJava
 	public final void synpred228_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:753:9: ( castExpression )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:753:9: castExpression
+		// /media/tony/disk2/_git/cs543/JavaJava.g:754:9: ( castExpression )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:754:9: castExpression
 		{
 		pushFollow(FOLLOW_castExpression_in_synpred228_JavaJava5447);
 		castExpression();
@@ -19221,8 +19221,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred232_JavaJava
 	public final void synpred232_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:758:8: ( '(' primitiveType ')' unaryExpression )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:758:8: '(' primitiveType ')' unaryExpression
+		// /media/tony/disk2/_git/cs543/JavaJava.g:759:8: ( '(' primitiveType ')' unaryExpression )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:759:8: '(' primitiveType ')' unaryExpression
 		{
 		match(input,32,FOLLOW_32_in_synpred232_JavaJava5489); if (state.failed) return;
 
@@ -19245,8 +19245,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred233_JavaJava
 	public final void synpred233_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:759:22: ( type )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:759:22: type
+		// /media/tony/disk2/_git/cs543/JavaJava.g:760:22: ( type )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:760:22: type
 		{
 		pushFollow(FOLLOW_type_in_synpred233_JavaJava5509);
 		type();
@@ -19260,8 +19260,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred235_JavaJava
 	public final void synpred235_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:764:73: ( '.' Identifier )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:764:73: '.' Identifier
+		// /media/tony/disk2/_git/cs543/JavaJava.g:765:73: ( '.' Identifier )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:765:73: '.' Identifier
 		{
 		match(input,43,FOLLOW_43_in_synpred235_JavaJava5551); if (state.failed) return;
 
@@ -19274,8 +19274,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred236_JavaJava
 	public final void synpred236_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:764:100: ( identifierSuffix )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:764:100: identifierSuffix
+		// /media/tony/disk2/_git/cs543/JavaJava.g:765:100: ( identifierSuffix )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:765:100: identifierSuffix
 		{
 		pushFollow(FOLLOW_identifierSuffix_in_synpred236_JavaJava5559);
 		identifierSuffix();
@@ -19292,8 +19292,8 @@ public class JavaJavaParser extends Parser {
 		Token I4=null;
 
 
-		// /media/tony/disk2/_git/cs543/JavaJava.g:768:42: ( '.' I4= Identifier )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:768:42: '.' I4= Identifier
+		// /media/tony/disk2/_git/cs543/JavaJava.g:769:42: ( '.' I4= Identifier )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:769:42: '.' I4= Identifier
 		{
 		match(input,43,FOLLOW_43_in_synpred241_JavaJava5614); if (state.failed) return;
 
@@ -19306,8 +19306,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred242_JavaJava
 	public final void synpred242_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:768:73: ( identifierSuffix )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:768:73: identifierSuffix
+		// /media/tony/disk2/_git/cs543/JavaJava.g:769:73: ( identifierSuffix )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:769:73: identifierSuffix
 		{
 		pushFollow(FOLLOW_identifierSuffix_in_synpred242_JavaJava5625);
 		identifierSuffix();
@@ -19321,8 +19321,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred248_JavaJava
 	public final void synpred248_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:775:10: ( '[' expression ']' )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:775:10: '[' expression ']'
+		// /media/tony/disk2/_git/cs543/JavaJava.g:776:10: ( '[' expression ']' )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:776:10: '[' expression ']'
 		{
 		match(input,55,FOLLOW_55_in_synpred248_JavaJava5716); if (state.failed) return;
 
@@ -19340,8 +19340,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred261_JavaJava
 	public final void synpred261_JavaJava_fragment() throws RecognitionException {
-		// /media/tony/disk2/_git/cs543/JavaJava.g:801:39: ( '[' expression ']' )
-		// /media/tony/disk2/_git/cs543/JavaJava.g:801:39: '[' expression ']'
+		// /media/tony/disk2/_git/cs543/JavaJava.g:802:39: ( '[' expression ']' )
+		// /media/tony/disk2/_git/cs543/JavaJava.g:802:39: '[' expression ']'
 		{
 		match(input,55,FOLLOW_55_in_synpred261_JavaJava5986); if (state.failed) return;
 
@@ -20133,7 +20133,7 @@ public class JavaJavaParser extends Parser {
 		}
 		@Override
 		public String getDescription() {
-			return "598:1: forControl options {k=3; } : ( enhancedForControl | ( forInit )? ';' ( expression )? ';' ( forUpdate )? );";
+			return "599:1: forControl options {k=3; } : ( enhancedForControl | ( forInit )? ';' ( expression )? ';' ( forUpdate )? );";
 		}
 		@Override
 		public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
@@ -21057,7 +21057,7 @@ public class JavaJavaParser extends Parser {
 		}
 		@Override
 		public String getDescription() {
-			return "759:21: ( type | expression )";
+			return "760:21: ( type | expression )";
 		}
 		@Override
 		public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {

@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 /media/tony/disk2/_git/cs543/JavaJava.g 2018-03-17 13:13:08
+// $ANTLR 3.5.1 /media/tony/disk2/_git/cs543/JavaJava.g 2018-03-20 20:46:18
 
 package metricssuite;
 
@@ -125,6 +125,7 @@ public class JavaJavaLexer extends Lexer {
 
 		public int ws = 0;
 		public int commentcount = 0;
+		public int commentbytes = 0;
 		
 		
 		public int constantcount = 0;
@@ -153,8 +154,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__25;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:17:7: ( '!' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:17:9: '!'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:18:7: ( '!' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:18:9: '!'
 			{
 			match('!'); 
 			}
@@ -173,8 +174,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__26;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:18:7: ( '!=' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:18:9: '!='
+			// /media/tony/disk2/_git/cs543/JavaJava.g:19:7: ( '!=' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:19:9: '!='
 			{
 			match("!="); 
 
@@ -194,8 +195,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__27;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:19:7: ( '%' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:19:9: '%'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:20:7: ( '%' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:20:9: '%'
 			{
 			match('%'); 
 			}
@@ -214,8 +215,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__28;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:20:7: ( '%=' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:20:9: '%='
+			// /media/tony/disk2/_git/cs543/JavaJava.g:21:7: ( '%=' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:21:9: '%='
 			{
 			match("%="); 
 
@@ -235,8 +236,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__29;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:21:7: ( '&&' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:21:9: '&&'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:22:7: ( '&&' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:22:9: '&&'
 			{
 			match("&&"); 
 
@@ -256,8 +257,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__30;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:22:7: ( '&' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:22:9: '&'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:23:7: ( '&' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:23:9: '&'
 			{
 			match('&'); 
 			}
@@ -276,8 +277,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__31;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:23:7: ( '&=' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:23:9: '&='
+			// /media/tony/disk2/_git/cs543/JavaJava.g:24:7: ( '&=' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:24:9: '&='
 			{
 			match("&="); 
 
@@ -297,8 +298,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__32;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:24:7: ( '(' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:24:9: '('
+			// /media/tony/disk2/_git/cs543/JavaJava.g:25:7: ( '(' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:25:9: '('
 			{
 			match('('); 
 			}
@@ -317,8 +318,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__33;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:25:7: ( ')' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:25:9: ')'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:26:7: ( ')' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:26:9: ')'
 			{
 			match(')'); 
 			}
@@ -337,8 +338,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__34;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:26:7: ( '*' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:26:9: '*'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:27:7: ( '*' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:27:9: '*'
 			{
 			match('*'); 
 			}
@@ -357,8 +358,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__35;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:27:7: ( '*=' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:27:9: '*='
+			// /media/tony/disk2/_git/cs543/JavaJava.g:28:7: ( '*=' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:28:9: '*='
 			{
 			match("*="); 
 
@@ -378,8 +379,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__36;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:28:7: ( '+' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:28:9: '+'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:29:7: ( '+' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:29:9: '+'
 			{
 			match('+'); 
 			}
@@ -398,8 +399,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__37;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:29:7: ( '++' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:29:9: '++'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:30:7: ( '++' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:30:9: '++'
 			{
 			match("++"); 
 
@@ -419,8 +420,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__38;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:30:7: ( '+=' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:30:9: '+='
+			// /media/tony/disk2/_git/cs543/JavaJava.g:31:7: ( '+=' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:31:9: '+='
 			{
 			match("+="); 
 
@@ -440,8 +441,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__39;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:31:7: ( ',' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:31:9: ','
+			// /media/tony/disk2/_git/cs543/JavaJava.g:32:7: ( ',' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:32:9: ','
 			{
 			match(','); 
 			}
@@ -460,8 +461,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__40;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:32:7: ( '-' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:32:9: '-'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:33:7: ( '-' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:33:9: '-'
 			{
 			match('-'); 
 			}
@@ -480,8 +481,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__41;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:33:7: ( '--' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:33:9: '--'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:34:7: ( '--' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:34:9: '--'
 			{
 			match("--"); 
 
@@ -501,8 +502,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__42;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:34:7: ( '-=' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:34:9: '-='
+			// /media/tony/disk2/_git/cs543/JavaJava.g:35:7: ( '-=' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:35:9: '-='
 			{
 			match("-="); 
 
@@ -522,8 +523,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__43;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:35:7: ( '.' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:35:9: '.'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:36:7: ( '.' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:36:9: '.'
 			{
 			match('.'); 
 			}
@@ -542,8 +543,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__44;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:36:7: ( '...' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:36:9: '...'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:37:7: ( '...' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:37:9: '...'
 			{
 			match("..."); 
 
@@ -563,8 +564,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__45;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:37:7: ( '/' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:37:9: '/'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:38:7: ( '/' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:38:9: '/'
 			{
 			match('/'); 
 			}
@@ -583,8 +584,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__46;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:38:7: ( '/=' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:38:9: '/='
+			// /media/tony/disk2/_git/cs543/JavaJava.g:39:7: ( '/=' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:39:9: '/='
 			{
 			match("/="); 
 
@@ -604,8 +605,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__47;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:39:7: ( ':' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:39:9: ':'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:40:7: ( ':' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:40:9: ':'
 			{
 			match(':'); 
 			}
@@ -624,8 +625,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__48;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:40:7: ( ';' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:40:9: ';'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:41:7: ( ';' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:41:9: ';'
 			{
 			match(';'); 
 			}
@@ -644,8 +645,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__49;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:41:7: ( '<' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:41:9: '<'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:42:7: ( '<' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:42:9: '<'
 			{
 			match('<'); 
 			}
@@ -664,8 +665,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__50;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:42:7: ( '=' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:42:9: '='
+			// /media/tony/disk2/_git/cs543/JavaJava.g:43:7: ( '=' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:43:9: '='
 			{
 			match('='); 
 			}
@@ -684,8 +685,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__51;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:43:7: ( '==' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:43:9: '=='
+			// /media/tony/disk2/_git/cs543/JavaJava.g:44:7: ( '==' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:44:9: '=='
 			{
 			match("=="); 
 
@@ -705,8 +706,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__52;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:44:7: ( '>' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:44:9: '>'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:45:7: ( '>' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:45:9: '>'
 			{
 			match('>'); 
 			}
@@ -725,8 +726,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__53;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:45:7: ( '?' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:45:9: '?'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:46:7: ( '?' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:46:9: '?'
 			{
 			match('?'); 
 			}
@@ -745,8 +746,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__54;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:46:7: ( '@' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:46:9: '@'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:47:7: ( '@' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:47:9: '@'
 			{
 			match('@'); 
 			}
@@ -765,8 +766,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__55;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:47:7: ( '[' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:47:9: '['
+			// /media/tony/disk2/_git/cs543/JavaJava.g:48:7: ( '[' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:48:9: '['
 			{
 			match('['); 
 			}
@@ -785,8 +786,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__56;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:48:7: ( ']' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:48:9: ']'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:49:7: ( ']' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:49:9: ']'
 			{
 			match(']'); 
 			}
@@ -805,8 +806,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__57;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:49:7: ( '^' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:49:9: '^'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:50:7: ( '^' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:50:9: '^'
 			{
 			match('^'); 
 			}
@@ -825,8 +826,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__58;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:50:7: ( '^=' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:50:9: '^='
+			// /media/tony/disk2/_git/cs543/JavaJava.g:51:7: ( '^=' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:51:9: '^='
 			{
 			match("^="); 
 
@@ -846,8 +847,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__59;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:51:7: ( 'abstract' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:51:9: 'abstract'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:52:7: ( 'abstract' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:52:9: 'abstract'
 			{
 			match("abstract"); 
 
@@ -867,8 +868,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__60;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:52:7: ( 'boolean' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:52:9: 'boolean'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:53:7: ( 'boolean' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:53:9: 'boolean'
 			{
 			match("boolean"); 
 
@@ -888,8 +889,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__61;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:53:7: ( 'break' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:53:9: 'break'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:54:7: ( 'break' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:54:9: 'break'
 			{
 			match("break"); 
 
@@ -909,8 +910,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__62;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:54:7: ( 'byte' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:54:9: 'byte'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:55:7: ( 'byte' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:55:9: 'byte'
 			{
 			match("byte"); 
 
@@ -930,8 +931,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__63;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:55:7: ( 'case' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:55:9: 'case'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:56:7: ( 'case' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:56:9: 'case'
 			{
 			match("case"); 
 
@@ -951,8 +952,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__64;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:56:7: ( 'catch' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:56:9: 'catch'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:57:7: ( 'catch' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:57:9: 'catch'
 			{
 			match("catch"); 
 
@@ -972,8 +973,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__65;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:57:7: ( 'char' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:57:9: 'char'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:58:7: ( 'char' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:58:9: 'char'
 			{
 			match("char"); 
 
@@ -993,8 +994,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__66;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:58:7: ( 'class' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:58:9: 'class'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:59:7: ( 'class' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:59:9: 'class'
 			{
 			match("class"); 
 
@@ -1014,8 +1015,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__67;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:59:7: ( 'continue' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:59:9: 'continue'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:60:7: ( 'continue' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:60:9: 'continue'
 			{
 			match("continue"); 
 
@@ -1035,8 +1036,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__68;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:60:7: ( 'default' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:60:9: 'default'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:61:7: ( 'default' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:61:9: 'default'
 			{
 			match("default"); 
 
@@ -1056,8 +1057,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__69;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:61:7: ( 'do' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:61:9: 'do'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:62:7: ( 'do' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:62:9: 'do'
 			{
 			match("do"); 
 
@@ -1077,8 +1078,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__70;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:62:7: ( 'double' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:62:9: 'double'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:63:7: ( 'double' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:63:9: 'double'
 			{
 			match("double"); 
 
@@ -1098,8 +1099,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__71;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:63:7: ( 'else' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:63:9: 'else'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:64:7: ( 'else' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:64:9: 'else'
 			{
 			match("else"); 
 
@@ -1119,8 +1120,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__72;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:64:7: ( 'extends' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:64:9: 'extends'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:65:7: ( 'extends' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:65:9: 'extends'
 			{
 			match("extends"); 
 
@@ -1140,8 +1141,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__73;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:65:7: ( 'false' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:65:9: 'false'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:66:7: ( 'false' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:66:9: 'false'
 			{
 			match("false"); 
 
@@ -1161,8 +1162,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__74;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:66:7: ( 'final' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:66:9: 'final'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:67:7: ( 'final' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:67:9: 'final'
 			{
 			match("final"); 
 
@@ -1182,8 +1183,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__75;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:67:7: ( 'finally' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:67:9: 'finally'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:68:7: ( 'finally' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:68:9: 'finally'
 			{
 			match("finally"); 
 
@@ -1203,8 +1204,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__76;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:68:7: ( 'float' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:68:9: 'float'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:69:7: ( 'float' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:69:9: 'float'
 			{
 			match("float"); 
 
@@ -1224,8 +1225,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__77;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:69:7: ( 'for' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:69:9: 'for'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:70:7: ( 'for' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:70:9: 'for'
 			{
 			match("for"); 
 
@@ -1245,8 +1246,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__78;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:70:7: ( 'if' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:70:9: 'if'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:71:7: ( 'if' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:71:9: 'if'
 			{
 			match("if"); 
 
@@ -1266,8 +1267,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__79;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:71:7: ( 'implements' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:71:9: 'implements'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:72:7: ( 'implements' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:72:9: 'implements'
 			{
 			match("implements"); 
 
@@ -1287,8 +1288,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__80;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:72:7: ( 'import' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:72:9: 'import'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:73:7: ( 'import' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:73:9: 'import'
 			{
 			match("import"); 
 
@@ -1308,8 +1309,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__81;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:73:7: ( 'instanceof' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:73:9: 'instanceof'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:74:7: ( 'instanceof' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:74:9: 'instanceof'
 			{
 			match("instanceof"); 
 
@@ -1329,8 +1330,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__82;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:74:7: ( 'int' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:74:9: 'int'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:75:7: ( 'int' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:75:9: 'int'
 			{
 			match("int"); 
 
@@ -1350,8 +1351,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__83;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:75:7: ( 'interface' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:75:9: 'interface'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:76:7: ( 'interface' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:76:9: 'interface'
 			{
 			match("interface"); 
 
@@ -1371,8 +1372,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__84;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:76:7: ( 'long' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:76:9: 'long'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:77:7: ( 'long' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:77:9: 'long'
 			{
 			match("long"); 
 
@@ -1392,8 +1393,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__85;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:77:7: ( 'native' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:77:9: 'native'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:78:7: ( 'native' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:78:9: 'native'
 			{
 			match("native"); 
 
@@ -1413,8 +1414,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__86;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:78:7: ( 'new' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:78:9: 'new'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:79:7: ( 'new' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:79:9: 'new'
 			{
 			match("new"); 
 
@@ -1434,8 +1435,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__87;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:79:7: ( 'null' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:79:9: 'null'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:80:7: ( 'null' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:80:9: 'null'
 			{
 			match("null"); 
 
@@ -1455,8 +1456,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__88;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:80:7: ( 'package' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:80:9: 'package'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:81:7: ( 'package' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:81:9: 'package'
 			{
 			match("package"); 
 
@@ -1476,8 +1477,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__89;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:81:7: ( 'private' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:81:9: 'private'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:82:7: ( 'private' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:82:9: 'private'
 			{
 			match("private"); 
 
@@ -1497,8 +1498,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__90;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:82:7: ( 'protected' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:82:9: 'protected'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:83:7: ( 'protected' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:83:9: 'protected'
 			{
 			match("protected"); 
 
@@ -1518,8 +1519,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__91;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:83:7: ( 'public' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:83:9: 'public'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:84:7: ( 'public' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:84:9: 'public'
 			{
 			match("public"); 
 
@@ -1539,8 +1540,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__92;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:84:7: ( 'return' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:84:9: 'return'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:85:7: ( 'return' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:85:9: 'return'
 			{
 			match("return"); 
 
@@ -1560,8 +1561,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__93;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:85:7: ( 'short' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:85:9: 'short'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:86:7: ( 'short' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:86:9: 'short'
 			{
 			match("short"); 
 
@@ -1581,8 +1582,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__94;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:86:7: ( 'static' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:86:9: 'static'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:87:7: ( 'static' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:87:9: 'static'
 			{
 			match("static"); 
 
@@ -1602,8 +1603,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__95;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:87:7: ( 'strictfp' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:87:9: 'strictfp'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:88:7: ( 'strictfp' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:88:9: 'strictfp'
 			{
 			match("strictfp"); 
 
@@ -1623,8 +1624,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__96;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:88:7: ( 'super' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:88:9: 'super'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:89:7: ( 'super' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:89:9: 'super'
 			{
 			match("super"); 
 
@@ -1644,8 +1645,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__97;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:89:7: ( 'switch' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:89:9: 'switch'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:90:7: ( 'switch' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:90:9: 'switch'
 			{
 			match("switch"); 
 
@@ -1665,8 +1666,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__98;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:90:7: ( 'synchronized' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:90:9: 'synchronized'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:91:7: ( 'synchronized' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:91:9: 'synchronized'
 			{
 			match("synchronized"); 
 
@@ -1686,8 +1687,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__99;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:91:7: ( 'this' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:91:9: 'this'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:92:7: ( 'this' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:92:9: 'this'
 			{
 			match("this"); 
 
@@ -1707,8 +1708,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__100;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:92:8: ( 'throw' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:92:10: 'throw'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:93:8: ( 'throw' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:93:10: 'throw'
 			{
 			match("throw"); 
 
@@ -1728,8 +1729,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__101;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:93:8: ( 'throws' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:93:10: 'throws'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:94:8: ( 'throws' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:94:10: 'throws'
 			{
 			match("throws"); 
 
@@ -1749,8 +1750,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__102;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:94:8: ( 'transient' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:94:10: 'transient'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:95:8: ( 'transient' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:95:10: 'transient'
 			{
 			match("transient"); 
 
@@ -1770,8 +1771,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__103;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:95:8: ( 'true' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:95:10: 'true'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:96:8: ( 'true' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:96:10: 'true'
 			{
 			match("true"); 
 
@@ -1791,8 +1792,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__104;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:96:8: ( 'try' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:96:10: 'try'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:97:8: ( 'try' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:97:10: 'try'
 			{
 			match("try"); 
 
@@ -1812,8 +1813,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__105;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:97:8: ( 'void' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:97:10: 'void'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:98:8: ( 'void' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:98:10: 'void'
 			{
 			match("void"); 
 
@@ -1833,8 +1834,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__106;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:98:8: ( 'volatile' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:98:10: 'volatile'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:99:8: ( 'volatile' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:99:10: 'volatile'
 			{
 			match("volatile"); 
 
@@ -1854,8 +1855,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__107;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:99:8: ( 'while' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:99:10: 'while'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:100:8: ( 'while' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:100:10: 'while'
 			{
 			match("while"); 
 
@@ -1875,8 +1876,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__108;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:100:8: ( '{' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:100:10: '{'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:101:8: ( '{' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:101:10: '{'
 			{
 			match('{'); 
 			}
@@ -1895,8 +1896,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__109;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:101:8: ( '|' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:101:10: '|'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:102:8: ( '|' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:102:10: '|'
 			{
 			match('|'); 
 			}
@@ -1915,8 +1916,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__110;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:102:8: ( '|=' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:102:10: '|='
+			// /media/tony/disk2/_git/cs543/JavaJava.g:103:8: ( '|=' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:103:10: '|='
 			{
 			match("|="); 
 
@@ -1936,8 +1937,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__111;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:103:8: ( '||' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:103:10: '||'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:104:8: ( '||' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:104:10: '||'
 			{
 			match("||"); 
 
@@ -1957,8 +1958,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__112;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:104:8: ( '}' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:104:10: '}'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:105:8: ( '}' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:105:10: '}'
 			{
 			match('}'); 
 			}
@@ -1977,8 +1978,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = T__113;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:105:8: ( '~' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:105:10: '~'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:106:8: ( '~' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:106:10: '~'
 			{
 			match('~'); 
 			}
@@ -1997,8 +1998,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = HexLiteral;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:836:12: ( '0' ( 'x' | 'X' ) ( HexDigit )+ ( IntegerTypeSuffix )? )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:836:14: '0' ( 'x' | 'X' ) ( HexDigit )+ ( IntegerTypeSuffix )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:837:12: ( '0' ( 'x' | 'X' ) ( HexDigit )+ ( IntegerTypeSuffix )? )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:837:14: '0' ( 'x' | 'X' ) ( HexDigit )+ ( IntegerTypeSuffix )?
 			{
 			match('0'); 
 			if ( input.LA(1)=='X'||input.LA(1)=='x' ) {
@@ -2009,7 +2010,7 @@ public class JavaJavaLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// /media/tony/disk2/_git/cs543/JavaJava.g:836:28: ( HexDigit )+
+			// /media/tony/disk2/_git/cs543/JavaJava.g:837:28: ( HexDigit )+
 			int cnt1=0;
 			loop1:
 			while (true) {
@@ -2042,7 +2043,7 @@ public class JavaJavaLexer extends Lexer {
 				cnt1++;
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:836:38: ( IntegerTypeSuffix )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:837:38: ( IntegerTypeSuffix )?
 			int alt2=2;
 			int LA2_0 = input.LA(1);
 			if ( (LA2_0=='L'||LA2_0=='l') ) {
@@ -2082,10 +2083,10 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = DecimalLiteral;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:838:16: ( ( '0' | '1' .. '9' ( '0' .. '9' )* ) ( IntegerTypeSuffix )? )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:838:18: ( '0' | '1' .. '9' ( '0' .. '9' )* ) ( IntegerTypeSuffix )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:839:16: ( ( '0' | '1' .. '9' ( '0' .. '9' )* ) ( IntegerTypeSuffix )? )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:839:18: ( '0' | '1' .. '9' ( '0' .. '9' )* ) ( IntegerTypeSuffix )?
 			{
-			// /media/tony/disk2/_git/cs543/JavaJava.g:838:18: ( '0' | '1' .. '9' ( '0' .. '9' )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:839:18: ( '0' | '1' .. '9' ( '0' .. '9' )* )
 			int alt4=2;
 			int LA4_0 = input.LA(1);
 			if ( (LA4_0=='0') ) {
@@ -2103,16 +2104,16 @@ public class JavaJavaLexer extends Lexer {
 
 			switch (alt4) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:838:19: '0'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:839:19: '0'
 					{
 					match('0'); 
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:838:25: '1' .. '9' ( '0' .. '9' )*
+					// /media/tony/disk2/_git/cs543/JavaJava.g:839:25: '1' .. '9' ( '0' .. '9' )*
 					{
 					matchRange('1','9'); 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:838:34: ( '0' .. '9' )*
+					// /media/tony/disk2/_git/cs543/JavaJava.g:839:34: ( '0' .. '9' )*
 					loop3:
 					while (true) {
 						int alt3=2;
@@ -2146,7 +2147,7 @@ public class JavaJavaLexer extends Lexer {
 
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:838:45: ( IntegerTypeSuffix )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:839:45: ( IntegerTypeSuffix )?
 			int alt5=2;
 			int LA5_0 = input.LA(1);
 			if ( (LA5_0=='L'||LA5_0=='l') ) {
@@ -2186,11 +2187,11 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = OctalLiteral;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:840:14: ( '0' ( '0' .. '7' )+ ( IntegerTypeSuffix )? )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:840:16: '0' ( '0' .. '7' )+ ( IntegerTypeSuffix )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:841:14: ( '0' ( '0' .. '7' )+ ( IntegerTypeSuffix )? )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:841:16: '0' ( '0' .. '7' )+ ( IntegerTypeSuffix )?
 			{
 			match('0'); 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:840:20: ( '0' .. '7' )+
+			// /media/tony/disk2/_git/cs543/JavaJava.g:841:20: ( '0' .. '7' )+
 			int cnt6=0;
 			loop6:
 			while (true) {
@@ -2223,7 +2224,7 @@ public class JavaJavaLexer extends Lexer {
 				cnt6++;
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:840:32: ( IntegerTypeSuffix )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:841:32: ( IntegerTypeSuffix )?
 			int alt7=2;
 			int LA7_0 = input.LA(1);
 			if ( (LA7_0=='L'||LA7_0=='l') ) {
@@ -2261,7 +2262,7 @@ public class JavaJavaLexer extends Lexer {
 	// $ANTLR start "HexDigit"
 	public final void mHexDigit() throws RecognitionException {
 		try {
-			// /media/tony/disk2/_git/cs543/JavaJava.g:844:10: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:845:10: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
 			// /media/tony/disk2/_git/cs543/JavaJava.g:
 			{
 			if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'F')||(input.LA(1) >= 'a' && input.LA(1) <= 'f') ) {
@@ -2284,7 +2285,7 @@ public class JavaJavaLexer extends Lexer {
 	// $ANTLR start "IntegerTypeSuffix"
 	public final void mIntegerTypeSuffix() throws RecognitionException {
 		try {
-			// /media/tony/disk2/_git/cs543/JavaJava.g:847:19: ( ( 'l' | 'L' ) )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:848:19: ( ( 'l' | 'L' ) )
 			// /media/tony/disk2/_git/cs543/JavaJava.g:
 			{
 			if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
@@ -2309,14 +2310,14 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = FloatingPointLiteral;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:849:5: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( Exponent )? ( FloatTypeSuffix )? | '.' ( '0' .. '9' )+ ( Exponent )? ( FloatTypeSuffix )? | ( '0' .. '9' )+ Exponent ( FloatTypeSuffix )? | ( '0' .. '9' )+ FloatTypeSuffix )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:850:5: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( Exponent )? ( FloatTypeSuffix )? | '.' ( '0' .. '9' )+ ( Exponent )? ( FloatTypeSuffix )? | ( '0' .. '9' )+ Exponent ( FloatTypeSuffix )? | ( '0' .. '9' )+ FloatTypeSuffix )
 			int alt18=4;
 			alt18 = dfa18.predict(input);
 			switch (alt18) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:849:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( Exponent )? ( FloatTypeSuffix )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:850:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( Exponent )? ( FloatTypeSuffix )?
 					{
-					// /media/tony/disk2/_git/cs543/JavaJava.g:849:9: ( '0' .. '9' )+
+					// /media/tony/disk2/_git/cs543/JavaJava.g:850:9: ( '0' .. '9' )+
 					int cnt8=0;
 					loop8:
 					while (true) {
@@ -2350,7 +2351,7 @@ public class JavaJavaLexer extends Lexer {
 					}
 
 					match('.'); 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:849:26: ( '0' .. '9' )*
+					// /media/tony/disk2/_git/cs543/JavaJava.g:850:26: ( '0' .. '9' )*
 					loop9:
 					while (true) {
 						int alt9=2;
@@ -2379,7 +2380,7 @@ public class JavaJavaLexer extends Lexer {
 						}
 					}
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:849:38: ( Exponent )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:850:38: ( Exponent )?
 					int alt10=2;
 					int LA10_0 = input.LA(1);
 					if ( (LA10_0=='E'||LA10_0=='e') ) {
@@ -2387,7 +2388,7 @@ public class JavaJavaLexer extends Lexer {
 					}
 					switch (alt10) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:849:38: Exponent
+							// /media/tony/disk2/_git/cs543/JavaJava.g:850:38: Exponent
 							{
 							mExponent(); 
 
@@ -2396,7 +2397,7 @@ public class JavaJavaLexer extends Lexer {
 
 					}
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:849:48: ( FloatTypeSuffix )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:850:48: ( FloatTypeSuffix )?
 					int alt11=2;
 					int LA11_0 = input.LA(1);
 					if ( (LA11_0=='D'||LA11_0=='F'||LA11_0=='d'||LA11_0=='f') ) {
@@ -2423,10 +2424,10 @@ public class JavaJavaLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:850:9: '.' ( '0' .. '9' )+ ( Exponent )? ( FloatTypeSuffix )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:851:9: '.' ( '0' .. '9' )+ ( Exponent )? ( FloatTypeSuffix )?
 					{
 					match('.'); 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:850:13: ( '0' .. '9' )+
+					// /media/tony/disk2/_git/cs543/JavaJava.g:851:13: ( '0' .. '9' )+
 					int cnt12=0;
 					loop12:
 					while (true) {
@@ -2459,7 +2460,7 @@ public class JavaJavaLexer extends Lexer {
 						cnt12++;
 					}
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:850:25: ( Exponent )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:851:25: ( Exponent )?
 					int alt13=2;
 					int LA13_0 = input.LA(1);
 					if ( (LA13_0=='E'||LA13_0=='e') ) {
@@ -2467,7 +2468,7 @@ public class JavaJavaLexer extends Lexer {
 					}
 					switch (alt13) {
 						case 1 :
-							// /media/tony/disk2/_git/cs543/JavaJava.g:850:25: Exponent
+							// /media/tony/disk2/_git/cs543/JavaJava.g:851:25: Exponent
 							{
 							mExponent(); 
 
@@ -2476,7 +2477,7 @@ public class JavaJavaLexer extends Lexer {
 
 					}
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:850:35: ( FloatTypeSuffix )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:851:35: ( FloatTypeSuffix )?
 					int alt14=2;
 					int LA14_0 = input.LA(1);
 					if ( (LA14_0=='D'||LA14_0=='F'||LA14_0=='d'||LA14_0=='f') ) {
@@ -2503,9 +2504,9 @@ public class JavaJavaLexer extends Lexer {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:851:9: ( '0' .. '9' )+ Exponent ( FloatTypeSuffix )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:852:9: ( '0' .. '9' )+ Exponent ( FloatTypeSuffix )?
 					{
-					// /media/tony/disk2/_git/cs543/JavaJava.g:851:9: ( '0' .. '9' )+
+					// /media/tony/disk2/_git/cs543/JavaJava.g:852:9: ( '0' .. '9' )+
 					int cnt15=0;
 					loop15:
 					while (true) {
@@ -2540,7 +2541,7 @@ public class JavaJavaLexer extends Lexer {
 
 					mExponent(); 
 
-					// /media/tony/disk2/_git/cs543/JavaJava.g:851:30: ( FloatTypeSuffix )?
+					// /media/tony/disk2/_git/cs543/JavaJava.g:852:30: ( FloatTypeSuffix )?
 					int alt16=2;
 					int LA16_0 = input.LA(1);
 					if ( (LA16_0=='D'||LA16_0=='F'||LA16_0=='d'||LA16_0=='f') ) {
@@ -2567,9 +2568,9 @@ public class JavaJavaLexer extends Lexer {
 					}
 					break;
 				case 4 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:852:9: ( '0' .. '9' )+ FloatTypeSuffix
+					// /media/tony/disk2/_git/cs543/JavaJava.g:853:9: ( '0' .. '9' )+ FloatTypeSuffix
 					{
-					// /media/tony/disk2/_git/cs543/JavaJava.g:852:9: ( '0' .. '9' )+
+					// /media/tony/disk2/_git/cs543/JavaJava.g:853:9: ( '0' .. '9' )+
 					int cnt17=0;
 					loop17:
 					while (true) {
@@ -2621,8 +2622,8 @@ public class JavaJavaLexer extends Lexer {
 	// $ANTLR start "Exponent"
 	public final void mExponent() throws RecognitionException {
 		try {
-			// /media/tony/disk2/_git/cs543/JavaJava.g:857:10: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:857:12: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
+			// /media/tony/disk2/_git/cs543/JavaJava.g:858:10: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:858:12: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
 			{
 			if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
 				input.consume();
@@ -2632,7 +2633,7 @@ public class JavaJavaLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// /media/tony/disk2/_git/cs543/JavaJava.g:857:22: ( '+' | '-' )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:858:22: ( '+' | '-' )?
 			int alt19=2;
 			int LA19_0 = input.LA(1);
 			if ( (LA19_0=='+'||LA19_0=='-') ) {
@@ -2655,7 +2656,7 @@ public class JavaJavaLexer extends Lexer {
 
 			}
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:857:33: ( '0' .. '9' )+
+			// /media/tony/disk2/_git/cs543/JavaJava.g:858:33: ( '0' .. '9' )+
 			int cnt20=0;
 			loop20:
 			while (true) {
@@ -2700,7 +2701,7 @@ public class JavaJavaLexer extends Lexer {
 	// $ANTLR start "FloatTypeSuffix"
 	public final void mFloatTypeSuffix() throws RecognitionException {
 		try {
-			// /media/tony/disk2/_git/cs543/JavaJava.g:860:17: ( ( 'f' | 'F' | 'd' | 'D' ) )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:861:17: ( ( 'f' | 'F' | 'd' | 'D' ) )
 			// /media/tony/disk2/_git/cs543/JavaJava.g:
 			{
 			if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='d'||input.LA(1)=='f' ) {
@@ -2725,11 +2726,11 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = CharacterLiteral;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:862:5: ( '\\'' ( EscapeSequence |~ ( '\\'' | '\\\\' ) ) '\\'' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:862:9: '\\'' ( EscapeSequence |~ ( '\\'' | '\\\\' ) ) '\\''
+			// /media/tony/disk2/_git/cs543/JavaJava.g:863:5: ( '\\'' ( EscapeSequence |~ ( '\\'' | '\\\\' ) ) '\\'' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:863:9: '\\'' ( EscapeSequence |~ ( '\\'' | '\\\\' ) ) '\\''
 			{
 			match('\''); 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:862:14: ( EscapeSequence |~ ( '\\'' | '\\\\' ) )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:863:14: ( EscapeSequence |~ ( '\\'' | '\\\\' ) )
 			int alt21=2;
 			int LA21_0 = input.LA(1);
 			if ( (LA21_0=='\\') ) {
@@ -2747,14 +2748,14 @@ public class JavaJavaLexer extends Lexer {
 
 			switch (alt21) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:862:16: EscapeSequence
+					// /media/tony/disk2/_git/cs543/JavaJava.g:863:16: EscapeSequence
 					{
 					mEscapeSequence(); 
 
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:862:33: ~ ( '\\'' | '\\\\' )
+					// /media/tony/disk2/_git/cs543/JavaJava.g:863:33: ~ ( '\\'' | '\\\\' )
 					{
 					if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '&')||(input.LA(1) >= '(' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
 						input.consume();
@@ -2787,11 +2788,11 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = StringLiteral;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:866:5: ( '\"' ( EscapeSequence |~ ( '\\\\' | '\"' ) )* '\"' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:866:8: '\"' ( EscapeSequence |~ ( '\\\\' | '\"' ) )* '\"'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:867:5: ( '\"' ( EscapeSequence |~ ( '\\\\' | '\"' ) )* '\"' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:867:8: '\"' ( EscapeSequence |~ ( '\\\\' | '\"' ) )* '\"'
 			{
 			match('\"'); 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:866:12: ( EscapeSequence |~ ( '\\\\' | '\"' ) )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:867:12: ( EscapeSequence |~ ( '\\\\' | '\"' ) )*
 			loop22:
 			while (true) {
 				int alt22=3;
@@ -2805,14 +2806,14 @@ public class JavaJavaLexer extends Lexer {
 
 				switch (alt22) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:866:14: EscapeSequence
+					// /media/tony/disk2/_git/cs543/JavaJava.g:867:14: EscapeSequence
 					{
 					mEscapeSequence(); 
 
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:866:31: ~ ( '\\\\' | '\"' )
+					// /media/tony/disk2/_git/cs543/JavaJava.g:867:31: ~ ( '\\\\' | '\"' )
 					{
 					if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!')||(input.LA(1) >= '#' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
 						input.consume();
@@ -2846,7 +2847,7 @@ public class JavaJavaLexer extends Lexer {
 	// $ANTLR start "EscapeSequence"
 	public final void mEscapeSequence() throws RecognitionException {
 		try {
-			// /media/tony/disk2/_git/cs543/JavaJava.g:872:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UnicodeEscape | OctalEscape )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:873:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UnicodeEscape | OctalEscape )
 			int alt23=3;
 			int LA23_0 = input.LA(1);
 			if ( (LA23_0=='\\') ) {
@@ -2901,7 +2902,7 @@ public class JavaJavaLexer extends Lexer {
 
 			switch (alt23) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:872:9: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
+					// /media/tony/disk2/_git/cs543/JavaJava.g:873:9: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
 					{
 					match('\\'); 
 					if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -2915,14 +2916,14 @@ public class JavaJavaLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:873:9: UnicodeEscape
+					// /media/tony/disk2/_git/cs543/JavaJava.g:874:9: UnicodeEscape
 					{
 					mUnicodeEscape(); 
 
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:874:9: OctalEscape
+					// /media/tony/disk2/_git/cs543/JavaJava.g:875:9: OctalEscape
 					{
 					mOctalEscape(); 
 
@@ -2940,7 +2941,7 @@ public class JavaJavaLexer extends Lexer {
 	// $ANTLR start "OctalEscape"
 	public final void mOctalEscape() throws RecognitionException {
 		try {
-			// /media/tony/disk2/_git/cs543/JavaJava.g:879:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:880:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
 			int alt24=3;
 			int LA24_0 = input.LA(1);
 			if ( (LA24_0=='\\') ) {
@@ -2998,7 +2999,7 @@ public class JavaJavaLexer extends Lexer {
 
 			switch (alt24) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:879:9: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
+					// /media/tony/disk2/_git/cs543/JavaJava.g:880:9: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
 					{
 					match('\\'); 
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '3') ) {
@@ -3028,7 +3029,7 @@ public class JavaJavaLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:880:9: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
+					// /media/tony/disk2/_git/cs543/JavaJava.g:881:9: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
 					{
 					match('\\'); 
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '7') ) {
@@ -3050,7 +3051,7 @@ public class JavaJavaLexer extends Lexer {
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:881:9: '\\\\' ( '0' .. '7' )
+					// /media/tony/disk2/_git/cs543/JavaJava.g:882:9: '\\\\' ( '0' .. '7' )
 					{
 					match('\\'); 
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '7') ) {
@@ -3075,8 +3076,8 @@ public class JavaJavaLexer extends Lexer {
 	// $ANTLR start "UnicodeEscape"
 	public final void mUnicodeEscape() throws RecognitionException {
 		try {
-			// /media/tony/disk2/_git/cs543/JavaJava.g:886:5: ( '\\\\' 'u' HexDigit HexDigit HexDigit HexDigit )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:886:9: '\\\\' 'u' HexDigit HexDigit HexDigit HexDigit
+			// /media/tony/disk2/_git/cs543/JavaJava.g:887:5: ( '\\\\' 'u' HexDigit HexDigit HexDigit HexDigit )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:887:9: '\\\\' 'u' HexDigit HexDigit HexDigit HexDigit
 			{
 			match('\\'); 
 			match('u'); 
@@ -3102,8 +3103,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = ENUM;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:888:5: ( 'enum' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:888:9: 'enum'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:889:5: ( 'enum' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:889:9: 'enum'
 			{
 			match("enum"); 
 
@@ -3123,8 +3124,8 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = ASSERT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:892:5: ( 'assert' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:892:9: 'assert'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:893:5: ( 'assert' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:893:9: 'assert'
 			{
 			match("assert"); 
 
@@ -3144,12 +3145,12 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = Identifier;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:896:5: ( Letter ( Letter | JavaIDDigit )* )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:896:8: Letter ( Letter | JavaIDDigit )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:897:5: ( Letter ( Letter | JavaIDDigit )* )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:897:8: Letter ( Letter | JavaIDDigit )*
 			{
 			mLetter(); 
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:896:15: ( Letter | JavaIDDigit )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:897:15: ( Letter | JavaIDDigit )*
 			loop25:
 			while (true) {
 				int alt25=2;
@@ -3192,7 +3193,7 @@ public class JavaJavaLexer extends Lexer {
 	// $ANTLR start "Letter"
 	public final void mLetter() throws RecognitionException {
 		try {
-			// /media/tony/disk2/_git/cs543/JavaJava.g:908:5: ( '\\u0024' | '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:909:5: ( '\\u0024' | '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
 			// /media/tony/disk2/_git/cs543/JavaJava.g:
 			{
 			if ( input.LA(1)=='$'||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z')||(input.LA(1) >= '\u00C0' && input.LA(1) <= '\u00D6')||(input.LA(1) >= '\u00D8' && input.LA(1) <= '\u00F6')||(input.LA(1) >= '\u00F8' && input.LA(1) <= '\u1FFF')||(input.LA(1) >= '\u3040' && input.LA(1) <= '\u318F')||(input.LA(1) >= '\u3300' && input.LA(1) <= '\u337F')||(input.LA(1) >= '\u3400' && input.LA(1) <= '\u3D2D')||(input.LA(1) >= '\u4E00' && input.LA(1) <= '\u9FFF')||(input.LA(1) >= '\uF900' && input.LA(1) <= '\uFAFF') ) {
@@ -3215,7 +3216,7 @@ public class JavaJavaLexer extends Lexer {
 	// $ANTLR start "JavaIDDigit"
 	public final void mJavaIDDigit() throws RecognitionException {
 		try {
-			// /media/tony/disk2/_git/cs543/JavaJava.g:922:5: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06f0' .. '\\u06f9' | '\\u0966' .. '\\u096f' | '\\u09e6' .. '\\u09ef' | '\\u0a66' .. '\\u0a6f' | '\\u0ae6' .. '\\u0aef' | '\\u0b66' .. '\\u0b6f' | '\\u0be7' .. '\\u0bef' | '\\u0c66' .. '\\u0c6f' | '\\u0ce6' .. '\\u0cef' | '\\u0d66' .. '\\u0d6f' | '\\u0e50' .. '\\u0e59' | '\\u0ed0' .. '\\u0ed9' | '\\u1040' .. '\\u1049' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:923:5: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06f0' .. '\\u06f9' | '\\u0966' .. '\\u096f' | '\\u09e6' .. '\\u09ef' | '\\u0a66' .. '\\u0a6f' | '\\u0ae6' .. '\\u0aef' | '\\u0b66' .. '\\u0b6f' | '\\u0be7' .. '\\u0bef' | '\\u0c66' .. '\\u0c6f' | '\\u0ce6' .. '\\u0cef' | '\\u0d66' .. '\\u0d6f' | '\\u0e50' .. '\\u0e59' | '\\u0ed0' .. '\\u0ed9' | '\\u1040' .. '\\u1049' )
 			// /media/tony/disk2/_git/cs543/JavaJava.g:
 			{
 			if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= '\u0660' && input.LA(1) <= '\u0669')||(input.LA(1) >= '\u06F0' && input.LA(1) <= '\u06F9')||(input.LA(1) >= '\u0966' && input.LA(1) <= '\u096F')||(input.LA(1) >= '\u09E6' && input.LA(1) <= '\u09EF')||(input.LA(1) >= '\u0A66' && input.LA(1) <= '\u0A6F')||(input.LA(1) >= '\u0AE6' && input.LA(1) <= '\u0AEF')||(input.LA(1) >= '\u0B66' && input.LA(1) <= '\u0B6F')||(input.LA(1) >= '\u0BE7' && input.LA(1) <= '\u0BEF')||(input.LA(1) >= '\u0C66' && input.LA(1) <= '\u0C6F')||(input.LA(1) >= '\u0CE6' && input.LA(1) <= '\u0CEF')||(input.LA(1) >= '\u0D66' && input.LA(1) <= '\u0D6F')||(input.LA(1) >= '\u0E50' && input.LA(1) <= '\u0E59')||(input.LA(1) >= '\u0ED0' && input.LA(1) <= '\u0ED9')||(input.LA(1) >= '\u1040' && input.LA(1) <= '\u1049') ) {
@@ -3240,10 +3241,10 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:938:5: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:938:8: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:939:5: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:939:8: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
 			{
-			// /media/tony/disk2/_git/cs543/JavaJava.g:938:8: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:939:8: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
 			int alt26=5;
 			switch ( input.LA(1) ) {
 			case ' ':
@@ -3278,35 +3279,35 @@ public class JavaJavaLexer extends Lexer {
 			}
 			switch (alt26) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:938:9: ' '
+					// /media/tony/disk2/_git/cs543/JavaJava.g:939:9: ' '
 					{
 					match(' '); 
 					ws++;
 					}
 					break;
 				case 2 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:938:20: '\\r'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:939:20: '\\r'
 					{
 					match('\r'); 
 					ws++;
 					}
 					break;
 				case 3 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:938:32: '\\t'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:939:32: '\\t'
 					{
 					match('\t'); 
 					ws++;
 					}
 					break;
 				case 4 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:938:44: '\\u000C'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:939:44: '\\u000C'
 					{
 					match('\f'); 
 					ws++;
 					}
 					break;
 				case 5 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:938:60: '\\n'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:939:60: '\\n'
 					{
 					match('\n'); 
 					ws++;
@@ -3332,12 +3333,12 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:942:5: ( '/*' ( options {greedy=false; } : . )* '*/' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:942:9: '/*' ( options {greedy=false; } : . )* '*/'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:943:5: ( '/*' ( options {greedy=false; } : . )* '*/' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:943:9: '/*' ( options {greedy=false; } : . )* '*/'
 			{
 			match("/*"); 
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:942:14: ( options {greedy=false; } : . )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:943:14: ( options {greedy=false; } : . )*
 			loop27:
 			while (true) {
 				int alt27=2;
@@ -3358,7 +3359,7 @@ public class JavaJavaLexer extends Lexer {
 
 				switch (alt27) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:942:42: .
+					// /media/tony/disk2/_git/cs543/JavaJava.g:943:42: .
 					{
 					matchAny(); 
 					commentcount++;
@@ -3372,7 +3373,7 @@ public class JavaJavaLexer extends Lexer {
 
 			match("*/"); 
 
-			_channel=HIDDEN;
+			_channel=2;
 			System.out.println("long commment" + commentcount);
 			}
 
@@ -3390,12 +3391,12 @@ public class JavaJavaLexer extends Lexer {
 		try {
 			int _type = LINE_COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /media/tony/disk2/_git/cs543/JavaJava.g:947:5: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( '\\r' )? '\\n' )
-			// /media/tony/disk2/_git/cs543/JavaJava.g:947:7: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( '\\r' )? '\\n'
+			// /media/tony/disk2/_git/cs543/JavaJava.g:948:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' )
+			// /media/tony/disk2/_git/cs543/JavaJava.g:948:7: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
 			{
 			match("//"); 
 
-			// /media/tony/disk2/_git/cs543/JavaJava.g:947:12: (~ ( ( '\\n' | '\\r' ) ) )*
+			// /media/tony/disk2/_git/cs543/JavaJava.g:948:12: (~ ( '\\n' | '\\r' ) )*
 			loop28:
 			while (true) {
 				int alt28=2;
@@ -3406,7 +3407,7 @@ public class JavaJavaLexer extends Lexer {
 
 				switch (alt28) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:
+					// /media/tony/disk2/_git/cs543/JavaJava.g:948:14: ~ ( '\\n' | '\\r' )
 					{
 					if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF') ) {
 						input.consume();
@@ -3416,6 +3417,7 @@ public class JavaJavaLexer extends Lexer {
 						recover(mse);
 						throw mse;
 					}
+					commentcount++;/*INSERT COUNT*/
 					}
 					break;
 
@@ -3424,8 +3426,7 @@ public class JavaJavaLexer extends Lexer {
 				}
 			}
 
-			commentcount++;/*INSERT COUNT*/
-			// /media/tony/disk2/_git/cs543/JavaJava.g:947:64: ( '\\r' )?
+			// /media/tony/disk2/_git/cs543/JavaJava.g:948:64: ( '\\r' )?
 			int alt29=2;
 			int LA29_0 = input.LA(1);
 			if ( (LA29_0=='\r') ) {
@@ -3433,7 +3434,7 @@ public class JavaJavaLexer extends Lexer {
 			}
 			switch (alt29) {
 				case 1 :
-					// /media/tony/disk2/_git/cs543/JavaJava.g:947:64: '\\r'
+					// /media/tony/disk2/_git/cs543/JavaJava.g:948:64: '\\r'
 					{
 					match('\r'); 
 					}
@@ -3442,7 +3443,7 @@ public class JavaJavaLexer extends Lexer {
 			}
 
 			match('\n'); 
-			_channel=HIDDEN;
+			_channel=2;
 			System.out.println("line commment" + commentcount);
 			}
 
@@ -4227,7 +4228,7 @@ public class JavaJavaLexer extends Lexer {
 		}
 		@Override
 		public String getDescription() {
-			return "848:1: FloatingPointLiteral : ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( Exponent )? ( FloatTypeSuffix )? | '.' ( '0' .. '9' )+ ( Exponent )? ( FloatTypeSuffix )? | ( '0' .. '9' )+ Exponent ( FloatTypeSuffix )? | ( '0' .. '9' )+ FloatTypeSuffix );";
+			return "849:1: FloatingPointLiteral : ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( Exponent )? ( FloatTypeSuffix )? | '.' ( '0' .. '9' )+ ( Exponent )? ( FloatTypeSuffix )? | ( '0' .. '9' )+ Exponent ( FloatTypeSuffix )? | ( '0' .. '9' )+ FloatTypeSuffix );";
 		}
 	}
 

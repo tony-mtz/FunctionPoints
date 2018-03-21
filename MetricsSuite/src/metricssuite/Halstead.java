@@ -134,17 +134,17 @@ public class Halstead {
             mc += "   " + s + "\n";
         }
         
-        String out ="";
-        //get bytes of all comments
-        //traverse tokens
-        for (int index = 0; index < tokens.size(); index++){
-            String l = tokens.toString(index, index);
-            if(l.contains("//") || l.contains("/*"))
-            out +=l;
-            //System.out.println(l);
-        }
+//        String out ="";
+//        //get bytes of all comments
+//        //traverse tokens
+//        for (int index = 0; index < tokens.size(); index++){
+//            String l = tokens.toString(index, index);
+//            if(l.contains("//") || l.contains("/*"))
+//            out +=l;
+//            //System.out.println(l);
+//        }
         //System.out.println(out);
-        commentSpaceBytes = out.getBytes().length;   
+        //commentSpaceBytes = out.getBytes().length;   
         
     }
     
