@@ -47,6 +47,8 @@ public class Controller implements Initializable {
     @FXML
     private Menu metrics;
     @FXML
+    private Menu projectCode;
+    @FXML
     private SplitPane splitPane;
     @FXML
     private AnchorPane rightPane;
@@ -67,6 +69,7 @@ public class Controller implements Initializable {
     private void metricsMenu(boolean tf) {
         System.out.println("in metrics menu method");
         metrics.setDisable(tf);
+        projectCode.setDisable(tf);
     }
 
 
@@ -278,8 +281,8 @@ public class Controller implements Initializable {
         }
     }
     
-    public void openCodeTab(File file) {
-        double calc = 0;
+    private void openCodeTab(File file) {
+        double calc;
         DecimalFormat df = new DecimalFormat("#.###");
         try {
             if(openFileTabs.containsKey(file.getName()))
@@ -364,7 +367,7 @@ public class Controller implements Initializable {
         leftPane.getChildren().add(treeView);
     }
 
-    public void closeTabs() {
+    private void closeTabs() {
         System.out.println("about to try close tabs...");
         openFPTabs.clear();
         if (tabPane != null) {
@@ -376,7 +379,7 @@ public class Controller implements Initializable {
         }
     }
 
-    public void openSMI() {
+    private void openSMI() {
         try {
             Tab tab = new Tab("SMI");
             smiTab = tab;

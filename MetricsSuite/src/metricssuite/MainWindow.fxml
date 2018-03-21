@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane fx:id="gridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="metricssuite.Controller">
+<GridPane fx:id="gridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="metricssuite.Controller">
 
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="1000.0" minWidth="10.0" prefWidth="1000.0" />
@@ -36,19 +36,18 @@
                 <MenuItem id="mEnterFPData" mnemonicParsing="false" onAction="#loadTab" text="Enter FP Data" />
             </Menu>
         </Menu>
-      <Menu id="mProjectCode" mnemonicParsing="false" text="Project code">
-         <items>
-            <MenuItem id="mAddCode" mnemonicParsing="false" onAction="#addCode" text="Add code" />
-            <MenuItem id="mprojectCodeStatistics" mnemonicParsing="false" onAction="#projectCodeStatistics" text="Project code statistics" />
-         </items>
-      </Menu>
+        <Menu id="mProjectCode" fx:id="projectCode" disable="true" mnemonicParsing="false" text="Project code">
+            <MenuItem id="mAddCode" mnemonicParsing="false" onAction="#addCode" text="Add code"/>
+            <MenuItem id="mprojectCodeStatistics" mnemonicParsing="false" onAction="#projectCodeStatistics"
+                      text="Project code statistics"/>
+        </Menu>
         <Menu id="mHelp" mnemonicParsing="false" text="Help">
         </Menu>
     </MenuBar>
-   <SplitPane fx:id="splitPane" dividerPositions="0.29797979797979796" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="TOP">
-      <items>
-         <AnchorPane fx:id="leftPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
-         <AnchorPane fx:id="rightPane" minWidth="700.0" prefWidth="700.0" />
-      </items>
-   </SplitPane>
+    <SplitPane fx:id="splitPane" dividerPositions="0.29797979797979796" minHeight="-Infinity" minWidth="-Infinity"
+               prefHeight="400.0" prefWidth="800.0" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT"
+               GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="TOP">
+        <AnchorPane fx:id="leftPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0"/>
+        <AnchorPane fx:id="rightPane" minWidth="700.0" prefWidth="700.0"/>
+    </SplitPane>
 </GridPane>
