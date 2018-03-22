@@ -119,7 +119,7 @@ public class Halstead {
         uniqueOperators = JavaMetrics.uniqueKeywords.size() + JavaMetrics.uniqueSpecial.size();
         uniqueOperands = JavaMetrics.uniqueConstants.size() + JavaMetrics.uniqueIdentifiers.size();
         totalOperators = parser.keywordCount + parser.specialcount;
-        totalOperands = parser.identcount;
+        totalOperands = parser.identcount + lexer.constantcount;
         progLength = totalOperands + totalOperators;
         vocabulary = uniqueOperands + uniqueOperators;
         volume = progLength * (Math.log((double)vocabulary)/Math.log(2));
@@ -133,7 +133,8 @@ public class Halstead {
         for(String s: JavaMetrics.mccabeValues){
             mc += "   " + s + "\n";
         }
-        
+        //System.out.println(JavaMetrics.mccabeValues.toString());
+
 //        String out ="";
 //        //get bytes of all comments
 //        //traverse tokens

@@ -8,5 +8,6 @@ public class Test1 {
         System.out.println("Hello World");
         int one =1;
         String name = "Tony";
+        String hello = "hello";
     }
 }
