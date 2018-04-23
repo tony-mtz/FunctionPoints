@@ -6,6 +6,7 @@
 package metricssuite;
 
 import java.io.IOException;
+import java.util.HashMap;
 import org.antlr.runtime.ANTLRFileStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.RecognitionException;
@@ -35,6 +36,8 @@ public class Halstead {
     private double personMonths = 0;
     private double bugsExpected =0;
     private String mc = "";
+    
+    private int methodCount =0;
 
     public String getMc() {
         return mc;
@@ -104,6 +107,14 @@ public class Halstead {
         return bugsExpected;
     }
     
+    public int getMethodCount(){        
+        return methodCount;
+    }
+    
+    private String children = "";
+    public String getChildren(){
+        return children;
+    }
     public void parse(String name) throws IOException, RecognitionException{
         
         
@@ -133,7 +144,18 @@ public class Halstead {
         for(String s: JavaMetrics.mccabeValues){
             mc += "   " + s + "\n";
         }
-        //System.out.println(JavaMetrics.mccabeValues.toString());
+        
+       
+        
+        for (HashMap.Entry<String, Integer> entry : JavaMetrics.classNames.entrySet()) { 
+            children +="Class = " + entry.getKey() + ", Value = " + entry.getValue() +"\n";
+        }
+        
+        
+        methodCount = JavaMetrics.methodNames.size();
+        
+        
+//        System.out.println("MC Matrics........" + JavaMetrics.mccabeValues.toString());
 
 //        String out ="";
 //        //get bytes of all comments

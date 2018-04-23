@@ -2,7 +2,7 @@
 
 //Treat Power and Factorial as operators
 
-public class Test2 {
+public class Test2 extends What{
     double sinx(double x, int m){
 
         int n;

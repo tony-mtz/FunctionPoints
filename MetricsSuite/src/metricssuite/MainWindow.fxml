@@ -40,6 +40,10 @@
             <MenuItem id="mAddCode" mnemonicParsing="false" onAction="#addCode" text="Add code"/>
             <MenuItem id="mprojectCodeStatistics" mnemonicParsing="false" onAction="#projectCodeStatistics"
                       text="Project code statistics"/>
+            <MenuItem id="miter4stats" mnemonicParsing="false" onAction="#iter4stats" text="other statistics"/>
+            <MenuItem id="mallstats" mnemonicParsing="false" onAction="#allFileStats" text="all stats"/>
+            
+            
         </Menu>
         <Menu id="mHelp" mnemonicParsing="false" text="Help">
         </Menu>

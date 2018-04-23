@@ -10,6 +10,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 import java.io.IOException;
+import java.util.LinkedHashMap;
 import org.antlr.runtime.ANTLRFileStream;
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
@@ -27,12 +28,23 @@ public class JavaMetrics {
     
     static Set<String> mccabeValues = new LinkedHashSet<String>();
     
+    static Set<String> methodNames = new LinkedHashSet<String>();
+    
+    static LinkedHashMap<String, Integer> classNames = new LinkedHashMap<String, Integer>();
+    
     public static void reset(){
         uniqueKeywords.clear();
         uniqueIdentifiers.clear();
         uniqueConstants.clear();
         uniqueSpecial.clear();
         mccabeValues.clear();
+        
+        methodNames.clear();
+    }
+    
+    public static void resetAll(){
+        reset();
+        classNames.clear();
     }
    
     

@@ -281,6 +281,63 @@ public class Controller implements Initializable {
         }
     }
     
+    @FXML
+    public void iter4stats(ActionEvent event){
+        int size = Context.getInstance().getProjectObject().projCode.size();
+        for(int i=0; i!= size; i++){
+            openIter4(new File(Context.getInstance().getProjectObject().projCode.get(i).getPath()));
+            
+        }
+    }
+    
+    @FXML
+    public void allFileStats(ActionEvent event){
+        int size = Context.getInstance().getProjectObject().projCode.size();
+        File temp = null;
+        JavaMetrics.resetAll();
+        Halstead hal = null;
+        for(int i=0; i!= size; i++){
+             temp = new File(Context.getInstance().getProjectObject().projCode.get(i).getPath());   
+             hal = new Halstead();
+            try {
+                hal.parse(temp.toString());
+            } catch (IOException ex) {
+                Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (RecognitionException ex) {
+                Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        allStats(hal);
+        
+    }
+    
+    private void allStats(Halstead hal){
+        
+        if(openFileTabs.containsKey("all"))
+            return;
+
+
+        TextArea textArea = new TextArea();
+
+        //JavaMetrics.reset();
+
+        //hal.parse(file.toString());
+
+        String fileText = "Children: \n";
+        fileText += hal.getChildren();
+
+        textArea.setText(fileText);
+        Tab tab = new Tab("all", textArea);            
+        tabPane.getTabs().add(tab);
+        openFileTabs.put("all", tab);
+        tab.setOnClosed(e->openFileTabs.remove("all"));
+            
+        
+            
+    }
+    
+    
     private void openCodeTab(File file) {
         double calc;
         DecimalFormat df = new DecimalFormat("#.###");
@@ -318,11 +375,68 @@ public class Controller implements Initializable {
             
             fileText += "McCabe's Cyclomatic Complexity: \n";
             fileText += hal.getMc();
+            fileText += hal.getChildren();
             textArea.setText(fileText);
             Tab tab = new Tab(name, textArea);            
             tabPane.getTabs().add(tab);
             openFileTabs.put(name, tab);
             tab.setOnClosed(e->openFileTabs.remove(name));
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (RecognitionException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void openIter4(File file) {
+        double calc;
+        DecimalFormat df = new DecimalFormat("#.###");
+        try {
+            if(openFileTabs.containsKey(file.getName()))
+                return;
+            String name = file.getName();
+            String name1 = "_"+name;
+            
+            TextArea textArea = new TextArea();
+            
+            JavaMetrics.reset();
+            Halstead hal = new Halstead();
+            hal.parse(file.toString());
+            
+            String fileText = "File name: " + name + "\n";
+//            fileText += "File length in bytes: "+ file.length() +"\n";
+//            fileText += "File white space : "+hal.getWhiteSpace() +"\n";
+//            fileText += "File comment space in bytes: " +hal.getCommentSpaceBytes() + "\n";
+//            calc = (double)hal.getCommentSpaceBytes()/file.length() * 100;
+//            
+//            fileText += "Comment percentage of file: " + df.format(calc) +"% \n";
+//            fileText += "Halstead metrics: \n";
+//            fileText += "   Unique operators: " +hal.getUniqueOperators() + "\n";
+//            fileText += "   Unique operands: " +hal.getUniqueOperands() + "\n";
+//            fileText += "   Total operators: " +hal.getTotalOperators() + "\n";
+//            fileText += "   Total operands: " +hal.getTotalOperands() + "\n";
+//            fileText += "   Program length (N) = " +hal.getProgLength() + "\n";
+//            fileText += "   Program vocabulary (n) = " +hal.getVocabulary()+ "\n";
+//            fileText += "   Volume = "+ df.format(hal.getVolume()) + "\n";
+//            fileText += "   Difficulty = "+ df.format(hal.getDifficulty()) + "\n";
+//            fileText += "   Effort = " + df.format(hal.getEffort()) + " Time = " + df.format(hal.getTime());
+//            fileText += "(" + df.format(hal.getTimeMin()) + " minutes or " + df.format(hal.getTimeHour()) + " hours or ";
+//            fileText +=  df.format(hal.getPersonMonths()) + " person months ) \n";
+//            fileText += "   Bugs expected = " + df.format(hal.getBugsExpected()) + "\n \n \n \n";
+//            
+//            fileText += "McCabe's Cyclomatic Complexity: \n";
+//            fileText += hal.getMc();
+
+            
+            fileText += "Method count: " + hal.getMethodCount();
+
+
+            textArea.setText(fileText);
+            Tab tab = new Tab(name1, textArea);            
+            tabPane.getTabs().add(tab);
+            openFileTabs.put(name1, tab);
+            tab.setOnClosed(e->openFileTabs.remove(name1));
             
         } catch (IOException e) {
             e.printStackTrace();
