@@ -375,7 +375,7 @@ public class Controller implements Initializable {
             
             fileText += "McCabe's Cyclomatic Complexity: \n";
             fileText += hal.getMc();
-            fileText += hal.getChildren();
+            
             textArea.setText(fileText);
             Tab tab = new Tab(name, textArea);            
             tabPane.getTabs().add(tab);
@@ -390,13 +390,13 @@ public class Controller implements Initializable {
     }
     
     private void openIter4(File file) {
-        double calc;
-        DecimalFormat df = new DecimalFormat("#.###");
+        String name = file.getName();
+        String name1 = "_"+name;
+
         try {
-            if(openFileTabs.containsKey(file.getName()))
+            if(openFileTabs.containsKey(name1))
                 return;
-            String name = file.getName();
-            String name1 = "_"+name;
+            
             
             TextArea textArea = new TextArea();
             
@@ -404,31 +404,7 @@ public class Controller implements Initializable {
             Halstead hal = new Halstead();
             hal.parse(file.toString());
             
-            String fileText = "File name: " + name + "\n";
-//            fileText += "File length in bytes: "+ file.length() +"\n";
-//            fileText += "File white space : "+hal.getWhiteSpace() +"\n";
-//            fileText += "File comment space in bytes: " +hal.getCommentSpaceBytes() + "\n";
-//            calc = (double)hal.getCommentSpaceBytes()/file.length() * 100;
-//            
-//            fileText += "Comment percentage of file: " + df.format(calc) +"% \n";
-//            fileText += "Halstead metrics: \n";
-//            fileText += "   Unique operators: " +hal.getUniqueOperators() + "\n";
-//            fileText += "   Unique operands: " +hal.getUniqueOperands() + "\n";
-//            fileText += "   Total operators: " +hal.getTotalOperators() + "\n";
-//            fileText += "   Total operands: " +hal.getTotalOperands() + "\n";
-//            fileText += "   Program length (N) = " +hal.getProgLength() + "\n";
-//            fileText += "   Program vocabulary (n) = " +hal.getVocabulary()+ "\n";
-//            fileText += "   Volume = "+ df.format(hal.getVolume()) + "\n";
-//            fileText += "   Difficulty = "+ df.format(hal.getDifficulty()) + "\n";
-//            fileText += "   Effort = " + df.format(hal.getEffort()) + " Time = " + df.format(hal.getTime());
-//            fileText += "(" + df.format(hal.getTimeMin()) + " minutes or " + df.format(hal.getTimeHour()) + " hours or ";
-//            fileText +=  df.format(hal.getPersonMonths()) + " person months ) \n";
-//            fileText += "   Bugs expected = " + df.format(hal.getBugsExpected()) + "\n \n \n \n";
-//            
-//            fileText += "McCabe's Cyclomatic Complexity: \n";
-//            fileText += hal.getMc();
-
-            
+            String fileText = "File name: " + name + "\n";            
             fileText += "Method count: " + hal.getMethodCount();
 
 
