@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 /home/tony/Downloads/JavaJava.g 2018-04-22 22:49:58
+// $ANTLR 3.5.1 /home/tony/Downloads/JavaJava.g 2018-05-05 21:13:13
 
 package metricssuite;
 
@@ -1490,9 +1490,14 @@ public class JavaJavaParser extends Parser {
 			adaptor.addChild(root_0, Identifier37_tree);
 			}
 
-			if ( state.backtracking==0 ) { className=(Identifier37!=null?Identifier37.getText():null); classCount++;}
+			if ( state.backtracking==0 ) { className=(Identifier37!=null?Identifier37.getText():null); classCount++;
+			    	if(!JavaMetrics.inheritanceTree.containsKey(className)){
+			    		JavaMetrics.inheritanceTree.put(className, null);
+			    	}
+			    	
+			    	}
 			if ( state.backtracking==0 ) {keywordCount++; JavaMetrics.uniqueKeywords.add("class"); id((Identifier37!=null?Identifier37.getText():null));}
-			// /home/tony/Downloads/JavaJava.g:145:153: ( typeParameters )?
+			// /home/tony/Downloads/JavaJava.g:150:88: ( typeParameters )?
 			int alt17=2;
 			int LA17_0 = input.LA(1);
 			if ( (LA17_0==49) ) {
@@ -1500,7 +1505,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt17) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:145:153: typeParameters
+					// /home/tony/Downloads/JavaJava.g:150:88: typeParameters
 					{
 					pushFollow(FOLLOW_typeParameters_in_normalClassDeclaration505);
 					typeParameters38=typeParameters();
@@ -1513,7 +1518,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /home/tony/Downloads/JavaJava.g:147:9: ( typeExt type )?
+			// /home/tony/Downloads/JavaJava.g:152:9: ( typeExt type )?
 			int alt18=2;
 			int LA18_0 = input.LA(1);
 			if ( (LA18_0==72) ) {
@@ -1521,7 +1526,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt18) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:147:10: typeExt type
+					// /home/tony/Downloads/JavaJava.g:152:10: typeExt type
 					{
 					pushFollow(FOLLOW_typeExt_in_normalClassDeclaration526);
 					typeExt39=typeExt();
@@ -1541,7 +1546,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /home/tony/Downloads/JavaJava.g:148:9: ( 'implements' typeList )?
+			// /home/tony/Downloads/JavaJava.g:153:9: ( 'implements' typeList )?
 			int alt19=2;
 			int LA19_0 = input.LA(1);
 			if ( (LA19_0==79) ) {
@@ -1549,7 +1554,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt19) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:148:10: 'implements' typeList
+					// /home/tony/Downloads/JavaJava.g:153:10: 'implements' typeList
 					{
 					string_literal41=(Token)match(input,79,FOLLOW_79_in_normalClassDeclaration543); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -1607,7 +1612,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "typeParameters"
-	// /home/tony/Downloads/JavaJava.g:152:1: typeParameters : '<' typeParameter ( ',' typeParameter )* '>' ;
+	// /home/tony/Downloads/JavaJava.g:157:1: typeParameters : '<' typeParameter ( ',' typeParameter )* '>' ;
 	public final JavaJavaParser.typeParameters_return typeParameters() throws RecognitionException {
 		JavaJavaParser.typeParameters_return retval = new JavaJavaParser.typeParameters_return();
 		retval.start = input.LT(1);
@@ -1628,8 +1633,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 11) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:153:5: ( '<' typeParameter ( ',' typeParameter )* '>' )
-			// /home/tony/Downloads/JavaJava.g:153:9: '<' typeParameter ( ',' typeParameter )* '>'
+			// /home/tony/Downloads/JavaJava.g:158:5: ( '<' typeParameter ( ',' typeParameter )* '>' )
+			// /home/tony/Downloads/JavaJava.g:158:9: '<' typeParameter ( ',' typeParameter )* '>'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -1647,7 +1652,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, typeParameter45.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:153:36: ( ',' typeParameter )*
+			// /home/tony/Downloads/JavaJava.g:158:36: ( ',' typeParameter )*
 			loop20:
 			while (true) {
 				int alt20=2;
@@ -1658,7 +1663,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt20) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:153:37: ',' typeParameter
+					// /home/tony/Downloads/JavaJava.g:158:37: ',' typeParameter
 					{
 					char_literal46=(Token)match(input,39,FOLLOW_39_in_typeParameters589); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -1720,7 +1725,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "typeParameter"
-	// /home/tony/Downloads/JavaJava.g:156:1: typeParameter : Identifier ( 'extends' typeBound )? ;
+	// /home/tony/Downloads/JavaJava.g:161:1: typeParameter : Identifier ( 'extends' typeBound )? ;
 	public final JavaJavaParser.typeParameter_return typeParameter() throws RecognitionException {
 		JavaJavaParser.typeParameter_return retval = new JavaJavaParser.typeParameter_return();
 		retval.start = input.LT(1);
@@ -1738,8 +1743,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 12) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:157:5: ( Identifier ( 'extends' typeBound )? )
-			// /home/tony/Downloads/JavaJava.g:157:9: Identifier ( 'extends' typeBound )?
+			// /home/tony/Downloads/JavaJava.g:162:5: ( Identifier ( 'extends' typeBound )? )
+			// /home/tony/Downloads/JavaJava.g:162:9: Identifier ( 'extends' typeBound )?
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -1750,7 +1755,7 @@ public class JavaJavaParser extends Parser {
 			adaptor.addChild(root_0, Identifier49_tree);
 			}
 
-			// /home/tony/Downloads/JavaJava.g:157:19: ( 'extends' typeBound )?
+			// /home/tony/Downloads/JavaJava.g:162:19: ( 'extends' typeBound )?
 			int alt21=2;
 			int LA21_0 = input.LA(1);
 			if ( (LA21_0==72) ) {
@@ -1758,7 +1763,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt21) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:157:20: 'extends' typeBound
+					// /home/tony/Downloads/JavaJava.g:162:20: 'extends' typeBound
 					{
 					string_literal50=(Token)match(input,72,FOLLOW_72_in_typeParameter623); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -1810,7 +1815,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "typeExt"
-	// /home/tony/Downloads/JavaJava.g:160:1: typeExt : 'extends' Identifier ;
+	// /home/tony/Downloads/JavaJava.g:165:1: typeExt : 'extends' Identifier ;
 	public final JavaJavaParser.typeExt_return typeExt() throws RecognitionException {
 		JavaJavaParser.typeExt_return retval = new JavaJavaParser.typeExt_return();
 		retval.start = input.LT(1);
@@ -1827,8 +1832,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 13) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:161:5: ( 'extends' Identifier )
-			// /home/tony/Downloads/JavaJava.g:161:7: 'extends' Identifier
+			// /home/tony/Downloads/JavaJava.g:166:5: ( 'extends' Identifier )
+			// /home/tony/Downloads/JavaJava.g:166:7: 'extends' Identifier
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -1846,6 +1851,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {extendsClass =(Identifier53!=null?Identifier53.getText():null);
+			    	JavaMetrics.inheritanceTree.put(className,extendsClass);
 			    	
 			    	if(JavaMetrics.classNames.containsKey(extendsClass)){
 			    		JavaMetrics.classNames.put(extendsClass, JavaMetrics.classNames.get(extendsClass)+1);
@@ -1885,7 +1891,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "typeBound"
-	// /home/tony/Downloads/JavaJava.g:171:1: typeBound : type ( '&' type )* ;
+	// /home/tony/Downloads/JavaJava.g:177:1: typeBound : type ( '&' type )* ;
 	public final JavaJavaParser.typeBound_return typeBound() throws RecognitionException {
 		JavaJavaParser.typeBound_return retval = new JavaJavaParser.typeBound_return();
 		retval.start = input.LT(1);
@@ -1902,8 +1908,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 14) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:172:5: ( type ( '&' type )* )
-			// /home/tony/Downloads/JavaJava.g:172:9: type ( '&' type )*
+			// /home/tony/Downloads/JavaJava.g:178:5: ( type ( '&' type )* )
+			// /home/tony/Downloads/JavaJava.g:178:9: type ( '&' type )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -1914,7 +1920,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, type54.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:172:14: ( '&' type )*
+			// /home/tony/Downloads/JavaJava.g:178:14: ( '&' type )*
 			loop22:
 			while (true) {
 				int alt22=2;
@@ -1925,7 +1931,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt22) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:172:15: '&' type
+					// /home/tony/Downloads/JavaJava.g:178:15: '&' type
 					{
 					char_literal55=(Token)match(input,30,FOLLOW_30_in_typeBound679); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -1979,7 +1985,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "enumDeclaration"
-	// /home/tony/Downloads/JavaJava.g:175:1: enumDeclaration : ENUM Identifier ( 'implements' typeList )? enumBody ;
+	// /home/tony/Downloads/JavaJava.g:181:1: enumDeclaration : ENUM Identifier ( 'implements' typeList )? enumBody ;
 	public final JavaJavaParser.enumDeclaration_return enumDeclaration() throws RecognitionException {
 		JavaJavaParser.enumDeclaration_return retval = new JavaJavaParser.enumDeclaration_return();
 		retval.start = input.LT(1);
@@ -2000,8 +2006,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 15) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:176:5: ( ENUM Identifier ( 'implements' typeList )? enumBody )
-			// /home/tony/Downloads/JavaJava.g:176:9: ENUM Identifier ( 'implements' typeList )? enumBody
+			// /home/tony/Downloads/JavaJava.g:182:5: ( ENUM Identifier ( 'implements' typeList )? enumBody )
+			// /home/tony/Downloads/JavaJava.g:182:9: ENUM Identifier ( 'implements' typeList )? enumBody
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -2018,7 +2024,7 @@ public class JavaJavaParser extends Parser {
 			adaptor.addChild(root_0, Identifier58_tree);
 			}
 
-			// /home/tony/Downloads/JavaJava.g:176:25: ( 'implements' typeList )?
+			// /home/tony/Downloads/JavaJava.g:182:25: ( 'implements' typeList )?
 			int alt23=2;
 			int LA23_0 = input.LA(1);
 			if ( (LA23_0==79) ) {
@@ -2026,7 +2032,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt23) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:176:26: 'implements' typeList
+					// /home/tony/Downloads/JavaJava.g:182:26: 'implements' typeList
 					{
 					string_literal59=(Token)match(input,79,FOLLOW_79_in_enumDeclaration707); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -2084,7 +2090,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "enumBody"
-	// /home/tony/Downloads/JavaJava.g:179:1: enumBody : '{' ( enumConstants )? ( ',' )? ( enumBodyDeclarations )? '}' ;
+	// /home/tony/Downloads/JavaJava.g:185:1: enumBody : '{' ( enumConstants )? ( ',' )? ( enumBodyDeclarations )? '}' ;
 	public final JavaJavaParser.enumBody_return enumBody() throws RecognitionException {
 		JavaJavaParser.enumBody_return retval = new JavaJavaParser.enumBody_return();
 		retval.start = input.LT(1);
@@ -2105,8 +2111,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 16) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:180:5: ( '{' ( enumConstants )? ( ',' )? ( enumBodyDeclarations )? '}' )
-			// /home/tony/Downloads/JavaJava.g:180:9: '{' ( enumConstants )? ( ',' )? ( enumBodyDeclarations )? '}'
+			// /home/tony/Downloads/JavaJava.g:186:5: ( '{' ( enumConstants )? ( ',' )? ( enumBodyDeclarations )? '}' )
+			// /home/tony/Downloads/JavaJava.g:186:9: '{' ( enumConstants )? ( ',' )? ( enumBodyDeclarations )? '}'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -2118,7 +2124,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("{");}
-			// /home/tony/Downloads/JavaJava.g:180:23: ( enumConstants )?
+			// /home/tony/Downloads/JavaJava.g:186:23: ( enumConstants )?
 			int alt24=2;
 			int LA24_0 = input.LA(1);
 			if ( (LA24_0==Identifier||LA24_0==54) ) {
@@ -2126,7 +2132,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt24) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:180:23: enumConstants
+					// /home/tony/Downloads/JavaJava.g:186:23: enumConstants
 					{
 					pushFollow(FOLLOW_enumConstants_in_enumBody738);
 					enumConstants63=enumConstants();
@@ -2139,7 +2145,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /home/tony/Downloads/JavaJava.g:180:38: ( ',' )?
+			// /home/tony/Downloads/JavaJava.g:186:38: ( ',' )?
 			int alt25=2;
 			int LA25_0 = input.LA(1);
 			if ( (LA25_0==39) ) {
@@ -2147,7 +2153,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt25) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:180:38: ','
+					// /home/tony/Downloads/JavaJava.g:186:38: ','
 					{
 					char_literal64=(Token)match(input,39,FOLLOW_39_in_enumBody741); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -2160,7 +2166,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /home/tony/Downloads/JavaJava.g:180:43: ( enumBodyDeclarations )?
+			// /home/tony/Downloads/JavaJava.g:186:43: ( enumBodyDeclarations )?
 			int alt26=2;
 			int LA26_0 = input.LA(1);
 			if ( (LA26_0==48) ) {
@@ -2168,7 +2174,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt26) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:180:43: enumBodyDeclarations
+					// /home/tony/Downloads/JavaJava.g:186:43: enumBodyDeclarations
 					{
 					pushFollow(FOLLOW_enumBodyDeclarations_in_enumBody744);
 					enumBodyDeclarations65=enumBodyDeclarations();
@@ -2220,7 +2226,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "enumConstants"
-	// /home/tony/Downloads/JavaJava.g:183:1: enumConstants : enumConstant ( ',' enumConstant )* ;
+	// /home/tony/Downloads/JavaJava.g:189:1: enumConstants : enumConstant ( ',' enumConstant )* ;
 	public final JavaJavaParser.enumConstants_return enumConstants() throws RecognitionException {
 		JavaJavaParser.enumConstants_return retval = new JavaJavaParser.enumConstants_return();
 		retval.start = input.LT(1);
@@ -2237,8 +2243,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 17) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:184:5: ( enumConstant ( ',' enumConstant )* )
-			// /home/tony/Downloads/JavaJava.g:184:9: enumConstant ( ',' enumConstant )*
+			// /home/tony/Downloads/JavaJava.g:190:5: ( enumConstant ( ',' enumConstant )* )
+			// /home/tony/Downloads/JavaJava.g:190:9: enumConstant ( ',' enumConstant )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -2249,7 +2255,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, enumConstant67.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:184:22: ( ',' enumConstant )*
+			// /home/tony/Downloads/JavaJava.g:190:22: ( ',' enumConstant )*
 			loop27:
 			while (true) {
 				int alt27=2;
@@ -2264,7 +2270,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt27) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:184:23: ',' enumConstant
+					// /home/tony/Downloads/JavaJava.g:190:23: ',' enumConstant
 					{
 					char_literal68=(Token)match(input,39,FOLLOW_39_in_enumConstants771); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -2319,7 +2325,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "enumConstant"
-	// /home/tony/Downloads/JavaJava.g:187:1: enumConstant : ( annotations )? Identifier ( arguments )? ( classBody )? ;
+	// /home/tony/Downloads/JavaJava.g:193:1: enumConstant : ( annotations )? Identifier ( arguments )? ( classBody )? ;
 	public final JavaJavaParser.enumConstant_return enumConstant() throws RecognitionException {
 		JavaJavaParser.enumConstant_return retval = new JavaJavaParser.enumConstant_return();
 		retval.start = input.LT(1);
@@ -2337,13 +2343,13 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 18) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:188:5: ( ( annotations )? Identifier ( arguments )? ( classBody )? )
-			// /home/tony/Downloads/JavaJava.g:188:9: ( annotations )? Identifier ( arguments )? ( classBody )?
+			// /home/tony/Downloads/JavaJava.g:194:5: ( ( annotations )? Identifier ( arguments )? ( classBody )? )
+			// /home/tony/Downloads/JavaJava.g:194:9: ( annotations )? Identifier ( arguments )? ( classBody )?
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			// /home/tony/Downloads/JavaJava.g:188:9: ( annotations )?
+			// /home/tony/Downloads/JavaJava.g:194:9: ( annotations )?
 			int alt28=2;
 			int LA28_0 = input.LA(1);
 			if ( (LA28_0==54) ) {
@@ -2351,7 +2357,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt28) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:188:9: annotations
+					// /home/tony/Downloads/JavaJava.g:194:9: annotations
 					{
 					pushFollow(FOLLOW_annotations_in_enumConstant800);
 					annotations70=annotations();
@@ -2370,7 +2376,7 @@ public class JavaJavaParser extends Parser {
 			adaptor.addChild(root_0, Identifier71_tree);
 			}
 
-			// /home/tony/Downloads/JavaJava.g:188:33: ( arguments )?
+			// /home/tony/Downloads/JavaJava.g:194:33: ( arguments )?
 			int alt29=2;
 			int LA29_0 = input.LA(1);
 			if ( (LA29_0==32) ) {
@@ -2378,7 +2384,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt29) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:188:33: arguments
+					// /home/tony/Downloads/JavaJava.g:194:33: arguments
 					{
 					pushFollow(FOLLOW_arguments_in_enumConstant805);
 					arguments72=arguments();
@@ -2391,7 +2397,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /home/tony/Downloads/JavaJava.g:188:44: ( classBody )?
+			// /home/tony/Downloads/JavaJava.g:194:44: ( classBody )?
 			int alt30=2;
 			int LA30_0 = input.LA(1);
 			if ( (LA30_0==108) ) {
@@ -2399,7 +2405,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt30) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:188:44: classBody
+					// /home/tony/Downloads/JavaJava.g:194:44: classBody
 					{
 					pushFollow(FOLLOW_classBody_in_enumConstant808);
 					classBody73=classBody();
@@ -2444,7 +2450,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "enumBodyDeclarations"
-	// /home/tony/Downloads/JavaJava.g:191:1: enumBodyDeclarations : ';' ( classBodyDeclaration )* ;
+	// /home/tony/Downloads/JavaJava.g:197:1: enumBodyDeclarations : ';' ( classBodyDeclaration )* ;
 	public final JavaJavaParser.enumBodyDeclarations_return enumBodyDeclarations() throws RecognitionException {
 		JavaJavaParser.enumBodyDeclarations_return retval = new JavaJavaParser.enumBodyDeclarations_return();
 		retval.start = input.LT(1);
@@ -2460,8 +2466,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 19) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:192:5: ( ';' ( classBodyDeclaration )* )
-			// /home/tony/Downloads/JavaJava.g:192:9: ';' ( classBodyDeclaration )*
+			// /home/tony/Downloads/JavaJava.g:198:5: ( ';' ( classBodyDeclaration )* )
+			// /home/tony/Downloads/JavaJava.g:198:9: ';' ( classBodyDeclaration )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -2472,7 +2478,7 @@ public class JavaJavaParser extends Parser {
 			adaptor.addChild(root_0, char_literal74_tree);
 			}
 
-			// /home/tony/Downloads/JavaJava.g:192:13: ( classBodyDeclaration )*
+			// /home/tony/Downloads/JavaJava.g:198:13: ( classBodyDeclaration )*
 			loop31:
 			while (true) {
 				int alt31=2;
@@ -2483,7 +2489,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt31) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:192:14: classBodyDeclaration
+					// /home/tony/Downloads/JavaJava.g:198:14: classBodyDeclaration
 					{
 					pushFollow(FOLLOW_classBodyDeclaration_in_enumBodyDeclarations835);
 					classBodyDeclaration75=classBodyDeclaration();
@@ -2531,7 +2537,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "interfaceDeclaration"
-	// /home/tony/Downloads/JavaJava.g:195:1: interfaceDeclaration : ( normalInterfaceDeclaration | annotationTypeDeclaration );
+	// /home/tony/Downloads/JavaJava.g:201:1: interfaceDeclaration : ( normalInterfaceDeclaration | annotationTypeDeclaration );
 	public final JavaJavaParser.interfaceDeclaration_return interfaceDeclaration() throws RecognitionException {
 		JavaJavaParser.interfaceDeclaration_return retval = new JavaJavaParser.interfaceDeclaration_return();
 		retval.start = input.LT(1);
@@ -2546,7 +2552,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 20) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:196:5: ( normalInterfaceDeclaration | annotationTypeDeclaration )
+			// /home/tony/Downloads/JavaJava.g:202:5: ( normalInterfaceDeclaration | annotationTypeDeclaration )
 			int alt32=2;
 			int LA32_0 = input.LA(1);
 			if ( (LA32_0==83) ) {
@@ -2565,7 +2571,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt32) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:196:9: normalInterfaceDeclaration
+					// /home/tony/Downloads/JavaJava.g:202:9: normalInterfaceDeclaration
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -2579,7 +2585,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:197:9: annotationTypeDeclaration
+					// /home/tony/Downloads/JavaJava.g:203:9: annotationTypeDeclaration
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -2624,7 +2630,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "normalInterfaceDeclaration"
-	// /home/tony/Downloads/JavaJava.g:200:1: normalInterfaceDeclaration : 'interface' Identifier ( typeParameters )? ( 'extends' typeList )? interfaceBody ;
+	// /home/tony/Downloads/JavaJava.g:206:1: normalInterfaceDeclaration : 'interface' Identifier ( typeParameters )? ( 'extends' typeList )? interfaceBody ;
 	public final JavaJavaParser.normalInterfaceDeclaration_return normalInterfaceDeclaration() throws RecognitionException {
 		JavaJavaParser.normalInterfaceDeclaration_return retval = new JavaJavaParser.normalInterfaceDeclaration_return();
 		retval.start = input.LT(1);
@@ -2646,8 +2652,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 21) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:201:5: ( 'interface' Identifier ( typeParameters )? ( 'extends' typeList )? interfaceBody )
-			// /home/tony/Downloads/JavaJava.g:201:9: 'interface' Identifier ( typeParameters )? ( 'extends' typeList )? interfaceBody
+			// /home/tony/Downloads/JavaJava.g:207:5: ( 'interface' Identifier ( typeParameters )? ( 'extends' typeList )? interfaceBody )
+			// /home/tony/Downloads/JavaJava.g:207:9: 'interface' Identifier ( typeParameters )? ( 'extends' typeList )? interfaceBody
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -2666,7 +2672,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {id((Identifier79!=null?Identifier79.getText():null));}
-			// /home/tony/Downloads/JavaJava.g:201:118: ( typeParameters )?
+			// /home/tony/Downloads/JavaJava.g:207:118: ( typeParameters )?
 			int alt33=2;
 			int LA33_0 = input.LA(1);
 			if ( (LA33_0==49) ) {
@@ -2674,7 +2680,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt33) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:201:118: typeParameters
+					// /home/tony/Downloads/JavaJava.g:207:118: typeParameters
 					{
 					pushFollow(FOLLOW_typeParameters_in_normalInterfaceDeclaration901);
 					typeParameters80=typeParameters();
@@ -2687,7 +2693,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /home/tony/Downloads/JavaJava.g:201:134: ( 'extends' typeList )?
+			// /home/tony/Downloads/JavaJava.g:207:134: ( 'extends' typeList )?
 			int alt34=2;
 			int LA34_0 = input.LA(1);
 			if ( (LA34_0==72) ) {
@@ -2695,7 +2701,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt34) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:201:135: 'extends' typeList
+					// /home/tony/Downloads/JavaJava.g:207:135: 'extends' typeList
 					{
 					string_literal81=(Token)match(input,72,FOLLOW_72_in_normalInterfaceDeclaration905); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -2753,7 +2759,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "typeList"
-	// /home/tony/Downloads/JavaJava.g:204:1: typeList : type ( ',' type )* ;
+	// /home/tony/Downloads/JavaJava.g:210:1: typeList : type ( ',' type )* ;
 	public final JavaJavaParser.typeList_return typeList() throws RecognitionException {
 		JavaJavaParser.typeList_return retval = new JavaJavaParser.typeList_return();
 		retval.start = input.LT(1);
@@ -2770,8 +2776,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 22) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:205:5: ( type ( ',' type )* )
-			// /home/tony/Downloads/JavaJava.g:205:9: type ( ',' type )*
+			// /home/tony/Downloads/JavaJava.g:211:5: ( type ( ',' type )* )
+			// /home/tony/Downloads/JavaJava.g:211:9: type ( ',' type )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -2782,7 +2788,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, type84.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:205:14: ( ',' type )*
+			// /home/tony/Downloads/JavaJava.g:211:14: ( ',' type )*
 			loop35:
 			while (true) {
 				int alt35=2;
@@ -2793,7 +2799,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt35) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:205:15: ',' type
+					// /home/tony/Downloads/JavaJava.g:211:15: ',' type
 					{
 					char_literal85=(Token)match(input,39,FOLLOW_39_in_typeList938); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -2848,7 +2854,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "classBody"
-	// /home/tony/Downloads/JavaJava.g:208:1: classBody : '{' ( classBodyDeclaration )* '}' ;
+	// /home/tony/Downloads/JavaJava.g:214:1: classBody : '{' ( classBodyDeclaration )* '}' ;
 	public final JavaJavaParser.classBody_return classBody() throws RecognitionException {
 		JavaJavaParser.classBody_return retval = new JavaJavaParser.classBody_return();
 		retval.start = input.LT(1);
@@ -2866,8 +2872,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 23) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:209:5: ( '{' ( classBodyDeclaration )* '}' )
-			// /home/tony/Downloads/JavaJava.g:209:9: '{' ( classBodyDeclaration )* '}'
+			// /home/tony/Downloads/JavaJava.g:215:5: ( '{' ( classBodyDeclaration )* '}' )
+			// /home/tony/Downloads/JavaJava.g:215:9: '{' ( classBodyDeclaration )* '}'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -2879,7 +2885,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("{");}
-			// /home/tony/Downloads/JavaJava.g:209:23: ( classBodyDeclaration )*
+			// /home/tony/Downloads/JavaJava.g:215:23: ( classBodyDeclaration )*
 			loop36:
 			while (true) {
 				int alt36=2;
@@ -2890,7 +2896,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt36) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:209:23: classBodyDeclaration
+					// /home/tony/Downloads/JavaJava.g:215:23: classBodyDeclaration
 					{
 					pushFollow(FOLLOW_classBodyDeclaration_in_classBody971);
 					classBodyDeclaration88=classBodyDeclaration();
@@ -2945,7 +2951,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "interfaceBody"
-	// /home/tony/Downloads/JavaJava.g:212:1: interfaceBody : '{' ( interfaceBodyDeclaration )* '}' ;
+	// /home/tony/Downloads/JavaJava.g:218:1: interfaceBody : '{' ( interfaceBodyDeclaration )* '}' ;
 	public final JavaJavaParser.interfaceBody_return interfaceBody() throws RecognitionException {
 		JavaJavaParser.interfaceBody_return retval = new JavaJavaParser.interfaceBody_return();
 		retval.start = input.LT(1);
@@ -2963,8 +2969,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 24) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:213:5: ( '{' ( interfaceBodyDeclaration )* '}' )
-			// /home/tony/Downloads/JavaJava.g:213:9: '{' ( interfaceBodyDeclaration )* '}'
+			// /home/tony/Downloads/JavaJava.g:219:5: ( '{' ( interfaceBodyDeclaration )* '}' )
+			// /home/tony/Downloads/JavaJava.g:219:9: '{' ( interfaceBodyDeclaration )* '}'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -2976,7 +2982,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("{");}
-			// /home/tony/Downloads/JavaJava.g:213:22: ( interfaceBodyDeclaration )*
+			// /home/tony/Downloads/JavaJava.g:219:22: ( interfaceBodyDeclaration )*
 			loop37:
 			while (true) {
 				int alt37=2;
@@ -2987,7 +2993,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt37) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:213:22: interfaceBodyDeclaration
+					// /home/tony/Downloads/JavaJava.g:219:22: interfaceBodyDeclaration
 					{
 					pushFollow(FOLLOW_interfaceBodyDeclaration_in_interfaceBody1001);
 					interfaceBodyDeclaration91=interfaceBodyDeclaration();
@@ -3042,7 +3048,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "classBodyDeclaration"
-	// /home/tony/Downloads/JavaJava.g:216:1: classBodyDeclaration : ( ';' | ( 'static' )? block | modifiers memberDecl );
+	// /home/tony/Downloads/JavaJava.g:222:1: classBodyDeclaration : ( ';' | ( 'static' )? block | modifiers memberDecl );
 	public final JavaJavaParser.classBodyDeclaration_return classBodyDeclaration() throws RecognitionException {
 		JavaJavaParser.classBodyDeclaration_return retval = new JavaJavaParser.classBodyDeclaration_return();
 		retval.start = input.LT(1);
@@ -3062,7 +3068,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 25) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:217:5: ( ';' | ( 'static' )? block | modifiers memberDecl )
+			// /home/tony/Downloads/JavaJava.g:223:5: ( ';' | ( 'static' )? block | modifiers memberDecl )
 			int alt39=3;
 			switch ( input.LA(1) ) {
 			case 48:
@@ -3137,7 +3143,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt39) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:217:9: ';'
+					// /home/tony/Downloads/JavaJava.g:223:9: ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -3152,12 +3158,12 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:218:9: ( 'static' )? block
+					// /home/tony/Downloads/JavaJava.g:224:9: ( 'static' )? block
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					// /home/tony/Downloads/JavaJava.g:218:9: ( 'static' )?
+					// /home/tony/Downloads/JavaJava.g:224:9: ( 'static' )?
 					int alt38=2;
 					int LA38_0 = input.LA(1);
 					if ( (LA38_0==94) ) {
@@ -3165,7 +3171,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt38) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:218:9: 'static'
+							// /home/tony/Downloads/JavaJava.g:224:9: 'static'
 							{
 							string_literal94=(Token)match(input,94,FOLLOW_94_in_classBodyDeclaration1036); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -3188,7 +3194,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /home/tony/Downloads/JavaJava.g:219:9: modifiers memberDecl
+					// /home/tony/Downloads/JavaJava.g:225:9: modifiers memberDecl
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -3239,7 +3245,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "memberDecl"
-	// /home/tony/Downloads/JavaJava.g:222:1: memberDecl : ( genericMethodOrConstructorDecl | memberDeclaration | 'void' Identifier voidMethodDeclaratorRest | Identifier constructorDeclaratorRest | interfaceDeclaration | classDeclaration );
+	// /home/tony/Downloads/JavaJava.g:228:1: memberDecl : ( genericMethodOrConstructorDecl | memberDeclaration | 'void' Identifier voidMethodDeclaratorRest | Identifier constructorDeclaratorRest | interfaceDeclaration | classDeclaration );
 	public final JavaJavaParser.memberDecl_return memberDecl() throws RecognitionException {
 		JavaJavaParser.memberDecl_return retval = new JavaJavaParser.memberDecl_return();
 		retval.start = input.LT(1);
@@ -3264,7 +3270,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 26) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:223:5: ( genericMethodOrConstructorDecl | memberDeclaration | 'void' Identifier voidMethodDeclaratorRest | Identifier constructorDeclaratorRest | interfaceDeclaration | classDeclaration )
+			// /home/tony/Downloads/JavaJava.g:229:5: ( genericMethodOrConstructorDecl | memberDeclaration | 'void' Identifier voidMethodDeclaratorRest | Identifier constructorDeclaratorRest | interfaceDeclaration | classDeclaration )
 			int alt40=6;
 			switch ( input.LA(1) ) {
 			case 49:
@@ -3334,7 +3340,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt40) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:223:9: genericMethodOrConstructorDecl
+					// /home/tony/Downloads/JavaJava.g:229:9: genericMethodOrConstructorDecl
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -3349,7 +3355,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:224:9: memberDeclaration
+					// /home/tony/Downloads/JavaJava.g:230:9: memberDeclaration
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -3363,7 +3369,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /home/tony/Downloads/JavaJava.g:225:9: 'void' Identifier voidMethodDeclaratorRest
+					// /home/tony/Downloads/JavaJava.g:231:9: 'void' Identifier voidMethodDeclaratorRest
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -3392,7 +3398,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /home/tony/Downloads/JavaJava.g:226:9: Identifier constructorDeclaratorRest
+					// /home/tony/Downloads/JavaJava.g:232:9: Identifier constructorDeclaratorRest
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -3414,7 +3420,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /home/tony/Downloads/JavaJava.g:227:9: interfaceDeclaration
+					// /home/tony/Downloads/JavaJava.g:233:9: interfaceDeclaration
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -3428,7 +3434,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /home/tony/Downloads/JavaJava.g:228:9: classDeclaration
+					// /home/tony/Downloads/JavaJava.g:234:9: classDeclaration
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -3473,7 +3479,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "memberDeclaration"
-	// /home/tony/Downloads/JavaJava.g:231:1: memberDeclaration : type ( methodDeclaration | fieldDeclaration ) ;
+	// /home/tony/Downloads/JavaJava.g:237:1: memberDeclaration : type ( methodDeclaration | fieldDeclaration ) ;
 	public final JavaJavaParser.memberDeclaration_return memberDeclaration() throws RecognitionException {
 		JavaJavaParser.memberDeclaration_return retval = new JavaJavaParser.memberDeclaration_return();
 		retval.start = input.LT(1);
@@ -3489,8 +3495,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 27) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:232:5: ( type ( methodDeclaration | fieldDeclaration ) )
-			// /home/tony/Downloads/JavaJava.g:232:9: type ( methodDeclaration | fieldDeclaration )
+			// /home/tony/Downloads/JavaJava.g:238:5: ( type ( methodDeclaration | fieldDeclaration ) )
+			// /home/tony/Downloads/JavaJava.g:238:9: type ( methodDeclaration | fieldDeclaration )
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -3501,7 +3507,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, type107.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:232:14: ( methodDeclaration | fieldDeclaration )
+			// /home/tony/Downloads/JavaJava.g:238:14: ( methodDeclaration | fieldDeclaration )
 			int alt41=2;
 			int LA41_0 = input.LA(1);
 			if ( (LA41_0==Identifier) ) {
@@ -3537,7 +3543,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt41) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:232:15: methodDeclaration
+					// /home/tony/Downloads/JavaJava.g:238:15: methodDeclaration
 					{
 					if ( state.backtracking==0 ) {inMethod=true;}
 					pushFollow(FOLLOW_methodDeclaration_in_memberDeclaration1175);
@@ -3549,7 +3555,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:232:54: fieldDeclaration
+					// /home/tony/Downloads/JavaJava.g:238:54: fieldDeclaration
 					{
 					if ( state.backtracking==0 ) {inMethod=false;}
 					pushFollow(FOLLOW_fieldDeclaration_in_memberDeclaration1183);
@@ -3595,7 +3601,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "genericMethodOrConstructorDecl"
-	// /home/tony/Downloads/JavaJava.g:235:1: genericMethodOrConstructorDecl : typeParameters genericMethodOrConstructorRest ;
+	// /home/tony/Downloads/JavaJava.g:241:1: genericMethodOrConstructorDecl : typeParameters genericMethodOrConstructorRest ;
 	public final JavaJavaParser.genericMethodOrConstructorDecl_return genericMethodOrConstructorDecl() throws RecognitionException {
 		JavaJavaParser.genericMethodOrConstructorDecl_return retval = new JavaJavaParser.genericMethodOrConstructorDecl_return();
 		retval.start = input.LT(1);
@@ -3610,8 +3616,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 28) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:236:5: ( typeParameters genericMethodOrConstructorRest )
-			// /home/tony/Downloads/JavaJava.g:236:9: typeParameters genericMethodOrConstructorRest
+			// /home/tony/Downloads/JavaJava.g:242:5: ( typeParameters genericMethodOrConstructorRest )
+			// /home/tony/Downloads/JavaJava.g:242:9: typeParameters genericMethodOrConstructorRest
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -3660,7 +3666,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "genericMethodOrConstructorRest"
-	// /home/tony/Downloads/JavaJava.g:239:1: genericMethodOrConstructorRest : ( ( type | 'void' ) Identifier methodDeclaratorRest | Identifier constructorDeclaratorRest );
+	// /home/tony/Downloads/JavaJava.g:245:1: genericMethodOrConstructorRest : ( ( type | 'void' ) Identifier methodDeclaratorRest | Identifier constructorDeclaratorRest );
 	public final JavaJavaParser.genericMethodOrConstructorRest_return genericMethodOrConstructorRest() throws RecognitionException {
 		JavaJavaParser.genericMethodOrConstructorRest_return retval = new JavaJavaParser.genericMethodOrConstructorRest_return();
 		retval.start = input.LT(1);
@@ -3682,7 +3688,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 29) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:240:5: ( ( type | 'void' ) Identifier methodDeclaratorRest | Identifier constructorDeclaratorRest )
+			// /home/tony/Downloads/JavaJava.g:246:5: ( ( type | 'void' ) Identifier methodDeclaratorRest | Identifier constructorDeclaratorRest )
 			int alt43=2;
 			int LA43_0 = input.LA(1);
 			if ( (LA43_0==Identifier) ) {
@@ -3721,12 +3727,12 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt43) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:240:9: ( type | 'void' ) Identifier methodDeclaratorRest
+					// /home/tony/Downloads/JavaJava.g:246:9: ( type | 'void' ) Identifier methodDeclaratorRest
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					// /home/tony/Downloads/JavaJava.g:240:9: ( type | 'void' )
+					// /home/tony/Downloads/JavaJava.g:246:9: ( type | 'void' )
 					int alt42=2;
 					int LA42_0 = input.LA(1);
 					if ( (LA42_0==Identifier||LA42_0==60||LA42_0==62||LA42_0==65||LA42_0==70||LA42_0==76||LA42_0==82||LA42_0==84||LA42_0==93) ) {
@@ -3745,7 +3751,7 @@ public class JavaJavaParser extends Parser {
 
 					switch (alt42) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:240:10: type
+							// /home/tony/Downloads/JavaJava.g:246:10: type
 							{
 							pushFollow(FOLLOW_type_in_genericMethodOrConstructorRest1229);
 							type112=type();
@@ -3756,7 +3762,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /home/tony/Downloads/JavaJava.g:240:17: 'void'
+							// /home/tony/Downloads/JavaJava.g:246:17: 'void'
 							{
 							string_literal113=(Token)match(input,105,FOLLOW_105_in_genericMethodOrConstructorRest1233); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -3785,7 +3791,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:241:9: Identifier constructorDeclaratorRest
+					// /home/tony/Downloads/JavaJava.g:247:9: Identifier constructorDeclaratorRest
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -3837,7 +3843,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "methodDeclaration"
-	// /home/tony/Downloads/JavaJava.g:244:1: methodDeclaration : Identifier methodDeclaratorRest ;
+	// /home/tony/Downloads/JavaJava.g:250:1: methodDeclaration : Identifier methodDeclaratorRest ;
 	public final JavaJavaParser.methodDeclaration_return methodDeclaration() throws RecognitionException {
 		JavaJavaParser.methodDeclaration_return retval = new JavaJavaParser.methodDeclaration_return();
 		retval.start = input.LT(1);
@@ -3853,8 +3859,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 30) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:245:5: ( Identifier methodDeclaratorRest )
-			// /home/tony/Downloads/JavaJava.g:245:9: Identifier methodDeclaratorRest
+			// /home/tony/Downloads/JavaJava.g:251:5: ( Identifier methodDeclaratorRest )
+			// /home/tony/Downloads/JavaJava.g:251:9: Identifier methodDeclaratorRest
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -3911,7 +3917,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "fieldDeclaration"
-	// /home/tony/Downloads/JavaJava.g:255:1: fieldDeclaration : variableDeclarators ';' ;
+	// /home/tony/Downloads/JavaJava.g:261:1: fieldDeclaration : variableDeclarators ';' ;
 	public final JavaJavaParser.fieldDeclaration_return fieldDeclaration() throws RecognitionException {
 		JavaJavaParser.fieldDeclaration_return retval = new JavaJavaParser.fieldDeclaration_return();
 		retval.start = input.LT(1);
@@ -3927,8 +3933,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 31) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:256:5: ( variableDeclarators ';' )
-			// /home/tony/Downloads/JavaJava.g:256:8: variableDeclarators ';'
+			// /home/tony/Downloads/JavaJava.g:262:5: ( variableDeclarators ';' )
+			// /home/tony/Downloads/JavaJava.g:262:8: variableDeclarators ';'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -3978,7 +3984,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "interfaceBodyDeclaration"
-	// /home/tony/Downloads/JavaJava.g:259:1: interfaceBodyDeclaration : ( modifiers interfaceMemberDecl | ';' );
+	// /home/tony/Downloads/JavaJava.g:265:1: interfaceBodyDeclaration : ( modifiers interfaceMemberDecl | ';' );
 	public final JavaJavaParser.interfaceBodyDeclaration_return interfaceBodyDeclaration() throws RecognitionException {
 		JavaJavaParser.interfaceBodyDeclaration_return retval = new JavaJavaParser.interfaceBodyDeclaration_return();
 		retval.start = input.LT(1);
@@ -3995,7 +4001,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 32) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:260:5: ( modifiers interfaceMemberDecl | ';' )
+			// /home/tony/Downloads/JavaJava.g:266:5: ( modifiers interfaceMemberDecl | ';' )
 			int alt44=2;
 			int LA44_0 = input.LA(1);
 			if ( (LA44_0==ENUM||LA44_0==Identifier||LA44_0==49||LA44_0==54||(LA44_0 >= 59 && LA44_0 <= 60)||LA44_0==62||(LA44_0 >= 65 && LA44_0 <= 66)||LA44_0==70||LA44_0==74||LA44_0==76||(LA44_0 >= 82 && LA44_0 <= 85)||(LA44_0 >= 89 && LA44_0 <= 91)||(LA44_0 >= 93 && LA44_0 <= 95)||LA44_0==98||LA44_0==102||(LA44_0 >= 105 && LA44_0 <= 106)) ) {
@@ -4014,7 +4020,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt44) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:260:9: modifiers interfaceMemberDecl
+					// /home/tony/Downloads/JavaJava.g:266:9: modifiers interfaceMemberDecl
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -4034,7 +4040,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:261:9: ';'
+					// /home/tony/Downloads/JavaJava.g:267:9: ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -4079,7 +4085,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "interfaceMemberDecl"
-	// /home/tony/Downloads/JavaJava.g:264:1: interfaceMemberDecl : ( interfaceMethodOrFieldDecl | interfaceGenericMethodDecl | 'void' Identifier voidInterfaceMethodDeclaratorRest | interfaceDeclaration | classDeclaration );
+	// /home/tony/Downloads/JavaJava.g:270:1: interfaceMemberDecl : ( interfaceMethodOrFieldDecl | interfaceGenericMethodDecl | 'void' Identifier voidInterfaceMethodDeclaratorRest | interfaceDeclaration | classDeclaration );
 	public final JavaJavaParser.interfaceMemberDecl_return interfaceMemberDecl() throws RecognitionException {
 		JavaJavaParser.interfaceMemberDecl_return retval = new JavaJavaParser.interfaceMemberDecl_return();
 		retval.start = input.LT(1);
@@ -4101,7 +4107,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 33) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:265:5: ( interfaceMethodOrFieldDecl | interfaceGenericMethodDecl | 'void' Identifier voidInterfaceMethodDeclaratorRest | interfaceDeclaration | classDeclaration )
+			// /home/tony/Downloads/JavaJava.g:271:5: ( interfaceMethodOrFieldDecl | interfaceGenericMethodDecl | 'void' Identifier voidInterfaceMethodDeclaratorRest | interfaceDeclaration | classDeclaration )
 			int alt45=5;
 			switch ( input.LA(1) ) {
 			case Identifier:
@@ -4147,7 +4153,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt45) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:265:9: interfaceMethodOrFieldDecl
+					// /home/tony/Downloads/JavaJava.g:271:9: interfaceMethodOrFieldDecl
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -4161,7 +4167,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:266:9: interfaceGenericMethodDecl
+					// /home/tony/Downloads/JavaJava.g:272:9: interfaceGenericMethodDecl
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -4175,7 +4181,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /home/tony/Downloads/JavaJava.g:267:9: 'void' Identifier voidInterfaceMethodDeclaratorRest
+					// /home/tony/Downloads/JavaJava.g:273:9: 'void' Identifier voidInterfaceMethodDeclaratorRest
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -4203,7 +4209,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /home/tony/Downloads/JavaJava.g:268:9: interfaceDeclaration
+					// /home/tony/Downloads/JavaJava.g:274:9: interfaceDeclaration
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -4217,7 +4223,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /home/tony/Downloads/JavaJava.g:269:9: classDeclaration
+					// /home/tony/Downloads/JavaJava.g:275:9: classDeclaration
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -4262,7 +4268,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "interfaceMethodOrFieldDecl"
-	// /home/tony/Downloads/JavaJava.g:272:1: interfaceMethodOrFieldDecl : type Identifier interfaceMethodOrFieldRest ;
+	// /home/tony/Downloads/JavaJava.g:278:1: interfaceMethodOrFieldDecl : type Identifier interfaceMethodOrFieldRest ;
 	public final JavaJavaParser.interfaceMethodOrFieldDecl_return interfaceMethodOrFieldDecl() throws RecognitionException {
 		JavaJavaParser.interfaceMethodOrFieldDecl_return retval = new JavaJavaParser.interfaceMethodOrFieldDecl_return();
 		retval.start = input.LT(1);
@@ -4279,8 +4285,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 34) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:273:5: ( type Identifier interfaceMethodOrFieldRest )
-			// /home/tony/Downloads/JavaJava.g:273:9: type Identifier interfaceMethodOrFieldRest
+			// /home/tony/Downloads/JavaJava.g:279:5: ( type Identifier interfaceMethodOrFieldRest )
+			// /home/tony/Downloads/JavaJava.g:279:9: type Identifier interfaceMethodOrFieldRest
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -4336,7 +4342,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "interfaceMethodOrFieldRest"
-	// /home/tony/Downloads/JavaJava.g:276:1: interfaceMethodOrFieldRest : ( constantDeclaratorsRest ';' | interfaceMethodDeclaratorRest );
+	// /home/tony/Downloads/JavaJava.g:282:1: interfaceMethodOrFieldRest : ( constantDeclaratorsRest ';' | interfaceMethodDeclaratorRest );
 	public final JavaJavaParser.interfaceMethodOrFieldRest_return interfaceMethodOrFieldRest() throws RecognitionException {
 		JavaJavaParser.interfaceMethodOrFieldRest_return retval = new JavaJavaParser.interfaceMethodOrFieldRest_return();
 		retval.start = input.LT(1);
@@ -4353,7 +4359,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 35) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:277:5: ( constantDeclaratorsRest ';' | interfaceMethodDeclaratorRest )
+			// /home/tony/Downloads/JavaJava.g:283:5: ( constantDeclaratorsRest ';' | interfaceMethodDeclaratorRest )
 			int alt46=2;
 			int LA46_0 = input.LA(1);
 			if ( (LA46_0==50||LA46_0==55) ) {
@@ -4372,7 +4378,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt46) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:277:9: constantDeclaratorsRest ';'
+					// /home/tony/Downloads/JavaJava.g:283:9: constantDeclaratorsRest ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -4393,7 +4399,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:278:9: interfaceMethodDeclaratorRest
+					// /home/tony/Downloads/JavaJava.g:284:9: interfaceMethodDeclaratorRest
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -4438,7 +4444,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "methodDeclaratorRest"
-	// /home/tony/Downloads/JavaJava.g:281:1: methodDeclaratorRest : formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ( methodBody | ';' ) ;
+	// /home/tony/Downloads/JavaJava.g:287:1: methodDeclaratorRest : formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ( methodBody | ';' ) ;
 	public final JavaJavaParser.methodDeclaratorRest_return methodDeclaratorRest() throws RecognitionException {
 		JavaJavaParser.methodDeclaratorRest_return retval = new JavaJavaParser.methodDeclaratorRest_return();
 		retval.start = input.LT(1);
@@ -4462,8 +4468,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 36) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:282:5: ( formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ( methodBody | ';' ) )
-			// /home/tony/Downloads/JavaJava.g:282:9: formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ( methodBody | ';' )
+			// /home/tony/Downloads/JavaJava.g:288:5: ( formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ( methodBody | ';' ) )
+			// /home/tony/Downloads/JavaJava.g:288:9: formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ( methodBody | ';' )
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -4474,7 +4480,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, formalParameters138.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:282:26: ( '[' ']' )*
+			// /home/tony/Downloads/JavaJava.g:288:26: ( '[' ']' )*
 			loop47:
 			while (true) {
 				int alt47=2;
@@ -4485,7 +4491,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt47) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:282:27: '[' ']'
+					// /home/tony/Downloads/JavaJava.g:288:27: '[' ']'
 					{
 					char_literal139=(Token)match(input,55,FOLLOW_55_in_methodDeclaratorRest1496); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -4509,7 +4515,7 @@ public class JavaJavaParser extends Parser {
 				}
 			}
 
-			// /home/tony/Downloads/JavaJava.g:283:9: ( 'throws' qualifiedNameList )?
+			// /home/tony/Downloads/JavaJava.g:289:9: ( 'throws' qualifiedNameList )?
 			int alt48=2;
 			int LA48_0 = input.LA(1);
 			if ( (LA48_0==101) ) {
@@ -4517,7 +4523,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt48) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:283:10: 'throws' qualifiedNameList
+					// /home/tony/Downloads/JavaJava.g:289:10: 'throws' qualifiedNameList
 					{
 					string_literal141=(Token)match(input,101,FOLLOW_101_in_methodDeclaratorRest1514); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -4537,7 +4543,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /home/tony/Downloads/JavaJava.g:284:9: ( methodBody | ';' )
+			// /home/tony/Downloads/JavaJava.g:290:9: ( methodBody | ';' )
 			int alt49=2;
 			int LA49_0 = input.LA(1);
 			if ( (LA49_0==108) ) {
@@ -4556,7 +4562,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt49) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:284:13: methodBody
+					// /home/tony/Downloads/JavaJava.g:290:13: methodBody
 					{
 					pushFollow(FOLLOW_methodBody_in_methodDeclaratorRest1534);
 					methodBody143=methodBody();
@@ -4567,7 +4573,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:285:13: ';'
+					// /home/tony/Downloads/JavaJava.g:291:13: ';'
 					{
 					char_literal144=(Token)match(input,48,FOLLOW_48_in_methodDeclaratorRest1548); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -4612,7 +4618,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "voidMethodDeclaratorRest"
-	// /home/tony/Downloads/JavaJava.g:289:1: voidMethodDeclaratorRest : formalParameters ( 'throws' qualifiedNameList )? ( methodBody | ';' ) ;
+	// /home/tony/Downloads/JavaJava.g:295:1: voidMethodDeclaratorRest : formalParameters ( 'throws' qualifiedNameList )? ( methodBody | ';' ) ;
 	public final JavaJavaParser.voidMethodDeclaratorRest_return voidMethodDeclaratorRest() throws RecognitionException {
 		JavaJavaParser.voidMethodDeclaratorRest_return retval = new JavaJavaParser.voidMethodDeclaratorRest_return();
 		retval.start = input.LT(1);
@@ -4632,8 +4638,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 37) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:290:5: ( formalParameters ( 'throws' qualifiedNameList )? ( methodBody | ';' ) )
-			// /home/tony/Downloads/JavaJava.g:290:9: formalParameters ( 'throws' qualifiedNameList )? ( methodBody | ';' )
+			// /home/tony/Downloads/JavaJava.g:296:5: ( formalParameters ( 'throws' qualifiedNameList )? ( methodBody | ';' ) )
+			// /home/tony/Downloads/JavaJava.g:296:9: formalParameters ( 'throws' qualifiedNameList )? ( methodBody | ';' )
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -4644,7 +4650,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, formalParameters145.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:290:26: ( 'throws' qualifiedNameList )?
+			// /home/tony/Downloads/JavaJava.g:296:26: ( 'throws' qualifiedNameList )?
 			int alt50=2;
 			int LA50_0 = input.LA(1);
 			if ( (LA50_0==101) ) {
@@ -4652,7 +4658,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt50) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:290:27: 'throws' qualifiedNameList
+					// /home/tony/Downloads/JavaJava.g:296:27: 'throws' qualifiedNameList
 					{
 					string_literal146=(Token)match(input,101,FOLLOW_101_in_voidMethodDeclaratorRest1584); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -4672,7 +4678,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /home/tony/Downloads/JavaJava.g:291:9: ( methodBody | ';' )
+			// /home/tony/Downloads/JavaJava.g:297:9: ( methodBody | ';' )
 			int alt51=2;
 			int LA51_0 = input.LA(1);
 			if ( (LA51_0==108) ) {
@@ -4691,7 +4697,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt51) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:291:13: methodBody
+					// /home/tony/Downloads/JavaJava.g:297:13: methodBody
 					{
 					pushFollow(FOLLOW_methodBody_in_voidMethodDeclaratorRest1603);
 					methodBody148=methodBody();
@@ -4702,7 +4708,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:292:13: ';'
+					// /home/tony/Downloads/JavaJava.g:298:13: ';'
 					{
 					char_literal149=(Token)match(input,48,FOLLOW_48_in_voidMethodDeclaratorRest1617); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -4748,7 +4754,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "interfaceMethodDeclaratorRest"
-	// /home/tony/Downloads/JavaJava.g:296:1: interfaceMethodDeclaratorRest : formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ';' ;
+	// /home/tony/Downloads/JavaJava.g:302:1: interfaceMethodDeclaratorRest : formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ';' ;
 	public final JavaJavaParser.interfaceMethodDeclaratorRest_return interfaceMethodDeclaratorRest() throws RecognitionException {
 		JavaJavaParser.interfaceMethodDeclaratorRest_return retval = new JavaJavaParser.interfaceMethodDeclaratorRest_return();
 		retval.start = input.LT(1);
@@ -4771,8 +4777,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 38) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:297:5: ( formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ';' )
-			// /home/tony/Downloads/JavaJava.g:297:8: formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ';'
+			// /home/tony/Downloads/JavaJava.g:303:5: ( formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ';' )
+			// /home/tony/Downloads/JavaJava.g:303:8: formalParameters ( '[' ']' )* ( 'throws' qualifiedNameList )? ';'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -4783,7 +4789,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, formalParameters150.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:297:25: ( '[' ']' )*
+			// /home/tony/Downloads/JavaJava.g:303:25: ( '[' ']' )*
 			loop52:
 			while (true) {
 				int alt52=2;
@@ -4794,7 +4800,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt52) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:297:26: '[' ']'
+					// /home/tony/Downloads/JavaJava.g:303:26: '[' ']'
 					{
 					char_literal151=(Token)match(input,55,FOLLOW_55_in_interfaceMethodDeclaratorRest1654); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -4818,7 +4824,7 @@ public class JavaJavaParser extends Parser {
 				}
 			}
 
-			// /home/tony/Downloads/JavaJava.g:297:56: ( 'throws' qualifiedNameList )?
+			// /home/tony/Downloads/JavaJava.g:303:56: ( 'throws' qualifiedNameList )?
 			int alt53=2;
 			int LA53_0 = input.LA(1);
 			if ( (LA53_0==101) ) {
@@ -4826,7 +4832,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt53) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:297:57: 'throws' qualifiedNameList
+					// /home/tony/Downloads/JavaJava.g:303:57: 'throws' qualifiedNameList
 					{
 					string_literal153=(Token)match(input,101,FOLLOW_101_in_interfaceMethodDeclaratorRest1665); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -4885,7 +4891,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "interfaceGenericMethodDecl"
-	// /home/tony/Downloads/JavaJava.g:300:1: interfaceGenericMethodDecl : typeParameters ( type | 'void' ) Identifier interfaceMethodDeclaratorRest ;
+	// /home/tony/Downloads/JavaJava.g:306:1: interfaceGenericMethodDecl : typeParameters ( type | 'void' ) Identifier interfaceMethodDeclaratorRest ;
 	public final JavaJavaParser.interfaceGenericMethodDecl_return interfaceGenericMethodDecl() throws RecognitionException {
 		JavaJavaParser.interfaceGenericMethodDecl_return retval = new JavaJavaParser.interfaceGenericMethodDecl_return();
 		retval.start = input.LT(1);
@@ -4905,8 +4911,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 39) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:301:5: ( typeParameters ( type | 'void' ) Identifier interfaceMethodDeclaratorRest )
-			// /home/tony/Downloads/JavaJava.g:301:9: typeParameters ( type | 'void' ) Identifier interfaceMethodDeclaratorRest
+			// /home/tony/Downloads/JavaJava.g:307:5: ( typeParameters ( type | 'void' ) Identifier interfaceMethodDeclaratorRest )
+			// /home/tony/Downloads/JavaJava.g:307:9: typeParameters ( type | 'void' ) Identifier interfaceMethodDeclaratorRest
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -4917,7 +4923,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, typeParameters156.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:301:24: ( type | 'void' )
+			// /home/tony/Downloads/JavaJava.g:307:24: ( type | 'void' )
 			int alt54=2;
 			int LA54_0 = input.LA(1);
 			if ( (LA54_0==Identifier||LA54_0==60||LA54_0==62||LA54_0==65||LA54_0==70||LA54_0==76||LA54_0==82||LA54_0==84||LA54_0==93) ) {
@@ -4936,7 +4942,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt54) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:301:25: type
+					// /home/tony/Downloads/JavaJava.g:307:25: type
 					{
 					pushFollow(FOLLOW_type_in_interfaceGenericMethodDecl1700);
 					type157=type();
@@ -4947,7 +4953,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:301:32: 'void'
+					// /home/tony/Downloads/JavaJava.g:307:32: 'void'
 					{
 					string_literal158=(Token)match(input,105,FOLLOW_105_in_interfaceGenericMethodDecl1704); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -5006,7 +5012,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "voidInterfaceMethodDeclaratorRest"
-	// /home/tony/Downloads/JavaJava.g:305:1: voidInterfaceMethodDeclaratorRest : formalParameters ( 'throws' qualifiedNameList )? ';' ;
+	// /home/tony/Downloads/JavaJava.g:311:1: voidInterfaceMethodDeclaratorRest : formalParameters ( 'throws' qualifiedNameList )? ';' ;
 	public final JavaJavaParser.voidInterfaceMethodDeclaratorRest_return voidInterfaceMethodDeclaratorRest() throws RecognitionException {
 		JavaJavaParser.voidInterfaceMethodDeclaratorRest_return retval = new JavaJavaParser.voidInterfaceMethodDeclaratorRest_return();
 		retval.start = input.LT(1);
@@ -5025,8 +5031,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 40) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:306:5: ( formalParameters ( 'throws' qualifiedNameList )? ';' )
-			// /home/tony/Downloads/JavaJava.g:306:8: formalParameters ( 'throws' qualifiedNameList )? ';'
+			// /home/tony/Downloads/JavaJava.g:312:5: ( formalParameters ( 'throws' qualifiedNameList )? ';' )
+			// /home/tony/Downloads/JavaJava.g:312:8: formalParameters ( 'throws' qualifiedNameList )? ';'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -5037,7 +5043,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, formalParameters161.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:306:25: ( 'throws' qualifiedNameList )?
+			// /home/tony/Downloads/JavaJava.g:312:25: ( 'throws' qualifiedNameList )?
 			int alt55=2;
 			int LA55_0 = input.LA(1);
 			if ( (LA55_0==101) ) {
@@ -5045,7 +5051,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt55) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:306:26: 'throws' qualifiedNameList
+					// /home/tony/Downloads/JavaJava.g:312:26: 'throws' qualifiedNameList
 					{
 					string_literal162=(Token)match(input,101,FOLLOW_101_in_voidInterfaceMethodDeclaratorRest1746); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -5104,7 +5110,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "constructorDeclaratorRest"
-	// /home/tony/Downloads/JavaJava.g:309:1: constructorDeclaratorRest : formalParameters ( 'throws' qualifiedNameList )? constructorBody ;
+	// /home/tony/Downloads/JavaJava.g:315:1: constructorDeclaratorRest : formalParameters ( 'throws' qualifiedNameList )? constructorBody ;
 	public final JavaJavaParser.constructorDeclaratorRest_return constructorDeclaratorRest() throws RecognitionException {
 		JavaJavaParser.constructorDeclaratorRest_return retval = new JavaJavaParser.constructorDeclaratorRest_return();
 		retval.start = input.LT(1);
@@ -5122,8 +5128,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 41) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:310:5: ( formalParameters ( 'throws' qualifiedNameList )? constructorBody )
-			// /home/tony/Downloads/JavaJava.g:310:9: formalParameters ( 'throws' qualifiedNameList )? constructorBody
+			// /home/tony/Downloads/JavaJava.g:316:5: ( formalParameters ( 'throws' qualifiedNameList )? constructorBody )
+			// /home/tony/Downloads/JavaJava.g:316:9: formalParameters ( 'throws' qualifiedNameList )? constructorBody
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -5134,7 +5140,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, formalParameters165.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:310:26: ( 'throws' qualifiedNameList )?
+			// /home/tony/Downloads/JavaJava.g:316:26: ( 'throws' qualifiedNameList )?
 			int alt56=2;
 			int LA56_0 = input.LA(1);
 			if ( (LA56_0==101) ) {
@@ -5142,7 +5148,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt56) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:310:27: 'throws' qualifiedNameList
+					// /home/tony/Downloads/JavaJava.g:316:27: 'throws' qualifiedNameList
 					{
 					string_literal166=(Token)match(input,101,FOLLOW_101_in_constructorDeclaratorRest1781); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -5200,7 +5206,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "constantDeclarator"
-	// /home/tony/Downloads/JavaJava.g:313:1: constantDeclarator : Identifier constantDeclaratorRest ;
+	// /home/tony/Downloads/JavaJava.g:319:1: constantDeclarator : Identifier constantDeclaratorRest ;
 	public final JavaJavaParser.constantDeclarator_return constantDeclarator() throws RecognitionException {
 		JavaJavaParser.constantDeclarator_return retval = new JavaJavaParser.constantDeclarator_return();
 		retval.start = input.LT(1);
@@ -5216,8 +5222,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 42) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:314:5: ( Identifier constantDeclaratorRest )
-			// /home/tony/Downloads/JavaJava.g:314:9: Identifier constantDeclaratorRest
+			// /home/tony/Downloads/JavaJava.g:320:5: ( Identifier constantDeclaratorRest )
+			// /home/tony/Downloads/JavaJava.g:320:9: Identifier constantDeclaratorRest
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -5267,7 +5273,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "variableDeclarators"
-	// /home/tony/Downloads/JavaJava.g:317:1: variableDeclarators : variableDeclarator ( ',' variableDeclarator )* ;
+	// /home/tony/Downloads/JavaJava.g:323:1: variableDeclarators : variableDeclarator ( ',' variableDeclarator )* ;
 	public final JavaJavaParser.variableDeclarators_return variableDeclarators() throws RecognitionException {
 		JavaJavaParser.variableDeclarators_return retval = new JavaJavaParser.variableDeclarators_return();
 		retval.start = input.LT(1);
@@ -5284,8 +5290,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 43) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:318:5: ( variableDeclarator ( ',' variableDeclarator )* )
-			// /home/tony/Downloads/JavaJava.g:318:9: variableDeclarator ( ',' variableDeclarator )*
+			// /home/tony/Downloads/JavaJava.g:324:5: ( variableDeclarator ( ',' variableDeclarator )* )
+			// /home/tony/Downloads/JavaJava.g:324:9: variableDeclarator ( ',' variableDeclarator )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -5296,7 +5302,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, variableDeclarator171.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:318:28: ( ',' variableDeclarator )*
+			// /home/tony/Downloads/JavaJava.g:324:28: ( ',' variableDeclarator )*
 			loop57:
 			while (true) {
 				int alt57=2;
@@ -5307,7 +5313,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt57) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:318:29: ',' variableDeclarator
+					// /home/tony/Downloads/JavaJava.g:324:29: ',' variableDeclarator
 					{
 					char_literal172=(Token)match(input,39,FOLLOW_39_in_variableDeclarators1838); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -5363,7 +5369,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "variableDeclarator"
-	// /home/tony/Downloads/JavaJava.g:321:1: variableDeclarator : variableDeclaratorId ( '=' variableInitializer )? ;
+	// /home/tony/Downloads/JavaJava.g:327:1: variableDeclarator : variableDeclaratorId ( '=' variableInitializer )? ;
 	public final JavaJavaParser.variableDeclarator_return variableDeclarator() throws RecognitionException {
 		JavaJavaParser.variableDeclarator_return retval = new JavaJavaParser.variableDeclarator_return();
 		retval.start = input.LT(1);
@@ -5380,8 +5386,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 44) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:322:5: ( variableDeclaratorId ( '=' variableInitializer )? )
-			// /home/tony/Downloads/JavaJava.g:322:9: variableDeclaratorId ( '=' variableInitializer )?
+			// /home/tony/Downloads/JavaJava.g:328:5: ( variableDeclaratorId ( '=' variableInitializer )? )
+			// /home/tony/Downloads/JavaJava.g:328:9: variableDeclaratorId ( '=' variableInitializer )?
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -5392,7 +5398,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, variableDeclaratorId174.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:322:30: ( '=' variableInitializer )?
+			// /home/tony/Downloads/JavaJava.g:328:30: ( '=' variableInitializer )?
 			int alt58=2;
 			int LA58_0 = input.LA(1);
 			if ( (LA58_0==50) ) {
@@ -5400,7 +5406,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt58) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:322:31: '=' variableInitializer
+					// /home/tony/Downloads/JavaJava.g:328:31: '=' variableInitializer
 					{
 					char_literal175=(Token)match(input,50,FOLLOW_50_in_variableDeclarator1868); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -5451,7 +5457,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "constantDeclaratorsRest"
-	// /home/tony/Downloads/JavaJava.g:325:1: constantDeclaratorsRest : constantDeclaratorRest ( ',' constantDeclarator )* ;
+	// /home/tony/Downloads/JavaJava.g:331:1: constantDeclaratorsRest : constantDeclaratorRest ( ',' constantDeclarator )* ;
 	public final JavaJavaParser.constantDeclaratorsRest_return constantDeclaratorsRest() throws RecognitionException {
 		JavaJavaParser.constantDeclaratorsRest_return retval = new JavaJavaParser.constantDeclaratorsRest_return();
 		retval.start = input.LT(1);
@@ -5468,8 +5474,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 45) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:326:5: ( constantDeclaratorRest ( ',' constantDeclarator )* )
-			// /home/tony/Downloads/JavaJava.g:326:9: constantDeclaratorRest ( ',' constantDeclarator )*
+			// /home/tony/Downloads/JavaJava.g:332:5: ( constantDeclaratorRest ( ',' constantDeclarator )* )
+			// /home/tony/Downloads/JavaJava.g:332:9: constantDeclaratorRest ( ',' constantDeclarator )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -5480,7 +5486,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, constantDeclaratorRest177.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:326:32: ( ',' constantDeclarator )*
+			// /home/tony/Downloads/JavaJava.g:332:32: ( ',' constantDeclarator )*
 			loop59:
 			while (true) {
 				int alt59=2;
@@ -5491,7 +5497,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt59) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:326:33: ',' constantDeclarator
+					// /home/tony/Downloads/JavaJava.g:332:33: ',' constantDeclarator
 					{
 					char_literal178=(Token)match(input,39,FOLLOW_39_in_constantDeclaratorsRest1898); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -5546,7 +5552,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "constantDeclaratorRest"
-	// /home/tony/Downloads/JavaJava.g:329:1: constantDeclaratorRest : ( '[' ']' )* '=' variableInitializer ;
+	// /home/tony/Downloads/JavaJava.g:335:1: constantDeclaratorRest : ( '[' ']' )* '=' variableInitializer ;
 	public final JavaJavaParser.constantDeclaratorRest_return constantDeclaratorRest() throws RecognitionException {
 		JavaJavaParser.constantDeclaratorRest_return retval = new JavaJavaParser.constantDeclaratorRest_return();
 		retval.start = input.LT(1);
@@ -5566,13 +5572,13 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 46) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:330:5: ( ( '[' ']' )* '=' variableInitializer )
-			// /home/tony/Downloads/JavaJava.g:330:9: ( '[' ']' )* '=' variableInitializer
+			// /home/tony/Downloads/JavaJava.g:336:5: ( ( '[' ']' )* '=' variableInitializer )
+			// /home/tony/Downloads/JavaJava.g:336:9: ( '[' ']' )* '=' variableInitializer
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			// /home/tony/Downloads/JavaJava.g:330:9: ( '[' ']' )*
+			// /home/tony/Downloads/JavaJava.g:336:9: ( '[' ']' )*
 			loop60:
 			while (true) {
 				int alt60=2;
@@ -5583,7 +5589,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt60) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:330:10: '[' ']'
+					// /home/tony/Downloads/JavaJava.g:336:10: '[' ']'
 					{
 					char_literal180=(Token)match(input,55,FOLLOW_55_in_constantDeclaratorRest1924); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -5651,7 +5657,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "variableDeclaratorId"
-	// /home/tony/Downloads/JavaJava.g:333:1: variableDeclaratorId : Identifier ( '[' ']' )* ;
+	// /home/tony/Downloads/JavaJava.g:339:1: variableDeclaratorId : Identifier ( '[' ']' )* ;
 	public final JavaJavaParser.variableDeclaratorId_return variableDeclaratorId() throws RecognitionException {
 		JavaJavaParser.variableDeclaratorId_return retval = new JavaJavaParser.variableDeclaratorId_return();
 		retval.start = input.LT(1);
@@ -5670,8 +5676,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 47) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:334:5: ( Identifier ( '[' ']' )* )
-			// /home/tony/Downloads/JavaJava.g:334:9: Identifier ( '[' ']' )*
+			// /home/tony/Downloads/JavaJava.g:340:5: ( Identifier ( '[' ']' )* )
+			// /home/tony/Downloads/JavaJava.g:340:9: Identifier ( '[' ']' )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -5695,7 +5701,7 @@ public class JavaJavaParser extends Parser {
 			                                         
 			                      }    
 			                    }
-			// /home/tony/Downloads/JavaJava.g:346:23: ( '[' ']' )*
+			// /home/tony/Downloads/JavaJava.g:352:23: ( '[' ']' )*
 			loop61:
 			while (true) {
 				int alt61=2;
@@ -5706,7 +5712,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt61) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:346:24: '[' ']'
+					// /home/tony/Downloads/JavaJava.g:352:24: '[' ']'
 					{
 					char_literal185=(Token)match(input,55,FOLLOW_55_in_variableDeclaratorId1966); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -5762,7 +5768,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "variableInitializer"
-	// /home/tony/Downloads/JavaJava.g:349:1: variableInitializer : ( arrayInitializer | expression );
+	// /home/tony/Downloads/JavaJava.g:355:1: variableInitializer : ( arrayInitializer | expression );
 	public final JavaJavaParser.variableInitializer_return variableInitializer() throws RecognitionException {
 		JavaJavaParser.variableInitializer_return retval = new JavaJavaParser.variableInitializer_return();
 		retval.start = input.LT(1);
@@ -5777,7 +5783,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 48) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:350:5: ( arrayInitializer | expression )
+			// /home/tony/Downloads/JavaJava.g:356:5: ( arrayInitializer | expression )
 			int alt62=2;
 			int LA62_0 = input.LA(1);
 			if ( (LA62_0==108) ) {
@@ -5796,7 +5802,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt62) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:350:9: arrayInitializer
+					// /home/tony/Downloads/JavaJava.g:356:9: arrayInitializer
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -5810,7 +5816,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:351:9: expression
+					// /home/tony/Downloads/JavaJava.g:357:9: expression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -5855,7 +5861,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "arrayInitializer"
-	// /home/tony/Downloads/JavaJava.g:354:1: arrayInitializer : '{' ( variableInitializer ( ',' variableInitializer )* ( ',' )? )? '}' ;
+	// /home/tony/Downloads/JavaJava.g:360:1: arrayInitializer : '{' ( variableInitializer ( ',' variableInitializer )* ( ',' )? )? '}' ;
 	public final JavaJavaParser.arrayInitializer_return arrayInitializer() throws RecognitionException {
 		JavaJavaParser.arrayInitializer_return retval = new JavaJavaParser.arrayInitializer_return();
 		retval.start = input.LT(1);
@@ -5878,8 +5884,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 49) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:355:5: ( '{' ( variableInitializer ( ',' variableInitializer )* ( ',' )? )? '}' )
-			// /home/tony/Downloads/JavaJava.g:355:9: '{' ( variableInitializer ( ',' variableInitializer )* ( ',' )? )? '}'
+			// /home/tony/Downloads/JavaJava.g:361:5: ( '{' ( variableInitializer ( ',' variableInitializer )* ( ',' )? )? '}' )
+			// /home/tony/Downloads/JavaJava.g:361:9: '{' ( variableInitializer ( ',' variableInitializer )* ( ',' )? )? '}'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -5891,7 +5897,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("{");}
-			// /home/tony/Downloads/JavaJava.g:355:22: ( variableInitializer ( ',' variableInitializer )* ( ',' )? )?
+			// /home/tony/Downloads/JavaJava.g:361:22: ( variableInitializer ( ',' variableInitializer )* ( ',' )? )?
 			int alt65=2;
 			int LA65_0 = input.LA(1);
 			if ( ((LA65_0 >= CharacterLiteral && LA65_0 <= DecimalLiteral)||LA65_0==FloatingPointLiteral||(LA65_0 >= HexLiteral && LA65_0 <= Identifier)||(LA65_0 >= OctalLiteral && LA65_0 <= StringLiteral)||LA65_0==25||LA65_0==32||(LA65_0 >= 36 && LA65_0 <= 37)||(LA65_0 >= 40 && LA65_0 <= 41)||LA65_0==60||LA65_0==62||LA65_0==65||LA65_0==70||LA65_0==73||LA65_0==76||LA65_0==82||LA65_0==84||(LA65_0 >= 86 && LA65_0 <= 87)||LA65_0==93||LA65_0==96||LA65_0==99||LA65_0==103||LA65_0==105||LA65_0==108||LA65_0==113) ) {
@@ -5899,7 +5905,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt65) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:355:23: variableInitializer ( ',' variableInitializer )* ( ',' )?
+					// /home/tony/Downloads/JavaJava.g:361:23: variableInitializer ( ',' variableInitializer )* ( ',' )?
 					{
 					pushFollow(FOLLOW_variableInitializer_in_arrayInitializer2033);
 					variableInitializer190=variableInitializer();
@@ -5907,7 +5913,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, variableInitializer190.getTree());
 
-					// /home/tony/Downloads/JavaJava.g:355:43: ( ',' variableInitializer )*
+					// /home/tony/Downloads/JavaJava.g:361:43: ( ',' variableInitializer )*
 					loop63:
 					while (true) {
 						int alt63=2;
@@ -5922,7 +5928,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt63) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:355:44: ',' variableInitializer
+							// /home/tony/Downloads/JavaJava.g:361:44: ',' variableInitializer
 							{
 							char_literal191=(Token)match(input,39,FOLLOW_39_in_arrayInitializer2036); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -5945,7 +5951,7 @@ public class JavaJavaParser extends Parser {
 						}
 					}
 
-					// /home/tony/Downloads/JavaJava.g:355:80: ( ',' )?
+					// /home/tony/Downloads/JavaJava.g:361:80: ( ',' )?
 					int alt64=2;
 					int LA64_0 = input.LA(1);
 					if ( (LA64_0==39) ) {
@@ -5953,7 +5959,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt64) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:355:81: ','
+							// /home/tony/Downloads/JavaJava.g:361:81: ','
 							{
 							char_literal193=(Token)match(input,39,FOLLOW_39_in_arrayInitializer2045); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -6010,7 +6016,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "modifier"
-	// /home/tony/Downloads/JavaJava.g:358:1: modifier : ( annotation | 'public' | 'protected' | 'private' | 'static' | 'abstract' | 'final' | 'native' | 'synchronized' | 'transient' | 'volatile' | 'strictfp' );
+	// /home/tony/Downloads/JavaJava.g:364:1: modifier : ( annotation | 'public' | 'protected' | 'private' | 'static' | 'abstract' | 'final' | 'native' | 'synchronized' | 'transient' | 'volatile' | 'strictfp' );
 	public final JavaJavaParser.modifier_return modifier() throws RecognitionException {
 		JavaJavaParser.modifier_return retval = new JavaJavaParser.modifier_return();
 		retval.start = input.LT(1);
@@ -6046,7 +6052,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 50) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:359:5: ( annotation | 'public' | 'protected' | 'private' | 'static' | 'abstract' | 'final' | 'native' | 'synchronized' | 'transient' | 'volatile' | 'strictfp' )
+			// /home/tony/Downloads/JavaJava.g:365:5: ( annotation | 'public' | 'protected' | 'private' | 'static' | 'abstract' | 'final' | 'native' | 'synchronized' | 'transient' | 'volatile' | 'strictfp' )
 			int alt66=12;
 			switch ( input.LA(1) ) {
 			case 54:
@@ -6117,7 +6123,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt66) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:359:9: annotation
+					// /home/tony/Downloads/JavaJava.g:365:9: annotation
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6131,7 +6137,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:360:9: 'public'
+					// /home/tony/Downloads/JavaJava.g:366:9: 'public'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6146,7 +6152,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /home/tony/Downloads/JavaJava.g:361:9: 'protected'
+					// /home/tony/Downloads/JavaJava.g:367:9: 'protected'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6161,7 +6167,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /home/tony/Downloads/JavaJava.g:362:9: 'private'
+					// /home/tony/Downloads/JavaJava.g:368:9: 'private'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6176,7 +6182,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /home/tony/Downloads/JavaJava.g:363:9: 'static'
+					// /home/tony/Downloads/JavaJava.g:369:9: 'static'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6191,7 +6197,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /home/tony/Downloads/JavaJava.g:364:9: 'abstract'
+					// /home/tony/Downloads/JavaJava.g:370:9: 'abstract'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6206,7 +6212,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /home/tony/Downloads/JavaJava.g:365:9: 'final'
+					// /home/tony/Downloads/JavaJava.g:371:9: 'final'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6221,7 +6227,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /home/tony/Downloads/JavaJava.g:366:9: 'native'
+					// /home/tony/Downloads/JavaJava.g:372:9: 'native'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6236,7 +6242,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 9 :
-					// /home/tony/Downloads/JavaJava.g:367:9: 'synchronized'
+					// /home/tony/Downloads/JavaJava.g:373:9: 'synchronized'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6251,7 +6257,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 10 :
-					// /home/tony/Downloads/JavaJava.g:368:9: 'transient'
+					// /home/tony/Downloads/JavaJava.g:374:9: 'transient'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6266,7 +6272,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 11 :
-					// /home/tony/Downloads/JavaJava.g:369:9: 'volatile'
+					// /home/tony/Downloads/JavaJava.g:375:9: 'volatile'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6281,7 +6287,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 12 :
-					// /home/tony/Downloads/JavaJava.g:370:9: 'strictfp'
+					// /home/tony/Downloads/JavaJava.g:376:9: 'strictfp'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6327,7 +6333,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "packageOrTypeName"
-	// /home/tony/Downloads/JavaJava.g:373:1: packageOrTypeName : qualifiedName ;
+	// /home/tony/Downloads/JavaJava.g:379:1: packageOrTypeName : qualifiedName ;
 	public final JavaJavaParser.packageOrTypeName_return packageOrTypeName() throws RecognitionException {
 		JavaJavaParser.packageOrTypeName_return retval = new JavaJavaParser.packageOrTypeName_return();
 		retval.start = input.LT(1);
@@ -6341,8 +6347,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 51) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:374:5: ( qualifiedName )
-			// /home/tony/Downloads/JavaJava.g:374:9: qualifiedName
+			// /home/tony/Downloads/JavaJava.g:380:5: ( qualifiedName )
+			// /home/tony/Downloads/JavaJava.g:380:9: qualifiedName
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -6385,7 +6391,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "enumConstantName"
-	// /home/tony/Downloads/JavaJava.g:377:1: enumConstantName : Identifier ;
+	// /home/tony/Downloads/JavaJava.g:383:1: enumConstantName : Identifier ;
 	public final JavaJavaParser.enumConstantName_return enumConstantName() throws RecognitionException {
 		JavaJavaParser.enumConstantName_return retval = new JavaJavaParser.enumConstantName_return();
 		retval.start = input.LT(1);
@@ -6400,8 +6406,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 52) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:378:5: ( Identifier )
-			// /home/tony/Downloads/JavaJava.g:378:9: Identifier
+			// /home/tony/Downloads/JavaJava.g:384:5: ( Identifier )
+			// /home/tony/Downloads/JavaJava.g:384:9: Identifier
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -6445,7 +6451,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "typeName"
-	// /home/tony/Downloads/JavaJava.g:381:1: typeName : qualifiedName ;
+	// /home/tony/Downloads/JavaJava.g:387:1: typeName : qualifiedName ;
 	public final JavaJavaParser.typeName_return typeName() throws RecognitionException {
 		JavaJavaParser.typeName_return retval = new JavaJavaParser.typeName_return();
 		retval.start = input.LT(1);
@@ -6459,8 +6465,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 53) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:382:5: ( qualifiedName )
-			// /home/tony/Downloads/JavaJava.g:382:9: qualifiedName
+			// /home/tony/Downloads/JavaJava.g:388:5: ( qualifiedName )
+			// /home/tony/Downloads/JavaJava.g:388:9: qualifiedName
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -6503,7 +6509,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "type"
-	// /home/tony/Downloads/JavaJava.g:385:1: type : ( classOrInterfaceType ( '[' ']' )* | primitiveType ( '[' ']' )* );
+	// /home/tony/Downloads/JavaJava.g:391:1: type : ( classOrInterfaceType ( '[' ']' )* | primitiveType ( '[' ']' )* );
 	public final JavaJavaParser.type_return type() throws RecognitionException {
 		JavaJavaParser.type_return retval = new JavaJavaParser.type_return();
 		retval.start = input.LT(1);
@@ -6526,7 +6532,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 54) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:386:2: ( classOrInterfaceType ( '[' ']' )* | primitiveType ( '[' ']' )* )
+			// /home/tony/Downloads/JavaJava.g:392:2: ( classOrInterfaceType ( '[' ']' )* | primitiveType ( '[' ']' )* )
 			int alt69=2;
 			int LA69_0 = input.LA(1);
 			if ( (LA69_0==Identifier) ) {
@@ -6545,7 +6551,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt69) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:386:4: classOrInterfaceType ( '[' ']' )*
+					// /home/tony/Downloads/JavaJava.g:392:4: classOrInterfaceType ( '[' ']' )*
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6556,7 +6562,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, classOrInterfaceType210.getTree());
 
-					// /home/tony/Downloads/JavaJava.g:386:25: ( '[' ']' )*
+					// /home/tony/Downloads/JavaJava.g:392:25: ( '[' ']' )*
 					loop67:
 					while (true) {
 						int alt67=2;
@@ -6567,7 +6573,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt67) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:386:26: '[' ']'
+							// /home/tony/Downloads/JavaJava.g:392:26: '[' ']'
 							{
 							char_literal211=(Token)match(input,55,FOLLOW_55_in_type2290); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -6594,7 +6600,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:387:4: primitiveType ( '[' ']' )*
+					// /home/tony/Downloads/JavaJava.g:393:4: primitiveType ( '[' ']' )*
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6606,7 +6612,7 @@ public class JavaJavaParser extends Parser {
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, primitiveType213.getTree());
 
 					if ( state.backtracking==0 ) {primitive=true;}
-					// /home/tony/Downloads/JavaJava.g:387:35: ( '[' ']' )*
+					// /home/tony/Downloads/JavaJava.g:393:35: ( '[' ']' )*
 					loop68:
 					while (true) {
 						int alt68=2;
@@ -6617,7 +6623,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt68) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:387:36: '[' ']'
+							// /home/tony/Downloads/JavaJava.g:393:36: '[' ']'
 							{
 							char_literal214=(Token)match(input,55,FOLLOW_55_in_type2308); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -6675,7 +6681,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "classOrInterfaceType"
-	// /home/tony/Downloads/JavaJava.g:392:1: classOrInterfaceType : I7= Identifier ( typeArguments )? ( '.' Identifier ( typeArguments )? )* ;
+	// /home/tony/Downloads/JavaJava.g:398:1: classOrInterfaceType : I7= Identifier ( typeArguments )? ( '.' Identifier ( typeArguments )? )* ;
 	public final JavaJavaParser.classOrInterfaceType_return classOrInterfaceType() throws RecognitionException {
 		JavaJavaParser.classOrInterfaceType_return retval = new JavaJavaParser.classOrInterfaceType_return();
 		retval.start = input.LT(1);
@@ -6696,8 +6702,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 55) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:393:2: (I7= Identifier ( typeArguments )? ( '.' Identifier ( typeArguments )? )* )
-			// /home/tony/Downloads/JavaJava.g:393:4: I7= Identifier ( typeArguments )? ( '.' Identifier ( typeArguments )? )*
+			// /home/tony/Downloads/JavaJava.g:399:2: (I7= Identifier ( typeArguments )? ( '.' Identifier ( typeArguments )? )* )
+			// /home/tony/Downloads/JavaJava.g:399:4: I7= Identifier ( typeArguments )? ( '.' Identifier ( typeArguments )? )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -6709,7 +6715,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) { id((I7!=null?I7.getText():null));}
-			// /home/tony/Downloads/JavaJava.g:393:35: ( typeArguments )?
+			// /home/tony/Downloads/JavaJava.g:399:35: ( typeArguments )?
 			int alt70=2;
 			int LA70_0 = input.LA(1);
 			if ( (LA70_0==49) ) {
@@ -6720,7 +6726,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt70) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:393:35: typeArguments
+					// /home/tony/Downloads/JavaJava.g:399:35: typeArguments
 					{
 					pushFollow(FOLLOW_typeArguments_in_classOrInterfaceType2335);
 					typeArguments216=typeArguments();
@@ -6733,7 +6739,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /home/tony/Downloads/JavaJava.g:393:50: ( '.' Identifier ( typeArguments )? )*
+			// /home/tony/Downloads/JavaJava.g:399:50: ( '.' Identifier ( typeArguments )? )*
 			loop72:
 			while (true) {
 				int alt72=2;
@@ -6744,7 +6750,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt72) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:393:51: '.' Identifier ( typeArguments )?
+					// /home/tony/Downloads/JavaJava.g:399:51: '.' Identifier ( typeArguments )?
 					{
 					char_literal217=(Token)match(input,43,FOLLOW_43_in_classOrInterfaceType2339); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -6759,7 +6765,7 @@ public class JavaJavaParser extends Parser {
 					adaptor.addChild(root_0, Identifier218_tree);
 					}
 
-					// /home/tony/Downloads/JavaJava.g:393:76: ( typeArguments )?
+					// /home/tony/Downloads/JavaJava.g:399:76: ( typeArguments )?
 					int alt71=2;
 					int LA71_0 = input.LA(1);
 					if ( (LA71_0==49) ) {
@@ -6770,7 +6776,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt71) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:393:76: typeArguments
+							// /home/tony/Downloads/JavaJava.g:399:76: typeArguments
 							{
 							pushFollow(FOLLOW_typeArguments_in_classOrInterfaceType2345);
 							typeArguments219=typeArguments();
@@ -6823,7 +6829,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "primitiveType"
-	// /home/tony/Downloads/JavaJava.g:396:1: primitiveType : ( 'boolean' | 'char' | 'byte' | 'short' | 'int' | 'long' | 'float' | 'double' );
+	// /home/tony/Downloads/JavaJava.g:402:1: primitiveType : ( 'boolean' | 'char' | 'byte' | 'short' | 'int' | 'long' | 'float' | 'double' );
 	public final JavaJavaParser.primitiveType_return primitiveType() throws RecognitionException {
 		JavaJavaParser.primitiveType_return retval = new JavaJavaParser.primitiveType_return();
 		retval.start = input.LT(1);
@@ -6852,7 +6858,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 56) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:397:5: ( 'boolean' | 'char' | 'byte' | 'short' | 'int' | 'long' | 'float' | 'double' )
+			// /home/tony/Downloads/JavaJava.g:403:5: ( 'boolean' | 'char' | 'byte' | 'short' | 'int' | 'long' | 'float' | 'double' )
 			int alt73=8;
 			switch ( input.LA(1) ) {
 			case 60:
@@ -6903,7 +6909,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt73) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:397:9: 'boolean'
+					// /home/tony/Downloads/JavaJava.g:403:9: 'boolean'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6918,7 +6924,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:398:9: 'char'
+					// /home/tony/Downloads/JavaJava.g:404:9: 'char'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6933,7 +6939,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /home/tony/Downloads/JavaJava.g:399:9: 'byte'
+					// /home/tony/Downloads/JavaJava.g:405:9: 'byte'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6948,7 +6954,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /home/tony/Downloads/JavaJava.g:400:9: 'short'
+					// /home/tony/Downloads/JavaJava.g:406:9: 'short'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6963,7 +6969,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /home/tony/Downloads/JavaJava.g:401:9: 'int'
+					// /home/tony/Downloads/JavaJava.g:407:9: 'int'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6978,7 +6984,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /home/tony/Downloads/JavaJava.g:402:9: 'long'
+					// /home/tony/Downloads/JavaJava.g:408:9: 'long'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -6993,7 +6999,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /home/tony/Downloads/JavaJava.g:403:9: 'float'
+					// /home/tony/Downloads/JavaJava.g:409:9: 'float'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -7008,7 +7014,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /home/tony/Downloads/JavaJava.g:404:9: 'double'
+					// /home/tony/Downloads/JavaJava.g:410:9: 'double'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -7054,7 +7060,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "variableModifier"
-	// /home/tony/Downloads/JavaJava.g:407:1: variableModifier : ( 'final' | annotation );
+	// /home/tony/Downloads/JavaJava.g:413:1: variableModifier : ( 'final' | annotation );
 	public final JavaJavaParser.variableModifier_return variableModifier() throws RecognitionException {
 		JavaJavaParser.variableModifier_return retval = new JavaJavaParser.variableModifier_return();
 		retval.start = input.LT(1);
@@ -7070,7 +7076,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 57) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:408:5: ( 'final' | annotation )
+			// /home/tony/Downloads/JavaJava.g:414:5: ( 'final' | annotation )
 			int alt74=2;
 			int LA74_0 = input.LA(1);
 			if ( (LA74_0==74) ) {
@@ -7089,7 +7095,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt74) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:408:9: 'final'
+					// /home/tony/Downloads/JavaJava.g:414:9: 'final'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -7104,7 +7110,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:409:9: annotation
+					// /home/tony/Downloads/JavaJava.g:415:9: annotation
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -7149,7 +7155,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "typeArguments"
-	// /home/tony/Downloads/JavaJava.g:412:1: typeArguments : '<' typeArgument ( ',' typeArgument )* '>' ;
+	// /home/tony/Downloads/JavaJava.g:418:1: typeArguments : '<' typeArgument ( ',' typeArgument )* '>' ;
 	public final JavaJavaParser.typeArguments_return typeArguments() throws RecognitionException {
 		JavaJavaParser.typeArguments_return retval = new JavaJavaParser.typeArguments_return();
 		retval.start = input.LT(1);
@@ -7170,8 +7176,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 58) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:413:5: ( '<' typeArgument ( ',' typeArgument )* '>' )
-			// /home/tony/Downloads/JavaJava.g:413:9: '<' typeArgument ( ',' typeArgument )* '>'
+			// /home/tony/Downloads/JavaJava.g:419:5: ( '<' typeArgument ( ',' typeArgument )* '>' )
+			// /home/tony/Downloads/JavaJava.g:419:9: '<' typeArgument ( ',' typeArgument )* '>'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -7189,7 +7195,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, typeArgument231.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:413:36: ( ',' typeArgument )*
+			// /home/tony/Downloads/JavaJava.g:419:36: ( ',' typeArgument )*
 			loop75:
 			while (true) {
 				int alt75=2;
@@ -7200,7 +7206,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt75) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:413:37: ',' typeArgument
+					// /home/tony/Downloads/JavaJava.g:419:37: ',' typeArgument
 					{
 					char_literal232=(Token)match(input,39,FOLLOW_39_in_typeArguments2516); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -7262,7 +7268,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "typeArgument"
-	// /home/tony/Downloads/JavaJava.g:416:1: typeArgument : ( type | '?' ( ( 'extends' | 'super' ) type )? );
+	// /home/tony/Downloads/JavaJava.g:422:1: typeArgument : ( type | '?' ( ( 'extends' | 'super' ) type )? );
 	public final JavaJavaParser.typeArgument_return typeArgument() throws RecognitionException {
 		JavaJavaParser.typeArgument_return retval = new JavaJavaParser.typeArgument_return();
 		retval.start = input.LT(1);
@@ -7283,7 +7289,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 59) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:417:5: ( type | '?' ( ( 'extends' | 'super' ) type )? )
+			// /home/tony/Downloads/JavaJava.g:423:5: ( type | '?' ( ( 'extends' | 'super' ) type )? )
 			int alt78=2;
 			int LA78_0 = input.LA(1);
 			if ( (LA78_0==Identifier||LA78_0==60||LA78_0==62||LA78_0==65||LA78_0==70||LA78_0==76||LA78_0==82||LA78_0==84||LA78_0==93) ) {
@@ -7302,7 +7308,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt78) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:417:9: type
+					// /home/tony/Downloads/JavaJava.g:423:9: type
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -7316,7 +7322,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:418:9: '?' ( ( 'extends' | 'super' ) type )?
+					// /home/tony/Downloads/JavaJava.g:424:9: '?' ( ( 'extends' | 'super' ) type )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -7327,7 +7333,7 @@ public class JavaJavaParser extends Parser {
 					adaptor.addChild(root_0, char_literal236_tree);
 					}
 
-					// /home/tony/Downloads/JavaJava.g:418:13: ( ( 'extends' | 'super' ) type )?
+					// /home/tony/Downloads/JavaJava.g:424:13: ( ( 'extends' | 'super' ) type )?
 					int alt77=2;
 					int LA77_0 = input.LA(1);
 					if ( (LA77_0==72||LA77_0==96) ) {
@@ -7335,9 +7341,9 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt77) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:418:14: ( 'extends' | 'super' ) type
+							// /home/tony/Downloads/JavaJava.g:424:14: ( 'extends' | 'super' ) type
 							{
-							// /home/tony/Downloads/JavaJava.g:418:14: ( 'extends' | 'super' )
+							// /home/tony/Downloads/JavaJava.g:424:14: ( 'extends' | 'super' )
 							int alt76=2;
 							int LA76_0 = input.LA(1);
 							if ( (LA76_0==72) ) {
@@ -7356,7 +7362,7 @@ public class JavaJavaParser extends Parser {
 
 							switch (alt76) {
 								case 1 :
-									// /home/tony/Downloads/JavaJava.g:418:15: 'extends'
+									// /home/tony/Downloads/JavaJava.g:424:15: 'extends'
 									{
 									string_literal237=(Token)match(input,72,FOLLOW_72_in_typeArgument2561); if (state.failed) return retval;
 									if ( state.backtracking==0 ) {
@@ -7368,7 +7374,7 @@ public class JavaJavaParser extends Parser {
 									}
 									break;
 								case 2 :
-									// /home/tony/Downloads/JavaJava.g:418:86: 'super'
+									// /home/tony/Downloads/JavaJava.g:424:86: 'super'
 									{
 									string_literal238=(Token)match(input,96,FOLLOW_96_in_typeArgument2566); if (state.failed) return retval;
 									if ( state.backtracking==0 ) {
@@ -7427,7 +7433,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "qualifiedNameList"
-	// /home/tony/Downloads/JavaJava.g:421:1: qualifiedNameList : qualifiedName ( ',' qualifiedName )* ;
+	// /home/tony/Downloads/JavaJava.g:427:1: qualifiedNameList : qualifiedName ( ',' qualifiedName )* ;
 	public final JavaJavaParser.qualifiedNameList_return qualifiedNameList() throws RecognitionException {
 		JavaJavaParser.qualifiedNameList_return retval = new JavaJavaParser.qualifiedNameList_return();
 		retval.start = input.LT(1);
@@ -7444,8 +7450,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 60) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:422:5: ( qualifiedName ( ',' qualifiedName )* )
-			// /home/tony/Downloads/JavaJava.g:422:9: qualifiedName ( ',' qualifiedName )*
+			// /home/tony/Downloads/JavaJava.g:428:5: ( qualifiedName ( ',' qualifiedName )* )
+			// /home/tony/Downloads/JavaJava.g:428:9: qualifiedName ( ',' qualifiedName )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -7456,7 +7462,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, qualifiedName240.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:422:23: ( ',' qualifiedName )*
+			// /home/tony/Downloads/JavaJava.g:428:23: ( ',' qualifiedName )*
 			loop79:
 			while (true) {
 				int alt79=2;
@@ -7467,7 +7473,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt79) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:422:24: ',' qualifiedName
+					// /home/tony/Downloads/JavaJava.g:428:24: ',' qualifiedName
 					{
 					char_literal241=(Token)match(input,39,FOLLOW_39_in_qualifiedNameList2600); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -7522,7 +7528,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "formalParameters"
-	// /home/tony/Downloads/JavaJava.g:425:1: formalParameters : '(' ( formalParameterDecls )? ')' ;
+	// /home/tony/Downloads/JavaJava.g:431:1: formalParameters : '(' ( formalParameterDecls )? ')' ;
 	public final JavaJavaParser.formalParameters_return formalParameters() throws RecognitionException {
 		JavaJavaParser.formalParameters_return retval = new JavaJavaParser.formalParameters_return();
 		retval.start = input.LT(1);
@@ -7540,8 +7546,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 61) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:426:5: ( '(' ( formalParameterDecls )? ')' )
-			// /home/tony/Downloads/JavaJava.g:426:9: '(' ( formalParameterDecls )? ')'
+			// /home/tony/Downloads/JavaJava.g:432:5: ( '(' ( formalParameterDecls )? ')' )
+			// /home/tony/Downloads/JavaJava.g:432:9: '(' ( formalParameterDecls )? ')'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -7553,7 +7559,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("(");}
-			// /home/tony/Downloads/JavaJava.g:426:23: ( formalParameterDecls )?
+			// /home/tony/Downloads/JavaJava.g:432:23: ( formalParameterDecls )?
 			int alt80=2;
 			int LA80_0 = input.LA(1);
 			if ( (LA80_0==Identifier||LA80_0==54||LA80_0==60||LA80_0==62||LA80_0==65||LA80_0==70||LA80_0==74||LA80_0==76||LA80_0==82||LA80_0==84||LA80_0==93) ) {
@@ -7561,7 +7567,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt80) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:426:23: formalParameterDecls
+					// /home/tony/Downloads/JavaJava.g:432:23: formalParameterDecls
 					{
 					pushFollow(FOLLOW_formalParameterDecls_in_formalParameters2629);
 					formalParameterDecls244=formalParameterDecls();
@@ -7613,7 +7619,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "formalParameterDecls"
-	// /home/tony/Downloads/JavaJava.g:429:1: formalParameterDecls : variableModifiers type formalParameterDeclsRest ;
+	// /home/tony/Downloads/JavaJava.g:435:1: formalParameterDecls : variableModifiers type formalParameterDeclsRest ;
 	public final JavaJavaParser.formalParameterDecls_return formalParameterDecls() throws RecognitionException {
 		JavaJavaParser.formalParameterDecls_return retval = new JavaJavaParser.formalParameterDecls_return();
 		retval.start = input.LT(1);
@@ -7629,8 +7635,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 62) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:430:5: ( variableModifiers type formalParameterDeclsRest )
-			// /home/tony/Downloads/JavaJava.g:430:9: variableModifiers type formalParameterDeclsRest
+			// /home/tony/Downloads/JavaJava.g:436:5: ( variableModifiers type formalParameterDeclsRest )
+			// /home/tony/Downloads/JavaJava.g:436:9: variableModifiers type formalParameterDeclsRest
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -7686,7 +7692,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "formalParameterDeclsRest"
-	// /home/tony/Downloads/JavaJava.g:433:1: formalParameterDeclsRest : ( variableDeclaratorId ( ',' formalParameterDecls )? | '...' variableDeclaratorId );
+	// /home/tony/Downloads/JavaJava.g:439:1: formalParameterDeclsRest : ( variableDeclaratorId ( ',' formalParameterDecls )? | '...' variableDeclaratorId );
 	public final JavaJavaParser.formalParameterDeclsRest_return formalParameterDeclsRest() throws RecognitionException {
 		JavaJavaParser.formalParameterDeclsRest_return retval = new JavaJavaParser.formalParameterDeclsRest_return();
 		retval.start = input.LT(1);
@@ -7706,7 +7712,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 63) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:434:5: ( variableDeclaratorId ( ',' formalParameterDecls )? | '...' variableDeclaratorId )
+			// /home/tony/Downloads/JavaJava.g:440:5: ( variableDeclaratorId ( ',' formalParameterDecls )? | '...' variableDeclaratorId )
 			int alt82=2;
 			int LA82_0 = input.LA(1);
 			if ( (LA82_0==Identifier) ) {
@@ -7725,7 +7731,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt82) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:434:9: variableDeclaratorId ( ',' formalParameterDecls )?
+					// /home/tony/Downloads/JavaJava.g:440:9: variableDeclaratorId ( ',' formalParameterDecls )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -7736,7 +7742,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, variableDeclaratorId249.getTree());
 
-					// /home/tony/Downloads/JavaJava.g:434:30: ( ',' formalParameterDecls )?
+					// /home/tony/Downloads/JavaJava.g:440:30: ( ',' formalParameterDecls )?
 					int alt81=2;
 					int LA81_0 = input.LA(1);
 					if ( (LA81_0==39) ) {
@@ -7744,7 +7750,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt81) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:434:31: ',' formalParameterDecls
+							// /home/tony/Downloads/JavaJava.g:440:31: ',' formalParameterDecls
 							{
 							char_literal250=(Token)match(input,39,FOLLOW_39_in_formalParameterDeclsRest2690); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -7767,7 +7773,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:435:9: '...' variableDeclaratorId
+					// /home/tony/Downloads/JavaJava.g:441:9: '...' variableDeclaratorId
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -7818,7 +7824,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "methodBody"
-	// /home/tony/Downloads/JavaJava.g:438:1: methodBody : block ;
+	// /home/tony/Downloads/JavaJava.g:444:1: methodBody : block ;
 	public final JavaJavaParser.methodBody_return methodBody() throws RecognitionException {
 		JavaJavaParser.methodBody_return retval = new JavaJavaParser.methodBody_return();
 		retval.start = input.LT(1);
@@ -7832,8 +7838,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 64) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:439:5: ( block )
-			// /home/tony/Downloads/JavaJava.g:439:8: block
+			// /home/tony/Downloads/JavaJava.g:445:5: ( block )
+			// /home/tony/Downloads/JavaJava.g:445:8: block
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -7878,7 +7884,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "constructorBody"
-	// /home/tony/Downloads/JavaJava.g:443:1: constructorBody : '{' ( explicitConstructorInvocation )? ( blockStatement )* '}' ;
+	// /home/tony/Downloads/JavaJava.g:449:1: constructorBody : '{' ( explicitConstructorInvocation )? ( blockStatement )* '}' ;
 	public final JavaJavaParser.constructorBody_return constructorBody() throws RecognitionException {
 		JavaJavaParser.constructorBody_return retval = new JavaJavaParser.constructorBody_return();
 		retval.start = input.LT(1);
@@ -7897,8 +7903,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 65) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:444:5: ( '{' ( explicitConstructorInvocation )? ( blockStatement )* '}' )
-			// /home/tony/Downloads/JavaJava.g:444:9: '{' ( explicitConstructorInvocation )? ( blockStatement )* '}'
+			// /home/tony/Downloads/JavaJava.g:450:5: ( '{' ( explicitConstructorInvocation )? ( blockStatement )* '}' )
+			// /home/tony/Downloads/JavaJava.g:450:9: '{' ( explicitConstructorInvocation )? ( blockStatement )* '}'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -7910,7 +7916,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("{");}
-			// /home/tony/Downloads/JavaJava.g:444:22: ( explicitConstructorInvocation )?
+			// /home/tony/Downloads/JavaJava.g:450:22: ( explicitConstructorInvocation )?
 			int alt83=2;
 			switch ( input.LA(1) ) {
 				case 49:
@@ -8105,7 +8111,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt83) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:444:22: explicitConstructorInvocation
+					// /home/tony/Downloads/JavaJava.g:450:22: explicitConstructorInvocation
 					{
 					pushFollow(FOLLOW_explicitConstructorInvocation_in_constructorBody2754);
 					explicitConstructorInvocation256=explicitConstructorInvocation();
@@ -8118,7 +8124,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /home/tony/Downloads/JavaJava.g:444:53: ( blockStatement )*
+			// /home/tony/Downloads/JavaJava.g:450:53: ( blockStatement )*
 			loop84:
 			while (true) {
 				int alt84=2;
@@ -8129,7 +8135,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt84) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:444:53: blockStatement
+					// /home/tony/Downloads/JavaJava.g:450:53: blockStatement
 					{
 					pushFollow(FOLLOW_blockStatement_in_constructorBody2757);
 					blockStatement257=blockStatement();
@@ -8184,7 +8190,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "explicitConstructorInvocation"
-	// /home/tony/Downloads/JavaJava.g:447:1: explicitConstructorInvocation : ( ( nonWildcardTypeArguments )? ( 'this' | 'super' ) arguments ';' | primary '.' ( nonWildcardTypeArguments )? 'super' arguments ';' );
+	// /home/tony/Downloads/JavaJava.g:453:1: explicitConstructorInvocation : ( ( nonWildcardTypeArguments )? ( 'this' | 'super' ) arguments ';' | primary '.' ( nonWildcardTypeArguments )? 'super' arguments ';' );
 	public final JavaJavaParser.explicitConstructorInvocation_return explicitConstructorInvocation() throws RecognitionException {
 		JavaJavaParser.explicitConstructorInvocation_return retval = new JavaJavaParser.explicitConstructorInvocation_return();
 		retval.start = input.LT(1);
@@ -8214,7 +8220,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 66) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:448:5: ( ( nonWildcardTypeArguments )? ( 'this' | 'super' ) arguments ';' | primary '.' ( nonWildcardTypeArguments )? 'super' arguments ';' )
+			// /home/tony/Downloads/JavaJava.g:454:5: ( ( nonWildcardTypeArguments )? ( 'this' | 'super' ) arguments ';' | primary '.' ( nonWildcardTypeArguments )? 'super' arguments ';' )
 			int alt88=2;
 			switch ( input.LA(1) ) {
 			case 49:
@@ -8279,12 +8285,12 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt88) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:448:9: ( nonWildcardTypeArguments )? ( 'this' | 'super' ) arguments ';'
+					// /home/tony/Downloads/JavaJava.g:454:9: ( nonWildcardTypeArguments )? ( 'this' | 'super' ) arguments ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					// /home/tony/Downloads/JavaJava.g:448:9: ( nonWildcardTypeArguments )?
+					// /home/tony/Downloads/JavaJava.g:454:9: ( nonWildcardTypeArguments )?
 					int alt85=2;
 					int LA85_0 = input.LA(1);
 					if ( (LA85_0==49) ) {
@@ -8292,7 +8298,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt85) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:448:9: nonWildcardTypeArguments
+							// /home/tony/Downloads/JavaJava.g:454:9: nonWildcardTypeArguments
 							{
 							pushFollow(FOLLOW_nonWildcardTypeArguments_in_explicitConstructorInvocation2781);
 							nonWildcardTypeArguments259=nonWildcardTypeArguments();
@@ -8305,7 +8311,7 @@ public class JavaJavaParser extends Parser {
 
 					}
 
-					// /home/tony/Downloads/JavaJava.g:448:35: ( 'this' | 'super' )
+					// /home/tony/Downloads/JavaJava.g:454:35: ( 'this' | 'super' )
 					int alt86=2;
 					int LA86_0 = input.LA(1);
 					if ( (LA86_0==99) ) {
@@ -8324,7 +8330,7 @@ public class JavaJavaParser extends Parser {
 
 					switch (alt86) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:448:36: 'this'
+							// /home/tony/Downloads/JavaJava.g:454:36: 'this'
 							{
 							string_literal260=(Token)match(input,99,FOLLOW_99_in_explicitConstructorInvocation2785); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -8336,7 +8342,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /home/tony/Downloads/JavaJava.g:448:101: 'super'
+							// /home/tony/Downloads/JavaJava.g:454:101: 'super'
 							{
 							string_literal261=(Token)match(input,96,FOLLOW_96_in_explicitConstructorInvocation2790); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -8366,7 +8372,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:449:9: primary '.' ( nonWildcardTypeArguments )? 'super' arguments ';'
+					// /home/tony/Downloads/JavaJava.g:455:9: primary '.' ( nonWildcardTypeArguments )? 'super' arguments ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8384,7 +8390,7 @@ public class JavaJavaParser extends Parser {
 					}
 
 					if ( state.backtracking==0 ) {s(".");}
-					// /home/tony/Downloads/JavaJava.g:449:30: ( nonWildcardTypeArguments )?
+					// /home/tony/Downloads/JavaJava.g:455:30: ( nonWildcardTypeArguments )?
 					int alt87=2;
 					int LA87_0 = input.LA(1);
 					if ( (LA87_0==49) ) {
@@ -8392,7 +8398,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt87) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:449:30: nonWildcardTypeArguments
+							// /home/tony/Downloads/JavaJava.g:455:30: nonWildcardTypeArguments
 							{
 							pushFollow(FOLLOW_nonWildcardTypeArguments_in_explicitConstructorInvocation2814);
 							nonWildcardTypeArguments266=nonWildcardTypeArguments();
@@ -8458,7 +8464,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "qualifiedName"
-	// /home/tony/Downloads/JavaJava.g:453:1: qualifiedName : I1= Identifier ( '.' I2= Identifier )* ;
+	// /home/tony/Downloads/JavaJava.g:459:1: qualifiedName : I1= Identifier ( '.' I2= Identifier )* ;
 	public final JavaJavaParser.qualifiedName_return qualifiedName() throws RecognitionException {
 		JavaJavaParser.qualifiedName_return retval = new JavaJavaParser.qualifiedName_return();
 		retval.start = input.LT(1);
@@ -8477,8 +8483,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 67) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:454:5: (I1= Identifier ( '.' I2= Identifier )* )
-			// /home/tony/Downloads/JavaJava.g:454:9: I1= Identifier ( '.' I2= Identifier )*
+			// /home/tony/Downloads/JavaJava.g:460:5: (I1= Identifier ( '.' I2= Identifier )* )
+			// /home/tony/Downloads/JavaJava.g:460:9: I1= Identifier ( '.' I2= Identifier )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -8490,7 +8496,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {myID  = (I1!=null?I1.getText():null);}
-			// /home/tony/Downloads/JavaJava.g:454:43: ( '.' I2= Identifier )*
+			// /home/tony/Downloads/JavaJava.g:460:43: ( '.' I2= Identifier )*
 			loop89:
 			while (true) {
 				int alt89=2;
@@ -8505,7 +8511,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt89) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:454:44: '.' I2= Identifier
+					// /home/tony/Downloads/JavaJava.g:460:44: '.' I2= Identifier
 					{
 					char_literal270=(Token)match(input,43,FOLLOW_43_in_qualifiedName2850); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -8561,7 +8567,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "literal"
-	// /home/tony/Downloads/JavaJava.g:457:1: literal : ( integerLiteral | FloatingPointLiteral | CharacterLiteral | StringLiteral | booleanLiteral | 'null' );
+	// /home/tony/Downloads/JavaJava.g:463:1: literal : ( integerLiteral | FloatingPointLiteral | CharacterLiteral | StringLiteral | booleanLiteral | 'null' );
 	public final JavaJavaParser.literal_return literal() throws RecognitionException {
 		JavaJavaParser.literal_return retval = new JavaJavaParser.literal_return();
 		retval.start = input.LT(1);
@@ -8584,7 +8590,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 68) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:458:5: ( integerLiteral | FloatingPointLiteral | CharacterLiteral | StringLiteral | booleanLiteral | 'null' )
+			// /home/tony/Downloads/JavaJava.g:464:5: ( integerLiteral | FloatingPointLiteral | CharacterLiteral | StringLiteral | booleanLiteral | 'null' )
 			int alt90=6;
 			switch ( input.LA(1) ) {
 			case DecimalLiteral:
@@ -8628,7 +8634,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt90) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:458:9: integerLiteral
+					// /home/tony/Downloads/JavaJava.g:464:9: integerLiteral
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8642,7 +8648,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:459:9: FloatingPointLiteral
+					// /home/tony/Downloads/JavaJava.g:465:9: FloatingPointLiteral
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8657,7 +8663,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /home/tony/Downloads/JavaJava.g:460:9: CharacterLiteral
+					// /home/tony/Downloads/JavaJava.g:466:9: CharacterLiteral
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8672,7 +8678,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /home/tony/Downloads/JavaJava.g:461:9: StringLiteral
+					// /home/tony/Downloads/JavaJava.g:467:9: StringLiteral
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8687,7 +8693,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /home/tony/Downloads/JavaJava.g:462:9: booleanLiteral
+					// /home/tony/Downloads/JavaJava.g:468:9: booleanLiteral
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8701,7 +8707,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /home/tony/Downloads/JavaJava.g:463:9: 'null'
+					// /home/tony/Downloads/JavaJava.g:469:9: 'null'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8747,7 +8753,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "integerLiteral"
-	// /home/tony/Downloads/JavaJava.g:466:1: integerLiteral : ( HexLiteral | OctalLiteral | DecimalLiteral );
+	// /home/tony/Downloads/JavaJava.g:472:1: integerLiteral : ( HexLiteral | OctalLiteral | DecimalLiteral );
 	public final JavaJavaParser.integerLiteral_return integerLiteral() throws RecognitionException {
 		JavaJavaParser.integerLiteral_return retval = new JavaJavaParser.integerLiteral_return();
 		retval.start = input.LT(1);
@@ -8766,7 +8772,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 69) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:467:5: ( HexLiteral | OctalLiteral | DecimalLiteral )
+			// /home/tony/Downloads/JavaJava.g:473:5: ( HexLiteral | OctalLiteral | DecimalLiteral )
 			int alt91=3;
 			switch ( input.LA(1) ) {
 			case HexLiteral:
@@ -8792,7 +8798,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt91) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:467:9: HexLiteral
+					// /home/tony/Downloads/JavaJava.g:473:9: HexLiteral
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8807,7 +8813,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:468:9: OctalLiteral
+					// /home/tony/Downloads/JavaJava.g:474:9: OctalLiteral
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8822,7 +8828,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /home/tony/Downloads/JavaJava.g:469:9: DecimalLiteral
+					// /home/tony/Downloads/JavaJava.g:475:9: DecimalLiteral
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8868,7 +8874,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "booleanLiteral"
-	// /home/tony/Downloads/JavaJava.g:472:1: booleanLiteral : ( 'true' | 'false' );
+	// /home/tony/Downloads/JavaJava.g:478:1: booleanLiteral : ( 'true' | 'false' );
 	public final JavaJavaParser.booleanLiteral_return booleanLiteral() throws RecognitionException {
 		JavaJavaParser.booleanLiteral_return retval = new JavaJavaParser.booleanLiteral_return();
 		retval.start = input.LT(1);
@@ -8885,7 +8891,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 70) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:473:5: ( 'true' | 'false' )
+			// /home/tony/Downloads/JavaJava.g:479:5: ( 'true' | 'false' )
 			int alt92=2;
 			int LA92_0 = input.LA(1);
 			if ( (LA92_0==103) ) {
@@ -8904,7 +8910,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt92) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:473:9: 'true'
+					// /home/tony/Downloads/JavaJava.g:479:9: 'true'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8919,7 +8925,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:474:9: 'false'
+					// /home/tony/Downloads/JavaJava.g:480:9: 'false'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -8965,7 +8971,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "annotations"
-	// /home/tony/Downloads/JavaJava.g:479:1: annotations : ( annotation )+ ;
+	// /home/tony/Downloads/JavaJava.g:485:1: annotations : ( annotation )+ ;
 	public final JavaJavaParser.annotations_return annotations() throws RecognitionException {
 		JavaJavaParser.annotations_return retval = new JavaJavaParser.annotations_return();
 		retval.start = input.LT(1);
@@ -8979,13 +8985,13 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 71) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:480:5: ( ( annotation )+ )
-			// /home/tony/Downloads/JavaJava.g:480:9: ( annotation )+
+			// /home/tony/Downloads/JavaJava.g:486:5: ( ( annotation )+ )
+			// /home/tony/Downloads/JavaJava.g:486:9: ( annotation )+
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			// /home/tony/Downloads/JavaJava.g:480:9: ( annotation )+
+			// /home/tony/Downloads/JavaJava.g:486:9: ( annotation )+
 			int cnt93=0;
 			loop93:
 			while (true) {
@@ -9005,7 +9011,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt93) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:480:9: annotation
+					// /home/tony/Downloads/JavaJava.g:486:9: annotation
 					{
 					pushFollow(FOLLOW_annotation_in_annotations3043);
 					annotation282=annotation();
@@ -9057,7 +9063,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "annotation"
-	// /home/tony/Downloads/JavaJava.g:483:1: annotation : '@' annotationName ( '(' ( elementValuePairs | elementValue )? ')' )? ;
+	// /home/tony/Downloads/JavaJava.g:489:1: annotation : '@' annotationName ( '(' ( elementValuePairs | elementValue )? ')' )? ;
 	public final JavaJavaParser.annotation_return annotation() throws RecognitionException {
 		JavaJavaParser.annotation_return retval = new JavaJavaParser.annotation_return();
 		retval.start = input.LT(1);
@@ -9079,8 +9085,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 72) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:484:5: ( '@' annotationName ( '(' ( elementValuePairs | elementValue )? ')' )? )
-			// /home/tony/Downloads/JavaJava.g:484:9: '@' annotationName ( '(' ( elementValuePairs | elementValue )? ')' )?
+			// /home/tony/Downloads/JavaJava.g:490:5: ( '@' annotationName ( '(' ( elementValuePairs | elementValue )? ')' )? )
+			// /home/tony/Downloads/JavaJava.g:490:9: '@' annotationName ( '(' ( elementValuePairs | elementValue )? ')' )?
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -9097,7 +9103,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, annotationName284.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:484:28: ( '(' ( elementValuePairs | elementValue )? ')' )?
+			// /home/tony/Downloads/JavaJava.g:490:28: ( '(' ( elementValuePairs | elementValue )? ')' )?
 			int alt95=2;
 			int LA95_0 = input.LA(1);
 			if ( (LA95_0==32) ) {
@@ -9105,7 +9111,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt95) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:484:30: '(' ( elementValuePairs | elementValue )? ')'
+					// /home/tony/Downloads/JavaJava.g:490:30: '(' ( elementValuePairs | elementValue )? ')'
 					{
 					char_literal285=(Token)match(input,32,FOLLOW_32_in_annotation3069); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -9114,7 +9120,7 @@ public class JavaJavaParser extends Parser {
 					}
 
 					if ( state.backtracking==0 ) {s("(");}
-					// /home/tony/Downloads/JavaJava.g:484:44: ( elementValuePairs | elementValue )?
+					// /home/tony/Downloads/JavaJava.g:490:44: ( elementValuePairs | elementValue )?
 					int alt94=3;
 					int LA94_0 = input.LA(1);
 					if ( (LA94_0==Identifier) ) {
@@ -9131,7 +9137,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt94) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:484:46: elementValuePairs
+							// /home/tony/Downloads/JavaJava.g:490:46: elementValuePairs
 							{
 							pushFollow(FOLLOW_elementValuePairs_in_annotation3075);
 							elementValuePairs286=elementValuePairs();
@@ -9142,7 +9148,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /home/tony/Downloads/JavaJava.g:484:66: elementValue
+							// /home/tony/Downloads/JavaJava.g:490:66: elementValue
 							{
 							pushFollow(FOLLOW_elementValue_in_annotation3079);
 							elementValue287=elementValue();
@@ -9199,7 +9205,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "annotationName"
-	// /home/tony/Downloads/JavaJava.g:487:1: annotationName : t1= Identifier ( '.' Identifier )* ;
+	// /home/tony/Downloads/JavaJava.g:493:1: annotationName : t1= Identifier ( '.' Identifier )* ;
 	public final JavaJavaParser.annotationName_return annotationName() throws RecognitionException {
 		JavaJavaParser.annotationName_return retval = new JavaJavaParser.annotationName_return();
 		retval.start = input.LT(1);
@@ -9218,8 +9224,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 73) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:488:5: (t1= Identifier ( '.' Identifier )* )
-			// /home/tony/Downloads/JavaJava.g:488:7: t1= Identifier ( '.' Identifier )*
+			// /home/tony/Downloads/JavaJava.g:494:5: (t1= Identifier ( '.' Identifier )* )
+			// /home/tony/Downloads/JavaJava.g:494:7: t1= Identifier ( '.' Identifier )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -9231,7 +9237,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {id((t1!=null?t1.getText():null)); }
-			// /home/tony/Downloads/JavaJava.g:488:38: ( '.' Identifier )*
+			// /home/tony/Downloads/JavaJava.g:494:38: ( '.' Identifier )*
 			loop96:
 			while (true) {
 				int alt96=2;
@@ -9242,7 +9248,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt96) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:488:39: '.' Identifier
+					// /home/tony/Downloads/JavaJava.g:494:39: '.' Identifier
 					{
 					char_literal289=(Token)match(input,43,FOLLOW_43_in_annotationName3118); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -9297,7 +9303,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "elementValuePairs"
-	// /home/tony/Downloads/JavaJava.g:491:1: elementValuePairs : elementValuePair ( ',' elementValuePair )* ;
+	// /home/tony/Downloads/JavaJava.g:497:1: elementValuePairs : elementValuePair ( ',' elementValuePair )* ;
 	public final JavaJavaParser.elementValuePairs_return elementValuePairs() throws RecognitionException {
 		JavaJavaParser.elementValuePairs_return retval = new JavaJavaParser.elementValuePairs_return();
 		retval.start = input.LT(1);
@@ -9314,8 +9320,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 74) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:492:5: ( elementValuePair ( ',' elementValuePair )* )
-			// /home/tony/Downloads/JavaJava.g:492:9: elementValuePair ( ',' elementValuePair )*
+			// /home/tony/Downloads/JavaJava.g:498:5: ( elementValuePair ( ',' elementValuePair )* )
+			// /home/tony/Downloads/JavaJava.g:498:9: elementValuePair ( ',' elementValuePair )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -9326,7 +9332,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, elementValuePair291.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:492:26: ( ',' elementValuePair )*
+			// /home/tony/Downloads/JavaJava.g:498:26: ( ',' elementValuePair )*
 			loop97:
 			while (true) {
 				int alt97=2;
@@ -9337,7 +9343,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt97) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:492:27: ',' elementValuePair
+					// /home/tony/Downloads/JavaJava.g:498:27: ',' elementValuePair
 					{
 					char_literal292=(Token)match(input,39,FOLLOW_39_in_elementValuePairs3146); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -9392,7 +9398,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "elementValuePair"
-	// /home/tony/Downloads/JavaJava.g:495:1: elementValuePair : Identifier '=' elementValue ;
+	// /home/tony/Downloads/JavaJava.g:501:1: elementValuePair : Identifier '=' elementValue ;
 	public final JavaJavaParser.elementValuePair_return elementValuePair() throws RecognitionException {
 		JavaJavaParser.elementValuePair_return retval = new JavaJavaParser.elementValuePair_return();
 		retval.start = input.LT(1);
@@ -9410,8 +9416,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 75) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:496:5: ( Identifier '=' elementValue )
-			// /home/tony/Downloads/JavaJava.g:496:9: Identifier '=' elementValue
+			// /home/tony/Downloads/JavaJava.g:502:5: ( Identifier '=' elementValue )
+			// /home/tony/Downloads/JavaJava.g:502:9: Identifier '=' elementValue
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -9468,7 +9474,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "elementValue"
-	// /home/tony/Downloads/JavaJava.g:499:1: elementValue : ( conditionalExpression | annotation | elementValueArrayInitializer );
+	// /home/tony/Downloads/JavaJava.g:505:1: elementValue : ( conditionalExpression | annotation | elementValueArrayInitializer );
 	public final JavaJavaParser.elementValue_return elementValue() throws RecognitionException {
 		JavaJavaParser.elementValue_return retval = new JavaJavaParser.elementValue_return();
 		retval.start = input.LT(1);
@@ -9484,7 +9490,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 76) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:500:5: ( conditionalExpression | annotation | elementValueArrayInitializer )
+			// /home/tony/Downloads/JavaJava.g:506:5: ( conditionalExpression | annotation | elementValueArrayInitializer )
 			int alt98=3;
 			switch ( input.LA(1) ) {
 			case CharacterLiteral:
@@ -9538,7 +9544,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt98) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:500:9: conditionalExpression
+					// /home/tony/Downloads/JavaJava.g:506:9: conditionalExpression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -9552,7 +9558,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:501:9: annotation
+					// /home/tony/Downloads/JavaJava.g:507:9: annotation
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -9566,7 +9572,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /home/tony/Downloads/JavaJava.g:502:9: elementValueArrayInitializer
+					// /home/tony/Downloads/JavaJava.g:508:9: elementValueArrayInitializer
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -9611,7 +9617,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "elementValueArrayInitializer"
-	// /home/tony/Downloads/JavaJava.g:505:1: elementValueArrayInitializer : '{' ( elementValue ( ',' elementValue )* )? ( ',' )? '}' ;
+	// /home/tony/Downloads/JavaJava.g:511:1: elementValueArrayInitializer : '{' ( elementValue ( ',' elementValue )* )? ( ',' )? '}' ;
 	public final JavaJavaParser.elementValueArrayInitializer_return elementValueArrayInitializer() throws RecognitionException {
 		JavaJavaParser.elementValueArrayInitializer_return retval = new JavaJavaParser.elementValueArrayInitializer_return();
 		retval.start = input.LT(1);
@@ -9634,8 +9640,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 77) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:506:5: ( '{' ( elementValue ( ',' elementValue )* )? ( ',' )? '}' )
-			// /home/tony/Downloads/JavaJava.g:506:9: '{' ( elementValue ( ',' elementValue )* )? ( ',' )? '}'
+			// /home/tony/Downloads/JavaJava.g:512:5: ( '{' ( elementValue ( ',' elementValue )* )? ( ',' )? '}' )
+			// /home/tony/Downloads/JavaJava.g:512:9: '{' ( elementValue ( ',' elementValue )* )? ( ',' )? '}'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -9647,7 +9653,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("{");}
-			// /home/tony/Downloads/JavaJava.g:506:22: ( elementValue ( ',' elementValue )* )?
+			// /home/tony/Downloads/JavaJava.g:512:22: ( elementValue ( ',' elementValue )* )?
 			int alt100=2;
 			int LA100_0 = input.LA(1);
 			if ( ((LA100_0 >= CharacterLiteral && LA100_0 <= DecimalLiteral)||LA100_0==FloatingPointLiteral||(LA100_0 >= HexLiteral && LA100_0 <= Identifier)||(LA100_0 >= OctalLiteral && LA100_0 <= StringLiteral)||LA100_0==25||LA100_0==32||(LA100_0 >= 36 && LA100_0 <= 37)||(LA100_0 >= 40 && LA100_0 <= 41)||LA100_0==54||LA100_0==60||LA100_0==62||LA100_0==65||LA100_0==70||LA100_0==73||LA100_0==76||LA100_0==82||LA100_0==84||(LA100_0 >= 86 && LA100_0 <= 87)||LA100_0==93||LA100_0==96||LA100_0==99||LA100_0==103||LA100_0==105||LA100_0==108||LA100_0==113) ) {
@@ -9655,7 +9661,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt100) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:506:23: elementValue ( ',' elementValue )*
+					// /home/tony/Downloads/JavaJava.g:512:23: elementValue ( ',' elementValue )*
 					{
 					pushFollow(FOLLOW_elementValue_in_elementValueArrayInitializer3249);
 					elementValue301=elementValue();
@@ -9663,7 +9669,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, elementValue301.getTree());
 
-					// /home/tony/Downloads/JavaJava.g:506:36: ( ',' elementValue )*
+					// /home/tony/Downloads/JavaJava.g:512:36: ( ',' elementValue )*
 					loop99:
 					while (true) {
 						int alt99=2;
@@ -9678,7 +9684,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt99) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:506:37: ',' elementValue
+							// /home/tony/Downloads/JavaJava.g:512:37: ',' elementValue
 							{
 							char_literal302=(Token)match(input,39,FOLLOW_39_in_elementValueArrayInitializer3252); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -9706,7 +9712,7 @@ public class JavaJavaParser extends Parser {
 
 			}
 
-			// /home/tony/Downloads/JavaJava.g:506:67: ( ',' )?
+			// /home/tony/Downloads/JavaJava.g:512:67: ( ',' )?
 			int alt101=2;
 			int LA101_0 = input.LA(1);
 			if ( (LA101_0==39) ) {
@@ -9714,7 +9720,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt101) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:506:68: ','
+					// /home/tony/Downloads/JavaJava.g:512:68: ','
 					{
 					char_literal304=(Token)match(input,39,FOLLOW_39_in_elementValueArrayInitializer3262); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -9766,7 +9772,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "annotationTypeDeclaration"
-	// /home/tony/Downloads/JavaJava.g:509:1: annotationTypeDeclaration : '@' 'interface' Identifier annotationTypeBody ;
+	// /home/tony/Downloads/JavaJava.g:515:1: annotationTypeDeclaration : '@' 'interface' Identifier annotationTypeBody ;
 	public final JavaJavaParser.annotationTypeDeclaration_return annotationTypeDeclaration() throws RecognitionException {
 		JavaJavaParser.annotationTypeDeclaration_return retval = new JavaJavaParser.annotationTypeDeclaration_return();
 		retval.start = input.LT(1);
@@ -9786,8 +9792,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 78) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:510:5: ( '@' 'interface' Identifier annotationTypeBody )
-			// /home/tony/Downloads/JavaJava.g:510:9: '@' 'interface' Identifier annotationTypeBody
+			// /home/tony/Downloads/JavaJava.g:516:5: ( '@' 'interface' Identifier annotationTypeBody )
+			// /home/tony/Downloads/JavaJava.g:516:9: '@' 'interface' Identifier annotationTypeBody
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -9849,7 +9855,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "annotationTypeBody"
-	// /home/tony/Downloads/JavaJava.g:513:1: annotationTypeBody : '{' ( annotationTypeElementDeclaration )* '}' ;
+	// /home/tony/Downloads/JavaJava.g:519:1: annotationTypeBody : '{' ( annotationTypeElementDeclaration )* '}' ;
 	public final JavaJavaParser.annotationTypeBody_return annotationTypeBody() throws RecognitionException {
 		JavaJavaParser.annotationTypeBody_return retval = new JavaJavaParser.annotationTypeBody_return();
 		retval.start = input.LT(1);
@@ -9867,8 +9873,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 79) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:514:5: ( '{' ( annotationTypeElementDeclaration )* '}' )
-			// /home/tony/Downloads/JavaJava.g:514:9: '{' ( annotationTypeElementDeclaration )* '}'
+			// /home/tony/Downloads/JavaJava.g:520:5: ( '{' ( annotationTypeElementDeclaration )* '}' )
+			// /home/tony/Downloads/JavaJava.g:520:9: '{' ( annotationTypeElementDeclaration )* '}'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -9880,7 +9886,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("{");}
-			// /home/tony/Downloads/JavaJava.g:514:22: ( annotationTypeElementDeclaration )*
+			// /home/tony/Downloads/JavaJava.g:520:22: ( annotationTypeElementDeclaration )*
 			loop102:
 			while (true) {
 				int alt102=2;
@@ -9891,7 +9897,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt102) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:514:23: annotationTypeElementDeclaration
+					// /home/tony/Downloads/JavaJava.g:520:23: annotationTypeElementDeclaration
 					{
 					pushFollow(FOLLOW_annotationTypeElementDeclaration_in_annotationTypeBody3326);
 					annotationTypeElementDeclaration311=annotationTypeElementDeclaration();
@@ -9946,7 +9952,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "annotationTypeElementDeclaration"
-	// /home/tony/Downloads/JavaJava.g:517:1: annotationTypeElementDeclaration : modifiers annotationTypeElementRest ;
+	// /home/tony/Downloads/JavaJava.g:523:1: annotationTypeElementDeclaration : modifiers annotationTypeElementRest ;
 	public final JavaJavaParser.annotationTypeElementDeclaration_return annotationTypeElementDeclaration() throws RecognitionException {
 		JavaJavaParser.annotationTypeElementDeclaration_return retval = new JavaJavaParser.annotationTypeElementDeclaration_return();
 		retval.start = input.LT(1);
@@ -9961,8 +9967,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 80) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:518:5: ( modifiers annotationTypeElementRest )
-			// /home/tony/Downloads/JavaJava.g:518:9: modifiers annotationTypeElementRest
+			// /home/tony/Downloads/JavaJava.g:524:5: ( modifiers annotationTypeElementRest )
+			// /home/tony/Downloads/JavaJava.g:524:9: modifiers annotationTypeElementRest
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -10011,7 +10017,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "annotationTypeElementRest"
-	// /home/tony/Downloads/JavaJava.g:521:1: annotationTypeElementRest : ( type annotationMethodOrConstantRest ';' | normalClassDeclaration ( ';' )? | normalInterfaceDeclaration ( ';' )? | enumDeclaration ( ';' )? | annotationTypeDeclaration ( ';' )? );
+	// /home/tony/Downloads/JavaJava.g:527:1: annotationTypeElementRest : ( type annotationMethodOrConstantRest ';' | normalClassDeclaration ( ';' )? | normalInterfaceDeclaration ( ';' )? | enumDeclaration ( ';' )? | annotationTypeDeclaration ( ';' )? );
 	public final JavaJavaParser.annotationTypeElementRest_return annotationTypeElementRest() throws RecognitionException {
 		JavaJavaParser.annotationTypeElementRest_return retval = new JavaJavaParser.annotationTypeElementRest_return();
 		retval.start = input.LT(1);
@@ -10040,7 +10046,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 81) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:522:5: ( type annotationMethodOrConstantRest ';' | normalClassDeclaration ( ';' )? | normalInterfaceDeclaration ( ';' )? | enumDeclaration ( ';' )? | annotationTypeDeclaration ( ';' )? )
+			// /home/tony/Downloads/JavaJava.g:528:5: ( type annotationMethodOrConstantRest ';' | normalClassDeclaration ( ';' )? | normalInterfaceDeclaration ( ';' )? | enumDeclaration ( ';' )? | annotationTypeDeclaration ( ';' )? )
 			int alt107=5;
 			switch ( input.LA(1) ) {
 			case Identifier:
@@ -10084,7 +10090,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt107) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:522:9: type annotationMethodOrConstantRest ';'
+					// /home/tony/Downloads/JavaJava.g:528:9: type annotationMethodOrConstantRest ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10110,7 +10116,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:523:9: normalClassDeclaration ( ';' )?
+					// /home/tony/Downloads/JavaJava.g:529:9: normalClassDeclaration ( ';' )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10121,7 +10127,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, normalClassDeclaration318.getTree());
 
-					// /home/tony/Downloads/JavaJava.g:523:32: ( ';' )?
+					// /home/tony/Downloads/JavaJava.g:529:32: ( ';' )?
 					int alt103=2;
 					int LA103_0 = input.LA(1);
 					if ( (LA103_0==48) ) {
@@ -10129,7 +10135,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt103) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:523:32: ';'
+							// /home/tony/Downloads/JavaJava.g:529:32: ';'
 							{
 							char_literal319=(Token)match(input,48,FOLLOW_48_in_annotationTypeElementRest3395); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -10145,7 +10151,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /home/tony/Downloads/JavaJava.g:524:9: normalInterfaceDeclaration ( ';' )?
+					// /home/tony/Downloads/JavaJava.g:530:9: normalInterfaceDeclaration ( ';' )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10156,7 +10162,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, normalInterfaceDeclaration320.getTree());
 
-					// /home/tony/Downloads/JavaJava.g:524:36: ( ';' )?
+					// /home/tony/Downloads/JavaJava.g:530:36: ( ';' )?
 					int alt104=2;
 					int LA104_0 = input.LA(1);
 					if ( (LA104_0==48) ) {
@@ -10164,7 +10170,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt104) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:524:36: ';'
+							// /home/tony/Downloads/JavaJava.g:530:36: ';'
 							{
 							char_literal321=(Token)match(input,48,FOLLOW_48_in_annotationTypeElementRest3408); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -10180,7 +10186,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /home/tony/Downloads/JavaJava.g:525:9: enumDeclaration ( ';' )?
+					// /home/tony/Downloads/JavaJava.g:531:9: enumDeclaration ( ';' )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10191,7 +10197,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, enumDeclaration322.getTree());
 
-					// /home/tony/Downloads/JavaJava.g:525:25: ( ';' )?
+					// /home/tony/Downloads/JavaJava.g:531:25: ( ';' )?
 					int alt105=2;
 					int LA105_0 = input.LA(1);
 					if ( (LA105_0==48) ) {
@@ -10199,7 +10205,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt105) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:525:25: ';'
+							// /home/tony/Downloads/JavaJava.g:531:25: ';'
 							{
 							char_literal323=(Token)match(input,48,FOLLOW_48_in_annotationTypeElementRest3421); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -10215,7 +10221,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /home/tony/Downloads/JavaJava.g:526:9: annotationTypeDeclaration ( ';' )?
+					// /home/tony/Downloads/JavaJava.g:532:9: annotationTypeDeclaration ( ';' )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10226,7 +10232,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, annotationTypeDeclaration324.getTree());
 
-					// /home/tony/Downloads/JavaJava.g:526:35: ( ';' )?
+					// /home/tony/Downloads/JavaJava.g:532:35: ( ';' )?
 					int alt106=2;
 					int LA106_0 = input.LA(1);
 					if ( (LA106_0==48) ) {
@@ -10234,7 +10240,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt106) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:526:35: ';'
+							// /home/tony/Downloads/JavaJava.g:532:35: ';'
 							{
 							char_literal325=(Token)match(input,48,FOLLOW_48_in_annotationTypeElementRest3434); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -10281,7 +10287,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "annotationMethodOrConstantRest"
-	// /home/tony/Downloads/JavaJava.g:529:1: annotationMethodOrConstantRest : ( annotationMethodRest | annotationConstantRest );
+	// /home/tony/Downloads/JavaJava.g:535:1: annotationMethodOrConstantRest : ( annotationMethodRest | annotationConstantRest );
 	public final JavaJavaParser.annotationMethodOrConstantRest_return annotationMethodOrConstantRest() throws RecognitionException {
 		JavaJavaParser.annotationMethodOrConstantRest_return retval = new JavaJavaParser.annotationMethodOrConstantRest_return();
 		retval.start = input.LT(1);
@@ -10296,7 +10302,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 82) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:530:5: ( annotationMethodRest | annotationConstantRest )
+			// /home/tony/Downloads/JavaJava.g:536:5: ( annotationMethodRest | annotationConstantRest )
 			int alt108=2;
 			int LA108_0 = input.LA(1);
 			if ( (LA108_0==Identifier) ) {
@@ -10332,7 +10338,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt108) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:530:9: annotationMethodRest
+					// /home/tony/Downloads/JavaJava.g:536:9: annotationMethodRest
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10346,7 +10352,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:531:9: annotationConstantRest
+					// /home/tony/Downloads/JavaJava.g:537:9: annotationConstantRest
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10391,7 +10397,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "annotationMethodRest"
-	// /home/tony/Downloads/JavaJava.g:534:1: annotationMethodRest : Identifier '(' ')' ( defaultValue )? ;
+	// /home/tony/Downloads/JavaJava.g:540:1: annotationMethodRest : Identifier '(' ')' ( defaultValue )? ;
 	public final JavaJavaParser.annotationMethodRest_return annotationMethodRest() throws RecognitionException {
 		JavaJavaParser.annotationMethodRest_return retval = new JavaJavaParser.annotationMethodRest_return();
 		retval.start = input.LT(1);
@@ -10411,8 +10417,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 83) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:535:5: ( Identifier '(' ')' ( defaultValue )? )
-			// /home/tony/Downloads/JavaJava.g:535:9: Identifier '(' ')' ( defaultValue )?
+			// /home/tony/Downloads/JavaJava.g:541:5: ( Identifier '(' ')' ( defaultValue )? )
+			// /home/tony/Downloads/JavaJava.g:541:9: Identifier '(' ')' ( defaultValue )?
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -10438,7 +10444,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s(")");}
-			// /home/tony/Downloads/JavaJava.g:535:73: ( defaultValue )?
+			// /home/tony/Downloads/JavaJava.g:541:73: ( defaultValue )?
 			int alt109=2;
 			int LA109_0 = input.LA(1);
 			if ( (LA109_0==68) ) {
@@ -10446,7 +10452,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt109) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:535:73: defaultValue
+					// /home/tony/Downloads/JavaJava.g:541:73: defaultValue
 					{
 					pushFollow(FOLLOW_defaultValue_in_annotationMethodRest3504);
 					defaultValue331=defaultValue();
@@ -10491,7 +10497,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "annotationConstantRest"
-	// /home/tony/Downloads/JavaJava.g:538:1: annotationConstantRest : variableDeclarators ;
+	// /home/tony/Downloads/JavaJava.g:544:1: annotationConstantRest : variableDeclarators ;
 	public final JavaJavaParser.annotationConstantRest_return annotationConstantRest() throws RecognitionException {
 		JavaJavaParser.annotationConstantRest_return retval = new JavaJavaParser.annotationConstantRest_return();
 		retval.start = input.LT(1);
@@ -10505,8 +10511,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 84) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:539:5: ( variableDeclarators )
-			// /home/tony/Downloads/JavaJava.g:539:9: variableDeclarators
+			// /home/tony/Downloads/JavaJava.g:545:5: ( variableDeclarators )
+			// /home/tony/Downloads/JavaJava.g:545:9: variableDeclarators
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -10549,7 +10555,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "defaultValue"
-	// /home/tony/Downloads/JavaJava.g:542:1: defaultValue : 'default' elementValue ;
+	// /home/tony/Downloads/JavaJava.g:548:1: defaultValue : 'default' elementValue ;
 	public final JavaJavaParser.defaultValue_return defaultValue() throws RecognitionException {
 		JavaJavaParser.defaultValue_return retval = new JavaJavaParser.defaultValue_return();
 		retval.start = input.LT(1);
@@ -10565,8 +10571,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 85) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:543:5: ( 'default' elementValue )
-			// /home/tony/Downloads/JavaJava.g:543:9: 'default' elementValue
+			// /home/tony/Downloads/JavaJava.g:549:5: ( 'default' elementValue )
+			// /home/tony/Downloads/JavaJava.g:549:9: 'default' elementValue
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -10616,7 +10622,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "block"
-	// /home/tony/Downloads/JavaJava.g:548:1: block : '{' ( blockStatement )* '}' ;
+	// /home/tony/Downloads/JavaJava.g:554:1: block : '{' ( blockStatement )* '}' ;
 	public final JavaJavaParser.block_return block() throws RecognitionException {
 		JavaJavaParser.block_return retval = new JavaJavaParser.block_return();
 		retval.start = input.LT(1);
@@ -10634,8 +10640,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 86) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:549:5: ( '{' ( blockStatement )* '}' )
-			// /home/tony/Downloads/JavaJava.g:549:9: '{' ( blockStatement )* '}'
+			// /home/tony/Downloads/JavaJava.g:555:5: ( '{' ( blockStatement )* '}' )
+			// /home/tony/Downloads/JavaJava.g:555:9: '{' ( blockStatement )* '}'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -10647,7 +10653,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("{");}
-			// /home/tony/Downloads/JavaJava.g:549:23: ( blockStatement )*
+			// /home/tony/Downloads/JavaJava.g:555:23: ( blockStatement )*
 			loop110:
 			while (true) {
 				int alt110=2;
@@ -10658,7 +10664,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt110) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:549:23: blockStatement
+					// /home/tony/Downloads/JavaJava.g:555:23: blockStatement
 					{
 					pushFollow(FOLLOW_blockStatement_in_block3580);
 					blockStatement336=blockStatement();
@@ -10713,7 +10719,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "blockStatement"
-	// /home/tony/Downloads/JavaJava.g:552:1: blockStatement : ( localVariableDeclarationStatement | classOrInterfaceDeclaration | statement );
+	// /home/tony/Downloads/JavaJava.g:558:1: blockStatement : ( localVariableDeclarationStatement | classOrInterfaceDeclaration | statement );
 	public final JavaJavaParser.blockStatement_return blockStatement() throws RecognitionException {
 		JavaJavaParser.blockStatement_return retval = new JavaJavaParser.blockStatement_return();
 		retval.start = input.LT(1);
@@ -10729,7 +10735,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 87) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:553:5: ( localVariableDeclarationStatement | classOrInterfaceDeclaration | statement )
+			// /home/tony/Downloads/JavaJava.g:559:5: ( localVariableDeclarationStatement | classOrInterfaceDeclaration | statement )
 			int alt111=3;
 			switch ( input.LA(1) ) {
 			case 74:
@@ -10949,7 +10955,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt111) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:553:10: localVariableDeclarationStatement
+					// /home/tony/Downloads/JavaJava.g:559:10: localVariableDeclarationStatement
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10963,7 +10969,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:554:9: classOrInterfaceDeclaration
+					// /home/tony/Downloads/JavaJava.g:560:9: classOrInterfaceDeclaration
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10977,7 +10983,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /home/tony/Downloads/JavaJava.g:555:8: statement
+					// /home/tony/Downloads/JavaJava.g:561:8: statement
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11022,7 +11028,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "localVariableDeclarationStatement"
-	// /home/tony/Downloads/JavaJava.g:558:1: localVariableDeclarationStatement : localVariableDeclaration ';' ;
+	// /home/tony/Downloads/JavaJava.g:564:1: localVariableDeclarationStatement : localVariableDeclaration ';' ;
 	public final JavaJavaParser.localVariableDeclarationStatement_return localVariableDeclarationStatement() throws RecognitionException {
 		JavaJavaParser.localVariableDeclarationStatement_return retval = new JavaJavaParser.localVariableDeclarationStatement_return();
 		retval.start = input.LT(1);
@@ -11038,8 +11044,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 88) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:559:5: ( localVariableDeclaration ';' )
-			// /home/tony/Downloads/JavaJava.g:559:10: localVariableDeclaration ';'
+			// /home/tony/Downloads/JavaJava.g:565:5: ( localVariableDeclaration ';' )
+			// /home/tony/Downloads/JavaJava.g:565:10: localVariableDeclaration ';'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -11090,7 +11096,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "localVariableDeclaration"
-	// /home/tony/Downloads/JavaJava.g:562:1: localVariableDeclaration : variableModifiers type variableDeclarators ;
+	// /home/tony/Downloads/JavaJava.g:568:1: localVariableDeclaration : variableModifiers type variableDeclarators ;
 	public final JavaJavaParser.localVariableDeclaration_return localVariableDeclaration() throws RecognitionException {
 		JavaJavaParser.localVariableDeclaration_return retval = new JavaJavaParser.localVariableDeclaration_return();
 		retval.start = input.LT(1);
@@ -11106,8 +11112,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 89) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:563:5: ( variableModifiers type variableDeclarators )
-			// /home/tony/Downloads/JavaJava.g:563:9: variableModifiers type variableDeclarators
+			// /home/tony/Downloads/JavaJava.g:569:5: ( variableModifiers type variableDeclarators )
+			// /home/tony/Downloads/JavaJava.g:569:9: variableModifiers type variableDeclarators
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -11163,7 +11169,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "variableModifiers"
-	// /home/tony/Downloads/JavaJava.g:566:1: variableModifiers : ( variableModifier )* ;
+	// /home/tony/Downloads/JavaJava.g:572:1: variableModifiers : ( variableModifier )* ;
 	public final JavaJavaParser.variableModifiers_return variableModifiers() throws RecognitionException {
 		JavaJavaParser.variableModifiers_return retval = new JavaJavaParser.variableModifiers_return();
 		retval.start = input.LT(1);
@@ -11177,13 +11183,13 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 90) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:567:5: ( ( variableModifier )* )
-			// /home/tony/Downloads/JavaJava.g:567:9: ( variableModifier )*
+			// /home/tony/Downloads/JavaJava.g:573:5: ( ( variableModifier )* )
+			// /home/tony/Downloads/JavaJava.g:573:9: ( variableModifier )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			// /home/tony/Downloads/JavaJava.g:567:9: ( variableModifier )*
+			// /home/tony/Downloads/JavaJava.g:573:9: ( variableModifier )*
 			loop112:
 			while (true) {
 				int alt112=2;
@@ -11194,7 +11200,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt112) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:567:9: variableModifier
+					// /home/tony/Downloads/JavaJava.g:573:9: variableModifier
 					{
 					pushFollow(FOLLOW_variableModifier_in_variableModifiers3706);
 					variableModifier346=variableModifier();
@@ -11242,7 +11248,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "statement"
-	// /home/tony/Downloads/JavaJava.g:570:1: statement : ( block | ASSERT expression ( ':' expression )? ';' | 'if' parExpression statement ( options {k=1; } : 'else' statement )? | 'for' '(' forControl ')' statement | 'while' parExpression statement | 'do' statement 'while' parExpression ';' | 'try' block ( catches 'finally' block | catches | 'finally' block ) | 'switch' parExpression '{' switchBlockStatementGroups '}' | 'synchronized' parExpression block | 'return' ( expression )? ';' | 'throw' expression ';' | 'break' ( Identifier )? ';' | 'continue' ( Identifier )? ';' | ';' | statementExpression ';' | Identifier ':' statement );
+	// /home/tony/Downloads/JavaJava.g:576:1: statement : ( block | ASSERT expression ( ':' expression )? ';' | 'if' parExpression statement ( options {k=1; } : 'else' statement )? | 'for' '(' forControl ')' statement | 'while' parExpression statement | 'do' statement 'while' parExpression ';' | 'try' block ( catches 'finally' block | catches | 'finally' block ) | 'switch' parExpression '{' switchBlockStatementGroups '}' | 'synchronized' parExpression block | 'return' ( expression )? ';' | 'throw' expression ';' | 'break' ( Identifier )? ';' | 'continue' ( Identifier )? ';' | ';' | statementExpression ';' | Identifier ':' statement );
 	public final JavaJavaParser.statement_return statement() throws RecognitionException {
 		JavaJavaParser.statement_return retval = new JavaJavaParser.statement_return();
 		retval.start = input.LT(1);
@@ -11346,7 +11352,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 91) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:571:5: ( block | ASSERT expression ( ':' expression )? ';' | 'if' parExpression statement ( options {k=1; } : 'else' statement )? | 'for' '(' forControl ')' statement | 'while' parExpression statement | 'do' statement 'while' parExpression ';' | 'try' block ( catches 'finally' block | catches | 'finally' block ) | 'switch' parExpression '{' switchBlockStatementGroups '}' | 'synchronized' parExpression block | 'return' ( expression )? ';' | 'throw' expression ';' | 'break' ( Identifier )? ';' | 'continue' ( Identifier )? ';' | ';' | statementExpression ';' | Identifier ':' statement )
+			// /home/tony/Downloads/JavaJava.g:577:5: ( block | ASSERT expression ( ':' expression )? ';' | 'if' parExpression statement ( options {k=1; } : 'else' statement )? | 'for' '(' forControl ')' statement | 'while' parExpression statement | 'do' statement 'while' parExpression ';' | 'try' block ( catches 'finally' block | catches | 'finally' block ) | 'switch' parExpression '{' switchBlockStatementGroups '}' | 'synchronized' parExpression block | 'return' ( expression )? ';' | 'throw' expression ';' | 'break' ( Identifier )? ';' | 'continue' ( Identifier )? ';' | ';' | statementExpression ';' | Identifier ':' statement )
 			int alt119=16;
 			switch ( input.LA(1) ) {
 			case 108:
@@ -11484,7 +11490,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt119) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:571:7: block
+					// /home/tony/Downloads/JavaJava.g:577:7: block
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11498,7 +11504,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:572:9: ASSERT expression ( ':' expression )? ';'
+					// /home/tony/Downloads/JavaJava.g:578:9: ASSERT expression ( ':' expression )? ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11515,7 +11521,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression349.getTree());
 
-					// /home/tony/Downloads/JavaJava.g:572:27: ( ':' expression )?
+					// /home/tony/Downloads/JavaJava.g:578:27: ( ':' expression )?
 					int alt113=2;
 					int LA113_0 = input.LA(1);
 					if ( (LA113_0==47) ) {
@@ -11523,7 +11529,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt113) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:572:28: ':' expression
+							// /home/tony/Downloads/JavaJava.g:578:28: ':' expression
 							{
 							char_literal350=(Token)match(input,47,FOLLOW_47_in_statement3739); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -11551,7 +11557,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /home/tony/Downloads/JavaJava.g:573:9: 'if' parExpression statement ( options {k=1; } : 'else' statement )?
+					// /home/tony/Downloads/JavaJava.g:579:9: 'if' parExpression statement ( options {k=1; } : 'else' statement )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11575,7 +11581,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, statement355.getTree());
 
-					// /home/tony/Downloads/JavaJava.g:573:99: ( options {k=1; } : 'else' statement )?
+					// /home/tony/Downloads/JavaJava.g:579:99: ( options {k=1; } : 'else' statement )?
 					int alt114=2;
 					int LA114_0 = input.LA(1);
 					if ( (LA114_0==71) ) {
@@ -11586,7 +11592,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt114) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:573:115: 'else' statement
+							// /home/tony/Downloads/JavaJava.g:579:115: 'else' statement
 							{
 							string_literal356=(Token)match(input,71,FOLLOW_71_in_statement3770); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -11609,7 +11615,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /home/tony/Downloads/JavaJava.g:574:9: 'for' '(' forControl ')' statement
+					// /home/tony/Downloads/JavaJava.g:580:9: 'for' '(' forControl ')' statement
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11650,7 +11656,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /home/tony/Downloads/JavaJava.g:575:9: 'while' parExpression statement
+					// /home/tony/Downloads/JavaJava.g:581:9: 'while' parExpression statement
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11677,7 +11683,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /home/tony/Downloads/JavaJava.g:576:9: 'do' statement 'while' parExpression ';'
+					// /home/tony/Downloads/JavaJava.g:582:9: 'do' statement 'while' parExpression ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11718,7 +11724,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /home/tony/Downloads/JavaJava.g:577:9: 'try' block ( catches 'finally' block | catches | 'finally' block )
+					// /home/tony/Downloads/JavaJava.g:583:9: 'try' block ( catches 'finally' block | catches | 'finally' block )
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11736,7 +11742,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, block372.getTree());
 
-					// /home/tony/Downloads/JavaJava.g:578:9: ( catches 'finally' block | catches | 'finally' block )
+					// /home/tony/Downloads/JavaJava.g:584:9: ( catches 'finally' block | catches | 'finally' block )
 					int alt115=3;
 					int LA115_0 = input.LA(1);
 					if ( (LA115_0==64) ) {
@@ -11775,7 +11781,7 @@ public class JavaJavaParser extends Parser {
 
 					switch (alt115) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:578:11: catches 'finally' block
+							// /home/tony/Downloads/JavaJava.g:584:11: catches 'finally' block
 							{
 							pushFollow(FOLLOW_catches_in_statement3864);
 							catches373=catches();
@@ -11799,7 +11805,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /home/tony/Downloads/JavaJava.g:579:11: catches
+							// /home/tony/Downloads/JavaJava.g:585:11: catches
 							{
 							pushFollow(FOLLOW_catches_in_statement3881);
 							catches376=catches();
@@ -11810,7 +11816,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 3 :
-							// /home/tony/Downloads/JavaJava.g:580:13: 'finally' block
+							// /home/tony/Downloads/JavaJava.g:586:13: 'finally' block
 							{
 							string_literal377=(Token)match(input,75,FOLLOW_75_in_statement3895); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -11833,7 +11839,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /home/tony/Downloads/JavaJava.g:582:9: 'switch' parExpression '{' switchBlockStatementGroups '}'
+					// /home/tony/Downloads/JavaJava.g:588:9: 'switch' parExpression '{' switchBlockStatementGroups '}'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11872,7 +11878,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 9 :
-					// /home/tony/Downloads/JavaJava.g:583:9: 'synchronized' parExpression block
+					// /home/tony/Downloads/JavaJava.g:589:9: 'synchronized' parExpression block
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11899,7 +11905,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 10 :
-					// /home/tony/Downloads/JavaJava.g:584:9: 'return' ( expression )? ';'
+					// /home/tony/Downloads/JavaJava.g:590:9: 'return' ( expression )? ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11911,7 +11917,7 @@ public class JavaJavaParser extends Parser {
 					}
 
 					if ( state.backtracking==0 ) {keywordCount++;JavaMetrics.uniqueKeywords.add("return");}
-					// /home/tony/Downloads/JavaJava.g:584:77: ( expression )?
+					// /home/tony/Downloads/JavaJava.g:590:77: ( expression )?
 					int alt116=2;
 					int LA116_0 = input.LA(1);
 					if ( ((LA116_0 >= CharacterLiteral && LA116_0 <= DecimalLiteral)||LA116_0==FloatingPointLiteral||(LA116_0 >= HexLiteral && LA116_0 <= Identifier)||(LA116_0 >= OctalLiteral && LA116_0 <= StringLiteral)||LA116_0==25||LA116_0==32||(LA116_0 >= 36 && LA116_0 <= 37)||(LA116_0 >= 40 && LA116_0 <= 41)||LA116_0==60||LA116_0==62||LA116_0==65||LA116_0==70||LA116_0==73||LA116_0==76||LA116_0==82||LA116_0==84||(LA116_0 >= 86 && LA116_0 <= 87)||LA116_0==93||LA116_0==96||LA116_0==99||LA116_0==103||LA116_0==105||LA116_0==113) ) {
@@ -11919,7 +11925,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt116) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:584:77: expression
+							// /home/tony/Downloads/JavaJava.g:590:77: expression
 							{
 							pushFollow(FOLLOW_expression_in_statement3957);
 							expression388=expression();
@@ -11942,7 +11948,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 11 :
-					// /home/tony/Downloads/JavaJava.g:585:9: 'throw' expression ';'
+					// /home/tony/Downloads/JavaJava.g:591:9: 'throw' expression ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11970,7 +11976,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 12 :
-					// /home/tony/Downloads/JavaJava.g:586:9: 'break' ( Identifier )? ';'
+					// /home/tony/Downloads/JavaJava.g:592:9: 'break' ( Identifier )? ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -11982,7 +11988,7 @@ public class JavaJavaParser extends Parser {
 					}
 
 					if ( state.backtracking==0 ) {keywordCount++;JavaMetrics.uniqueKeywords.add("break"); System.out.println("FOUND BREAK");}
-					// /home/tony/Downloads/JavaJava.g:586:109: ( Identifier )?
+					// /home/tony/Downloads/JavaJava.g:592:109: ( Identifier )?
 					int alt117=2;
 					int LA117_0 = input.LA(1);
 					if ( (LA117_0==Identifier) ) {
@@ -11990,7 +11996,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt117) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:586:109: Identifier
+							// /home/tony/Downloads/JavaJava.g:592:109: Identifier
 							{
 							Identifier394=(Token)match(input,Identifier,FOLLOW_Identifier_in_statement3992); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -12014,7 +12020,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 13 :
-					// /home/tony/Downloads/JavaJava.g:587:9: 'continue' ( Identifier )? ';'
+					// /home/tony/Downloads/JavaJava.g:593:9: 'continue' ( Identifier )? ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -12026,7 +12032,7 @@ public class JavaJavaParser extends Parser {
 					}
 
 					if ( state.backtracking==0 ) {keywordCount++;JavaMetrics.uniqueKeywords.add("continue");}
-					// /home/tony/Downloads/JavaJava.g:587:81: ( Identifier )?
+					// /home/tony/Downloads/JavaJava.g:593:81: ( Identifier )?
 					int alt118=2;
 					int LA118_0 = input.LA(1);
 					if ( (LA118_0==Identifier) ) {
@@ -12034,7 +12040,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt118) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:587:81: Identifier
+							// /home/tony/Downloads/JavaJava.g:593:81: Identifier
 							{
 							Identifier397=(Token)match(input,Identifier,FOLLOW_Identifier_in_statement4012); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -12058,7 +12064,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 14 :
-					// /home/tony/Downloads/JavaJava.g:588:9: ';'
+					// /home/tony/Downloads/JavaJava.g:594:9: ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -12073,7 +12079,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 15 :
-					// /home/tony/Downloads/JavaJava.g:589:9: statementExpression ';'
+					// /home/tony/Downloads/JavaJava.g:595:9: statementExpression ';'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -12094,7 +12100,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 16 :
-					// /home/tony/Downloads/JavaJava.g:590:9: Identifier ':' statement
+					// /home/tony/Downloads/JavaJava.g:596:9: Identifier ':' statement
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -12152,7 +12158,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "catches"
-	// /home/tony/Downloads/JavaJava.g:593:1: catches : catchClause ( catchClause )* ;
+	// /home/tony/Downloads/JavaJava.g:599:1: catches : catchClause ( catchClause )* ;
 	public final JavaJavaParser.catches_return catches() throws RecognitionException {
 		JavaJavaParser.catches_return retval = new JavaJavaParser.catches_return();
 		retval.start = input.LT(1);
@@ -12167,8 +12173,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 92) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:594:5: ( catchClause ( catchClause )* )
-			// /home/tony/Downloads/JavaJava.g:594:9: catchClause ( catchClause )*
+			// /home/tony/Downloads/JavaJava.g:600:5: ( catchClause ( catchClause )* )
+			// /home/tony/Downloads/JavaJava.g:600:9: catchClause ( catchClause )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -12179,7 +12185,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, catchClause405.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:594:21: ( catchClause )*
+			// /home/tony/Downloads/JavaJava.g:600:21: ( catchClause )*
 			loop120:
 			while (true) {
 				int alt120=2;
@@ -12190,7 +12196,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt120) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:594:22: catchClause
+					// /home/tony/Downloads/JavaJava.g:600:22: catchClause
 					{
 					pushFollow(FOLLOW_catchClause_in_catches4088);
 					catchClause406=catchClause();
@@ -12238,7 +12244,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "catchClause"
-	// /home/tony/Downloads/JavaJava.g:597:1: catchClause : 'catch' '(' formalParameter ')' block ;
+	// /home/tony/Downloads/JavaJava.g:603:1: catchClause : 'catch' '(' formalParameter ')' block ;
 	public final JavaJavaParser.catchClause_return catchClause() throws RecognitionException {
 		JavaJavaParser.catchClause_return retval = new JavaJavaParser.catchClause_return();
 		retval.start = input.LT(1);
@@ -12259,8 +12265,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 93) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:598:5: ( 'catch' '(' formalParameter ')' block )
-			// /home/tony/Downloads/JavaJava.g:598:9: 'catch' '(' formalParameter ')' block
+			// /home/tony/Downloads/JavaJava.g:604:5: ( 'catch' '(' formalParameter ')' block )
+			// /home/tony/Downloads/JavaJava.g:604:9: 'catch' '(' formalParameter ')' block
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -12330,7 +12336,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "formalParameter"
-	// /home/tony/Downloads/JavaJava.g:601:1: formalParameter : variableModifiers type variableDeclaratorId ;
+	// /home/tony/Downloads/JavaJava.g:607:1: formalParameter : variableModifiers type variableDeclaratorId ;
 	public final JavaJavaParser.formalParameter_return formalParameter() throws RecognitionException {
 		JavaJavaParser.formalParameter_return retval = new JavaJavaParser.formalParameter_return();
 		retval.start = input.LT(1);
@@ -12346,8 +12352,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 94) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:602:5: ( variableModifiers type variableDeclaratorId )
-			// /home/tony/Downloads/JavaJava.g:602:9: variableModifiers type variableDeclaratorId
+			// /home/tony/Downloads/JavaJava.g:608:5: ( variableModifiers type variableDeclaratorId )
+			// /home/tony/Downloads/JavaJava.g:608:9: variableModifiers type variableDeclaratorId
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -12402,7 +12408,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "switchBlockStatementGroups"
-	// /home/tony/Downloads/JavaJava.g:605:1: switchBlockStatementGroups : ( switchBlockStatementGroup )* ;
+	// /home/tony/Downloads/JavaJava.g:611:1: switchBlockStatementGroups : ( switchBlockStatementGroup )* ;
 	public final JavaJavaParser.switchBlockStatementGroups_return switchBlockStatementGroups() throws RecognitionException {
 		JavaJavaParser.switchBlockStatementGroups_return retval = new JavaJavaParser.switchBlockStatementGroups_return();
 		retval.start = input.LT(1);
@@ -12416,13 +12422,13 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 95) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:606:5: ( ( switchBlockStatementGroup )* )
-			// /home/tony/Downloads/JavaJava.g:606:9: ( switchBlockStatementGroup )*
+			// /home/tony/Downloads/JavaJava.g:612:5: ( ( switchBlockStatementGroup )* )
+			// /home/tony/Downloads/JavaJava.g:612:9: ( switchBlockStatementGroup )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			// /home/tony/Downloads/JavaJava.g:606:9: ( switchBlockStatementGroup )*
+			// /home/tony/Downloads/JavaJava.g:612:9: ( switchBlockStatementGroup )*
 			loop121:
 			while (true) {
 				int alt121=2;
@@ -12433,7 +12439,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt121) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:606:10: switchBlockStatementGroup
+					// /home/tony/Downloads/JavaJava.g:612:10: switchBlockStatementGroup
 					{
 					pushFollow(FOLLOW_switchBlockStatementGroup_in_switchBlockStatementGroups4177);
 					switchBlockStatementGroup415=switchBlockStatementGroup();
@@ -12481,7 +12487,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "switchBlockStatementGroup"
-	// /home/tony/Downloads/JavaJava.g:613:1: switchBlockStatementGroup : ( switchLabel )+ ( blockStatement )* ;
+	// /home/tony/Downloads/JavaJava.g:619:1: switchBlockStatementGroup : ( switchLabel )+ ( blockStatement )* ;
 	public final JavaJavaParser.switchBlockStatementGroup_return switchBlockStatementGroup() throws RecognitionException {
 		JavaJavaParser.switchBlockStatementGroup_return retval = new JavaJavaParser.switchBlockStatementGroup_return();
 		retval.start = input.LT(1);
@@ -12496,13 +12502,13 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 96) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:614:5: ( ( switchLabel )+ ( blockStatement )* )
-			// /home/tony/Downloads/JavaJava.g:614:9: ( switchLabel )+ ( blockStatement )*
+			// /home/tony/Downloads/JavaJava.g:620:5: ( ( switchLabel )+ ( blockStatement )* )
+			// /home/tony/Downloads/JavaJava.g:620:9: ( switchLabel )+ ( blockStatement )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			// /home/tony/Downloads/JavaJava.g:614:9: ( switchLabel )+
+			// /home/tony/Downloads/JavaJava.g:620:9: ( switchLabel )+
 			int cnt122=0;
 			loop122:
 			while (true) {
@@ -12525,7 +12531,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt122) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:614:9: switchLabel
+					// /home/tony/Downloads/JavaJava.g:620:9: switchLabel
 					{
 					pushFollow(FOLLOW_switchLabel_in_switchBlockStatementGroup4204);
 					switchLabel416=switchLabel();
@@ -12545,7 +12551,7 @@ public class JavaJavaParser extends Parser {
 				cnt122++;
 			}
 
-			// /home/tony/Downloads/JavaJava.g:614:22: ( blockStatement )*
+			// /home/tony/Downloads/JavaJava.g:620:22: ( blockStatement )*
 			loop123:
 			while (true) {
 				int alt123=2;
@@ -12556,7 +12562,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt123) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:614:22: blockStatement
+					// /home/tony/Downloads/JavaJava.g:620:22: blockStatement
 					{
 					pushFollow(FOLLOW_blockStatement_in_switchBlockStatementGroup4207);
 					blockStatement417=blockStatement();
@@ -12604,7 +12610,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "switchLabel"
-	// /home/tony/Downloads/JavaJava.g:617:1: switchLabel : ( 'case' constantExpression ':' | 'case' enumConstantName ':' | 'default' ':' );
+	// /home/tony/Downloads/JavaJava.g:623:1: switchLabel : ( 'case' constantExpression ':' | 'case' enumConstantName ':' | 'default' ':' );
 	public final JavaJavaParser.switchLabel_return switchLabel() throws RecognitionException {
 		JavaJavaParser.switchLabel_return retval = new JavaJavaParser.switchLabel_return();
 		retval.start = input.LT(1);
@@ -12631,7 +12637,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 97) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:618:5: ( 'case' constantExpression ':' | 'case' enumConstantName ':' | 'default' ':' )
+			// /home/tony/Downloads/JavaJava.g:624:5: ( 'case' constantExpression ':' | 'case' enumConstantName ':' | 'default' ':' )
 			int alt124=3;
 			int LA124_0 = input.LA(1);
 			if ( (LA124_0==63) ) {
@@ -12714,7 +12720,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt124) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:618:9: 'case' constantExpression ':'
+					// /home/tony/Downloads/JavaJava.g:624:9: 'case' constantExpression ':'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -12741,7 +12747,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:619:9: 'case' enumConstantName ':'
+					// /home/tony/Downloads/JavaJava.g:625:9: 'case' enumConstantName ':'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -12768,7 +12774,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /home/tony/Downloads/JavaJava.g:620:9: 'default' ':'
+					// /home/tony/Downloads/JavaJava.g:626:9: 'default' ':'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -12820,7 +12826,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "forControl"
-	// /home/tony/Downloads/JavaJava.g:623:1: forControl options {k=3; } : ( enhancedForControl | ( forInit )? ';' ( expression )? ';' ( forUpdate )? );
+	// /home/tony/Downloads/JavaJava.g:629:1: forControl options {k=3; } : ( enhancedForControl | ( forInit )? ';' ( expression )? ';' ( forUpdate )? );
 	public final JavaJavaParser.forControl_return forControl() throws RecognitionException {
 		JavaJavaParser.forControl_return retval = new JavaJavaParser.forControl_return();
 		retval.start = input.LT(1);
@@ -12841,12 +12847,12 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 98) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:625:5: ( enhancedForControl | ( forInit )? ';' ( expression )? ';' ( forUpdate )? )
+			// /home/tony/Downloads/JavaJava.g:631:5: ( enhancedForControl | ( forInit )? ';' ( expression )? ';' ( forUpdate )? )
 			int alt128=2;
 			alt128 = dfa128.predict(input);
 			switch (alt128) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:625:9: enhancedForControl
+					// /home/tony/Downloads/JavaJava.g:631:9: enhancedForControl
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -12860,12 +12866,12 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:626:9: ( forInit )? ';' ( expression )? ';' ( forUpdate )?
+					// /home/tony/Downloads/JavaJava.g:632:9: ( forInit )? ';' ( expression )? ';' ( forUpdate )?
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					// /home/tony/Downloads/JavaJava.g:626:9: ( forInit )?
+					// /home/tony/Downloads/JavaJava.g:632:9: ( forInit )?
 					int alt125=2;
 					int LA125_0 = input.LA(1);
 					if ( ((LA125_0 >= CharacterLiteral && LA125_0 <= DecimalLiteral)||LA125_0==FloatingPointLiteral||(LA125_0 >= HexLiteral && LA125_0 <= Identifier)||(LA125_0 >= OctalLiteral && LA125_0 <= StringLiteral)||LA125_0==25||LA125_0==32||(LA125_0 >= 36 && LA125_0 <= 37)||(LA125_0 >= 40 && LA125_0 <= 41)||LA125_0==54||LA125_0==60||LA125_0==62||LA125_0==65||LA125_0==70||(LA125_0 >= 73 && LA125_0 <= 74)||LA125_0==76||LA125_0==82||LA125_0==84||(LA125_0 >= 86 && LA125_0 <= 87)||LA125_0==93||LA125_0==96||LA125_0==99||LA125_0==103||LA125_0==105||LA125_0==113) ) {
@@ -12873,7 +12879,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt125) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:626:9: forInit
+							// /home/tony/Downloads/JavaJava.g:632:9: forInit
 							{
 							pushFollow(FOLLOW_forInit_in_forControl4307);
 							forInit427=forInit();
@@ -12892,7 +12898,7 @@ public class JavaJavaParser extends Parser {
 					adaptor.addChild(root_0, char_literal428_tree);
 					}
 
-					// /home/tony/Downloads/JavaJava.g:626:22: ( expression )?
+					// /home/tony/Downloads/JavaJava.g:632:22: ( expression )?
 					int alt126=2;
 					int LA126_0 = input.LA(1);
 					if ( ((LA126_0 >= CharacterLiteral && LA126_0 <= DecimalLiteral)||LA126_0==FloatingPointLiteral||(LA126_0 >= HexLiteral && LA126_0 <= Identifier)||(LA126_0 >= OctalLiteral && LA126_0 <= StringLiteral)||LA126_0==25||LA126_0==32||(LA126_0 >= 36 && LA126_0 <= 37)||(LA126_0 >= 40 && LA126_0 <= 41)||LA126_0==60||LA126_0==62||LA126_0==65||LA126_0==70||LA126_0==73||LA126_0==76||LA126_0==82||LA126_0==84||(LA126_0 >= 86 && LA126_0 <= 87)||LA126_0==93||LA126_0==96||LA126_0==99||LA126_0==103||LA126_0==105||LA126_0==113) ) {
@@ -12900,7 +12906,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt126) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:626:22: expression
+							// /home/tony/Downloads/JavaJava.g:632:22: expression
 							{
 							pushFollow(FOLLOW_expression_in_forControl4312);
 							expression429=expression();
@@ -12919,7 +12925,7 @@ public class JavaJavaParser extends Parser {
 					adaptor.addChild(root_0, char_literal430_tree);
 					}
 
-					// /home/tony/Downloads/JavaJava.g:626:38: ( forUpdate )?
+					// /home/tony/Downloads/JavaJava.g:632:38: ( forUpdate )?
 					int alt127=2;
 					int LA127_0 = input.LA(1);
 					if ( ((LA127_0 >= CharacterLiteral && LA127_0 <= DecimalLiteral)||LA127_0==FloatingPointLiteral||(LA127_0 >= HexLiteral && LA127_0 <= Identifier)||(LA127_0 >= OctalLiteral && LA127_0 <= StringLiteral)||LA127_0==25||LA127_0==32||(LA127_0 >= 36 && LA127_0 <= 37)||(LA127_0 >= 40 && LA127_0 <= 41)||LA127_0==60||LA127_0==62||LA127_0==65||LA127_0==70||LA127_0==73||LA127_0==76||LA127_0==82||LA127_0==84||(LA127_0 >= 86 && LA127_0 <= 87)||LA127_0==93||LA127_0==96||LA127_0==99||LA127_0==103||LA127_0==105||LA127_0==113) ) {
@@ -12927,7 +12933,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt127) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:626:38: forUpdate
+							// /home/tony/Downloads/JavaJava.g:632:38: forUpdate
 							{
 							pushFollow(FOLLOW_forUpdate_in_forControl4317);
 							forUpdate431=forUpdate();
@@ -12974,7 +12980,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "forInit"
-	// /home/tony/Downloads/JavaJava.g:629:1: forInit : ( localVariableDeclaration | expressionList );
+	// /home/tony/Downloads/JavaJava.g:635:1: forInit : ( localVariableDeclaration | expressionList );
 	public final JavaJavaParser.forInit_return forInit() throws RecognitionException {
 		JavaJavaParser.forInit_return retval = new JavaJavaParser.forInit_return();
 		retval.start = input.LT(1);
@@ -12989,7 +12995,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 99) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:630:5: ( localVariableDeclaration | expressionList )
+			// /home/tony/Downloads/JavaJava.g:636:5: ( localVariableDeclaration | expressionList )
 			int alt129=2;
 			switch ( input.LA(1) ) {
 			case 54:
@@ -13138,7 +13144,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt129) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:630:9: localVariableDeclaration
+					// /home/tony/Downloads/JavaJava.g:636:9: localVariableDeclaration
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -13152,7 +13158,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:631:9: expressionList
+					// /home/tony/Downloads/JavaJava.g:637:9: expressionList
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -13197,7 +13203,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "enhancedForControl"
-	// /home/tony/Downloads/JavaJava.g:634:1: enhancedForControl : variableModifiers type Identifier ':' expression ;
+	// /home/tony/Downloads/JavaJava.g:640:1: enhancedForControl : variableModifiers type Identifier ':' expression ;
 	public final JavaJavaParser.enhancedForControl_return enhancedForControl() throws RecognitionException {
 		JavaJavaParser.enhancedForControl_return retval = new JavaJavaParser.enhancedForControl_return();
 		retval.start = input.LT(1);
@@ -13217,8 +13223,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 100) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:635:5: ( variableModifiers type Identifier ':' expression )
-			// /home/tony/Downloads/JavaJava.g:635:9: variableModifiers type Identifier ':' expression
+			// /home/tony/Downloads/JavaJava.g:641:5: ( variableModifiers type Identifier ':' expression )
+			// /home/tony/Downloads/JavaJava.g:641:9: variableModifiers type Identifier ':' expression
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -13286,7 +13292,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "forUpdate"
-	// /home/tony/Downloads/JavaJava.g:638:1: forUpdate : expressionList ;
+	// /home/tony/Downloads/JavaJava.g:644:1: forUpdate : expressionList ;
 	public final JavaJavaParser.forUpdate_return forUpdate() throws RecognitionException {
 		JavaJavaParser.forUpdate_return retval = new JavaJavaParser.forUpdate_return();
 		retval.start = input.LT(1);
@@ -13300,8 +13306,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 101) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:639:5: ( expressionList )
-			// /home/tony/Downloads/JavaJava.g:639:9: expressionList
+			// /home/tony/Downloads/JavaJava.g:645:5: ( expressionList )
+			// /home/tony/Downloads/JavaJava.g:645:9: expressionList
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -13344,7 +13350,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "parExpression"
-	// /home/tony/Downloads/JavaJava.g:644:1: parExpression : '(' expression ')' ;
+	// /home/tony/Downloads/JavaJava.g:650:1: parExpression : '(' expression ')' ;
 	public final JavaJavaParser.parExpression_return parExpression() throws RecognitionException {
 		JavaJavaParser.parExpression_return retval = new JavaJavaParser.parExpression_return();
 		retval.start = input.LT(1);
@@ -13362,8 +13368,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 102) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:645:5: ( '(' expression ')' )
-			// /home/tony/Downloads/JavaJava.g:645:9: '(' expression ')'
+			// /home/tony/Downloads/JavaJava.g:651:5: ( '(' expression ')' )
+			// /home/tony/Downloads/JavaJava.g:651:9: '(' expression ')'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -13420,7 +13426,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "expressionList"
-	// /home/tony/Downloads/JavaJava.g:648:1: expressionList : expression ( ',' expression )* ;
+	// /home/tony/Downloads/JavaJava.g:654:1: expressionList : expression ( ',' expression )* ;
 	public final JavaJavaParser.expressionList_return expressionList() throws RecognitionException {
 		JavaJavaParser.expressionList_return retval = new JavaJavaParser.expressionList_return();
 		retval.start = input.LT(1);
@@ -13437,8 +13443,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 103) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:649:5: ( expression ( ',' expression )* )
-			// /home/tony/Downloads/JavaJava.g:649:9: expression ( ',' expression )*
+			// /home/tony/Downloads/JavaJava.g:655:5: ( expression ( ',' expression )* )
+			// /home/tony/Downloads/JavaJava.g:655:9: expression ( ',' expression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -13449,7 +13455,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, expression443.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:649:20: ( ',' expression )*
+			// /home/tony/Downloads/JavaJava.g:655:20: ( ',' expression )*
 			loop130:
 			while (true) {
 				int alt130=2;
@@ -13460,7 +13466,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt130) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:649:21: ',' expression
+					// /home/tony/Downloads/JavaJava.g:655:21: ',' expression
 					{
 					char_literal444=(Token)match(input,39,FOLLOW_39_in_expressionList4454); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -13515,7 +13521,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "statementExpression"
-	// /home/tony/Downloads/JavaJava.g:652:1: statementExpression : expression ;
+	// /home/tony/Downloads/JavaJava.g:658:1: statementExpression : expression ;
 	public final JavaJavaParser.statementExpression_return statementExpression() throws RecognitionException {
 		JavaJavaParser.statementExpression_return retval = new JavaJavaParser.statementExpression_return();
 		retval.start = input.LT(1);
@@ -13529,8 +13535,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 104) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:653:5: ( expression )
-			// /home/tony/Downloads/JavaJava.g:653:9: expression
+			// /home/tony/Downloads/JavaJava.g:659:5: ( expression )
+			// /home/tony/Downloads/JavaJava.g:659:9: expression
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -13573,7 +13579,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "constantExpression"
-	// /home/tony/Downloads/JavaJava.g:656:1: constantExpression : expression ;
+	// /home/tony/Downloads/JavaJava.g:662:1: constantExpression : expression ;
 	public final JavaJavaParser.constantExpression_return constantExpression() throws RecognitionException {
 		JavaJavaParser.constantExpression_return retval = new JavaJavaParser.constantExpression_return();
 		retval.start = input.LT(1);
@@ -13587,8 +13593,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 105) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:657:5: ( expression )
-			// /home/tony/Downloads/JavaJava.g:657:9: expression
+			// /home/tony/Downloads/JavaJava.g:663:5: ( expression )
+			// /home/tony/Downloads/JavaJava.g:663:9: expression
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -13631,7 +13637,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "expression"
-	// /home/tony/Downloads/JavaJava.g:660:1: expression : conditionalExpression ( assignmentOperator expression )? ;
+	// /home/tony/Downloads/JavaJava.g:666:1: expression : conditionalExpression ( assignmentOperator expression )? ;
 	public final JavaJavaParser.expression_return expression() throws RecognitionException {
 		JavaJavaParser.expression_return retval = new JavaJavaParser.expression_return();
 		retval.start = input.LT(1);
@@ -13647,8 +13653,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 106) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:661:5: ( conditionalExpression ( assignmentOperator expression )? )
-			// /home/tony/Downloads/JavaJava.g:661:9: conditionalExpression ( assignmentOperator expression )?
+			// /home/tony/Downloads/JavaJava.g:667:5: ( conditionalExpression ( assignmentOperator expression )? )
+			// /home/tony/Downloads/JavaJava.g:667:9: conditionalExpression ( assignmentOperator expression )?
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -13659,7 +13665,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, conditionalExpression448.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:661:31: ( assignmentOperator expression )?
+			// /home/tony/Downloads/JavaJava.g:667:31: ( assignmentOperator expression )?
 			int alt131=2;
 			switch ( input.LA(1) ) {
 				case 50:
@@ -13753,7 +13759,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt131) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:661:32: assignmentOperator expression
+					// /home/tony/Downloads/JavaJava.g:667:32: assignmentOperator expression
 					{
 					pushFollow(FOLLOW_assignmentOperator_in_expression4528);
 					assignmentOperator449=assignmentOperator();
@@ -13804,7 +13810,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "assignmentOperator"
-	// /home/tony/Downloads/JavaJava.g:664:1: assignmentOperator : ( '=' | '+=' | '-=' | '*=' | '/=' | '&=' | '|=' | '^=' | '%=' | ( '<' '<' '=' )=>t1= '<' t2= '<' t3= '=' {...}?| ( '>' '>' '>' '=' )=>t1= '>' t2= '>' t3= '>' t4= '=' {...}?| ( '>' '>' '=' )=>t1= '>' t2= '>' t3= '=' {...}?);
+	// /home/tony/Downloads/JavaJava.g:670:1: assignmentOperator : ( '=' | '+=' | '-=' | '*=' | '/=' | '&=' | '|=' | '^=' | '%=' | ( '<' '<' '=' )=>t1= '<' t2= '<' t3= '=' {...}?| ( '>' '>' '>' '=' )=>t1= '>' t2= '>' t3= '>' t4= '=' {...}?| ( '>' '>' '=' )=>t1= '>' t2= '>' t3= '=' {...}?);
 	public final JavaJavaParser.assignmentOperator_return assignmentOperator() throws RecognitionException {
 		JavaJavaParser.assignmentOperator_return retval = new JavaJavaParser.assignmentOperator_return();
 		retval.start = input.LT(1);
@@ -13843,7 +13849,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 107) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:665:5: ( '=' | '+=' | '-=' | '*=' | '/=' | '&=' | '|=' | '^=' | '%=' | ( '<' '<' '=' )=>t1= '<' t2= '<' t3= '=' {...}?| ( '>' '>' '>' '=' )=>t1= '>' t2= '>' t3= '>' t4= '=' {...}?| ( '>' '>' '=' )=>t1= '>' t2= '>' t3= '=' {...}?)
+			// /home/tony/Downloads/JavaJava.g:671:5: ( '=' | '+=' | '-=' | '*=' | '/=' | '&=' | '|=' | '^=' | '%=' | ( '<' '<' '=' )=>t1= '<' t2= '<' t3= '=' {...}?| ( '>' '>' '>' '=' )=>t1= '>' t2= '>' t3= '>' t4= '=' {...}?| ( '>' '>' '=' )=>t1= '>' t2= '>' t3= '=' {...}?)
 			int alt132=12;
 			int LA132_0 = input.LA(1);
 			if ( (LA132_0==50) ) {
@@ -13913,7 +13919,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt132) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:665:9: '='
+					// /home/tony/Downloads/JavaJava.g:671:9: '='
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -13928,7 +13934,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:666:9: '+='
+					// /home/tony/Downloads/JavaJava.g:672:9: '+='
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -13942,7 +13948,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /home/tony/Downloads/JavaJava.g:667:9: '-='
+					// /home/tony/Downloads/JavaJava.g:673:9: '-='
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -13956,7 +13962,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /home/tony/Downloads/JavaJava.g:668:9: '*='
+					// /home/tony/Downloads/JavaJava.g:674:9: '*='
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -13970,7 +13976,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /home/tony/Downloads/JavaJava.g:669:9: '/='
+					// /home/tony/Downloads/JavaJava.g:675:9: '/='
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -13984,7 +13990,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /home/tony/Downloads/JavaJava.g:670:9: '&='
+					// /home/tony/Downloads/JavaJava.g:676:9: '&='
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -13998,7 +14004,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /home/tony/Downloads/JavaJava.g:671:9: '|='
+					// /home/tony/Downloads/JavaJava.g:677:9: '|='
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -14012,7 +14018,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /home/tony/Downloads/JavaJava.g:672:9: '^='
+					// /home/tony/Downloads/JavaJava.g:678:9: '^='
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -14026,7 +14032,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 9 :
-					// /home/tony/Downloads/JavaJava.g:673:9: '%='
+					// /home/tony/Downloads/JavaJava.g:679:9: '%='
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -14040,7 +14046,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 10 :
-					// /home/tony/Downloads/JavaJava.g:674:9: ( '<' '<' '=' )=>t1= '<' t2= '<' t3= '=' {...}?
+					// /home/tony/Downloads/JavaJava.g:680:9: ( '<' '<' '=' )=>t1= '<' t2= '<' t3= '=' {...}?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -14073,7 +14079,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 11 :
-					// /home/tony/Downloads/JavaJava.g:679:9: ( '>' '>' '>' '=' )=>t1= '>' t2= '>' t3= '>' t4= '=' {...}?
+					// /home/tony/Downloads/JavaJava.g:685:9: ( '>' '>' '>' '=' )=>t1= '>' t2= '>' t3= '>' t4= '=' {...}?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -14114,7 +14120,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 12 :
-					// /home/tony/Downloads/JavaJava.g:686:9: ( '>' '>' '=' )=>t1= '>' t2= '>' t3= '=' {...}?
+					// /home/tony/Downloads/JavaJava.g:692:9: ( '>' '>' '=' )=>t1= '>' t2= '>' t3= '=' {...}?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -14178,7 +14184,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "conditionalExpression"
-	// /home/tony/Downloads/JavaJava.g:693:1: conditionalExpression : conditionalOrExpression ( '?' expression ':' expression )? ;
+	// /home/tony/Downloads/JavaJava.g:699:1: conditionalExpression : conditionalOrExpression ( '?' expression ':' expression )? ;
 	public final JavaJavaParser.conditionalExpression_return conditionalExpression() throws RecognitionException {
 		JavaJavaParser.conditionalExpression_return retval = new JavaJavaParser.conditionalExpression_return();
 		retval.start = input.LT(1);
@@ -14198,8 +14204,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 108) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:694:5: ( conditionalOrExpression ( '?' expression ':' expression )? )
-			// /home/tony/Downloads/JavaJava.g:694:9: conditionalOrExpression ( '?' expression ':' expression )?
+			// /home/tony/Downloads/JavaJava.g:700:5: ( conditionalOrExpression ( '?' expression ':' expression )? )
+			// /home/tony/Downloads/JavaJava.g:700:9: conditionalOrExpression ( '?' expression ':' expression )?
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -14210,7 +14216,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, conditionalOrExpression460.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:694:33: ( '?' expression ':' expression )?
+			// /home/tony/Downloads/JavaJava.g:700:33: ( '?' expression ':' expression )?
 			int alt133=2;
 			int LA133_0 = input.LA(1);
 			if ( (LA133_0==53) ) {
@@ -14218,7 +14224,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt133) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:694:35: '?' expression ':' expression
+					// /home/tony/Downloads/JavaJava.g:700:35: '?' expression ':' expression
 					{
 					char_literal461=(Token)match(input,53,FOLLOW_53_in_conditionalExpression4784); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -14281,7 +14287,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "conditionalOrExpression"
-	// /home/tony/Downloads/JavaJava.g:697:1: conditionalOrExpression : conditionalAndExpression ( '||' conditionalAndExpression )* ;
+	// /home/tony/Downloads/JavaJava.g:703:1: conditionalOrExpression : conditionalAndExpression ( '||' conditionalAndExpression )* ;
 	public final JavaJavaParser.conditionalOrExpression_return conditionalOrExpression() throws RecognitionException {
 		JavaJavaParser.conditionalOrExpression_return retval = new JavaJavaParser.conditionalOrExpression_return();
 		retval.start = input.LT(1);
@@ -14298,8 +14304,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 109) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:698:5: ( conditionalAndExpression ( '||' conditionalAndExpression )* )
-			// /home/tony/Downloads/JavaJava.g:698:9: conditionalAndExpression ( '||' conditionalAndExpression )*
+			// /home/tony/Downloads/JavaJava.g:704:5: ( conditionalAndExpression ( '||' conditionalAndExpression )* )
+			// /home/tony/Downloads/JavaJava.g:704:9: conditionalAndExpression ( '||' conditionalAndExpression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -14310,7 +14316,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, conditionalAndExpression465.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:698:34: ( '||' conditionalAndExpression )*
+			// /home/tony/Downloads/JavaJava.g:704:34: ( '||' conditionalAndExpression )*
 			loop134:
 			while (true) {
 				int alt134=2;
@@ -14321,7 +14327,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt134) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:698:36: '||' conditionalAndExpression
+					// /home/tony/Downloads/JavaJava.g:704:36: '||' conditionalAndExpression
 					{
 					string_literal466=(Token)match(input,111,FOLLOW_111_in_conditionalOrExpression4816); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -14376,7 +14382,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "conditionalAndExpression"
-	// /home/tony/Downloads/JavaJava.g:701:1: conditionalAndExpression : inclusiveOrExpression ( '&&' inclusiveOrExpression )* ;
+	// /home/tony/Downloads/JavaJava.g:707:1: conditionalAndExpression : inclusiveOrExpression ( '&&' inclusiveOrExpression )* ;
 	public final JavaJavaParser.conditionalAndExpression_return conditionalAndExpression() throws RecognitionException {
 		JavaJavaParser.conditionalAndExpression_return retval = new JavaJavaParser.conditionalAndExpression_return();
 		retval.start = input.LT(1);
@@ -14393,8 +14399,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 110) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:702:5: ( inclusiveOrExpression ( '&&' inclusiveOrExpression )* )
-			// /home/tony/Downloads/JavaJava.g:702:9: inclusiveOrExpression ( '&&' inclusiveOrExpression )*
+			// /home/tony/Downloads/JavaJava.g:708:5: ( inclusiveOrExpression ( '&&' inclusiveOrExpression )* )
+			// /home/tony/Downloads/JavaJava.g:708:9: inclusiveOrExpression ( '&&' inclusiveOrExpression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -14405,7 +14411,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, inclusiveOrExpression468.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:702:31: ( '&&' inclusiveOrExpression )*
+			// /home/tony/Downloads/JavaJava.g:708:31: ( '&&' inclusiveOrExpression )*
 			loop135:
 			while (true) {
 				int alt135=2;
@@ -14416,7 +14422,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt135) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:702:33: '&&' inclusiveOrExpression
+					// /home/tony/Downloads/JavaJava.g:708:33: '&&' inclusiveOrExpression
 					{
 					string_literal469=(Token)match(input,29,FOLLOW_29_in_conditionalAndExpression4846); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -14471,7 +14477,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "inclusiveOrExpression"
-	// /home/tony/Downloads/JavaJava.g:705:1: inclusiveOrExpression : exclusiveOrExpression ( '|' exclusiveOrExpression )* ;
+	// /home/tony/Downloads/JavaJava.g:711:1: inclusiveOrExpression : exclusiveOrExpression ( '|' exclusiveOrExpression )* ;
 	public final JavaJavaParser.inclusiveOrExpression_return inclusiveOrExpression() throws RecognitionException {
 		JavaJavaParser.inclusiveOrExpression_return retval = new JavaJavaParser.inclusiveOrExpression_return();
 		retval.start = input.LT(1);
@@ -14488,8 +14494,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 111) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:706:5: ( exclusiveOrExpression ( '|' exclusiveOrExpression )* )
-			// /home/tony/Downloads/JavaJava.g:706:9: exclusiveOrExpression ( '|' exclusiveOrExpression )*
+			// /home/tony/Downloads/JavaJava.g:712:5: ( exclusiveOrExpression ( '|' exclusiveOrExpression )* )
+			// /home/tony/Downloads/JavaJava.g:712:9: exclusiveOrExpression ( '|' exclusiveOrExpression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -14500,7 +14506,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, exclusiveOrExpression471.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:706:31: ( '|' exclusiveOrExpression )*
+			// /home/tony/Downloads/JavaJava.g:712:31: ( '|' exclusiveOrExpression )*
 			loop136:
 			while (true) {
 				int alt136=2;
@@ -14511,7 +14517,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt136) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:706:33: '|' exclusiveOrExpression
+					// /home/tony/Downloads/JavaJava.g:712:33: '|' exclusiveOrExpression
 					{
 					char_literal472=(Token)match(input,109,FOLLOW_109_in_inclusiveOrExpression4876); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -14566,7 +14572,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "exclusiveOrExpression"
-	// /home/tony/Downloads/JavaJava.g:709:1: exclusiveOrExpression : andExpression ( '^' andExpression )* ;
+	// /home/tony/Downloads/JavaJava.g:715:1: exclusiveOrExpression : andExpression ( '^' andExpression )* ;
 	public final JavaJavaParser.exclusiveOrExpression_return exclusiveOrExpression() throws RecognitionException {
 		JavaJavaParser.exclusiveOrExpression_return retval = new JavaJavaParser.exclusiveOrExpression_return();
 		retval.start = input.LT(1);
@@ -14583,8 +14589,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 112) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:710:5: ( andExpression ( '^' andExpression )* )
-			// /home/tony/Downloads/JavaJava.g:710:9: andExpression ( '^' andExpression )*
+			// /home/tony/Downloads/JavaJava.g:716:5: ( andExpression ( '^' andExpression )* )
+			// /home/tony/Downloads/JavaJava.g:716:9: andExpression ( '^' andExpression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -14595,7 +14601,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, andExpression474.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:710:23: ( '^' andExpression )*
+			// /home/tony/Downloads/JavaJava.g:716:23: ( '^' andExpression )*
 			loop137:
 			while (true) {
 				int alt137=2;
@@ -14606,7 +14612,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt137) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:710:25: '^' andExpression
+					// /home/tony/Downloads/JavaJava.g:716:25: '^' andExpression
 					{
 					char_literal475=(Token)match(input,57,FOLLOW_57_in_exclusiveOrExpression4906); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -14660,7 +14666,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "andExpression"
-	// /home/tony/Downloads/JavaJava.g:713:1: andExpression : equalityExpression ( '&' equalityExpression )* ;
+	// /home/tony/Downloads/JavaJava.g:719:1: andExpression : equalityExpression ( '&' equalityExpression )* ;
 	public final JavaJavaParser.andExpression_return andExpression() throws RecognitionException {
 		JavaJavaParser.andExpression_return retval = new JavaJavaParser.andExpression_return();
 		retval.start = input.LT(1);
@@ -14677,8 +14683,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 113) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:714:5: ( equalityExpression ( '&' equalityExpression )* )
-			// /home/tony/Downloads/JavaJava.g:714:9: equalityExpression ( '&' equalityExpression )*
+			// /home/tony/Downloads/JavaJava.g:720:5: ( equalityExpression ( '&' equalityExpression )* )
+			// /home/tony/Downloads/JavaJava.g:720:9: equalityExpression ( '&' equalityExpression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -14689,7 +14695,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, equalityExpression477.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:714:28: ( '&' equalityExpression )*
+			// /home/tony/Downloads/JavaJava.g:720:28: ( '&' equalityExpression )*
 			loop138:
 			while (true) {
 				int alt138=2;
@@ -14700,7 +14706,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt138) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:714:30: '&' equalityExpression
+					// /home/tony/Downloads/JavaJava.g:720:30: '&' equalityExpression
 					{
 					char_literal478=(Token)match(input,30,FOLLOW_30_in_andExpression4934); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -14755,7 +14761,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "equalityExpression"
-	// /home/tony/Downloads/JavaJava.g:717:1: equalityExpression : instanceOfExpression ( ( '==' | '!=' ) instanceOfExpression )* ;
+	// /home/tony/Downloads/JavaJava.g:723:1: equalityExpression : instanceOfExpression ( ( '==' | '!=' ) instanceOfExpression )* ;
 	public final JavaJavaParser.equalityExpression_return equalityExpression() throws RecognitionException {
 		JavaJavaParser.equalityExpression_return retval = new JavaJavaParser.equalityExpression_return();
 		retval.start = input.LT(1);
@@ -14774,8 +14780,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 114) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:718:5: ( instanceOfExpression ( ( '==' | '!=' ) instanceOfExpression )* )
-			// /home/tony/Downloads/JavaJava.g:718:9: instanceOfExpression ( ( '==' | '!=' ) instanceOfExpression )*
+			// /home/tony/Downloads/JavaJava.g:724:5: ( instanceOfExpression ( ( '==' | '!=' ) instanceOfExpression )* )
+			// /home/tony/Downloads/JavaJava.g:724:9: instanceOfExpression ( ( '==' | '!=' ) instanceOfExpression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -14786,7 +14792,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, instanceOfExpression480.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:718:30: ( ( '==' | '!=' ) instanceOfExpression )*
+			// /home/tony/Downloads/JavaJava.g:724:30: ( ( '==' | '!=' ) instanceOfExpression )*
 			loop140:
 			while (true) {
 				int alt140=2;
@@ -14797,9 +14803,9 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt140) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:718:32: ( '==' | '!=' ) instanceOfExpression
+					// /home/tony/Downloads/JavaJava.g:724:32: ( '==' | '!=' ) instanceOfExpression
 					{
-					// /home/tony/Downloads/JavaJava.g:718:32: ( '==' | '!=' )
+					// /home/tony/Downloads/JavaJava.g:724:32: ( '==' | '!=' )
 					int alt139=2;
 					int LA139_0 = input.LA(1);
 					if ( (LA139_0==51) ) {
@@ -14818,7 +14824,7 @@ public class JavaJavaParser extends Parser {
 
 					switch (alt139) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:718:33: '=='
+							// /home/tony/Downloads/JavaJava.g:724:33: '=='
 							{
 							string_literal481=(Token)match(input,51,FOLLOW_51_in_equalityExpression4965); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -14830,7 +14836,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /home/tony/Downloads/JavaJava.g:718:50: '!='
+							// /home/tony/Downloads/JavaJava.g:724:50: '!='
 							{
 							string_literal482=(Token)match(input,26,FOLLOW_26_in_equalityExpression4970); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -14890,7 +14896,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "instanceOfExpression"
-	// /home/tony/Downloads/JavaJava.g:721:1: instanceOfExpression : relationalExpression ( 'instanceof' type )? ;
+	// /home/tony/Downloads/JavaJava.g:727:1: instanceOfExpression : relationalExpression ( 'instanceof' type )? ;
 	public final JavaJavaParser.instanceOfExpression_return instanceOfExpression() throws RecognitionException {
 		JavaJavaParser.instanceOfExpression_return retval = new JavaJavaParser.instanceOfExpression_return();
 		retval.start = input.LT(1);
@@ -14907,8 +14913,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 115) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:722:5: ( relationalExpression ( 'instanceof' type )? )
-			// /home/tony/Downloads/JavaJava.g:722:9: relationalExpression ( 'instanceof' type )?
+			// /home/tony/Downloads/JavaJava.g:728:5: ( relationalExpression ( 'instanceof' type )? )
+			// /home/tony/Downloads/JavaJava.g:728:9: relationalExpression ( 'instanceof' type )?
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -14919,7 +14925,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, relationalExpression484.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:722:30: ( 'instanceof' type )?
+			// /home/tony/Downloads/JavaJava.g:728:30: ( 'instanceof' type )?
 			int alt141=2;
 			int LA141_0 = input.LA(1);
 			if ( (LA141_0==81) ) {
@@ -14927,7 +14933,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt141) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:722:31: 'instanceof' type
+					// /home/tony/Downloads/JavaJava.g:728:31: 'instanceof' type
 					{
 					string_literal485=(Token)match(input,81,FOLLOW_81_in_instanceOfExpression5000); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -14979,7 +14985,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "relationalExpression"
-	// /home/tony/Downloads/JavaJava.g:725:1: relationalExpression : shiftExpression ( relationalOp shiftExpression )* ;
+	// /home/tony/Downloads/JavaJava.g:731:1: relationalExpression : shiftExpression ( relationalOp shiftExpression )* ;
 	public final JavaJavaParser.relationalExpression_return relationalExpression() throws RecognitionException {
 		JavaJavaParser.relationalExpression_return retval = new JavaJavaParser.relationalExpression_return();
 		retval.start = input.LT(1);
@@ -14995,8 +15001,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 116) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:726:5: ( shiftExpression ( relationalOp shiftExpression )* )
-			// /home/tony/Downloads/JavaJava.g:726:9: shiftExpression ( relationalOp shiftExpression )*
+			// /home/tony/Downloads/JavaJava.g:732:5: ( shiftExpression ( relationalOp shiftExpression )* )
+			// /home/tony/Downloads/JavaJava.g:732:9: shiftExpression ( relationalOp shiftExpression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -15007,7 +15013,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, shiftExpression487.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:726:25: ( relationalOp shiftExpression )*
+			// /home/tony/Downloads/JavaJava.g:732:25: ( relationalOp shiftExpression )*
 			loop142:
 			while (true) {
 				int alt142=2;
@@ -15029,7 +15035,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt142) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:726:27: relationalOp shiftExpression
+					// /home/tony/Downloads/JavaJava.g:732:27: relationalOp shiftExpression
 					{
 					pushFollow(FOLLOW_relationalOp_in_relationalExpression5028);
 					relationalOp488=relationalOp();
@@ -15083,7 +15089,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "relationalOp"
-	// /home/tony/Downloads/JavaJava.g:729:1: relationalOp : ( ( '<' '=' )=>t1= '<' t2= '=' {...}?| ( '>' '=' )=>t1= '>' t2= '=' {...}?| '<' | '>' );
+	// /home/tony/Downloads/JavaJava.g:735:1: relationalOp : ( ( '<' '=' )=>t1= '<' t2= '=' {...}?| ( '>' '=' )=>t1= '>' t2= '=' {...}?| '<' | '>' );
 	public final JavaJavaParser.relationalOp_return relationalOp() throws RecognitionException {
 		JavaJavaParser.relationalOp_return retval = new JavaJavaParser.relationalOp_return();
 		retval.start = input.LT(1);
@@ -15104,7 +15110,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 117) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:730:5: ( ( '<' '=' )=>t1= '<' t2= '=' {...}?| ( '>' '=' )=>t1= '>' t2= '=' {...}?| '<' | '>' )
+			// /home/tony/Downloads/JavaJava.g:736:5: ( ( '<' '=' )=>t1= '<' t2= '=' {...}?| ( '>' '=' )=>t1= '>' t2= '=' {...}?| '<' | '>' )
 			int alt143=4;
 			int LA143_0 = input.LA(1);
 			if ( (LA143_0==49) ) {
@@ -15163,7 +15169,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt143) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:730:9: ( '<' '=' )=>t1= '<' t2= '=' {...}?
+					// /home/tony/Downloads/JavaJava.g:736:9: ( '<' '=' )=>t1= '<' t2= '=' {...}?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -15188,7 +15194,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:733:9: ( '>' '=' )=>t1= '>' t2= '=' {...}?
+					// /home/tony/Downloads/JavaJava.g:739:9: ( '>' '=' )=>t1= '>' t2= '=' {...}?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -15213,7 +15219,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /home/tony/Downloads/JavaJava.g:736:9: '<'
+					// /home/tony/Downloads/JavaJava.g:742:9: '<'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -15228,7 +15234,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /home/tony/Downloads/JavaJava.g:737:9: '>'
+					// /home/tony/Downloads/JavaJava.g:743:9: '>'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -15274,7 +15280,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "shiftExpression"
-	// /home/tony/Downloads/JavaJava.g:740:1: shiftExpression : additiveExpression ( shiftOp additiveExpression )* ;
+	// /home/tony/Downloads/JavaJava.g:746:1: shiftExpression : additiveExpression ( shiftOp additiveExpression )* ;
 	public final JavaJavaParser.shiftExpression_return shiftExpression() throws RecognitionException {
 		JavaJavaParser.shiftExpression_return retval = new JavaJavaParser.shiftExpression_return();
 		retval.start = input.LT(1);
@@ -15290,8 +15296,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 118) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:741:5: ( additiveExpression ( shiftOp additiveExpression )* )
-			// /home/tony/Downloads/JavaJava.g:741:9: additiveExpression ( shiftOp additiveExpression )*
+			// /home/tony/Downloads/JavaJava.g:747:5: ( additiveExpression ( shiftOp additiveExpression )* )
+			// /home/tony/Downloads/JavaJava.g:747:9: additiveExpression ( shiftOp additiveExpression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -15302,7 +15308,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, additiveExpression492.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:741:28: ( shiftOp additiveExpression )*
+			// /home/tony/Downloads/JavaJava.g:747:28: ( shiftOp additiveExpression )*
 			loop144:
 			while (true) {
 				int alt144=2;
@@ -15339,7 +15345,7 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt144) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:741:30: shiftOp additiveExpression
+					// /home/tony/Downloads/JavaJava.g:747:30: shiftOp additiveExpression
 					{
 					pushFollow(FOLLOW_shiftOp_in_shiftExpression5161);
 					shiftOp493=shiftOp();
@@ -15393,7 +15399,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "shiftOp"
-	// /home/tony/Downloads/JavaJava.g:744:1: shiftOp : ( ( '<' '<' )=>t1= '<' t2= '<' {...}?| ( '>' '>' '>' )=>t1= '>' t2= '>' t3= '>' {...}?| ( '>' '>' )=>t1= '>' t2= '>' {...}?);
+	// /home/tony/Downloads/JavaJava.g:750:1: shiftOp : ( ( '<' '<' )=>t1= '<' t2= '<' {...}?| ( '>' '>' '>' )=>t1= '>' t2= '>' t3= '>' {...}?| ( '>' '>' )=>t1= '>' t2= '>' {...}?);
 	public final JavaJavaParser.shiftOp_return shiftOp() throws RecognitionException {
 		JavaJavaParser.shiftOp_return retval = new JavaJavaParser.shiftOp_return();
 		retval.start = input.LT(1);
@@ -15412,7 +15418,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 119) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:745:5: ( ( '<' '<' )=>t1= '<' t2= '<' {...}?| ( '>' '>' '>' )=>t1= '>' t2= '>' t3= '>' {...}?| ( '>' '>' )=>t1= '>' t2= '>' {...}?)
+			// /home/tony/Downloads/JavaJava.g:751:5: ( ( '<' '<' )=>t1= '<' t2= '<' {...}?| ( '>' '>' '>' )=>t1= '>' t2= '>' t3= '>' {...}?| ( '>' '>' )=>t1= '>' t2= '>' {...}?)
 			int alt145=3;
 			int LA145_0 = input.LA(1);
 			if ( (LA145_0==49) && (synpred215_JavaJava())) {
@@ -15539,7 +15545,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt145) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:745:9: ( '<' '<' )=>t1= '<' t2= '<' {...}?
+					// /home/tony/Downloads/JavaJava.g:751:9: ( '<' '<' )=>t1= '<' t2= '<' {...}?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -15564,7 +15570,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:748:9: ( '>' '>' '>' )=>t1= '>' t2= '>' t3= '>' {...}?
+					// /home/tony/Downloads/JavaJava.g:754:9: ( '>' '>' '>' )=>t1= '>' t2= '>' t3= '>' {...}?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -15597,7 +15603,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /home/tony/Downloads/JavaJava.g:753:9: ( '>' '>' )=>t1= '>' t2= '>' {...}?
+					// /home/tony/Downloads/JavaJava.g:759:9: ( '>' '>' )=>t1= '>' t2= '>' {...}?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -15653,7 +15659,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "additiveExpression"
-	// /home/tony/Downloads/JavaJava.g:759:1: additiveExpression : multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )* ;
+	// /home/tony/Downloads/JavaJava.g:765:1: additiveExpression : multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )* ;
 	public final JavaJavaParser.additiveExpression_return additiveExpression() throws RecognitionException {
 		JavaJavaParser.additiveExpression_return retval = new JavaJavaParser.additiveExpression_return();
 		retval.start = input.LT(1);
@@ -15672,8 +15678,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 120) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:760:5: ( multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )* )
-			// /home/tony/Downloads/JavaJava.g:760:9: multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )*
+			// /home/tony/Downloads/JavaJava.g:766:5: ( multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )* )
+			// /home/tony/Downloads/JavaJava.g:766:9: multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -15684,7 +15690,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, multiplicativeExpression495.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:760:34: ( ( '+' | '-' ) multiplicativeExpression )*
+			// /home/tony/Downloads/JavaJava.g:766:34: ( ( '+' | '-' ) multiplicativeExpression )*
 			loop147:
 			while (true) {
 				int alt147=2;
@@ -15695,9 +15701,9 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt147) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:760:36: ( '+' | '-' ) multiplicativeExpression
+					// /home/tony/Downloads/JavaJava.g:766:36: ( '+' | '-' ) multiplicativeExpression
 					{
-					// /home/tony/Downloads/JavaJava.g:760:36: ( '+' | '-' )
+					// /home/tony/Downloads/JavaJava.g:766:36: ( '+' | '-' )
 					int alt146=2;
 					int LA146_0 = input.LA(1);
 					if ( (LA146_0==36) ) {
@@ -15716,7 +15722,7 @@ public class JavaJavaParser extends Parser {
 
 					switch (alt146) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:760:37: '+'
+							// /home/tony/Downloads/JavaJava.g:766:37: '+'
 							{
 							char_literal496=(Token)match(input,36,FOLLOW_36_in_additiveExpression5307); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -15728,7 +15734,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /home/tony/Downloads/JavaJava.g:760:52: '-'
+							// /home/tony/Downloads/JavaJava.g:766:52: '-'
 							{
 							char_literal497=(Token)match(input,40,FOLLOW_40_in_additiveExpression5312); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -15788,7 +15794,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "multiplicativeExpression"
-	// /home/tony/Downloads/JavaJava.g:763:1: multiplicativeExpression : unaryExpression ( ( '*' | '/' | '%' ) unaryExpression )* ;
+	// /home/tony/Downloads/JavaJava.g:769:1: multiplicativeExpression : unaryExpression ( ( '*' | '/' | '%' ) unaryExpression )* ;
 	public final JavaJavaParser.multiplicativeExpression_return multiplicativeExpression() throws RecognitionException {
 		JavaJavaParser.multiplicativeExpression_return retval = new JavaJavaParser.multiplicativeExpression_return();
 		retval.start = input.LT(1);
@@ -15809,8 +15815,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 121) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:764:5: ( unaryExpression ( ( '*' | '/' | '%' ) unaryExpression )* )
-			// /home/tony/Downloads/JavaJava.g:764:9: unaryExpression ( ( '*' | '/' | '%' ) unaryExpression )*
+			// /home/tony/Downloads/JavaJava.g:770:5: ( unaryExpression ( ( '*' | '/' | '%' ) unaryExpression )* )
+			// /home/tony/Downloads/JavaJava.g:770:9: unaryExpression ( ( '*' | '/' | '%' ) unaryExpression )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -15821,7 +15827,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, unaryExpression499.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:764:25: ( ( '*' | '/' | '%' ) unaryExpression )*
+			// /home/tony/Downloads/JavaJava.g:770:25: ( ( '*' | '/' | '%' ) unaryExpression )*
 			loop149:
 			while (true) {
 				int alt149=2;
@@ -15832,9 +15838,9 @@ public class JavaJavaParser extends Parser {
 
 				switch (alt149) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:764:27: ( '*' | '/' | '%' ) unaryExpression
+					// /home/tony/Downloads/JavaJava.g:770:27: ( '*' | '/' | '%' ) unaryExpression
 					{
-					// /home/tony/Downloads/JavaJava.g:764:27: ( '*' | '/' | '%' )
+					// /home/tony/Downloads/JavaJava.g:770:27: ( '*' | '/' | '%' )
 					int alt148=3;
 					switch ( input.LA(1) ) {
 					case 34:
@@ -15860,7 +15866,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt148) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:764:29: '*'
+							// /home/tony/Downloads/JavaJava.g:770:29: '*'
 							{
 							char_literal500=(Token)match(input,34,FOLLOW_34_in_multiplicativeExpression5345); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -15872,7 +15878,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /home/tony/Downloads/JavaJava.g:764:45: '/'
+							// /home/tony/Downloads/JavaJava.g:770:45: '/'
 							{
 							char_literal501=(Token)match(input,45,FOLLOW_45_in_multiplicativeExpression5351); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -15884,7 +15890,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 3 :
-							// /home/tony/Downloads/JavaJava.g:764:61: '%'
+							// /home/tony/Downloads/JavaJava.g:770:61: '%'
 							{
 							char_literal502=(Token)match(input,27,FOLLOW_27_in_multiplicativeExpression5357); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -15944,7 +15950,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "unaryExpression"
-	// /home/tony/Downloads/JavaJava.g:767:1: unaryExpression : ( '+' unaryExpression | '-' unaryExpression | '++' unaryExpression | '--' unaryExpression | unaryExpressionNotPlusMinus );
+	// /home/tony/Downloads/JavaJava.g:773:1: unaryExpression : ( '+' unaryExpression | '-' unaryExpression | '++' unaryExpression | '--' unaryExpression | unaryExpressionNotPlusMinus );
 	public final JavaJavaParser.unaryExpression_return unaryExpression() throws RecognitionException {
 		JavaJavaParser.unaryExpression_return retval = new JavaJavaParser.unaryExpression_return();
 		retval.start = input.LT(1);
@@ -15970,7 +15976,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 122) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:768:5: ( '+' unaryExpression | '-' unaryExpression | '++' unaryExpression | '--' unaryExpression | unaryExpressionNotPlusMinus )
+			// /home/tony/Downloads/JavaJava.g:774:5: ( '+' unaryExpression | '-' unaryExpression | '++' unaryExpression | '--' unaryExpression | unaryExpressionNotPlusMinus )
 			int alt150=5;
 			switch ( input.LA(1) ) {
 			case 36:
@@ -16030,7 +16036,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt150) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:768:9: '+' unaryExpression
+					// /home/tony/Downloads/JavaJava.g:774:9: '+' unaryExpression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16050,7 +16056,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:769:9: '-' unaryExpression
+					// /home/tony/Downloads/JavaJava.g:775:9: '-' unaryExpression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16070,7 +16076,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /home/tony/Downloads/JavaJava.g:770:9: '++' unaryExpression
+					// /home/tony/Downloads/JavaJava.g:776:9: '++' unaryExpression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16090,7 +16096,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /home/tony/Downloads/JavaJava.g:771:9: '--' unaryExpression
+					// /home/tony/Downloads/JavaJava.g:777:9: '--' unaryExpression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16110,7 +16116,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /home/tony/Downloads/JavaJava.g:772:9: unaryExpressionNotPlusMinus
+					// /home/tony/Downloads/JavaJava.g:778:9: unaryExpressionNotPlusMinus
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16155,7 +16161,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "unaryExpressionNotPlusMinus"
-	// /home/tony/Downloads/JavaJava.g:775:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );
+	// /home/tony/Downloads/JavaJava.g:781:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );
 	public final JavaJavaParser.unaryExpressionNotPlusMinus_return unaryExpressionNotPlusMinus() throws RecognitionException {
 		JavaJavaParser.unaryExpressionNotPlusMinus_return retval = new JavaJavaParser.unaryExpressionNotPlusMinus_return();
 		retval.start = input.LT(1);
@@ -16181,7 +16187,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 123) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:776:5: ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? )
+			// /home/tony/Downloads/JavaJava.g:782:5: ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? )
 			int alt153=4;
 			switch ( input.LA(1) ) {
 			case 113:
@@ -16240,7 +16246,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt153) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:776:9: '~' unaryExpression
+					// /home/tony/Downloads/JavaJava.g:782:9: '~' unaryExpression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16260,7 +16266,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:777:9: '!' unaryExpression
+					// /home/tony/Downloads/JavaJava.g:783:9: '!' unaryExpression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16280,7 +16286,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /home/tony/Downloads/JavaJava.g:778:9: castExpression
+					// /home/tony/Downloads/JavaJava.g:784:9: castExpression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16294,7 +16300,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /home/tony/Downloads/JavaJava.g:779:9: primary ( selector )* ( '++' | '--' )?
+					// /home/tony/Downloads/JavaJava.g:785:9: primary ( selector )* ( '++' | '--' )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16305,7 +16311,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, primary518.getTree());
 
-					// /home/tony/Downloads/JavaJava.g:779:17: ( selector )*
+					// /home/tony/Downloads/JavaJava.g:785:17: ( selector )*
 					loop151:
 					while (true) {
 						int alt151=2;
@@ -16316,7 +16322,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt151) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:779:17: selector
+							// /home/tony/Downloads/JavaJava.g:785:17: selector
 							{
 							pushFollow(FOLLOW_selector_in_unaryExpressionNotPlusMinus5491);
 							selector519=selector();
@@ -16332,7 +16338,7 @@ public class JavaJavaParser extends Parser {
 						}
 					}
 
-					// /home/tony/Downloads/JavaJava.g:779:27: ( '++' | '--' )?
+					// /home/tony/Downloads/JavaJava.g:785:27: ( '++' | '--' )?
 					int alt152=3;
 					int LA152_0 = input.LA(1);
 					if ( (LA152_0==37) ) {
@@ -16343,7 +16349,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt152) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:779:28: '++'
+							// /home/tony/Downloads/JavaJava.g:785:28: '++'
 							{
 							string_literal520=(Token)match(input,37,FOLLOW_37_in_unaryExpressionNotPlusMinus5495); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -16355,7 +16361,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /home/tony/Downloads/JavaJava.g:779:44: '--'
+							// /home/tony/Downloads/JavaJava.g:785:44: '--'
 							{
 							string_literal521=(Token)match(input,41,FOLLOW_41_in_unaryExpressionNotPlusMinus5499); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -16403,7 +16409,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "castExpression"
-	// /home/tony/Downloads/JavaJava.g:782:1: castExpression : ( '(' primitiveType ')' unaryExpression | '(' ( type | expression ) ')' unaryExpressionNotPlusMinus );
+	// /home/tony/Downloads/JavaJava.g:788:1: castExpression : ( '(' primitiveType ')' unaryExpression | '(' ( type | expression ) ')' unaryExpressionNotPlusMinus );
 	public final JavaJavaParser.castExpression_return castExpression() throws RecognitionException {
 		JavaJavaParser.castExpression_return retval = new JavaJavaParser.castExpression_return();
 		retval.start = input.LT(1);
@@ -16429,7 +16435,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 124) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:783:5: ( '(' primitiveType ')' unaryExpression | '(' ( type | expression ) ')' unaryExpressionNotPlusMinus )
+			// /home/tony/Downloads/JavaJava.g:789:5: ( '(' primitiveType ')' unaryExpression | '(' ( type | expression ) ')' unaryExpressionNotPlusMinus )
 			int alt155=2;
 			int LA155_0 = input.LA(1);
 			if ( (LA155_0==32) ) {
@@ -16452,7 +16458,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt155) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:783:8: '(' primitiveType ')' unaryExpression
+					// /home/tony/Downloads/JavaJava.g:789:8: '(' primitiveType ')' unaryExpression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16485,7 +16491,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:784:8: '(' ( type | expression ) ')' unaryExpressionNotPlusMinus
+					// /home/tony/Downloads/JavaJava.g:790:8: '(' ( type | expression ) ')' unaryExpressionNotPlusMinus
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16497,12 +16503,12 @@ public class JavaJavaParser extends Parser {
 					}
 
 					if ( state.backtracking==0 ) {s("(");}
-					// /home/tony/Downloads/JavaJava.g:784:21: ( type | expression )
+					// /home/tony/Downloads/JavaJava.g:790:21: ( type | expression )
 					int alt154=2;
 					alt154 = dfa154.predict(input);
 					switch (alt154) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:784:22: type
+							// /home/tony/Downloads/JavaJava.g:790:22: type
 							{
 							pushFollow(FOLLOW_type_in_castExpression5541);
 							type527=type();
@@ -16513,7 +16519,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /home/tony/Downloads/JavaJava.g:784:29: expression
+							// /home/tony/Downloads/JavaJava.g:790:29: expression
 							{
 							pushFollow(FOLLOW_expression_in_castExpression5545);
 							expression528=expression();
@@ -16572,7 +16578,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "primary"
-	// /home/tony/Downloads/JavaJava.g:787:1: primary : ( parExpression | 'this' ( '.' Identifier )* ( identifierSuffix )? | 'super' superSuffix | literal | 'new' creator |I1= Identifier ( '.' I4= Identifier )* ( identifierSuffix )? | primitiveType ( '[' ']' )* '.' 'class' | 'void' '.' 'class' );
+	// /home/tony/Downloads/JavaJava.g:793:1: primary : ( parExpression | 'this' ( '.' Identifier )* ( identifierSuffix )? | 'super' superSuffix | literal | 'new' creator |I1= Identifier ( '.' I4= Identifier )* ( identifierSuffix )? | primitiveType ( '[' ']' )* '.' 'class' | 'void' '.' 'class' );
 	public final JavaJavaParser.primary_return primary() throws RecognitionException {
 		JavaJavaParser.primary_return retval = new JavaJavaParser.primary_return();
 		retval.start = input.LT(1);
@@ -16622,7 +16628,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 125) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:788:5: ( parExpression | 'this' ( '.' Identifier )* ( identifierSuffix )? | 'super' superSuffix | literal | 'new' creator |I1= Identifier ( '.' I4= Identifier )* ( identifierSuffix )? | primitiveType ( '[' ']' )* '.' 'class' | 'void' '.' 'class' )
+			// /home/tony/Downloads/JavaJava.g:794:5: ( parExpression | 'this' ( '.' Identifier )* ( identifierSuffix )? | 'super' superSuffix | literal | 'new' creator |I1= Identifier ( '.' I4= Identifier )* ( identifierSuffix )? | primitiveType ( '[' ']' )* '.' 'class' | 'void' '.' 'class' )
 			int alt161=8;
 			switch ( input.LA(1) ) {
 			case 32:
@@ -16688,7 +16694,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt161) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:788:9: parExpression
+					// /home/tony/Downloads/JavaJava.g:794:9: parExpression
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16702,7 +16708,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:789:9: 'this' ( '.' Identifier )* ( identifierSuffix )?
+					// /home/tony/Downloads/JavaJava.g:795:9: 'this' ( '.' Identifier )* ( identifierSuffix )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16714,7 +16720,7 @@ public class JavaJavaParser extends Parser {
 					}
 
 					if ( state.backtracking==0 ) {keywordCount++;JavaMetrics.uniqueKeywords.add("this");}
-					// /home/tony/Downloads/JavaJava.g:789:72: ( '.' Identifier )*
+					// /home/tony/Downloads/JavaJava.g:795:72: ( '.' Identifier )*
 					loop156:
 					while (true) {
 						int alt156=2;
@@ -16733,7 +16739,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt156) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:789:73: '.' Identifier
+							// /home/tony/Downloads/JavaJava.g:795:73: '.' Identifier
 							{
 							char_literal533=(Token)match(input,43,FOLLOW_43_in_primary5583); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -16756,7 +16762,7 @@ public class JavaJavaParser extends Parser {
 						}
 					}
 
-					// /home/tony/Downloads/JavaJava.g:789:100: ( identifierSuffix )?
+					// /home/tony/Downloads/JavaJava.g:795:100: ( identifierSuffix )?
 					int alt157=2;
 					switch ( input.LA(1) ) {
 						case 55:
@@ -16783,7 +16789,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt157) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:789:100: identifierSuffix
+							// /home/tony/Downloads/JavaJava.g:795:100: identifierSuffix
 							{
 							pushFollow(FOLLOW_identifierSuffix_in_primary5591);
 							identifierSuffix535=identifierSuffix();
@@ -16799,7 +16805,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /home/tony/Downloads/JavaJava.g:790:9: 'super' superSuffix
+					// /home/tony/Downloads/JavaJava.g:796:9: 'super' superSuffix
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16820,7 +16826,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /home/tony/Downloads/JavaJava.g:791:9: literal
+					// /home/tony/Downloads/JavaJava.g:797:9: literal
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16834,7 +16840,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /home/tony/Downloads/JavaJava.g:792:9: 'new' creator
+					// /home/tony/Downloads/JavaJava.g:798:9: 'new' creator
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16855,7 +16861,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /home/tony/Downloads/JavaJava.g:793:9: I1= Identifier ( '.' I4= Identifier )* ( identifierSuffix )?
+					// /home/tony/Downloads/JavaJava.g:799:9: I1= Identifier ( '.' I4= Identifier )* ( identifierSuffix )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16867,7 +16873,7 @@ public class JavaJavaParser extends Parser {
 					}
 
 					id((I1!=null?I1.getText():null));
-					// /home/tony/Downloads/JavaJava.g:793:41: ( '.' I4= Identifier )*
+					// /home/tony/Downloads/JavaJava.g:799:41: ( '.' I4= Identifier )*
 					loop158:
 					while (true) {
 						int alt158=2;
@@ -16886,7 +16892,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt158) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:793:42: '.' I4= Identifier
+							// /home/tony/Downloads/JavaJava.g:799:42: '.' I4= Identifier
 							{
 							char_literal541=(Token)match(input,43,FOLLOW_43_in_primary5646); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -16909,7 +16915,7 @@ public class JavaJavaParser extends Parser {
 						}
 					}
 
-					// /home/tony/Downloads/JavaJava.g:793:73: ( identifierSuffix )?
+					// /home/tony/Downloads/JavaJava.g:799:73: ( identifierSuffix )?
 					int alt159=2;
 					switch ( input.LA(1) ) {
 						case 55:
@@ -16936,7 +16942,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt159) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:793:73: identifierSuffix
+							// /home/tony/Downloads/JavaJava.g:799:73: identifierSuffix
 							{
 							pushFollow(FOLLOW_identifierSuffix_in_primary5657);
 							identifierSuffix542=identifierSuffix();
@@ -16952,7 +16958,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /home/tony/Downloads/JavaJava.g:794:9: primitiveType ( '[' ']' )* '.' 'class'
+					// /home/tony/Downloads/JavaJava.g:800:9: primitiveType ( '[' ']' )* '.' 'class'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -16963,7 +16969,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, primitiveType543.getTree());
 
-					// /home/tony/Downloads/JavaJava.g:794:23: ( '[' ']' )*
+					// /home/tony/Downloads/JavaJava.g:800:23: ( '[' ']' )*
 					loop160:
 					while (true) {
 						int alt160=2;
@@ -16974,7 +16980,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt160) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:794:24: '[' ']'
+							// /home/tony/Downloads/JavaJava.g:800:24: '[' ']'
 							{
 							char_literal544=(Token)match(input,55,FOLLOW_55_in_primary5672); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -17014,7 +17020,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /home/tony/Downloads/JavaJava.g:795:9: 'void' '.' 'class'
+					// /home/tony/Downloads/JavaJava.g:801:9: 'void' '.' 'class'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -17074,7 +17080,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "identifierSuffix"
-	// /home/tony/Downloads/JavaJava.g:798:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' innerCreator );
+	// /home/tony/Downloads/JavaJava.g:804:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' innerCreator );
 	public final JavaJavaParser.identifierSuffix_return identifierSuffix() throws RecognitionException {
 		JavaJavaParser.identifierSuffix_return retval = new JavaJavaParser.identifierSuffix_return();
 		retval.start = input.LT(1);
@@ -17122,7 +17128,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 126) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:799:5: ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' innerCreator )
+			// /home/tony/Downloads/JavaJava.g:805:5: ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' innerCreator )
 			int alt164=8;
 			switch ( input.LA(1) ) {
 			case 55:
@@ -17205,12 +17211,12 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt164) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:799:9: ( '[' ']' )+ '.' 'class'
+					// /home/tony/Downloads/JavaJava.g:805:9: ( '[' ']' )+ '.' 'class'
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					// /home/tony/Downloads/JavaJava.g:799:9: ( '[' ']' )+
+					// /home/tony/Downloads/JavaJava.g:805:9: ( '[' ']' )+
 					int cnt162=0;
 					loop162:
 					while (true) {
@@ -17222,7 +17228,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt162) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:799:10: '[' ']'
+							// /home/tony/Downloads/JavaJava.g:805:10: '[' ']'
 							{
 							char_literal551=(Token)match(input,55,FOLLOW_55_in_identifierSuffix5722); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -17267,12 +17273,12 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:800:9: ( '[' expression ']' )+
+					// /home/tony/Downloads/JavaJava.g:806:9: ( '[' expression ']' )+
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					// /home/tony/Downloads/JavaJava.g:800:9: ( '[' expression ']' )+
+					// /home/tony/Downloads/JavaJava.g:806:9: ( '[' expression ']' )+
 					int cnt163=0;
 					loop163:
 					while (true) {
@@ -17288,7 +17294,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt163) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:800:10: '[' expression ']'
+							// /home/tony/Downloads/JavaJava.g:806:10: '[' expression ']'
 							{
 							char_literal555=(Token)match(input,55,FOLLOW_55_in_identifierSuffix5748); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -17325,7 +17331,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /home/tony/Downloads/JavaJava.g:801:9: arguments
+					// /home/tony/Downloads/JavaJava.g:807:9: arguments
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -17339,7 +17345,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /home/tony/Downloads/JavaJava.g:802:9: '.' 'class'
+					// /home/tony/Downloads/JavaJava.g:808:9: '.' 'class'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -17361,7 +17367,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /home/tony/Downloads/JavaJava.g:803:9: '.' explicitGenericInvocation
+					// /home/tony/Downloads/JavaJava.g:809:9: '.' explicitGenericInvocation
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -17382,7 +17388,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /home/tony/Downloads/JavaJava.g:804:9: '.' 'this'
+					// /home/tony/Downloads/JavaJava.g:810:9: '.' 'this'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -17404,7 +17410,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /home/tony/Downloads/JavaJava.g:805:9: '.' 'super' arguments
+					// /home/tony/Downloads/JavaJava.g:811:9: '.' 'super' arguments
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -17432,7 +17438,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /home/tony/Downloads/JavaJava.g:806:9: '.' 'new' innerCreator
+					// /home/tony/Downloads/JavaJava.g:812:9: '.' 'new' innerCreator
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -17491,7 +17497,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "creator"
-	// /home/tony/Downloads/JavaJava.g:809:1: creator : ( nonWildcardTypeArguments createdName classCreatorRest | createdName ( arrayCreatorRest | classCreatorRest ) );
+	// /home/tony/Downloads/JavaJava.g:815:1: creator : ( nonWildcardTypeArguments createdName classCreatorRest | createdName ( arrayCreatorRest | classCreatorRest ) );
 	public final JavaJavaParser.creator_return creator() throws RecognitionException {
 		JavaJavaParser.creator_return retval = new JavaJavaParser.creator_return();
 		retval.start = input.LT(1);
@@ -17510,7 +17516,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 127) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:810:5: ( nonWildcardTypeArguments createdName classCreatorRest | createdName ( arrayCreatorRest | classCreatorRest ) )
+			// /home/tony/Downloads/JavaJava.g:816:5: ( nonWildcardTypeArguments createdName classCreatorRest | createdName ( arrayCreatorRest | classCreatorRest ) )
 			int alt166=2;
 			int LA166_0 = input.LA(1);
 			if ( (LA166_0==49) ) {
@@ -17529,7 +17535,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt166) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:810:9: nonWildcardTypeArguments createdName classCreatorRest
+					// /home/tony/Downloads/JavaJava.g:816:9: nonWildcardTypeArguments createdName classCreatorRest
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -17555,7 +17561,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:811:9: createdName ( arrayCreatorRest | classCreatorRest )
+					// /home/tony/Downloads/JavaJava.g:817:9: createdName ( arrayCreatorRest | classCreatorRest )
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -17566,7 +17572,7 @@ public class JavaJavaParser extends Parser {
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, createdName574.getTree());
 
-					// /home/tony/Downloads/JavaJava.g:811:21: ( arrayCreatorRest | classCreatorRest )
+					// /home/tony/Downloads/JavaJava.g:817:21: ( arrayCreatorRest | classCreatorRest )
 					int alt165=2;
 					int LA165_0 = input.LA(1);
 					if ( (LA165_0==55) ) {
@@ -17585,7 +17591,7 @@ public class JavaJavaParser extends Parser {
 
 					switch (alt165) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:811:22: arrayCreatorRest
+							// /home/tony/Downloads/JavaJava.g:817:22: arrayCreatorRest
 							{
 							pushFollow(FOLLOW_arrayCreatorRest_in_creator5885);
 							arrayCreatorRest575=arrayCreatorRest();
@@ -17596,7 +17602,7 @@ public class JavaJavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /home/tony/Downloads/JavaJava.g:811:41: classCreatorRest
+							// /home/tony/Downloads/JavaJava.g:817:41: classCreatorRest
 							{
 							pushFollow(FOLLOW_classCreatorRest_in_creator5889);
 							classCreatorRest576=classCreatorRest();
@@ -17643,7 +17649,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "createdName"
-	// /home/tony/Downloads/JavaJava.g:814:1: createdName : ( classOrInterfaceType | primitiveType );
+	// /home/tony/Downloads/JavaJava.g:820:1: createdName : ( classOrInterfaceType | primitiveType );
 	public final JavaJavaParser.createdName_return createdName() throws RecognitionException {
 		JavaJavaParser.createdName_return retval = new JavaJavaParser.createdName_return();
 		retval.start = input.LT(1);
@@ -17658,7 +17664,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 128) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:815:5: ( classOrInterfaceType | primitiveType )
+			// /home/tony/Downloads/JavaJava.g:821:5: ( classOrInterfaceType | primitiveType )
 			int alt167=2;
 			int LA167_0 = input.LA(1);
 			if ( (LA167_0==Identifier) ) {
@@ -17677,7 +17683,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt167) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:815:8: classOrInterfaceType
+					// /home/tony/Downloads/JavaJava.g:821:8: classOrInterfaceType
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -17692,7 +17698,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:816:9: primitiveType
+					// /home/tony/Downloads/JavaJava.g:822:9: primitiveType
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -17738,7 +17744,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "innerCreator"
-	// /home/tony/Downloads/JavaJava.g:819:1: innerCreator : ( nonWildcardTypeArguments )? Identifier classCreatorRest ;
+	// /home/tony/Downloads/JavaJava.g:825:1: innerCreator : ( nonWildcardTypeArguments )? Identifier classCreatorRest ;
 	public final JavaJavaParser.innerCreator_return innerCreator() throws RecognitionException {
 		JavaJavaParser.innerCreator_return retval = new JavaJavaParser.innerCreator_return();
 		retval.start = input.LT(1);
@@ -17755,13 +17761,13 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 129) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:820:5: ( ( nonWildcardTypeArguments )? Identifier classCreatorRest )
-			// /home/tony/Downloads/JavaJava.g:820:9: ( nonWildcardTypeArguments )? Identifier classCreatorRest
+			// /home/tony/Downloads/JavaJava.g:826:5: ( ( nonWildcardTypeArguments )? Identifier classCreatorRest )
+			// /home/tony/Downloads/JavaJava.g:826:9: ( nonWildcardTypeArguments )? Identifier classCreatorRest
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			// /home/tony/Downloads/JavaJava.g:820:9: ( nonWildcardTypeArguments )?
+			// /home/tony/Downloads/JavaJava.g:826:9: ( nonWildcardTypeArguments )?
 			int alt168=2;
 			int LA168_0 = input.LA(1);
 			if ( (LA168_0==49) ) {
@@ -17769,7 +17775,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt168) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:820:9: nonWildcardTypeArguments
+					// /home/tony/Downloads/JavaJava.g:826:9: nonWildcardTypeArguments
 					{
 					pushFollow(FOLLOW_nonWildcardTypeArguments_in_innerCreator5946);
 					nonWildcardTypeArguments579=nonWildcardTypeArguments();
@@ -17826,7 +17832,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "arrayCreatorRest"
-	// /home/tony/Downloads/JavaJava.g:823:1: arrayCreatorRest : '[' ( ']' ( '[' ']' )* arrayInitializer | expression ']' ( '[' expression ']' )* ( '[' ']' )* ) ;
+	// /home/tony/Downloads/JavaJava.g:829:1: arrayCreatorRest : '[' ( ']' ( '[' ']' )* arrayInitializer | expression ']' ( '[' expression ']' )* ( '[' ']' )* ) ;
 	public final JavaJavaParser.arrayCreatorRest_return arrayCreatorRest() throws RecognitionException {
 		JavaJavaParser.arrayCreatorRest_return retval = new JavaJavaParser.arrayCreatorRest_return();
 		retval.start = input.LT(1);
@@ -17860,8 +17866,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 130) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:824:5: ( '[' ( ']' ( '[' ']' )* arrayInitializer | expression ']' ( '[' expression ']' )* ( '[' ']' )* ) )
-			// /home/tony/Downloads/JavaJava.g:824:9: '[' ( ']' ( '[' ']' )* arrayInitializer | expression ']' ( '[' expression ']' )* ( '[' ']' )* )
+			// /home/tony/Downloads/JavaJava.g:830:5: ( '[' ( ']' ( '[' ']' )* arrayInitializer | expression ']' ( '[' expression ']' )* ( '[' ']' )* ) )
+			// /home/tony/Downloads/JavaJava.g:830:9: '[' ( ']' ( '[' ']' )* arrayInitializer | expression ']' ( '[' expression ']' )* ( '[' ']' )* )
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -17873,7 +17879,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("[");}
-			// /home/tony/Downloads/JavaJava.g:825:9: ( ']' ( '[' ']' )* arrayInitializer | expression ']' ( '[' expression ']' )* ( '[' ']' )* )
+			// /home/tony/Downloads/JavaJava.g:831:9: ( ']' ( '[' ']' )* arrayInitializer | expression ']' ( '[' expression ']' )* ( '[' ']' )* )
 			int alt172=2;
 			int LA172_0 = input.LA(1);
 			if ( (LA172_0==56) ) {
@@ -17892,7 +17898,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt172) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:825:13: ']' ( '[' ']' )* arrayInitializer
+					// /home/tony/Downloads/JavaJava.g:831:13: ']' ( '[' ']' )* arrayInitializer
 					{
 					char_literal583=(Token)match(input,56,FOLLOW_56_in_arrayCreatorRest5985); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -17900,7 +17906,7 @@ public class JavaJavaParser extends Parser {
 					adaptor.addChild(root_0, char_literal583_tree);
 					}
 
-					// /home/tony/Downloads/JavaJava.g:825:17: ( '[' ']' )*
+					// /home/tony/Downloads/JavaJava.g:831:17: ( '[' ']' )*
 					loop169:
 					while (true) {
 						int alt169=2;
@@ -17911,7 +17917,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt169) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:825:18: '[' ']'
+							// /home/tony/Downloads/JavaJava.g:831:18: '[' ']'
 							{
 							char_literal584=(Token)match(input,55,FOLLOW_55_in_arrayCreatorRest5988); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -17944,7 +17950,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:826:13: expression ']' ( '[' expression ']' )* ( '[' ']' )*
+					// /home/tony/Downloads/JavaJava.g:832:13: expression ']' ( '[' expression ']' )* ( '[' ']' )*
 					{
 					pushFollow(FOLLOW_expression_in_arrayCreatorRest6011);
 					expression587=expression();
@@ -17959,7 +17965,7 @@ public class JavaJavaParser extends Parser {
 					}
 
 					if ( state.backtracking==0 ) {s("]");}
-					// /home/tony/Downloads/JavaJava.g:826:38: ( '[' expression ']' )*
+					// /home/tony/Downloads/JavaJava.g:832:38: ( '[' expression ']' )*
 					loop170:
 					while (true) {
 						int alt170=2;
@@ -17974,7 +17980,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt170) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:826:39: '[' expression ']'
+							// /home/tony/Downloads/JavaJava.g:832:39: '[' expression ']'
 							{
 							char_literal589=(Token)match(input,55,FOLLOW_55_in_arrayCreatorRest6018); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -18004,7 +18010,7 @@ public class JavaJavaParser extends Parser {
 						}
 					}
 
-					// /home/tony/Downloads/JavaJava.g:826:79: ( '[' ']' )*
+					// /home/tony/Downloads/JavaJava.g:832:79: ( '[' ']' )*
 					loop171:
 					while (true) {
 						int alt171=2;
@@ -18019,7 +18025,7 @@ public class JavaJavaParser extends Parser {
 
 						switch (alt171) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:826:80: '[' ']'
+							// /home/tony/Downloads/JavaJava.g:832:80: '[' ']'
 							{
 							char_literal592=(Token)match(input,55,FOLLOW_55_in_arrayCreatorRest6030); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -18080,7 +18086,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "classCreatorRest"
-	// /home/tony/Downloads/JavaJava.g:830:1: classCreatorRest : arguments ( classBody )? ;
+	// /home/tony/Downloads/JavaJava.g:836:1: classCreatorRest : arguments ( classBody )? ;
 	public final JavaJavaParser.classCreatorRest_return classCreatorRest() throws RecognitionException {
 		JavaJavaParser.classCreatorRest_return retval = new JavaJavaParser.classCreatorRest_return();
 		retval.start = input.LT(1);
@@ -18095,8 +18101,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 131) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:831:5: ( arguments ( classBody )? )
-			// /home/tony/Downloads/JavaJava.g:831:8: arguments ( classBody )?
+			// /home/tony/Downloads/JavaJava.g:837:5: ( arguments ( classBody )? )
+			// /home/tony/Downloads/JavaJava.g:837:8: arguments ( classBody )?
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -18108,7 +18114,7 @@ public class JavaJavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, arguments594.getTree());
 
-			// /home/tony/Downloads/JavaJava.g:831:43: ( classBody )?
+			// /home/tony/Downloads/JavaJava.g:837:43: ( classBody )?
 			int alt173=2;
 			int LA173_0 = input.LA(1);
 			if ( (LA173_0==108) ) {
@@ -18116,7 +18122,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt173) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:831:43: classBody
+					// /home/tony/Downloads/JavaJava.g:837:43: classBody
 					{
 					pushFollow(FOLLOW_classBody_in_classCreatorRest6068);
 					classBody595=classBody();
@@ -18161,7 +18167,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "explicitGenericInvocation"
-	// /home/tony/Downloads/JavaJava.g:834:1: explicitGenericInvocation : nonWildcardTypeArguments Identifier arguments ;
+	// /home/tony/Downloads/JavaJava.g:840:1: explicitGenericInvocation : nonWildcardTypeArguments Identifier arguments ;
 	public final JavaJavaParser.explicitGenericInvocation_return explicitGenericInvocation() throws RecognitionException {
 		JavaJavaParser.explicitGenericInvocation_return retval = new JavaJavaParser.explicitGenericInvocation_return();
 		retval.start = input.LT(1);
@@ -18178,8 +18184,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 132) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:835:5: ( nonWildcardTypeArguments Identifier arguments )
-			// /home/tony/Downloads/JavaJava.g:835:9: nonWildcardTypeArguments Identifier arguments
+			// /home/tony/Downloads/JavaJava.g:841:5: ( nonWildcardTypeArguments Identifier arguments )
+			// /home/tony/Downloads/JavaJava.g:841:9: nonWildcardTypeArguments Identifier arguments
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -18235,7 +18241,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "nonWildcardTypeArguments"
-	// /home/tony/Downloads/JavaJava.g:838:1: nonWildcardTypeArguments : '<' typeList '>' ;
+	// /home/tony/Downloads/JavaJava.g:844:1: nonWildcardTypeArguments : '<' typeList '>' ;
 	public final JavaJavaParser.nonWildcardTypeArguments_return nonWildcardTypeArguments() throws RecognitionException {
 		JavaJavaParser.nonWildcardTypeArguments_return retval = new JavaJavaParser.nonWildcardTypeArguments_return();
 		retval.start = input.LT(1);
@@ -18253,8 +18259,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 133) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:839:5: ( '<' typeList '>' )
-			// /home/tony/Downloads/JavaJava.g:839:9: '<' typeList '>'
+			// /home/tony/Downloads/JavaJava.g:845:5: ( '<' typeList '>' )
+			// /home/tony/Downloads/JavaJava.g:845:9: '<' typeList '>'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -18311,7 +18317,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "selector"
-	// /home/tony/Downloads/JavaJava.g:842:1: selector : ( '.' Identifier ( arguments )? | '.' 'this' | '.' 'super' superSuffix | '.' 'new' innerCreator | '[' expression ']' );
+	// /home/tony/Downloads/JavaJava.g:848:1: selector : ( '.' Identifier ( arguments )? | '.' 'this' | '.' 'super' superSuffix | '.' 'new' innerCreator | '[' expression ']' );
 	public final JavaJavaParser.selector_return selector() throws RecognitionException {
 		JavaJavaParser.selector_return retval = new JavaJavaParser.selector_return();
 		retval.start = input.LT(1);
@@ -18348,7 +18354,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 134) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:843:5: ( '.' Identifier ( arguments )? | '.' 'this' | '.' 'super' superSuffix | '.' 'new' innerCreator | '[' expression ']' )
+			// /home/tony/Downloads/JavaJava.g:849:5: ( '.' Identifier ( arguments )? | '.' 'this' | '.' 'super' superSuffix | '.' 'new' innerCreator | '[' expression ']' )
 			int alt175=5;
 			int LA175_0 = input.LA(1);
 			if ( (LA175_0==43) ) {
@@ -18399,7 +18405,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt175) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:843:9: '.' Identifier ( arguments )?
+					// /home/tony/Downloads/JavaJava.g:849:9: '.' Identifier ( arguments )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -18418,7 +18424,7 @@ public class JavaJavaParser extends Parser {
 					}
 
 					if ( state.backtracking==0 ) {if(primitive) id((Identifier603!=null?Identifier603.getText():null));}
-					// /home/tony/Downloads/JavaJava.g:843:73: ( arguments )?
+					// /home/tony/Downloads/JavaJava.g:849:73: ( arguments )?
 					int alt174=2;
 					int LA174_0 = input.LA(1);
 					if ( (LA174_0==32) ) {
@@ -18426,7 +18432,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt174) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:843:73: arguments
+							// /home/tony/Downloads/JavaJava.g:849:73: arguments
 							{
 							pushFollow(FOLLOW_arguments_in_selector6160);
 							arguments604=arguments();
@@ -18442,7 +18448,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:844:9: '.' 'this'
+					// /home/tony/Downloads/JavaJava.g:850:9: '.' 'this'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -18464,7 +18470,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /home/tony/Downloads/JavaJava.g:845:9: '.' 'super' superSuffix
+					// /home/tony/Downloads/JavaJava.g:851:9: '.' 'super' superSuffix
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -18492,7 +18498,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /home/tony/Downloads/JavaJava.g:846:9: '.' 'new' innerCreator
+					// /home/tony/Downloads/JavaJava.g:852:9: '.' 'new' innerCreator
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -18520,7 +18526,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /home/tony/Downloads/JavaJava.g:847:9: '[' expression ']'
+					// /home/tony/Downloads/JavaJava.g:853:9: '[' expression ']'
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -18579,7 +18585,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "superSuffix"
-	// /home/tony/Downloads/JavaJava.g:850:1: superSuffix : ( arguments | '.' Identifier ( arguments )? );
+	// /home/tony/Downloads/JavaJava.g:856:1: superSuffix : ( arguments | '.' Identifier ( arguments )? );
 	public final JavaJavaParser.superSuffix_return superSuffix() throws RecognitionException {
 		JavaJavaParser.superSuffix_return retval = new JavaJavaParser.superSuffix_return();
 		retval.start = input.LT(1);
@@ -18598,7 +18604,7 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 135) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:851:5: ( arguments | '.' Identifier ( arguments )? )
+			// /home/tony/Downloads/JavaJava.g:857:5: ( arguments | '.' Identifier ( arguments )? )
 			int alt177=2;
 			int LA177_0 = input.LA(1);
 			if ( (LA177_0==32) ) {
@@ -18617,7 +18623,7 @@ public class JavaJavaParser extends Parser {
 
 			switch (alt177) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:851:9: arguments
+					// /home/tony/Downloads/JavaJava.g:857:9: arguments
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -18631,7 +18637,7 @@ public class JavaJavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/tony/Downloads/JavaJava.g:852:9: '.' Identifier ( arguments )?
+					// /home/tony/Downloads/JavaJava.g:858:9: '.' Identifier ( arguments )?
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -18650,7 +18656,7 @@ public class JavaJavaParser extends Parser {
 					}
 
 					if ( state.backtracking==0 ) {if(primitive) id((Identifier618!=null?Identifier618.getText():null));}
-					// /home/tony/Downloads/JavaJava.g:852:72: ( arguments )?
+					// /home/tony/Downloads/JavaJava.g:858:72: ( arguments )?
 					int alt176=2;
 					int LA176_0 = input.LA(1);
 					if ( (LA176_0==32) ) {
@@ -18658,7 +18664,7 @@ public class JavaJavaParser extends Parser {
 					}
 					switch (alt176) {
 						case 1 :
-							// /home/tony/Downloads/JavaJava.g:852:72: arguments
+							// /home/tony/Downloads/JavaJava.g:858:72: arguments
 							{
 							pushFollow(FOLLOW_arguments_in_superSuffix6273);
 							arguments619=arguments();
@@ -18705,7 +18711,7 @@ public class JavaJavaParser extends Parser {
 
 
 	// $ANTLR start "arguments"
-	// /home/tony/Downloads/JavaJava.g:855:1: arguments : '(' ( expressionList )? ')' ;
+	// /home/tony/Downloads/JavaJava.g:861:1: arguments : '(' ( expressionList )? ')' ;
 	public final JavaJavaParser.arguments_return arguments() throws RecognitionException {
 		JavaJavaParser.arguments_return retval = new JavaJavaParser.arguments_return();
 		retval.start = input.LT(1);
@@ -18723,8 +18729,8 @@ public class JavaJavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 136) ) { return retval; }
 
-			// /home/tony/Downloads/JavaJava.g:856:5: ( '(' ( expressionList )? ')' )
-			// /home/tony/Downloads/JavaJava.g:856:9: '(' ( expressionList )? ')'
+			// /home/tony/Downloads/JavaJava.g:862:5: ( '(' ( expressionList )? ')' )
+			// /home/tony/Downloads/JavaJava.g:862:9: '(' ( expressionList )? ')'
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -18736,7 +18742,7 @@ public class JavaJavaParser extends Parser {
 			}
 
 			if ( state.backtracking==0 ) {s("(");}
-			// /home/tony/Downloads/JavaJava.g:856:22: ( expressionList )?
+			// /home/tony/Downloads/JavaJava.g:862:22: ( expressionList )?
 			int alt178=2;
 			int LA178_0 = input.LA(1);
 			if ( ((LA178_0 >= CharacterLiteral && LA178_0 <= DecimalLiteral)||LA178_0==FloatingPointLiteral||(LA178_0 >= HexLiteral && LA178_0 <= Identifier)||(LA178_0 >= OctalLiteral && LA178_0 <= StringLiteral)||LA178_0==25||LA178_0==32||(LA178_0 >= 36 && LA178_0 <= 37)||(LA178_0 >= 40 && LA178_0 <= 41)||LA178_0==60||LA178_0==62||LA178_0==65||LA178_0==70||LA178_0==73||LA178_0==76||LA178_0==82||LA178_0==84||(LA178_0 >= 86 && LA178_0 <= 87)||LA178_0==93||LA178_0==96||LA178_0==99||LA178_0==103||LA178_0==105||LA178_0==113) ) {
@@ -18744,7 +18750,7 @@ public class JavaJavaParser extends Parser {
 			}
 			switch (alt178) {
 				case 1 :
-					// /home/tony/Downloads/JavaJava.g:856:22: expressionList
+					// /home/tony/Downloads/JavaJava.g:862:22: expressionList
 					{
 					pushFollow(FOLLOW_expressionList_in_arguments6296);
 					expressionList621=expressionList();
@@ -18923,8 +18929,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred113_JavaJava
 	public final void synpred113_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:444:22: ( explicitConstructorInvocation )
-		// /home/tony/Downloads/JavaJava.g:444:22: explicitConstructorInvocation
+		// /home/tony/Downloads/JavaJava.g:450:22: ( explicitConstructorInvocation )
+		// /home/tony/Downloads/JavaJava.g:450:22: explicitConstructorInvocation
 		{
 		pushFollow(FOLLOW_explicitConstructorInvocation_in_synpred113_JavaJava2754);
 		explicitConstructorInvocation();
@@ -18938,10 +18944,10 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred117_JavaJava
 	public final void synpred117_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:448:9: ( ( nonWildcardTypeArguments )? ( 'this' | 'super' ) arguments ';' )
-		// /home/tony/Downloads/JavaJava.g:448:9: ( nonWildcardTypeArguments )? ( 'this' | 'super' ) arguments ';'
+		// /home/tony/Downloads/JavaJava.g:454:9: ( ( nonWildcardTypeArguments )? ( 'this' | 'super' ) arguments ';' )
+		// /home/tony/Downloads/JavaJava.g:454:9: ( nonWildcardTypeArguments )? ( 'this' | 'super' ) arguments ';'
 		{
-		// /home/tony/Downloads/JavaJava.g:448:9: ( nonWildcardTypeArguments )?
+		// /home/tony/Downloads/JavaJava.g:454:9: ( nonWildcardTypeArguments )?
 		int alt192=2;
 		int LA192_0 = input.LA(1);
 		if ( (LA192_0==49) ) {
@@ -18949,7 +18955,7 @@ public class JavaJavaParser extends Parser {
 		}
 		switch (alt192) {
 			case 1 :
-				// /home/tony/Downloads/JavaJava.g:448:9: nonWildcardTypeArguments
+				// /home/tony/Downloads/JavaJava.g:454:9: nonWildcardTypeArguments
 				{
 				pushFollow(FOLLOW_nonWildcardTypeArguments_in_synpred117_JavaJava2781);
 				nonWildcardTypeArguments();
@@ -18985,8 +18991,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred128_JavaJava
 	public final void synpred128_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:480:9: ( annotation )
-		// /home/tony/Downloads/JavaJava.g:480:9: annotation
+		// /home/tony/Downloads/JavaJava.g:486:9: ( annotation )
+		// /home/tony/Downloads/JavaJava.g:486:9: annotation
 		{
 		pushFollow(FOLLOW_annotation_in_synpred128_JavaJava3043);
 		annotation();
@@ -19000,8 +19006,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred151_JavaJava
 	public final void synpred151_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:553:10: ( localVariableDeclarationStatement )
-		// /home/tony/Downloads/JavaJava.g:553:10: localVariableDeclarationStatement
+		// /home/tony/Downloads/JavaJava.g:559:10: ( localVariableDeclarationStatement )
+		// /home/tony/Downloads/JavaJava.g:559:10: localVariableDeclarationStatement
 		{
 		pushFollow(FOLLOW_localVariableDeclarationStatement_in_synpred151_JavaJava3609);
 		localVariableDeclarationStatement();
@@ -19015,8 +19021,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred152_JavaJava
 	public final void synpred152_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:554:9: ( classOrInterfaceDeclaration )
-		// /home/tony/Downloads/JavaJava.g:554:9: classOrInterfaceDeclaration
+		// /home/tony/Downloads/JavaJava.g:560:9: ( classOrInterfaceDeclaration )
+		// /home/tony/Downloads/JavaJava.g:560:9: classOrInterfaceDeclaration
 		{
 		pushFollow(FOLLOW_classOrInterfaceDeclaration_in_synpred152_JavaJava3619);
 		classOrInterfaceDeclaration();
@@ -19030,8 +19036,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred157_JavaJava
 	public final void synpred157_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:573:115: ( 'else' statement )
-		// /home/tony/Downloads/JavaJava.g:573:115: 'else' statement
+		// /home/tony/Downloads/JavaJava.g:579:115: ( 'else' statement )
+		// /home/tony/Downloads/JavaJava.g:579:115: 'else' statement
 		{
 		match(input,71,FOLLOW_71_in_synpred157_JavaJava3770); if (state.failed) return;
 
@@ -19047,8 +19053,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred162_JavaJava
 	public final void synpred162_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:578:11: ( catches 'finally' block )
-		// /home/tony/Downloads/JavaJava.g:578:11: catches 'finally' block
+		// /home/tony/Downloads/JavaJava.g:584:11: ( catches 'finally' block )
+		// /home/tony/Downloads/JavaJava.g:584:11: catches 'finally' block
 		{
 		pushFollow(FOLLOW_catches_in_synpred162_JavaJava3864);
 		catches();
@@ -19069,8 +19075,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred163_JavaJava
 	public final void synpred163_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:579:11: ( catches )
-		// /home/tony/Downloads/JavaJava.g:579:11: catches
+		// /home/tony/Downloads/JavaJava.g:585:11: ( catches )
+		// /home/tony/Downloads/JavaJava.g:585:11: catches
 		{
 		pushFollow(FOLLOW_catches_in_synpred163_JavaJava3881);
 		catches();
@@ -19084,8 +19090,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred178_JavaJava
 	public final void synpred178_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:614:9: ( switchLabel )
-		// /home/tony/Downloads/JavaJava.g:614:9: switchLabel
+		// /home/tony/Downloads/JavaJava.g:620:9: ( switchLabel )
+		// /home/tony/Downloads/JavaJava.g:620:9: switchLabel
 		{
 		pushFollow(FOLLOW_switchLabel_in_synpred178_JavaJava4204);
 		switchLabel();
@@ -19099,8 +19105,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred180_JavaJava
 	public final void synpred180_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:618:9: ( 'case' constantExpression ':' )
-		// /home/tony/Downloads/JavaJava.g:618:9: 'case' constantExpression ':'
+		// /home/tony/Downloads/JavaJava.g:624:9: ( 'case' constantExpression ':' )
+		// /home/tony/Downloads/JavaJava.g:624:9: 'case' constantExpression ':'
 		{
 		match(input,63,FOLLOW_63_in_synpred180_JavaJava4231); if (state.failed) return;
 
@@ -19118,8 +19124,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred181_JavaJava
 	public final void synpred181_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:619:9: ( 'case' enumConstantName ':' )
-		// /home/tony/Downloads/JavaJava.g:619:9: 'case' enumConstantName ':'
+		// /home/tony/Downloads/JavaJava.g:625:9: ( 'case' enumConstantName ':' )
+		// /home/tony/Downloads/JavaJava.g:625:9: 'case' enumConstantName ':'
 		{
 		match(input,63,FOLLOW_63_in_synpred181_JavaJava4246); if (state.failed) return;
 
@@ -19137,8 +19143,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred182_JavaJava
 	public final void synpred182_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:625:9: ( enhancedForControl )
-		// /home/tony/Downloads/JavaJava.g:625:9: enhancedForControl
+		// /home/tony/Downloads/JavaJava.g:631:9: ( enhancedForControl )
+		// /home/tony/Downloads/JavaJava.g:631:9: enhancedForControl
 		{
 		pushFollow(FOLLOW_enhancedForControl_in_synpred182_JavaJava4297);
 		enhancedForControl();
@@ -19152,8 +19158,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred186_JavaJava
 	public final void synpred186_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:630:9: ( localVariableDeclaration )
-		// /home/tony/Downloads/JavaJava.g:630:9: localVariableDeclaration
+		// /home/tony/Downloads/JavaJava.g:636:9: ( localVariableDeclaration )
+		// /home/tony/Downloads/JavaJava.g:636:9: localVariableDeclaration
 		{
 		pushFollow(FOLLOW_localVariableDeclaration_in_synpred186_JavaJava4337);
 		localVariableDeclaration();
@@ -19167,8 +19173,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred188_JavaJava
 	public final void synpred188_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:661:32: ( assignmentOperator expression )
-		// /home/tony/Downloads/JavaJava.g:661:32: assignmentOperator expression
+		// /home/tony/Downloads/JavaJava.g:667:32: ( assignmentOperator expression )
+		// /home/tony/Downloads/JavaJava.g:667:32: assignmentOperator expression
 		{
 		pushFollow(FOLLOW_assignmentOperator_in_synpred188_JavaJava4528);
 		assignmentOperator();
@@ -19187,8 +19193,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred198_JavaJava
 	public final void synpred198_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:674:9: ( '<' '<' '=' )
-		// /home/tony/Downloads/JavaJava.g:674:10: '<' '<' '='
+		// /home/tony/Downloads/JavaJava.g:680:9: ( '<' '<' '=' )
+		// /home/tony/Downloads/JavaJava.g:680:10: '<' '<' '='
 		{
 		match(input,49,FOLLOW_49_in_synpred198_JavaJava4648); if (state.failed) return;
 
@@ -19203,8 +19209,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred199_JavaJava
 	public final void synpred199_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:679:9: ( '>' '>' '>' '=' )
-		// /home/tony/Downloads/JavaJava.g:679:10: '>' '>' '>' '='
+		// /home/tony/Downloads/JavaJava.g:685:9: ( '>' '>' '>' '=' )
+		// /home/tony/Downloads/JavaJava.g:685:10: '>' '>' '>' '='
 		{
 		match(input,52,FOLLOW_52_in_synpred199_JavaJava4688); if (state.failed) return;
 
@@ -19221,8 +19227,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred200_JavaJava
 	public final void synpred200_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:686:9: ( '>' '>' '=' )
-		// /home/tony/Downloads/JavaJava.g:686:10: '>' '>' '='
+		// /home/tony/Downloads/JavaJava.g:692:9: ( '>' '>' '=' )
+		// /home/tony/Downloads/JavaJava.g:692:10: '>' '>' '='
 		{
 		match(input,52,FOLLOW_52_in_synpred200_JavaJava4733); if (state.failed) return;
 
@@ -19237,8 +19243,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred211_JavaJava
 	public final void synpred211_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:730:9: ( '<' '=' )
-		// /home/tony/Downloads/JavaJava.g:730:10: '<' '='
+		// /home/tony/Downloads/JavaJava.g:736:9: ( '<' '=' )
+		// /home/tony/Downloads/JavaJava.g:736:10: '<' '='
 		{
 		match(input,49,FOLLOW_49_in_synpred211_JavaJava5057); if (state.failed) return;
 
@@ -19251,8 +19257,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred212_JavaJava
 	public final void synpred212_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:733:9: ( '>' '=' )
-		// /home/tony/Downloads/JavaJava.g:733:10: '>' '='
+		// /home/tony/Downloads/JavaJava.g:739:9: ( '>' '=' )
+		// /home/tony/Downloads/JavaJava.g:739:10: '>' '='
 		{
 		match(input,52,FOLLOW_52_in_synpred212_JavaJava5091); if (state.failed) return;
 
@@ -19265,8 +19271,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred215_JavaJava
 	public final void synpred215_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:745:9: ( '<' '<' )
-		// /home/tony/Downloads/JavaJava.g:745:10: '<' '<'
+		// /home/tony/Downloads/JavaJava.g:751:9: ( '<' '<' )
+		// /home/tony/Downloads/JavaJava.g:751:10: '<' '<'
 		{
 		match(input,49,FOLLOW_49_in_synpred215_JavaJava5186); if (state.failed) return;
 
@@ -19279,8 +19285,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred216_JavaJava
 	public final void synpred216_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:748:9: ( '>' '>' '>' )
-		// /home/tony/Downloads/JavaJava.g:748:10: '>' '>' '>'
+		// /home/tony/Downloads/JavaJava.g:754:9: ( '>' '>' '>' )
+		// /home/tony/Downloads/JavaJava.g:754:10: '>' '>' '>'
 		{
 		match(input,52,FOLLOW_52_in_synpred216_JavaJava5220); if (state.failed) return;
 
@@ -19295,8 +19301,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred217_JavaJava
 	public final void synpred217_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:753:9: ( '>' '>' )
-		// /home/tony/Downloads/JavaJava.g:753:10: '>' '>'
+		// /home/tony/Downloads/JavaJava.g:759:9: ( '>' '>' )
+		// /home/tony/Downloads/JavaJava.g:759:10: '>' '>'
 		{
 		match(input,52,FOLLOW_52_in_synpred217_JavaJava5260); if (state.failed) return;
 
@@ -19309,8 +19315,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred229_JavaJava
 	public final void synpred229_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:778:9: ( castExpression )
-		// /home/tony/Downloads/JavaJava.g:778:9: castExpression
+		// /home/tony/Downloads/JavaJava.g:784:9: ( castExpression )
+		// /home/tony/Downloads/JavaJava.g:784:9: castExpression
 		{
 		pushFollow(FOLLOW_castExpression_in_synpred229_JavaJava5479);
 		castExpression();
@@ -19324,8 +19330,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred233_JavaJava
 	public final void synpred233_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:783:8: ( '(' primitiveType ')' unaryExpression )
-		// /home/tony/Downloads/JavaJava.g:783:8: '(' primitiveType ')' unaryExpression
+		// /home/tony/Downloads/JavaJava.g:789:8: ( '(' primitiveType ')' unaryExpression )
+		// /home/tony/Downloads/JavaJava.g:789:8: '(' primitiveType ')' unaryExpression
 		{
 		match(input,32,FOLLOW_32_in_synpred233_JavaJava5521); if (state.failed) return;
 
@@ -19348,8 +19354,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred234_JavaJava
 	public final void synpred234_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:784:22: ( type )
-		// /home/tony/Downloads/JavaJava.g:784:22: type
+		// /home/tony/Downloads/JavaJava.g:790:22: ( type )
+		// /home/tony/Downloads/JavaJava.g:790:22: type
 		{
 		pushFollow(FOLLOW_type_in_synpred234_JavaJava5541);
 		type();
@@ -19363,8 +19369,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred236_JavaJava
 	public final void synpred236_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:789:73: ( '.' Identifier )
-		// /home/tony/Downloads/JavaJava.g:789:73: '.' Identifier
+		// /home/tony/Downloads/JavaJava.g:795:73: ( '.' Identifier )
+		// /home/tony/Downloads/JavaJava.g:795:73: '.' Identifier
 		{
 		match(input,43,FOLLOW_43_in_synpred236_JavaJava5583); if (state.failed) return;
 
@@ -19377,8 +19383,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred237_JavaJava
 	public final void synpred237_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:789:100: ( identifierSuffix )
-		// /home/tony/Downloads/JavaJava.g:789:100: identifierSuffix
+		// /home/tony/Downloads/JavaJava.g:795:100: ( identifierSuffix )
+		// /home/tony/Downloads/JavaJava.g:795:100: identifierSuffix
 		{
 		pushFollow(FOLLOW_identifierSuffix_in_synpred237_JavaJava5591);
 		identifierSuffix();
@@ -19395,8 +19401,8 @@ public class JavaJavaParser extends Parser {
 		Token I4=null;
 
 
-		// /home/tony/Downloads/JavaJava.g:793:42: ( '.' I4= Identifier )
-		// /home/tony/Downloads/JavaJava.g:793:42: '.' I4= Identifier
+		// /home/tony/Downloads/JavaJava.g:799:42: ( '.' I4= Identifier )
+		// /home/tony/Downloads/JavaJava.g:799:42: '.' I4= Identifier
 		{
 		match(input,43,FOLLOW_43_in_synpred242_JavaJava5646); if (state.failed) return;
 
@@ -19409,8 +19415,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred243_JavaJava
 	public final void synpred243_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:793:73: ( identifierSuffix )
-		// /home/tony/Downloads/JavaJava.g:793:73: identifierSuffix
+		// /home/tony/Downloads/JavaJava.g:799:73: ( identifierSuffix )
+		// /home/tony/Downloads/JavaJava.g:799:73: identifierSuffix
 		{
 		pushFollow(FOLLOW_identifierSuffix_in_synpred243_JavaJava5657);
 		identifierSuffix();
@@ -19424,8 +19430,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred249_JavaJava
 	public final void synpred249_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:800:10: ( '[' expression ']' )
-		// /home/tony/Downloads/JavaJava.g:800:10: '[' expression ']'
+		// /home/tony/Downloads/JavaJava.g:806:10: ( '[' expression ']' )
+		// /home/tony/Downloads/JavaJava.g:806:10: '[' expression ']'
 		{
 		match(input,55,FOLLOW_55_in_synpred249_JavaJava5748); if (state.failed) return;
 
@@ -19443,8 +19449,8 @@ public class JavaJavaParser extends Parser {
 
 	// $ANTLR start synpred262_JavaJava
 	public final void synpred262_JavaJava_fragment() throws RecognitionException {
-		// /home/tony/Downloads/JavaJava.g:826:39: ( '[' expression ']' )
-		// /home/tony/Downloads/JavaJava.g:826:39: '[' expression ']'
+		// /home/tony/Downloads/JavaJava.g:832:39: ( '[' expression ']' )
+		// /home/tony/Downloads/JavaJava.g:832:39: '[' expression ']'
 		{
 		match(input,55,FOLLOW_55_in_synpred262_JavaJava6018); if (state.failed) return;
 
@@ -20263,7 +20269,7 @@ public class JavaJavaParser extends Parser {
 		}
 		@Override
 		public String getDescription() {
-			return "623:1: forControl options {k=3; } : ( enhancedForControl | ( forInit )? ';' ( expression )? ';' ( forUpdate )? );";
+			return "629:1: forControl options {k=3; } : ( enhancedForControl | ( forInit )? ';' ( expression )? ';' ( forUpdate )? );";
 		}
 		@Override
 		public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
@@ -21187,7 +21193,7 @@ public class JavaJavaParser extends Parser {
 		}
 		@Override
 		public String getDescription() {
-			return "784:21: ( type | expression )";
+			return "790:21: ( type | expression )";
 		}
 		@Override
 		public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {

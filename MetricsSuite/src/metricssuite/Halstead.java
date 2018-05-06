@@ -36,6 +36,7 @@ public class Halstead {
     private double personMonths = 0;
     private double bugsExpected =0;
     private String mc = "";
+   
     
     private int methodCount =0;
 
@@ -148,9 +149,15 @@ public class Halstead {
        
         
         for (HashMap.Entry<String, Integer> entry : JavaMetrics.classNames.entrySet()) { 
-            children +="Class = " + entry.getKey() + ", Value = " + entry.getValue() +"\n";
+            children +="Class Name: " + entry.getKey() + ", Children: " + entry.getValue() +"\n";
         }
         
+//        String temp = "";
+//        for (HashMap.Entry<String, String> entry : JavaMetrics.inheritanceTree.entrySet()) { 
+//            temp +="Class = " + entry.getKey() + ", Value = " + entry.getValue() +"\n";
+//        }
+//        System.out.println(temp);
+//        
         
         methodCount = JavaMetrics.methodNames.size();
         
@@ -170,6 +177,7 @@ public class Halstead {
         //commentSpaceBytes = out.getBytes().length;   
         
     }
+   
     
     
     

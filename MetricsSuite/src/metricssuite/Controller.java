@@ -313,7 +313,7 @@ public class Controller implements Initializable {
     }
     
     private void allStats(Halstead hal){
-        
+        IterFourUtil util = new IterFourUtil();
         if(openFileTabs.containsKey("all"))
             return;
 
@@ -324,8 +324,10 @@ public class Controller implements Initializable {
 
         //hal.parse(file.toString());
 
-        String fileText = "Children: \n";
-        fileText += hal.getChildren();
+        String fileText = "Number of Children: \n";
+        fileText += hal.getChildren() +"\n";
+        fileText += "Depth of inheritance tree: \n";
+        fileText += util.inheritanceDepth() +"\n";
 
         textArea.setText(fileText);
         Tab tab = new Tab("all", textArea);            
@@ -392,6 +394,7 @@ public class Controller implements Initializable {
     private void openIter4(File file) {
         String name = file.getName();
         String name1 = "_"+name;
+        
 
         try {
             if(openFileTabs.containsKey(name1))
@@ -406,6 +409,7 @@ public class Controller implements Initializable {
             
             String fileText = "File name: " + name + "\n";            
             fileText += "Method count: " + hal.getMethodCount();
+           
 
 
             textArea.setText(fileText);

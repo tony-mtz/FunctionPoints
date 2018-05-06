@@ -1,4 +1,4 @@
-public class Test3 {    
+public class Test3 extends Test2{    
 //comment is here
 /*
 
