@@ -142,7 +142,12 @@ classDeclaration
     ;
     
 normalClassDeclaration
-    :   'class' Identifier { className=$Identifier.text; classCount++;}{keywordCount++; JavaMetrics.uniqueKeywords.add("class"); id($Identifier.text);} typeParameters?
+    :   'class' Identifier { className=$Identifier.text; classCount++;
+    	if(!JavaMetrics.inheritanceTree.containsKey(className)){
+    		JavaMetrics.inheritanceTree.put(className, null);
+    	}
+    	
+    	}{keywordCount++; JavaMetrics.uniqueKeywords.add("class"); id($Identifier.text);} typeParameters?
         //('extends' {keywordCount++;JavaMetrics.uniqueKeywords.add("extends");}type)? 
         (typeExt {keywordCount++;JavaMetrics.uniqueKeywords.add("extends");}type)? 
         ('implements' {keywordCount++;JavaMetrics.uniqueKeywords.add("implements");} typeList )?
@@ -159,6 +164,7 @@ typeParameter
 
 typeExt
     : 'extends' Identifier {extendsClass =$Identifier.text;
+    	JavaMetrics.inheritanceTree.put(className,extendsClass);
     	
     	if(JavaMetrics.classNames.containsKey(extendsClass)){
     		JavaMetrics.classNames.put(extendsClass, JavaMetrics.classNames.get(extendsClass)+1);
