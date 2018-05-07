@@ -7,6 +7,8 @@ package metricssuite;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.HashSet;
+
 import org.antlr.runtime.ANTLRFileStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.RecognitionException;
@@ -39,6 +41,7 @@ public class Halstead {
    
     
     private int methodCount =0;
+    private HashMap<String, Integer> couplingBetweenClasses = new HashMap<>();
 
     public String getMc() {
         return mc;
@@ -47,6 +50,8 @@ public class Halstead {
     public double getTimeMin() {
         return timeMin;
     }
+
+    public HashMap<String, Integer> getCouplingBetweenClasses() { return couplingBetweenClasses;}
 
     public double getTimeHour() {
         return timeHour;
@@ -142,6 +147,9 @@ public class Halstead {
         timeHour = timeMin/60;
         personMonths = timeHour/140;
         bugsExpected = volume/3000;
+        for (HashMap.Entry<String, HashSet<String>> classCoupling : JavaMetrics.couplingBetweenClasses.entrySet()) {
+            couplingBetweenClasses.put(classCoupling.getKey(), classCoupling.getValue().size());
+        }
         for(String s: JavaMetrics.mccabeValues){
             mc += "   " + s + "\n";
         }

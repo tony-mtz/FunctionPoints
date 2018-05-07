@@ -51,10 +51,10 @@ package metricssuite;
     /////////////////////////////////
     String myID;
     String packageName, className;
-    void s(String sp){ 
-         specialcount++; 
+    void s(String sp){
+        specialcount++;
         // System.out.println(sp);
-         JavaMetrics.uniqueSpecial.add(sp);
+        JavaMetrics.uniqueSpecial.add(sp);
     }
     void id(String s){
     	identcount++;
@@ -146,7 +146,9 @@ normalClassDeclaration
     	if(!JavaMetrics.inheritanceTree.containsKey(className)){
     		JavaMetrics.inheritanceTree.put(className, null);
     	}
-    	
+    	if(!JavaMetrics.couplingBetweenClasses.containsKey(className)){
+            JavaMetrics.couplingBetweenClasses.put(className, new HashSet<>());
+        }
     	}{keywordCount++; JavaMetrics.uniqueKeywords.add("class"); id($Identifier.text);} typeParameters?
         //('extends' {keywordCount++;JavaMetrics.uniqueKeywords.add("extends");}type)? 
         (typeExt {keywordCount++;JavaMetrics.uniqueKeywords.add("extends");}type)? 
@@ -348,7 +350,7 @@ variableDeclaratorId
 //                       		id(new Symbol($Identifier.text,PrimitiveType, methodName)); 
                          	/*JavaMetrics.ssm.push(new Symbol($Identifier.text,"unknown", methodName)); */
                                          
-                      }    
+                      }
                     } ('['{s("[");} ']' {s("]");})*
     ;
 
@@ -389,14 +391,15 @@ typeName
     ;
 
 type
-	:	classOrInterfaceType ('[' {s("[");} ']' {s("]");})* 
+	:	classOrInterfaceType ('[' {s("[");} ']' {s("]");})*
 	|	primitiveType {primitive=true;}('[' {s("[");} ']' {s("]");})*
 	;
 
 
 
 classOrInterfaceType
-	:	I7=Identifier { id($I7.text);} typeArguments? ('.' {s(".");} Identifier typeArguments? )* 
+	:	I7=Identifier { id($I7.text);System.out.println("TEST " + $I7.text);
+                                                         JavaMetrics.couplingBetweenClasses.get(className).add($I7.text);} typeArguments? ('.' {s(".");} Identifier typeArguments? )*
 	;
 
 primitiveType

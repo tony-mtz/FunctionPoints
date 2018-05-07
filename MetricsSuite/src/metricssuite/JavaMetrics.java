@@ -6,14 +6,10 @@
 package metricssuite;
 
 import java.io.IOException;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
+
 import org.antlr.runtime.ANTLRFileStream;
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
@@ -37,6 +33,7 @@ public class JavaMetrics {
     static LinkedHashMap<String, Integer> classNames = new LinkedHashMap<String, Integer>();
     //depth of inheritance tree
     static HashMap<String, String> inheritanceTree = new HashMap<>();
+    static HashMap<String, HashSet<String>> couplingBetweenClasses = new HashMap<>();
     
     public static void reset(){
         uniqueKeywords.clear();

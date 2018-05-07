@@ -293,7 +293,7 @@ public class Controller implements Initializable {
     @FXML
     public void allFileStats(ActionEvent event){
         int size = Context.getInstance().getProjectObject().projCode.size();
-        File temp = null;
+        File temp;
         JavaMetrics.resetAll();
         Halstead hal = null;
         for(int i=0; i!= size; i++){
@@ -301,9 +301,7 @@ public class Controller implements Initializable {
              hal = new Halstead();
             try {
                 hal.parse(temp.toString());
-            } catch (IOException ex) {
-                Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (RecognitionException ex) {
+            } catch (IOException | RecognitionException ex) {
                 Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
@@ -328,6 +326,12 @@ public class Controller implements Initializable {
         fileText += hal.getChildren() +"\n";
         fileText += "Depth of inheritance tree: \n";
         fileText += util.inheritanceDepth() +"\n";
+
+        fileText += "Coupling Between Classes (CBO):\n";
+        for (HashMap.Entry<String, Integer> coupling : hal.getCouplingBetweenClasses().entrySet()) {
+            fileText += "Class: " + coupling.getKey() + ", " + "coupled classes = "
+                    + coupling.getValue() + "\n";
+        }
 
         textArea.setText(fileText);
         Tab tab = new Tab("all", textArea);            
@@ -377,7 +381,7 @@ public class Controller implements Initializable {
             
             fileText += "McCabe's Cyclomatic Complexity: \n";
             fileText += hal.getMc();
-            
+
             textArea.setText(fileText);
             Tab tab = new Tab(name, textArea);            
             tabPane.getTabs().add(tab);

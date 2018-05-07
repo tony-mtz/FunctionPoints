@@ -38,17 +38,8 @@ public class MetricsSuite extends Application {
         });
     }
 
-    public static void main(String[] args) throws IOException, RecognitionException {
+    public static void main(String[] args) {
         launch(args);
-        
-        //delete after done testing
-        Halstead jv = new Halstead();
-        jv.parse("Test2.java");
-        System.out.println("operands : "+jv.getUniqueOperands());
-        System.out.println("operators : "+jv.getUniqueOperators());
-        System.out.println("total operands: " + jv.getTotalOperands());
-        System.out.println("total operators: " + jv.getTotalOperators());
-        //end delete
     }
 
 }
