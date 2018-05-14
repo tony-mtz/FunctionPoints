@@ -398,8 +398,7 @@ type
 
 
 classOrInterfaceType
-	:	I7=Identifier { id($I7.text);System.out.println("TEST " + $I7.text);
-                                                         JavaMetrics.couplingBetweenClasses.get(className).add($I7.text);} typeArguments? ('.' {s(".");} Identifier typeArguments? )*
+	:	I7=Identifier { id($I7.text);JavaMetrics.couplingBetweenClasses.get(className).add($I7.text);} typeArguments? ('.' {s(".");} Identifier typeArguments? )*
 	;
 
 primitiveType
@@ -460,7 +459,7 @@ explicitConstructorInvocation
 
 
 qualifiedName
-    :   I1=Identifier {myID  = $I1.text;} ('.' {s(".");} I2=Identifier {myID+="."+$I2.text;})* 
+    :   I1=Identifier {myID  = $I1.text;} ('.' {s(".");} I2=Identifier {myID+="."+$I2.text;})*
     ;
     
 literal 
@@ -799,7 +798,10 @@ primary
     |   'super'{keywordCount++;JavaMetrics.uniqueKeywords.add("super");} superSuffix
     |   literal
     |   'new'{keywordCount++;JavaMetrics.uniqueKeywords.add("new");} creator
-    |   I1=Identifier {{id($I1.text);}} ('.' {s(".");} I4=Identifier)*  identifierSuffix? 
+    |   I1=Identifier {{id($I1.text);  HashSet set = JavaMetrics.lackOfCohesion.get(methodName);
+    if (set == null) { set = new HashSet<String>(); JavaMetrics.lackOfCohesion.put(methodName, set);}
+    set.add($I1.text);
+    }} ('.' {s(".");} I4=Identifier)*  identifierSuffix?
     |   primitiveType ('['{s("[");} ']'{s("]");})* '.' 'class' {keywordCount++;JavaMetrics.uniqueKeywords.add("class");}
     |   'void'{keywordCount++;JavaMetrics.uniqueKeywords.add("void");} '.' {s(".");} 'class'{keywordCount++;JavaMetrics.uniqueKeywords.add("class");}
     ;

@@ -6,8 +6,7 @@
 package metricssuite;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 
 import org.antlr.runtime.ANTLRFileStream;
 import org.antlr.runtime.CommonTokenStream;
@@ -186,7 +185,26 @@ public class Halstead {
         
     }
    
-    
+    int calculateLackOfCohesion() {
+        int nullSections = 0;
+        int nonNullSections = 0;
+        HashMap<String, HashSet<String>> map = JavaMetrics.lackOfCohesion;
+        Collection<HashSet<String>> sets = map.values();
+        for (Iterator<HashSet<String>> iterator = sets.iterator(); iterator.hasNext();) {
+            HashSet<String> set = iterator.next();
+            iterator.remove();
+            for (HashSet<String> method : sets) {
+                Set<String> intersect = new HashSet<>(set);
+                intersect.retainAll(method);
+                if (intersect.size() > 0) {
+                    nonNullSections++;
+                } else {
+                    nullSections++;
+                }
+            }
+        }
+        return nullSections - nonNullSections;
+    }
     
     
 }

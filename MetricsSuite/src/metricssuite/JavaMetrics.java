@@ -34,6 +34,7 @@ public class JavaMetrics {
     //depth of inheritance tree
     static HashMap<String, String> inheritanceTree = new HashMap<>();
     static HashMap<String, HashSet<String>> couplingBetweenClasses = new HashMap<>();
+    static HashMap<String, HashSet<String>> lackOfCohesion = new HashMap<>();
     
     public static void reset(){
         uniqueKeywords.clear();
@@ -43,6 +44,7 @@ public class JavaMetrics {
         mccabeValues.clear();
         
         methodNames.clear();
+        lackOfCohesion.clear();
     }
     
     public static void resetAll(){

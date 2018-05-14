@@ -377,10 +377,11 @@ public class Controller implements Initializable {
             fileText += "   Effort = " + df.format(hal.getEffort()) + " Time = " + df.format(hal.getTime());
             fileText += "(" + df.format(hal.getTimeMin()) + " minutes or " + df.format(hal.getTimeHour()) + " hours or ";
             fileText +=  df.format(hal.getPersonMonths()) + " person months ) \n";
-            fileText += "   Bugs expected = " + df.format(hal.getBugsExpected()) + "\n \n \n \n";
+            fileText += "   Bugs expected = " + df.format(hal.getBugsExpected()) + "\n \n \n";
             
             fileText += "McCabe's Cyclomatic Complexity: \n";
             fileText += hal.getMc();
+            fileText += "\n Lack of Cohesion Between Methods (LCOM): " + hal.calculateLackOfCohesion();
 
             textArea.setText(fileText);
             Tab tab = new Tab(name, textArea);            
